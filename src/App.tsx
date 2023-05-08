@@ -1,10 +1,10 @@
-import { Typography } from "@mui/material";
+import Header from "./components/header/Header";
 
 const App = () => {
   return (
-    <Typography color="secondary.main" variant="h1">
-      Open Healthcare Sandbox V3
-    </Typography>
+    <>
+      <Header />      
+    </>
   );
 };
 
