@@ -29,7 +29,7 @@ const theme = createTheme({
     },
     h3: {
       fontFamily: ["Poppins", "sans-serif"].join(","),
-      fontSize: 24,
+      fontSize: 26,
     },
     h4: {
       fontFamily: ["Poppins", "sans-serif"].join(","),
