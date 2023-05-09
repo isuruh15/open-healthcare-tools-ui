@@ -20,9 +20,11 @@ const Footer = () => {
   return (
     <>
       <Dialog open={isOpen}>
-        <DialogTitle>Modal Title</DialogTitle>
+        <DialogTitle>We value your feedback!</DialogTitle>
         <DialogContent>
-          <FeedbackForm />
+          <FeedbackForm onSubmit={function (): void {
+            throw new Error("Function not implemented.");
+          } } />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClick}>Close</Button>
