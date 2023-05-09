@@ -16,7 +16,6 @@ interface Props {
 
 const SideNav = ({ items }: Props) => {
   const location = useLocation();
-  console.log(location.pathname);
   const [currentSelection, setCurrentSelection] = useState<string>(
     location.pathname
   );
@@ -48,7 +47,7 @@ const SideNav = ({ items }: Props) => {
           key={item.path}
           className={`sidenav-item ${
             currentSelection === item.path ? "selected" : ""
-          }`}          
+          }`}
           to={item.path}
           onClick={() => handleItemClick(item.path)}
         >
