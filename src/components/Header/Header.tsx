@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import ContactBtn from './ContactBtn'
+import ContactBtn from './ContactButton'
 import Logo from './Logo'
 
 const Header = () => {

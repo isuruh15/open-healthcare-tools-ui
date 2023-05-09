@@ -1,0 +1,29 @@
+import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
+import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
+import FireHydrantAltOutlinedIcon from '@mui/icons-material/FireHydrantAltOutlined';
+import Sample1 from "../Features/Sample1";
+import Sample2 from "../Features/Sample2";
+import Sample3 from "../Features/Sample3";
+
+const items = [
+  {
+    label: "Sample 1",
+    path: "/",
+    icon: <AccountBoxOutlinedIcon sx={{width:30,height:30}} />,
+    component: <Sample1 />,
+  },
+  {
+    label: "Sample 2",
+    path: "/sample2",
+    icon: <LocalFireDepartmentOutlinedIcon sx={{width:30,height:30}}/>,
+    component: <Sample2 />,
+  },
+  {
+    label: "Sample 3",
+    path: "/sample3",
+    icon: <FireHydrantAltOutlinedIcon sx={{width:30,height:30}}/>,
+    component: <Sample3 />,
+  },
+];
+
+export default items;
