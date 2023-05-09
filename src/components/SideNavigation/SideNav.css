@@ -1,0 +1,17 @@
+.sidenav-item {
+  color: var(--white);
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.selected {
+  background-color: white;
+  color: var(--black);
+  border-radius: 10px 0 0 10px;
+  margin-right: -20px;
+  padding-right: 20px;
+}

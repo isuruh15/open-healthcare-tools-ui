@@ -1,11 +1,12 @@
 import { Button } from "@mui/material";
 import MailIcon from "@mui/icons-material/Mail";
+import config from '../../../app-config.json'
 
-const ContactBtn = () => {
+const ContactButton = () => {
   return (
     <Button
       variant="outlined"
-      aria-label="contact button"
+      aria-label="contact-button"
       startIcon={<MailIcon />}
       sx={{
         fontSize: 16,
@@ -18,12 +19,12 @@ const ContactBtn = () => {
         ":hover": {
           border: 2,
           bgcolor: "success.main",
-          color: "primary.main",
+          color: "background.paper",
           borderColor: "success.main",
         },
       }}
       component="a"
-      href="https://wso2.com/contact/?src=healthcare"
+      href={config.wso2_contact_url}
       target="_blank"
     >
       Contact Us
@@ -31,4 +32,4 @@ const ContactBtn = () => {
   );
 };
 
-export default ContactBtn;
+export default ContactButton;

@@ -1,12 +1,14 @@
-import { Box, Container } from "@mui/material";
-import Header from "./components/header/Header";
-import Footer from "./components/header/footer/Footer";
+import React from 'react';
+import { Box } from "@mui/material";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Body from './components/Body/Body';
 
 const App = () => {
   return (
-    <Box sx={{display:"flex", flexDirection:"column", height:"100vh"}}>
+    <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Header />
-      <Container sx={{flexGrow:1}}></Container>
+      <Body/>      
       <Footer />
     </Box>
   );
