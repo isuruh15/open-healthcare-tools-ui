@@ -9,19 +9,19 @@ const items = [
   {
     label: "Sample 1",
     path: "/",
-    icon: <AccountBoxOutlinedIcon sx={{width:30,height:30}} />,
+    icon: <AccountBoxOutlinedIcon sx={{width:26,height:26}} />,
     component: <Sample1 />,
   },
   {
     label: "Sample 2",
     path: "/sample2",
-    icon: <LocalFireDepartmentOutlinedIcon sx={{width:30,height:30}}/>,
+    icon: <LocalFireDepartmentOutlinedIcon sx={{width:26,height:26}}/>,
     component: <Sample2 />,
   },
   {
     label: "Sample 3",
     path: "/sample3",
-    icon: <FireHydrantAltOutlinedIcon sx={{width:30,height:30}}/>,
+    icon: <FireHydrantAltOutlinedIcon sx={{width:26,height:26}}/>,
     component: <Sample3 />,
   },
 ];
