@@ -6,9 +6,9 @@ import Body from './components/Body/Body';
 
 const App = () => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Header />
-      <Body/>      
+      <Body/>
       <Footer />
     </Box>
   );

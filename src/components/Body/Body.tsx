@@ -6,11 +6,14 @@ import items from './Config'
 
 const Body = () => {
   return (
-    <Box sx={{ flexGrow: 1, display: "flex" }}>
+    <Box sx={{ display: "flex", height: "100vh" }}>
       <SideNavigation items={items} />
-      <Routes items={items} />
+
+      <Box sx={{ flexGrow: 3 }}>
+        <Routes items={items} />
+      </Box>
     </Box>
   );
 };
-
+//
 export default Body;
