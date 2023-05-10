@@ -3,8 +3,30 @@ import { Grid } from "@mui/material";
 import ConvertButton from "../Common/ConvertButton";
 import TextArea from "../Common/TextArea";
 import BodyContainer from "../Body/BodyContainer";
+import { useState } from "react";
+import axios from "axios";
 
 const Hl7v2ToFhir = () => {
+  const [data, setData] = useState("");
+  const [response, setResponse] = useState({});
+
+  const handleOnChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    event.preventDefault();
+    setData(event.target.value);
+  };
+
+  const callBackend = () => {
+    console.log("Clicked");
+    axios
+      .post("https://jsonplaceholder.typicode.com/users", data)
+      .then((res) => {
+        console.log(res.data);
+        setResponse(res.data);
+      });
+  };
+
   return (
     <BodyContainer>
       <Heading
@@ -21,17 +43,20 @@ const Hl7v2ToFhir = () => {
       >
         <Grid item xs={12} sm={12} md={12} lg={5.5} xl={5.5}>
           <Grid container alignItems="center" justifyContent="center">
-            <TextArea label="Paste your HL7 resource here:" />
+            <TextArea
+              label="Paste your HL7 resource here:"
+              handleOnChange={handleOnChange}
+            />
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={1} xl={1}>
           <Grid container alignItems="center" justifyContent="center">
-            <ConvertButton></ConvertButton>
+            <ConvertButton handleSubmit={callBackend} />
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={5.5} xl={5.5}>
           <Grid container alignItems="center" justifyContent="center">
-            <TextArea label="Converted FHIR resource here:" />
+            <TextArea label="Converted FHIR resource here:" data={response} />
           </Grid>
         </Grid>
       </Grid>
