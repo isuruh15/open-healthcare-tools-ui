@@ -31,7 +31,7 @@ const SideNav = ({ items }: Props) => {
         flexDirection: "column",
         bgcolor: "secondary.main",
         p: 2,
-        width: 250,
+        minWidth: 250,
       }}
     >
       <Typography variant="h4" sx={{ color: "background.paper", mt: 2, ml: 2 }}>

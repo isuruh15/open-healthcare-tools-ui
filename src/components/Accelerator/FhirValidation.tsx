@@ -16,7 +16,7 @@ const FhirValidation = () => {
       <Grid
         container
         spacing={2}
-        marginTop={3}
+        marginTop={5}
         alignItems="center"
         justifyContent="center"
       >

@@ -1,29 +1,21 @@
-import {
-  Icon,
-  IconButton,
-  Theme,
-  createStyles,
-  makeStyles,
-} from "@mui/material";
+import { Button } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       "& > span": {
-//         margin: theme.spacing(2),
-//       },
-//     },
-//   })
-// );
+interface Props {
+  handleSubmit?(): any;
+}
 
-const ConvertButton = () => {
+const ConvertButton = ({ handleSubmit }: Props) => {
   return (
-    <ArrowForwardIosIcon
-      color="secondary"
-      sx={{ fontSize: 100 }}
-      onClick={()=>{console.log("Clicked")}}
-    ></ArrowForwardIosIcon>
+    <Button variant="outlined" onClick={handleSubmit}>
+      <ArrowForwardIosIcon
+        color="secondary"
+        sx={{ fontSize: 100 }}
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      ></ArrowForwardIosIcon>
+    </Button>
   );
 };
 
