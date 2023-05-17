@@ -9,3 +9,4 @@ export { TextAreaOutput } from "./TextAreaOutput";
 export { UploadIcon } from "./UploadIcon";
 export { ViewDocument } from "./ViewDocument";
 export { AboutTool } from "./AboutTool";
+export { ResponseAlert } from "./ResponseAlert";

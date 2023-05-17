@@ -11,12 +11,12 @@ export const ConvertButton = ({ handleSubmit }: Props) => {
       variant="outlined"
       sx={{
         borderRadius: 1,
-        color: "success.main",
+        color: "primary.main",
         border: 1,
         borderColor: "primary.light",
         ":hover": {
           border: 1,
-          borderColor: "secondary.light",
+          borderColor: "primary.light",
         },
       }}
       onClick={handleSubmit}

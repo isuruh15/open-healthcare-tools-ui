@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Alert, Box, Collapse, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import {
   ConvertButton,
   TextAreaInput,
   TextAreaOutput,
   Heading,
+  ResponseAlert,
 } from "../Common";
 import apiClient from "../../services/api-client";
 import { HL7_TO_FHIR_ABOUT_URL, BFF_BASE_URL } from "../../Config";
@@ -47,28 +48,12 @@ export const Hl7v2ToFhir = () => {
   return (
     <Container maxWidth="xl">
       {error && (
-        <Collapse
-          in={isOpen}
-          sx={{
-            position: "fixed",
-            bottom: 60,
-            right: 30,
-            zIndex: 2,
-            transition: "0.3s ease",
-          }}
-        >
-          <Box display="flex" justifyContent="flex-end">
-            <Alert
-              severity="error"
-              sx={{ fontSize: 15, width: 500 }}
-              onClose={() => {
-                setIsOpen(false);
-              }}
-            >
-              {error}
-            </Alert>
-          </Box>
-        </Collapse>
+        <ResponseAlert
+          isOpen={isOpen}
+          severity="error"
+          message={error}
+          setIsOpen={setIsOpen}
+        />
       )}
       <Heading
         heading="HL7V2 To FHIR"
