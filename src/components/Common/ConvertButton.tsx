@@ -13,7 +13,7 @@ export const ConvertButton = ({ handleSubmit }: Props) => {
         borderRadius: 1,
         color: "primary.main",
         border: 1,
-        borderColor: "primary.light",
+        borderColor: "grey.400",
         ":hover": {
           border: 1,
           borderColor: "primary.light",
@@ -21,9 +21,7 @@ export const ConvertButton = ({ handleSubmit }: Props) => {
       }}
       onClick={handleSubmit}
     >
-      <ArrowForwardIosIcon
-        sx={{ width: 50, height: 50 }}
-      ></ArrowForwardIosIcon>
+      <ArrowForwardIosIcon sx={{ width: 50, height: 50 }}></ArrowForwardIosIcon>
     </Button>
   );
 };
