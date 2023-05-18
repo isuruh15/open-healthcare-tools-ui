@@ -1,9 +1,10 @@
-import { Alert, Box, Collapse, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import {
   TextAreaInput,
   Heading,
   TextAreaOutput,
   ConvertButton,
+  ResponseAlert,
 } from "../Common";
 import { useState } from "react";
 import { BFF_BASE_URL } from "../../Config";
@@ -46,26 +47,19 @@ export const CcdaToFhir = () => {
 
   return (
     <Container maxWidth="xl">
-      {error && (
-        <Collapse in={isOpen}>
-          <Box display="flex" justifyContent="flex-end">
-            <Alert
-              severity="error"
-              sx={{ fontSize: 15, width: 500 }}
-              onClose={() => {
-                setIsOpen(false);
-              }}
-            >
-              {error}
-            </Alert>
-          </Box>
-        </Collapse>
-      )}
       <Heading
         heading="C-CDA To FHIR"
         description="Convert C-CDA data to FHIR"
         url="https://wso2.com/solutions/healthcare/"
       ></Heading>
+      {error && (
+        <ResponseAlert
+          isOpen={isOpen}
+          severity="error"
+          message={error}
+          setIsOpen={setIsOpen}
+        />
+      )}
       <Grid
         container
         spacing={2}
