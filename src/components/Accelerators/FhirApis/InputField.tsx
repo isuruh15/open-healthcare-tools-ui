@@ -119,6 +119,7 @@ export const InputField = ({
         ) : (
           <TextField
             size="small"
+            sx={{ width: 250 }}
             value=""
             onChange={(event) => handleChange("value", event.target.value)}
             {...props}

@@ -251,7 +251,9 @@ export const GetResourceContent = ({
                 <Box>
                   {isSearchOperation && (
                     <>
-                      <Typography sx={{ color: "primary.dark", mb: 1 }}>
+                      <Typography
+                        sx={{ color: "primary.dark", mb: 1, mt: 0.5 }}
+                      >
                         Add optional search parameter(s)
                       </Typography>
                       <Box
