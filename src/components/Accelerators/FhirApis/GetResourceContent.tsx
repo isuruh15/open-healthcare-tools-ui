@@ -337,7 +337,7 @@ export const GetResourceContent = ({
                   fileType="json"
                   downloadEnabled
                   width="100%"
-                  height="calc(100vh - 345px)"
+                  height="calc(100vh - 346px)"
                 />
               </Box>
             </Box>
