@@ -213,7 +213,7 @@ export const CcdaToFhir = () => {
             readFile={readFile}
             clearEnabled
             width="100%"
-            height="calc(100vh - 200px)"
+            height="calc(100vh - 197px)"
           />
         </Box>
         <Box
@@ -234,7 +234,7 @@ export const CcdaToFhir = () => {
             downloadEnabled
             clearEnabled
             width="100%"
-            height="calc(100vh - 200px)"
+            height="calc(100vh - 197px)"
           />
         </Box>
       </Box>

@@ -82,7 +82,13 @@ export const CodeEditor = ({
           {clearEnabled && <ClearIcon onClear={onClear!} size={22} />}
         </Box>
       </Box>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          border: 1,
+          borderColor: "grey.400",
+        }}
+      >
         <CodeMirror
           placeholder={placeholder}
           value={value}

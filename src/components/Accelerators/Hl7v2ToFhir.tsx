@@ -213,7 +213,7 @@ export const Hl7v2ToFhir = () => {
             readFile={readFile}
             clearEnabled
             width="100%"
-            height="calc(100vh - 200px)"
+            height="calc(100vh - 197px)"
           />
         </Box>
         <Box
@@ -234,7 +234,7 @@ export const Hl7v2ToFhir = () => {
             downloadEnabled
             clearEnabled
             width="100%"
-            height="calc(100vh - 200px)"
+            height="calc(100vh - 197px)"
           />
         </Box>
       </Box>
