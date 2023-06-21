@@ -225,7 +225,7 @@ export const GetResourceContent = ({
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              height: "calc(100vh - 304px)",
+              height: "calc(100vh - 307px)",
             }}
           >
             <PreLoader setActive={isLoading} />

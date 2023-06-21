@@ -170,7 +170,7 @@ export const CreateOperationContent = ({ backendUrl, resource }: Props) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            height: "calc(100vh - 304px)",
+            height: "calc(100vh - 333px)",
           }}
         >
           <PreLoader setActive={isLoading} />
