@@ -97,7 +97,7 @@ export const SamplesModal = ({
           </IconButton>
         </Box>
         <Divider />
-        <Box sx={{ flexGrow: 1, my: 1, display: "flex" }}>
+        <Box sx={{ flexGrow: 1, display: "flex" }}>
           <Box
             sx={{
               width: "20%",
@@ -137,7 +137,14 @@ export const SamplesModal = ({
               />
             </Box>
           </Box>
-          <Box sx={{ width: "80%", display: "flex", justifyContent: "center" }}>
+          <Box
+            sx={{
+              width: "80%",
+              display: "flex",
+              mb: 2,
+              justifyContent: "center",
+            }}
+          >
             {selectedSample && (
               <CodeEditor
                 title={selectedSample.name}
