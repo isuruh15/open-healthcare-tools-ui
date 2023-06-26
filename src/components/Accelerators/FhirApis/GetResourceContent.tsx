@@ -361,9 +361,13 @@ export const GetResourceContent = ({
                   )}
                 </>
               ) : (
-                <Typography sx={{ fontStyle: "italic", m: 1 }}>
-                  No search parameters available
-                </Typography>
+                <>
+                  {isSearchOperation && (
+                    <Typography sx={{ fontStyle: "italic", m: 1 }}>
+                      No search parameters available
+                    </Typography>
+                  )}
+                </>
               )}
               <Box>
                 {!isSearchOperation && (
