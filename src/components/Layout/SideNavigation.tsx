@@ -140,7 +140,7 @@ export const SideNavigation = ({ items }: Props) => {
                     cursor: "pointer",
                     transition: "0.2s",
                     textDecoration: "none",
-                    borderRadius: "4px 0 0 4px",
+                    borderRadius: "6px 0 0 6px",
                     fontSize: isExpanded ? 16 : 0,
                     ...(currentSelection === item.path && {
                       backgroundColor: "background.default",
