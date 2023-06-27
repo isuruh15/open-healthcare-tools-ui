@@ -135,8 +135,8 @@ export const SideNavigation = ({ items }: Props) => {
                     py: 1.25,
                     width: 230,
                     px: isExpanded ? 1.5 : 0,
-                    margin: 0.62,
-                    mx: 1.5,
+                    my: 0.62,
+                    mx: 1.7,
                     cursor: "pointer",
                     transition: "0.2s",
                     textDecoration: "none",
@@ -145,8 +145,7 @@ export const SideNavigation = ({ items }: Props) => {
                     ...(currentSelection === item.path && {
                       backgroundColor: "background.default",
                       color: "primary.dark",
-                      marginRight: -1,
-                      paddingLeft: 1.5,
+                      pl: 1.5,
                     }),
                   }}
                   id={`sidebar-item-${item.path}`}
