@@ -10,7 +10,7 @@ import {
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
 import apiClient from "../../services/api-client";
-import { BFF_BASE_URL } from "../Configs/Constants";
+import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 
 interface State {
   input: string;
@@ -121,7 +121,7 @@ export const Hl7v2ToFhir = () => {
     }));
 
     apiClient(BFF_BASE_URL)
-      .post("/v2tofhir/transform", input)
+      .post(HL7V2_TO_FHIR_URL, input)
       .then((res) => {
         setRequest({
           reqUrl: BFF_BASE_URL + res.config["url"],

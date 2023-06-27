@@ -1,4 +1,11 @@
-import { BFF_BASE_URL } from "./Constants";
+import {
+  BFF_BASE_URL,
+  FHIR_ENCOUNTER_URL,
+  FHIR_OBSERVATION_URL,
+  FHIR_ORGANIZATION_URL,
+  FHIR_PATIENT_URL,
+  FHIR_PRACTITIONER_URL,
+} from "./Constants";
 
 export enum OperationTypes {
   CREATE,
@@ -18,7 +25,7 @@ export interface ResourceConfig {
 
 export interface ApiConfig {
   name: string;
-  baseUrl: string;
+  apiUrl: string;
   resources: ResourceConfig[];
   searchParams: SearchParam[];
 }
@@ -49,7 +56,7 @@ export const apiList: ApiConfig[] = [
   // },
   {
     name: "Patient",
-    baseUrl: BFF_BASE_URL + "/fhir/r4/patient",
+    apiUrl: BFF_BASE_URL + FHIR_PATIENT_URL,
     searchParams: [
       {
         paramName: "ID",
@@ -132,7 +139,7 @@ export const apiList: ApiConfig[] = [
   },
   {
     name: "Encounter",
-    baseUrl: BFF_BASE_URL + "/fhir/r4/encounter",
+    apiUrl: BFF_BASE_URL + FHIR_ENCOUNTER_URL,
     searchParams: [
       {
         paramName: "ID",
@@ -201,7 +208,7 @@ export const apiList: ApiConfig[] = [
   },
   {
     name: "Practitioner",
-    baseUrl: BFF_BASE_URL + "/fhir/r4/practitioner",
+    apiUrl: BFF_BASE_URL + FHIR_PRACTITIONER_URL,
     searchParams: [
       {
         paramName: "ID",
@@ -262,7 +269,7 @@ export const apiList: ApiConfig[] = [
   },
   {
     name: "Organization",
-    baseUrl: BFF_BASE_URL + "/fhir/r4/organization",
+    apiUrl: BFF_BASE_URL + FHIR_ORGANIZATION_URL,
     searchParams: [
       {
         paramName: "ID",
@@ -331,7 +338,7 @@ export const apiList: ApiConfig[] = [
   },
   {
     name: "Observation",
-    baseUrl: BFF_BASE_URL + "/fhir/r4/observation",
+    apiUrl: BFF_BASE_URL + FHIR_OBSERVATION_URL,
     searchParams: [
       {
         paramName: "ID",

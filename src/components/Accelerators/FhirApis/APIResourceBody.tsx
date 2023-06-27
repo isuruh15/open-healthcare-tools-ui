@@ -78,7 +78,7 @@ export const APIResourceBody = () => {
             {(resource.resourceMethod === "POST" ||
               resource.resourceMethod === "PUT") && (
               <CreateOperationContent
-                backendUrl={apiList[selectedAPI].baseUrl}
+                backendUrl={apiList[selectedAPI].apiUrl}
                 resource={resource}
               />
             )}
@@ -88,7 +88,7 @@ export const APIResourceBody = () => {
                 isSearchOperation={
                   resource.resourceOperation === OperationTypes.SEARCH
                 }
-                backendUrl={apiList[selectedAPI].baseUrl}
+                backendUrl={apiList[selectedAPI].apiUrl}
                 searchParams={apiList[selectedAPI].searchParams}
               />
             )}
