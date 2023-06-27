@@ -36,7 +36,8 @@ export const FhirData: Sample[] = [
                "Bob"
             ]
          }
-      ]
+      ],
+      "active": true,
    }`,
   },
   {
@@ -71,7 +72,8 @@ export const FhirData: Sample[] = [
          }
       ],
       "gender":"male",
-      "birthDate":"1988-07-25",
+      "birthDate":"1988-07-25",      
+      "active": false,
       "address":[
          {
             "use":"home",
@@ -110,6 +112,7 @@ export const FhirData: Sample[] = [
             ]
          }
       ],
+      "active": true,
       "telecom":[
          {
             "system":"phone",
