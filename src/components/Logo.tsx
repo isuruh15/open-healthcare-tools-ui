@@ -14,7 +14,7 @@ export const Logo = () => {
       }}
     >
       <Typography color="primary.dark" variant="h4" sx={{ fontWeight: 600 }}>
-        Open Healthcare Sandbox
+        Open Healthcare Tools
       </Typography>
       <Box sx={{ alignSelf: "flex-end" }}>
         <Box sx={{ display: "flex", gap: 1 }}>

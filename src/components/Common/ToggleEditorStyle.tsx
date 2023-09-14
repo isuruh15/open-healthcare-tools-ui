@@ -56,7 +56,7 @@ export const ToggleEditorStyle = ({ mode, toggleMode }: Props) => {
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: 1, mr: 0.8 }}>
       <Typography
-        sx={{ fontSize: 14, color: "primary.dark", fontWeight: 400 }}
+        sx={{ fontSize: 11, color: "primary.dark", fontWeight: 400 }}
         id="editor-style-label"
       >
         Editor Style
@@ -65,6 +65,7 @@ export const ToggleEditorStyle = ({ mode, toggleMode }: Props) => {
         checked={mode}
         onChange={toggleMode}
         id="editor-style-switch"
+        size="small"
       />
     </Box>
   );

@@ -193,15 +193,16 @@ export const CcdaToFhir = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "flex-end",
+          mt: 5,
         }}
       >
-        <SamplesModal aria-label="Samples Modal" />
-        <ConvertButton
+        {/* <SamplesModal aria-label="Samples Modal" /> */}
+        {/* <ConvertButton
           handleSubmit={callBackend}
           isLoading={isLoading}
           aria-label="Convert Button"
-        />
+        /> */}
         <Box id="headers-button">
           <HeadersTab request={request} response={response} />
         </Box>

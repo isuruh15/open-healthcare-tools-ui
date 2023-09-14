@@ -10,11 +10,11 @@ interface Props {
 export const ComponentTitle = ({ heading, description, url }: Props) => {
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", mt:2, ml:1 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Typography
             color="primary.dark"
-            variant="h5"
+            variant="h3"
             sx={{
               fontWeight: 600,
             }}

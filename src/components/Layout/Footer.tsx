@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import CopyrightIcon from "@mui/icons-material/Copyright";
+import { Logo } from "../Logo";
 
 export const Footer = () => {
   return (
@@ -7,6 +8,15 @@ export const Footer = () => {
       sx={{ display: "flex", borderTop: 0.5, borderColor: "grey.400" }}
       id="footer-container"
     >
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          ml: 0.5
+        }}
+      >
+        <Logo />
+      </Box>
       <Box
         sx={{
           display: "flex",

@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import { SecureApp } from "@asgardeo/auth-react";
 import { Box } from "@mui/material";
 import { DarkModeProvider } from "./components/Contexts/DarkModeContext";
 import { PreLoader } from "./components/Common";
@@ -16,30 +17,32 @@ const MainContent = React.lazy(() =>
 
 const App = () => {
   return (
-    <DarkModeProvider>
-      <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-        <Suspense
-          fallback={
-            <>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100vh",
-                }}
-              >
-                <PreLoader setActive={true} size={50} />
-              </Box>
-            </>
-          }
-        >
-          <Header />
-          <MainContent />
-        </Suspense>
-      </Box>
-    </DarkModeProvider>
+    <SecureApp>
+      <DarkModeProvider>
+        <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+          <Suspense
+            fallback={
+              <>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100vh",
+                  }}
+                >
+                  <PreLoader setActive={true} size={50} />
+                </Box>
+              </>
+            }
+          >
+            {/* <Header /> */}
+            <MainContent />
+          </Suspense>
+        </Box>
+      </DarkModeProvider>
+    </SecureApp>
   );
 };
 
