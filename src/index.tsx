@@ -12,8 +12,8 @@ const root = ReactDOM.createRoot(
 );
 
 const config = {
-  signInRedirectURL: "http://localhost:3000/hl7-to-fhir",
-  signOutRedirectURL: "http://localhost:3000/hl7-to-fhir",
+  signInRedirectURL: "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/hl7-to-fhir",
+  signOutRedirectURL: "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/hl7-to-fhir",
   clientID: "DN2VylTUi2ZgzUFTI0NuJ17LWKMa",
   baseUrl: "https://api.asgardeo.io/t/healthtools",
   scope: ["openid", "profile"]
