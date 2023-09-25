@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import { DarkModeProvider } from "./components/Contexts/DarkModeContext";
 import { PreLoader } from "./components/Common";
 
+
 const Header = React.lazy(() =>
   import("./components/Layout/Header").then((module) => ({
     default: module.Header,
@@ -12,6 +13,11 @@ const Header = React.lazy(() =>
 const MainContent = React.lazy(() =>
   import("./components/Layout/MainContent").then((module) => ({
     default: module.MainContent,
+  }))
+);
+const CompositeTool = React.lazy(() =>
+  import("./components/Layout/CompositeTool").then((module) => ({
+    default: module.CompositeTool,
   }))
 );
 
@@ -38,7 +44,7 @@ const App = () => {
             }
           >
             {/* <Header /> */}
-            <MainContent />
+            <CompositeTool />
           </Suspense>
         </Box>
       </DarkModeProvider>

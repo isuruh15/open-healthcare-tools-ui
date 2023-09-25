@@ -200,13 +200,16 @@ export const Hl7v2ToFhir = () => {
           justifyContent: "space-between",
         }}
       >
-        <SamplesModal />
-        <ConvertButton
+        {/* <SamplesModal /> */}
+        {/* <ConvertButton
           handleSubmit={callBackend}
           isLoading={isLoading}
           aria-label="Convert Button"
-        />
-        <Box id="headers-button">
+        /> */}
+        <Box id="headers-button" sx={{
+          justifyContent: "flex-end",
+        }}>
+          <Box></Box>
           <HeadersTab request={request} response={response} />
         </Box>
       </Box>
@@ -269,6 +272,14 @@ export const Hl7v2ToFhir = () => {
             aria-label="FHIR Resource Editor"
           />
         </Box>
+      </Box>
+      <Box>
+
+      <ConvertButton
+          handleSubmit={callBackend}
+          isLoading={isLoading}
+          aria-label="Convert Button"
+        />
       </Box>
     </Container>
   );

@@ -6,6 +6,9 @@ import { items } from "../Configs/AcceleratorConfig";
 import itemConfig from "../../tool-config.json";
 import { MainBlade } from "../Common/MainBlade";
 import { PromotedToolBlade } from "../Common/PromotedToolBlade";
+import Tools from "../Common/Tools";
+import Banner from "../Common/Banner";
+import { title } from "process";
 
 interface ItemConfig {
   [key: string]: {
@@ -26,6 +29,13 @@ export const MainContent = () => {
     }
     return item;
   });
+
+  const content = {
+    title: "Health IT Developer Toolkit",
+  };
+  const contentBal = {
+    title: "Ballerina - A Language built for healthcare",
+  };
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -82,17 +92,56 @@ export const MainContent = () => {
           <Box
             sx={{
               display: "flex",
+              flexDirection: "column",
+              mb: "auto",
+              ml: 0,
+              mr: 0,
+              mt:2,
+              flexGrow: 1,
+            }}
+            id="banner-container"
+          >
+            <Banner content={content}></Banner>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
               flexDirection: "space-between",
-              mb: 5,
+              mb: 2,
               ml: 2,
               mr: 2,
               flexGrow: 1,
             }}
             id="banner-container"
           >
-            <PromotedToolBlade />
-            <PromotedToolBlade />
-            <PromotedToolBlade />
+            <Tools></Tools>
+          </Box>
+          <Divider sx={{ mt: 1 }} />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              mb: 0,
+              ml: 0,
+              mr: 0,
+            }}
+            id="banner-container"
+          >
+            <Banner content={content}></Banner>
+            <Banner content={contentBal}></Banner>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              mb: 2,
+              mt: 2,
+              ml: 0,
+              mr: 0,
+            }}
+            id="article-container"
+          >
+            <Banner content={content}></Banner>
           </Box>
           <Footer />
         </Box>
