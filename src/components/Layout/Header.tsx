@@ -19,10 +19,11 @@ export const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { signOut } = useAuthContext();
+  // const { signOut } = useAuthContext();
 
   const handleSampleLoad = () => 
-    signOut();
+    // signOut();
+    console.log("logout");
 
   const location = useLocation();
   const currentItem = items.find(

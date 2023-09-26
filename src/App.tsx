@@ -23,7 +23,7 @@ const CompositeTool = React.lazy(() =>
 
 const App = () => {
   return (
-    <SecureApp>
+    // <SecureApp>
       <DarkModeProvider>
         <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
           <Suspense
@@ -48,7 +48,7 @@ const App = () => {
           </Suspense>
         </Box>
       </DarkModeProvider>
-    </SecureApp>
+    // </SecureApp>
   );
 };
 

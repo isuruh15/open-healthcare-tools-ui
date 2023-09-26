@@ -12,7 +12,7 @@ interface Props {
 }
 
 const AppRoutes = ({ items }: Props) => {
-  const { signIn } = useAuthContext();
+  // const { signIn } = useAuthContext();
 
   return (
     <SelectedSampleProvider>

@@ -33,14 +33,23 @@ export interface Sample {
 }
 
 export const items: Item[] = [
+  // {
+  //   label: "FHIR APIs",
+  //   description: "Try out sample FHIR APIs",
+  //   url: "https://wso2.com/solutions/healthcare/",
+  //   path: "/",
+  //   icon: <LocalFireDepartmentOutlinedIcon sx={{ width: 23, height: 23 }} />,
+  //   component: <FhirApis />,
+  //   sampleData: FhirData,
+  // },
   {
-    label: "FHIR APIs",
-    description: "Try out sample FHIR APIs",
+    label: "HL7V2 To FHIR",
+    description: "Convert HL7 V2 data to FHIR",
     url: "https://wso2.com/solutions/healthcare/",
     path: "/",
-    icon: <LocalFireDepartmentOutlinedIcon sx={{ width: 23, height: 23 }} />,
-    component: <FhirApis />,
-    sampleData: FhirData,
+    icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
+    component: <Hl7v2ToFhir />,
+    sampleData: Hl7Data,
   },
   {
     label: "HL7V2 To FHIR",
