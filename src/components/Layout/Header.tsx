@@ -8,8 +8,13 @@ import { items, Item } from "../Configs/AcceleratorConfig";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
 
-export const Header = () => {
-  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+interface HeaderProps {
+  title: string;
+  shortDescription: string;
+  url: string;
+}
+
+export const Header = ({ title,shortDescription,url }: HeaderProps) => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
   const handleResize = (): void => setScreenWidth(window.innerWidth);
@@ -19,19 +24,19 @@ export const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // const { signOut } = useAuthContext();
+  const { signOut } = useAuthContext();
 
   const handleSampleLoad = () => 
-    // signOut();
+    signOut();
     console.log("logout");
 
-  const location = useLocation();
-  const currentItem = items.find(
-    (item: Item) => item.path === location.pathname
-  );
-  const label = currentItem ? currentItem.label : "";
-  const description = currentItem ? currentItem.description : "";
-  const url = currentItem ? currentItem.url : "";
+  // const location = useLocation();
+  // const currentItem = items.find(
+  //   (item: Item) => item.path === location.pathname
+  // );
+  // const label = currentItem ? currentItem.label : "";
+  // const description = currentItem ? currentItem.description : "";
+  // const url = currentItem ? currentItem.url : "";
 
   return (
     <>
@@ -54,8 +59,8 @@ export const Header = () => {
         {/* <Logo /> */}
         {/* <KeyboardArrowRightOutlinedIcon fontSize="large" color="primary" /> */}
         <ComponentTitle
-          heading={label}
-          description={description}
+          heading={title}
+          description={shortDescription}
           url={url}
         ></ComponentTitle>
         <Box
@@ -67,10 +72,6 @@ export const Header = () => {
           }}
           id="toggle-container"
         >
-          <ToggleEditorStyle
-            mode={darkMode}
-            toggleMode={() => setDarkMode(!darkMode)}
-          />
         <CommonButton
                   variant="border"
                   label="Logout"

@@ -3,14 +3,16 @@ import { Footer, Header, SideNavigation } from "../Layout";
 import { ComingSoon } from "../Common";
 import Routes from "../Routes/AppRoutes";
 import { items } from "../Configs/AcceleratorConfig";
-import itemConfig from "../../tool-config.json";
+import toolConfig from "../../tool-config.json";
 import { MainBlade } from "../Common/MainBlade";
 import { PromotedToolBlade } from "../Common/PromotedToolBlade";
 import Tools from "../Common/Tools";
 import Banner from "../Common/Banner";
 import { title } from "process";
+import { tools, Tool } from "../Configs/ToolContentConfig";
+import { useLocation } from "react-router-dom";
 
-interface ItemConfig {
+interface ToolConfig {
   [key: string]: {
     status: "enabled" | "disabled" | "maintenance";
   };
@@ -18,17 +20,25 @@ interface ItemConfig {
 
 export const MainContent = () => {
   const filteredItems = items.filter((item) => {
-    const itemStatus = (itemConfig as ItemConfig)[item.label]?.status;
+    const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
     return itemStatus !== "disabled";
   });
 
   const renderedItems = filteredItems.map((item) => {
-    const itemStatus = (itemConfig as ItemConfig)[item.label]?.status;
+    const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
     if (itemStatus === "maintenance") {
       return { ...item, component: <ComingSoon /> };
     }
     return item;
   });
+
+  const location = useLocation();
+  const currentItem = tools.find(
+    (tool: Tool) => tool.path === location.pathname
+  );
+  if (!currentItem) {
+    return <div>404</div>;
+  }
 
   const content = {
     title: "Health IT Developer Toolkit",
@@ -39,12 +49,12 @@ export const MainContent = () => {
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-      <Header />
-      <Box sx={{ flexGrow: 1, display: "flex" }} id="main-container">
+      <Header title={currentItem.header.title} shortDescription={currentItem.header.shortDescription} url={currentItem.header.url} />
+      <Box sx={{ flexGrow: 1, display: "flex", mt: 2 }} id="main-container">
 
         {/* <SideNavigation items={renderedItems} /> */}
         <Box
-          width={1}
+          // width={1}
           pt={1}
           sx={{
             display: "flex",
@@ -58,13 +68,11 @@ export const MainContent = () => {
               display: "flex",
               flexDirection: "column",
               mb: "auto",
-              ml: 2,
-              mr: 2,
               flexGrow: 1,
             }}
             id="banner-container"
           >
-            <MainBlade />
+            <MainBlade title={currentItem.mainBlade.title} description={currentItem.mainBlade.description} image={currentItem.mainBlade.image} />
           </Box>
           <Box
             sx={{
@@ -96,7 +104,7 @@ export const MainContent = () => {
               mb: "auto",
               ml: 0,
               mr: 0,
-              mt:2,
+              mt: 2,
               flexGrow: 1,
             }}
             id="banner-container"

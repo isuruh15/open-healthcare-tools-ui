@@ -12,26 +12,11 @@ interface Props {
 }
 
 const AppRoutes = ({ items }: Props) => {
-  // const { signIn } = useAuthContext();
 
   return (
     <SelectedSampleProvider>
       <Routes>
         {items.map((item) => (
-          // item.path === "/" ?
-          //   (< Route key={item.path} path={item.path} element={item.component}/>)
-          // :
-          //   (<SecureRoute
-          //     path={item.path}
-          //     component={item.component}
-          //     callback={() => {
-          //       // Fires when the user is not authenticated.
-          //       // Will be directed to sign in.
-          //       signIn();
-          //     }}
-          //   />)
-
-
           <Route key={item.path} path={item.path} element={item.component} />
         ))}
       </Routes>

@@ -3,41 +3,43 @@ import logoBlack from "../../assets/system-integration.png";
 import { PreLoader } from "./PreLoader";
 import { useState } from "react";
 
-export const MainBlade = () => {
+interface MainBladeProps {
+    title: string;
+    description: string;
+    image: string;
+    backgroundImage?: string;
+}
+
+export const MainBlade = ({ title, description, image, backgroundImage }: MainBladeProps) => {
     const [active] = useState(true);
     return (
         <Box
             sx={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
                 justifyContent: "space-around",
                 gap: 15,
                 alignItems: "center",
                 height: 1,
-            }}
-        >
-            <Box>
-                <img src={logoBlack} alt="Healthcare Logo" style={{ width: "200px" }} />
-            </Box>
-            <Box sx={{ lineHeight: 0.5, textAlign: "center" }}>
+                backgroundColor: "#00A79D75",
+                ml: 0,
+                mr: 0,
+            }}>
+            <Box sx={{ lineHeight: 1, textAlign: "justify", ml: 4 }}>
                 {/* <PreLoader setActive={active} /> */}
                 <Typography
-                    variant="h4"
+                    variant="h1"
                     color="primary.dark"
                     fontWeight="500"
-                    sx={{ mt: 3 }}
-                >
-                    Health Tools
+                    sx={{ mt: 3, mb: 6 }}>
+                    {title}
                 </Typography>
                 <Typography variant="h6" sx={{ color: "grey.500", mt: 1 }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                    officia deserunt mollit anim id est laborum.
+                    {description}
                 </Typography>
+            </Box>
+            <Box>
+                <img src={image} alt="Healthcare Logo" style={{ width: "100" }} />
             </Box>
         </Box>
     );
