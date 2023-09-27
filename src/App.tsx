@@ -44,7 +44,7 @@ const App = () => {
             }
           >
             {/* <Header /> */}
-            <CompositeTool />
+            <MainContent />
           </Suspense>
         </Box>
       </DarkModeProvider>

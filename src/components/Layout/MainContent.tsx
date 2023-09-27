@@ -11,6 +11,7 @@ import Banner from "../Common/Banner";
 import { title } from "process";
 import { tools, Tool } from "../Configs/ToolContentConfig";
 import { useLocation } from "react-router-dom";
+import Wso2Blade from "../Common/Wso2Blade";
 
 interface ToolConfig {
   [key: string]: {
@@ -135,8 +136,9 @@ export const MainContent = () => {
             }}
             id="banner-container"
           >
-            <Banner content={content}></Banner>
-            <Banner content={contentBal}></Banner>
+            <Wso2Blade solution={content} language={contentBal}></Wso2Blade>
+            {/* <Banner content={content}></Banner>
+            <Banner content={contentBal}></Banner> */}
           </Box>
           <Box
             sx={{
