@@ -1,16 +1,14 @@
 import { Box, Divider } from "@mui/material";
-import { Footer, Header, SideNavigation } from "../Layout";
-import { ComingSoon } from "../Common";
-import Routes from "../Routes/AppRoutes";
-import { items } from "../Configs/AcceleratorConfig";
-import toolConfig from "../../tool-config.json";
-import { MainBlade } from "../Common/MainBlade";
-import { PromotedToolBlade } from "../Common/PromotedToolBlade";
-import Tools from "../Common/Tools";
-import Banner from "../Common/Banner";
-import { title } from "process";
-import { tools, Tool } from "../Configs/ToolContentConfig";
 import { useLocation } from "react-router-dom";
+import toolConfig from "../../tool-config.json";
+import { ComingSoon } from "../Common";
+import Banner from "../Common/Banner";
+import { MainBlade } from "../Common/MainBlade";
+import Tools from "../Common/Tools";
+import { items } from "../Configs/AcceleratorConfig";
+import { Tool, tools } from "../Configs/ToolContentConfig";
+import { Footer, Header } from "../Layout";
+import Routes from "../Routes/AppRoutes";
 
 interface ToolConfig {
   [key: string]: {
@@ -37,6 +35,7 @@ export const MainContent = () => {
     (tool: Tool) => tool.path === location.pathname
   );
   if (!currentItem) {
+    // TODO: We should create a proper 404 page
     return <div>404</div>;
   }
 
@@ -48,111 +47,42 @@ export const MainContent = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-      <Header title={currentItem.header.title} shortDescription={currentItem.header.shortDescription} url={currentItem.header.url} />
-      <Box sx={{ flexGrow: 1, display: "flex", mt: 2 }} id="main-container">
+    <Box>
+      <Header
+        title={currentItem.header.title}
+        shortDescription={currentItem.header.shortDescription}
+        url={currentItem.header.url}
+      />
+      <Box id="main-container">
+        {/* Banner content */}
+        <MainBlade
+          title={currentItem.mainBlade.title}
+          description={currentItem.mainBlade.description}
+          image={currentItem.mainBlade.image}
+        />
 
-        {/* <SideNavigation items={renderedItems} /> */}
-        <Box
-          // width={1}
-          pt={1}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            height: "calc(100vh - 70px)",
-            overflowY: "auto",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              mb: "auto",
-              flexGrow: 1,
-            }}
-            id="banner-container"
-          >
-            <MainBlade title={currentItem.mainBlade.title} description={currentItem.mainBlade.description} image={currentItem.mainBlade.image} />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              mb: "auto",
-              flexGrow: 1,
-            }}
-            id="tool-header-container"
-          >
+        {/* Tool execution area */}
+        <Routes items={renderedItems} />
 
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              mb: "auto",
-              flexGrow: 1,
-            }}
-            id="content-container"
-          >
-            <Routes items={renderedItems} />
-          </Box>
-          <Divider sx={{ mt: 1 }} />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              mb: "auto",
-              ml: 0,
-              mr: 0,
-              mt: 2,
-              flexGrow: 1,
-            }}
-            id="banner-container"
-          >
-            <Banner content={content}></Banner>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "space-between",
-              mb: 2,
-              ml: 2,
-              mr: 2,
-              flexGrow: 1,
-            }}
-            id="banner-container"
-          >
-            <Tools></Tools>
-          </Box>
-          <Divider sx={{ mt: 1 }} />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              mb: 0,
-              ml: 0,
-              mr: 0,
-            }}
-            id="banner-container"
-          >
-            <Banner content={content}></Banner>
-            <Banner content={contentBal}></Banner>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              mb: 2,
-              mt: 2,
-              ml: 0,
-              mr: 0,
-            }}
-            id="article-container"
-          >
-            <Banner content={content}></Banner>
-          </Box>
-          <Footer />
-        </Box>
+        {/* Github source display area */}
+        <Banner content={content} marginTop={0} marginBottom={5}></Banner>
+
+        <Divider sx={{ mt: 1 }} />
+
+        {/* Other tools display area */}
+        <Tools></Tools>
+
+        <Divider sx={{ mt: 1 }} />
+
+        {/* About WSO2 display area */}
+        <Banner content={content} marginTop={5} marginBottom={1}></Banner>
+
+        {/* About Ballerina display area */}
+        <Banner content={contentBal} marginTop={1}></Banner>
+
+        {/* Articles display area */}
+        <Banner content={content} marginTop={15}></Banner>
+        <Footer />
       </Box>
     </Box>
   );
