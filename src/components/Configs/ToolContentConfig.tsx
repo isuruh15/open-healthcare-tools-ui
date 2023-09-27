@@ -16,7 +16,7 @@ import CableOutlinedIcon from "@mui/icons-material/CableOutlined";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
 
-export interface Item {
+export interface Tool {
   label: string;
   description: string;
   url: string;
@@ -24,6 +24,18 @@ export interface Item {
   icon: ReactElement;
   component: ReactElement;
   sampleData?: Sample[];
+  header:{
+    title: string;
+    shortDescription: string;
+    url: string;
+  };
+  mainBlade:{
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    background: string;
+  };
 }
 
 export interface Sample {
@@ -32,7 +44,7 @@ export interface Sample {
   data: string;
 }
 
-export const items: Item[] = [
+export const tools: Tool[] = [
   // {
   //   label: "FHIR APIs",
   //   description: "Try out sample FHIR APIs",
@@ -50,6 +62,18 @@ export const items: Item[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     sampleData: Hl7Data,
+    header:{
+      title: "HL7V2 To FHIR",
+      shortDescription: "Convert HL7 V2 data to FHIR",
+      url: "https://wso2.com/solutions/healthcare/"
+    },
+    mainBlade:{
+      title: "HL7V2 To FHIR",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      image: "https://ballerina.io/images/health-intro.png",
+      link: "https://wso2.com/solutions/healthcare/",
+      background: "#00255C"
+    }
   },
   {
     label: "HL7V2 To FHIR",
@@ -59,6 +83,18 @@ export const items: Item[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     sampleData: Hl7Data,
+    header:{
+      title: "HL7V2 To FHIR",
+      shortDescription: "Convert HL7 V2 data to FHIR",
+      url: "https://wso2.com/solutions/healthcare/"
+    },
+    mainBlade:{
+      title: "HL7V2 To FHIR",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      image: "https://ballerina.io/images/health-intro.png",
+      link: "https://wso2.com/solutions/healthcare/",
+      background: "#00255C"
+    }
   },
   {
     label: "C-CDA To FHIR",
@@ -68,6 +104,18 @@ export const items: Item[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <CcdaToFhir />,
     sampleData: CcdaData,
+    header:{
+      title: "HL7V2 To FHIR",
+      shortDescription: "Convert HL7 V2 data to FHIR",
+      url: "https://wso2.com/solutions/healthcare/"
+    },
+    mainBlade:{
+      title: "HL7V2 To FHIR",
+      description: "Convert HL7 V2 data to FHIR",
+      image: "https://ballerina.io/images/health-sm-banner.png",
+      link: "https://wso2.com/solutions/healthcare/",
+      background: "#00255C"
+    }
   },
   {
     label: "FHIR Validation",
@@ -77,6 +125,18 @@ export const items: Item[] = [
     path: "/fhir-validation",
     icon: <CheckCircleOutlineOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirValidation />,
+    header:{
+      title: "HL7V2 To FHIR",
+      shortDescription: "Convert HL7 V2 data to FHIR",
+      url: "https://wso2.com/solutions/healthcare/"
+    },
+    mainBlade:{
+      title: "HL7V2 To FHIR",
+      description: "Convert HL7 V2 data to FHIR",
+      image: "https://ballerina.io/images/health-sm-banner.png",
+      link: "https://wso2.com/solutions/healthcare/",
+      background: "#00255C"
+    }
   },
   {
     label: "SMART on FHIR",
@@ -85,6 +145,18 @@ export const items: Item[] = [
     path: "/smart-on-fhir",
     icon: <VpnKeyOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <SmartOnFhir />,
+    header:{
+      title: "HL7V2 To FHIR",
+      shortDescription: "Convert HL7 V2 data to FHIR",
+      url: "https://wso2.com/solutions/healthcare/"
+    },
+    mainBlade:{
+      title: "HL7V2 To FHIR",
+      description: "Convert HL7 V2 data to FHIR",
+      image: "https://ballerina.io/images/health-sm-banner.png",
+      link: "https://wso2.com/solutions/healthcare/",
+      background: "#00255C"
+    }
   },
   {
     label: "FHIR Path",
@@ -94,6 +166,18 @@ export const items: Item[] = [
     path: "/fhir-path",
     icon: <FilterAltOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirPath />,
+    header:{
+      title: "HL7V2 To FHIR",
+      shortDescription: "Convert HL7 V2 data to FHIR",
+      url: "https://wso2.com/solutions/healthcare/"
+    },
+    mainBlade:{
+      title: "HL7V2 To FHIR",
+      description: "Convert HL7 V2 data to FHIR",
+      image: "https://ballerina.io/images/health-sm-banner.png",
+      link: "https://wso2.com/solutions/healthcare/",
+      background: "#00255C"
+    }
   },
   {
     label: "Connect To EMR",
@@ -102,5 +186,17 @@ export const items: Item[] = [
     path: "/connect-to-emr",
     icon: <CableOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <ConnectToEmr />,
+    header:{
+      title: "HL7V2 To FHIR",
+      shortDescription: "Convert HL7 V2 data to FHIR",
+      url: "https://wso2.com/solutions/healthcare/"
+    },
+    mainBlade:{
+      title: "HL7V2 To FHIR",
+      description: "Convert HL7 V2 data to FHIR",
+      image: "https://ballerina.io/images/health-sm-banner.png",
+      link: "https://wso2.com/solutions/healthcare/",
+      background: "#00255C"
+    }
   },
 ];

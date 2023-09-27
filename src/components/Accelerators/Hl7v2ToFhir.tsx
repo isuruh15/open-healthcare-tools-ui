@@ -6,6 +6,7 @@ import {
   CodeEditor,
   ResponseAlert,
   HeadersTab,
+  ToggleEditorStyle,
 } from "../Common";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
@@ -35,7 +36,7 @@ export const Hl7v2ToFhir = () => {
 
   const { loadSample, setLoadSample, selectedLabel, setSelectedLabel } =
     useContext(SelectedSampleContext);
-  const { darkMode } = useContext(DarkModeContext);
+    const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   const [response, setResponse] = useState<any>({
     statusCode: null,
@@ -194,24 +195,25 @@ export const Hl7v2ToFhir = () => {
           aria-label="Success Response Alert"
         />
       )}
+
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
+          mt: 4,
         }}
       >
         {/* <SamplesModal /> */}
-        {/* <ConvertButton
-          handleSubmit={callBackend}
-          isLoading={isLoading}
-          aria-label="Convert Button"
-        /> */}
         <Box id="headers-button" sx={{
           justifyContent: "flex-end",
         }}>
-          <Box></Box>
           <HeadersTab request={request} response={response} />
         </Box>
+
+        <ToggleEditorStyle
+          mode={darkMode}
+          toggleMode={() => setDarkMode(!darkMode)}
+        />
       </Box>
       <Divider sx={{ mt: 1 }} />
       <Box
