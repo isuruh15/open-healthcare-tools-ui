@@ -5,18 +5,20 @@ interface BannerProps {
     content: {
         title: string;
     };
+    marginTop?: number;
+    marginBottom?: number;
 }
 
-export const Banner = ({ content }: BannerProps) => {
+export const Banner = ({ content, marginTop = 3, marginBottom = 2}: BannerProps) => {
   return (
     <Box
       bgcolor={alpha("#00A79D", 0.75)}
       height={300}
       alignItems="center"
       justifyContent="center"
-    //   paddingTop={5}
       padding={5}
-    //   marginTop={2}
+      marginTop={marginTop}
+      marginBottom={marginBottom}
     >
       <Grid container alignItems="center" justifyContent="center" padding={1}>
         <Typography variant="h2" align="center" color="#00255C" maxWidth="lg">
