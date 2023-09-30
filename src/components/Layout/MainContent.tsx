@@ -5,8 +5,9 @@ import { ComingSoon } from "../Common";
 import Banner from "../Common/Banner";
 import { MainBlade } from "../Common/MainBlade";
 import Tools from "../Common/Tools";
+import { tools, Tool } from "../Configs/ToolContentConfig";
+import Wso2Blade from "../Common/Wso2Blade";
 import { items } from "../Configs/AcceleratorConfig";
-import { Tool, tools } from "../Configs/ToolContentConfig";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
 
@@ -75,10 +76,12 @@ export const MainContent = () => {
         <Divider sx={{ mt: 1 }} />
 
         {/* About WSO2 display area */}
-        <Banner content={content} marginTop={5} marginBottom={1}></Banner>
+        
+        <Wso2Blade solution={content} language={contentBal}></Wso2Blade>
 
         {/* About Ballerina display area */}
         <Banner content={contentBal} marginTop={1}></Banner>
+
 
         {/* Articles display area */}
         <Banner content={content} marginTop={15}></Banner>
