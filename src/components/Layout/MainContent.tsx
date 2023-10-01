@@ -79,12 +79,8 @@ export const MainContent = () => {
         
         <Wso2Blade solution={content} language={contentBal}></Wso2Blade>
 
-        {/* About Ballerina display area */}
-        <Banner content={contentBal} marginTop={1}></Banner>
-
-
         {/* Articles display area */}
-        <Banner content={content} marginTop={15}></Banner>
+        <Banner content={content} marginTop={5}></Banner>
         <Footer />
       </Box>
     </Box>
