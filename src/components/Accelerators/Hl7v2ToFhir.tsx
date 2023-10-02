@@ -275,14 +275,14 @@ export const Hl7v2ToFhir = () => {
           />
         </Box>
       </Box>
-      <Box>
+      {/* <Box>
 
       <ConvertButton
           handleSubmit={callBackend}
           isLoading={isLoading}
           aria-label="Convert Button"
         />
-      </Box>
+      </Box> */}
     </Container>
   );
 };

@@ -2,6 +2,7 @@ import { Box, Divider } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import toolConfig from "../../tool-config.json";
 import { ComingSoon } from "../Common";
+import ArticleBanner from "../Common/ArticleBanner";
 import Banner from "../Common/Banner";
 import { MainBlade } from "../Common/MainBlade";
 import Tools from "../Common/Tools";
@@ -10,6 +11,7 @@ import Wso2Blade from "../Common/Wso2Blade";
 import { items } from "../Configs/AcceleratorConfig";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
+import GithubBanner from "../Common/GithubBanner";
 
 interface ToolConfig {
   [key: string]: {
@@ -47,6 +49,10 @@ export const MainContent = () => {
     title: "Ballerina - A Language built for healthcare",
   };
 
+  const contentArticle = {
+    title: "Listen what our developers say about the different tools",
+  };
+
   return (
     <Box>
       <Header
@@ -66,7 +72,7 @@ export const MainContent = () => {
         <Routes items={renderedItems} />
 
         {/* Github source display area */}
-        <Banner content={content} marginTop={0} marginBottom={5}></Banner>
+        <GithubBanner content={content} marginTop={0} marginBottom={5}></GithubBanner>
 
         <Divider sx={{ mt: 1 }} />
 
@@ -80,7 +86,9 @@ export const MainContent = () => {
         <Wso2Blade solution={content} language={contentBal}></Wso2Blade>
 
         {/* Articles display area */}
-        <Banner content={content} marginTop={5}></Banner>
+        <ArticleBanner content={contentArticle} marginTop={15}></ArticleBanner>
+
+        {/* Footer display area */}
         <Footer />
       </Box>
     </Box>
