@@ -11,16 +11,16 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const basePath = "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/"
-// const basePath = "http://localhost:3000/"
+const basePath = import.meta.env.VITE_APP_AUTH_REDIRECT_URL || "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/";
 
 const config = {
-  signInRedirectURL: basePath + "hl7-to-fhir",
-  signOutRedirectURL: basePath + "hl7-to-fhir",
-  clientID: "DN2VylTUi2ZgzUFTI0NuJ17LWKMa",
-  baseUrl: "https://api.asgardeo.io/t/healthtools",
+  signInRedirectURL: basePath,
+  signOutRedirectURL: basePath,
+  clientID: import.meta.env.VITE_APP_AUTH_CLIENT_ID,
+  baseUrl: import.meta.env.VITE_APP_AUTH_BASE_URL,
   scope: ["openid", "profile"]
 };
+
 
 root.render(
   <AuthProvider config={config}>
