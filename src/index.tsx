@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const basePath = import.meta.env.VITE_APP_AUTH_REDIRECT_URL || "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/";
+const basePath = import.meta.env.VITE_APP_AUTH_REDIRECT_URL || "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/hl7-to-fhir";
 
 console.log("basePath", import.meta.env.RANDOM);
 
