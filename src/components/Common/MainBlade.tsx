@@ -57,7 +57,7 @@ export const MainBlade = ({
               </Typography>
             </Grid>
           </Grid>
-          <Grid container item xl={6} alignItems="left" justifyContent="start">
+          <Grid container item xl={6} alignItems={{lg: 'center',xl: 'left'}} justifyContent={{lg: 'center', xl: 'start'}}>
             <img src={image} alt="Healthcare Logo" width={700} height={395} />
           </Grid>
         </Grid>
