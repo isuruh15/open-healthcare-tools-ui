@@ -7,10 +7,10 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { articles } from "../Configs/ArticleConfig";
+import { Link } from "@mui/material";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -57,7 +57,7 @@ function SwipeableTextMobileStepper() {
         {articles.map((step, index) => (
           <Box key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <Link to={step.link}>
+              <Link href="https://google.com" target="_blank">
               <Box
                 component="img"
                 sx={{

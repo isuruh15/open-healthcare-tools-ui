@@ -24,5 +24,3 @@ export const articles = [
       link: "htts://www.google.com"
   },
 ];
-
-  

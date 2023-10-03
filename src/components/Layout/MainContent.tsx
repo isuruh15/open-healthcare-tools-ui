@@ -50,7 +50,7 @@ export const MainContent = () => {
   };
 
   const contentArticle = {
-    title: "Listen what our developers say about the different tools",
+    title: "Listen what our developers say about different tools",
   };
 
   return (
