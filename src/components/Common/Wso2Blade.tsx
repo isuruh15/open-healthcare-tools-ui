@@ -57,8 +57,8 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                 <Grid container alignItems="center" justifyContent="center" padding={2}>
                     <Box
                         component={"img"}
-                        src="https://wso2.cachefly.net/wso2/sites/all/2023/images/webp/wso2-logo.webp"
-                        alt="Healthcare Logo"
+                        src="wso2-logo.webp"
+                        alt="WSO2 Logo"
                         sx={{
                             height: 100,
                             width: 350,
@@ -114,8 +114,8 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                 <Grid container alignItems="center" justifyContent="center" padding={2}>
                     <Box
                         component={"img"}
-                        src="https://ballerina.io/images/logo/ballerina-logo-grey.svg"
-                        alt="Healthcare Logo"
+                        src="ballerina-logo-grey.svg"
+                        alt="Ballerina Logo"
                         sx={{
                             height: 100,
                             width: 350,
