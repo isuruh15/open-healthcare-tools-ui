@@ -39,11 +39,11 @@ function Toolcard({ title, description, image, link }: Props) {
             variant="h5"
             component="div"
             align="center"
-            color="#00255C"
+            color="#text.primary"
           >
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary" lineHeight={1.5}>
+          <Typography variant="body1" color="text.secondary" lineHeight={1.5}>
             {description}
           </Typography>
         </CardContent>

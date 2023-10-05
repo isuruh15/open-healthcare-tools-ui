@@ -3,7 +3,12 @@ import { useAuthContext } from "@asgardeo/auth-react";
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { Logo } from "../Logo";
-import { AlertModal, ComponentTitle, ToggleEditorStyle, CommonButton } from "../Common";
+import {
+  AlertModal,
+  ComponentTitle,
+  ToggleEditorStyle,
+  CommonButton,
+} from "../Common";
 import { items, Item } from "../Configs/AcceleratorConfig";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
@@ -14,7 +19,7 @@ interface HeaderProps {
   url: string;
 }
 
-export const Header = ({ title,shortDescription,url }: HeaderProps) => {
+export const Header = ({ title, shortDescription, url }: HeaderProps) => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
   const handleResize = (): void => setScreenWidth(window.innerWidth);
@@ -26,9 +31,8 @@ export const Header = ({ title,shortDescription,url }: HeaderProps) => {
 
   const { signOut } = useAuthContext();
 
-  const handleSampleLoad = () => 
-    signOut();
-    console.log("logout");
+  const handleSampleLoad = () => signOut();
+  console.log("logout");
 
   // const location = useLocation();
   // const currentItem = items.find(
@@ -54,6 +58,8 @@ export const Header = ({ title,shortDescription,url }: HeaderProps) => {
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
         }}
+        borderBottom={5}
+        borderColor="secondary.main"
         id="header-container"
       >
         {/* <Logo /> */}
@@ -72,12 +78,12 @@ export const Header = ({ title,shortDescription,url }: HeaderProps) => {
           }}
           id="toggle-container"
         >
-        <CommonButton
-                  variant="border"
-                  label="Logout"
-                  onClick={handleSampleLoad}
-                  id="load-sample-button"
-                />
+          <CommonButton
+            variant="border"
+            label="Logout"
+            onClick={handleSampleLoad}
+            id="load-sample-button"
+          />
         </Box>
       </Box>
     </>

@@ -1,17 +1,16 @@
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import toolConfig from "../../tool-config.json";
 import { ComingSoon } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
-import Banner from "../Common/Banner";
+import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
 import Tools from "../Common/Tools";
-import { tools, Tool } from "../Configs/ToolContentConfig";
 import Wso2Blade from "../Common/Wso2Blade";
 import { items } from "../Configs/AcceleratorConfig";
+import { Tool, tools } from "../Configs/ToolContentConfig";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
-import GithubBanner from "../Common/GithubBanner";
 
 interface ToolConfig {
   [key: string]: {
@@ -72,21 +71,24 @@ export const MainContent = () => {
         <Routes items={renderedItems} />
 
         {/* Github source display area */}
-        <GithubBanner content={content} marginTop={0} marginBottom={5}></GithubBanner>
-
-        <Divider sx={{ mt: 1 }} />
+        <GithubBanner
+          content={content}
+          marginTop={0}
+          marginBottom={0}
+        ></GithubBanner>
 
         {/* Other tools display area */}
         <Tools></Tools>
 
-        <Divider sx={{ mt: 1 }} />
-
         {/* About WSO2 display area */}
-        
         <Wso2Blade solution={content} language={contentBal}></Wso2Blade>
 
         {/* Articles display area */}
-        <ArticleBanner content={contentArticle} marginTop={15}></ArticleBanner>
+        <ArticleBanner
+          content={contentArticle}
+          marginTop={0}
+          marginBottom={0}
+        ></ArticleBanner>
 
         {/* Footer display area */}
         <Footer />

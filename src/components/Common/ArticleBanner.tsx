@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, alpha } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import SwipeableTextMobileStepper from "./SwipeableTextMobileStepper";
 
 interface Props {
@@ -12,15 +12,19 @@ interface Props {
 function ArticleBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
   return (
     <Box
-      bgcolor="#00A79D75"
+      // bgcolor="secondary.main"
       alignItems="center"
       justifyContent="center"
       padding={5}
-      marginTop={marginTop}
-      marginBottom={marginBottom}
+      paddingTop={10}
     >
       <Grid container alignItems="center" justifyContent="center" padding={1}>
-        <Typography variant="h2" align="center" color="#00255C" maxWidth="lg">
+        <Typography
+          variant="h4"
+          align="center"
+          maxWidth="lg"
+          color="text.primary"
+        >
           {content.title}
         </Typography>
       </Grid>
