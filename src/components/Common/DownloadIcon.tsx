@@ -18,7 +18,7 @@ export const DownloadIcon = ({ size = 30, handleDownload }: Props) => {
         <IconButton
           aria-label="Download Content"
           sx={{
-            color: "primary.main",
+            color: "text.primary",
           }}
           onClick={handleDownload}
         >

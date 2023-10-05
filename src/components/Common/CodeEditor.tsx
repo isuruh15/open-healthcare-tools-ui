@@ -68,6 +68,7 @@ export const CodeEditor = ({
         height: 1,
       }}
       aria-label={title}
+      color="text.primary"
     >
       <Box
         sx={{
@@ -76,7 +77,7 @@ export const CodeEditor = ({
           alignItems: "center",
         }}
       >
-        <Typography variant="h6" sx={{ color: "primary.dark" }}>
+        <Typography variant="h6">
           {title}
         </Typography>
         <Box sx={{ display: "flex" }}>
@@ -103,6 +104,7 @@ export const CodeEditor = ({
           extensions={[langExtensions[fileType]()]}
           onChange={onChange}
           readOnly={readOnly}
+          color="text.primary"
         />
       </Box>
     </Box>

@@ -31,7 +31,16 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
         }}
       >
         <Grid container alignItems="center" justifyContent="center">
-          <Grid container alignItems="center" padding={5}>
+          <Grid
+            container
+            alignItems="center"
+            sx={{
+              paddingRight: 5,
+              paddingLeft: 2,
+              paddingTop: 5,
+              paddingBottom: 5,
+            }}
+          >
             <Typography
               variant="h3"
               align="center"
@@ -69,7 +78,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
         <Grid container alignItems="center" justifyContent="center" padding={2}>
           <Box
             component={"img"}
-            src="wso2-logo.webp"
+            src="wso2-logo.png"
             alt="WSO2 Logo"
             sx={{
               height: 100,
@@ -96,12 +105,12 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
         }}
       >
         <Grid container alignItems="center" justifyContent="center">
-          <Grid
-            container
-            alignItems="center"
-            // justifyContent="center"
-            padding={5}
-          >
+          <Grid container alignItems="center" sx={{
+              paddingRight: 5,
+              paddingLeft: 2,
+              paddingTop: 5,
+              paddingBottom: 5,
+            }}>
             <Typography
               variant="h3"
               align="center"

@@ -5,7 +5,7 @@ import Toolcard from "./ToolCard";
 function Tools() {
   return (
     <>
-      <Grid container rowSpacing={2}>
+      <Grid container rowSpacing={2} color="text.primary">
         <Grid
           container
           item
@@ -17,7 +17,6 @@ function Tools() {
           <Typography
             variant="h4"
             align="center"
-            color="text.primary"
             maxWidth="lg"
           >
             Health IT Developer Toolkit

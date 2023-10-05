@@ -33,13 +33,12 @@ export const MainBlade = ({
             alignItems="center"
             justifyContent="center"
           >
-            <Grid container item alignItems="center" justifyContent="center">
+            <Grid container item alignItems="center" justifyContent="flexStart">
               <Typography
                 variant="h2"
                 fontWeight="500"
                 sx={{ mt: 3, mb: 6 }}
                 alignItems="center"
-                justifyContent="start"
                 color="text.primary"
               >
                 {title}
