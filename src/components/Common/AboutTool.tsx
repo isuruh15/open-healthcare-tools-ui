@@ -34,7 +34,7 @@ export const AboutTool = ({ url, iconType }: Props) => {
         </Tooltip>
       ) : (
         <Typography
-          variant="h6"
+          variant="body1"
           sx={{
             fontWeight: 400,
             transition: "0.3s",
@@ -42,6 +42,7 @@ export const AboutTool = ({ url, iconType }: Props) => {
           }}
           id="about-tool-typography"
           aria-label="About Tool Typography"
+          color="text.primary"
         >
           Learn more
         </Typography>

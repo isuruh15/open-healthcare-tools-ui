@@ -42,11 +42,11 @@ function SwipeableTextMobileStepper() {
               variant="outlined"
               disabled={activeStep == 0}
               onClick={() => handleBack()}
-              sx={{ color: "#00255C", borderRadius: 20 }}
+              sx={{ color: "#FF7300", borderRadius: 20 }}
             >
               <ArrowBackIosOutlinedIcon
                 fontSize="large"
-                sx={{ stroke: "#00255C", strokeWidth: 2, color: "#00255C" }}
+                sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
               />
             </Button>
           </Grid>
@@ -98,11 +98,11 @@ function SwipeableTextMobileStepper() {
               variant="outlined"
               disabled={activeStep == maxSteps - 1}
               onClick={() => handleNext()}
-              sx={{ borderRadius: 20 }}
+              sx={{ borderRadius: 200, stroke: "#FF7300" }}
             >
               <ArrowForwardIosOutlinedIcon
                 fontSize="large"
-                sx={{ stroke: "#00255C", strokeWidth: 2, color: "#00255C" }}
+                sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
               />
             </Button>
           </Grid>
@@ -129,9 +129,9 @@ function SwipeableTextMobileStepper() {
               }}
             >
               <Box
-                width={25}
-                height={6}
-                bgcolor={index == activeStep ? "#00255C" : "#FFFFFF"}
+                width={30}
+                height={7}
+                bgcolor={index == activeStep ? "secondary.main":"text.primary"}
                 marginRight={1}
                 borderRadius={1}
               ></Box>

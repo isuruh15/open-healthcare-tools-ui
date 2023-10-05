@@ -16,7 +16,7 @@ export const MainBlade = ({
 }: MainBladeProps) => {
   const [active] = useState(true);
   return (
-    <Box bgcolor="#00A79D75">
+    <Box bgcolor="background.paper">
       <Grid container alignItems="center" justifyContent="center">
         <Grid
           container
@@ -29,18 +29,18 @@ export const MainBlade = ({
           <Grid
             container
             item
-            xl={6}
+            md={6}
             alignItems="center"
             justifyContent="center"
           >
             <Grid container item alignItems="center" justifyContent="center">
               <Typography
-                variant="h1"
-                color="primary.dark"
+                variant="h2"
                 fontWeight="500"
                 sx={{ mt: 3, mb: 6 }}
                 alignItems="center"
-                justifyContent="center"
+                justifyContent="start"
+                color="text.primary"
               >
                 {title}
               </Typography>
@@ -48,16 +48,23 @@ export const MainBlade = ({
 
             <Grid container item alignItems="center" justifyContent="center">
               <Typography
-                variant="h6"
-                color="primary.dark"
+                variant="body1"
+                color="text.secondary"
                 marginTop={1}
                 align="justify"
+                lineHeight={1.7}
               >
                 {description}
               </Typography>
             </Grid>
           </Grid>
-          <Grid container item xl={6} alignItems={{lg: 'center',xl: 'left'}} justifyContent={{lg: 'center', xl: 'start'}}>
+          <Grid
+            container
+            item
+            md={6}
+            alignItems={{ lg: "center", xl: "left" }}
+            justifyContent={{ lg: "center", xl: "start" }}
+          >
             <img src={image} alt="Healthcare Logo" width={700} height={395} />
           </Grid>
         </Grid>

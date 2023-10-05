@@ -13,7 +13,7 @@ export const Logo = () => {
         my: 1,
       }}
     >
-      <Typography color="primary.dark" variant="h4" sx={{ fontWeight: 600 }}>
+      <Typography color="primary.dark" variant="h6" sx={{ fontWeight: 600 }}>
         Open Healthcare Tools
       </Typography>
       <Box sx={{ alignSelf: "flex-end" }}>
