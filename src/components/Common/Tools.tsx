@@ -10,11 +10,11 @@ function Tools() {
           container
           item
           xs={12}
-          marginTop={10}
+          marginTop={8}
           alignItems="center"
           justifyContent="center"
         >
-          <Typography variant="h4" align="center" color="#00255C">
+          <Typography variant="h3" align="center" color="#00255C">
             Health IT Developer Toolkit
           </Typography>
         </Grid>

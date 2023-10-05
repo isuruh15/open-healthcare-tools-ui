@@ -72,14 +72,14 @@ export const MainContent = () => {
         <Routes items={renderedItems} />
 
         {/* Github source display area */}
-        <GithubBanner content={content} marginTop={0} marginBottom={5}></GithubBanner>
+        <GithubBanner content={content} marginTop={0} marginBottom={1}></GithubBanner>
 
         <Divider sx={{ mt: 1 }} />
 
         {/* Other tools display area */}
         <Tools></Tools>
 
-        <Divider sx={{ mt: 1 }} />
+        <Divider sx={{ mt: 1, mb: 4 }} />
 
         {/* About WSO2 display area */}
         

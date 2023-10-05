@@ -33,7 +33,7 @@ export interface ITool {
           title: "X12 to FHIR",
           description:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non veritatis repellendus nam quasi inventore tempora expedita atque reiciendis adipisci quis, nulla voluptatum assumenda exercitationem doloribus commodi ipsam, eveniet autem optio?",
-          image: "tool.jpg",
+          image: "tool2.png",
           link: "https://840608f3-c4e3-4886-8925-4b06c8eab113.e1-us-east-azure.choreoapps.dev",
         },
       ],
