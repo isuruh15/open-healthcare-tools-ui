@@ -24,7 +24,7 @@ export const CopyContent = ({ data, size = 30 }: Props) => {
       placement="bottom"
       id="copy-tooltip"
     >
-      <Box style={{ display: "flex" }}>
+      <Box style={{ display: "flex" }} color="text.primary">
         <Typography component="span">
           {isCopied && (
             <Alert
@@ -41,7 +41,7 @@ export const CopyContent = ({ data, size = 30 }: Props) => {
           aria-label="Copy Content"
           aria-labelledby="copy-button"
           sx={{
-            color: "primary.main",
+            color: "text.primary",
           }}
           onClick={() => {
             navigator.clipboard.writeText(data!);

@@ -5,17 +5,42 @@ import Toolcard from "./ToolCard";
 function Tools() {
   return (
     <>
-      <Grid container rowSpacing={2}>
+      <Grid container rowSpacing={2} color="text.primary">
         <Grid
           container
           item
           xs={12}
-          marginTop={8}
+          marginTop={7}
           alignItems="center"
           justifyContent="center"
         >
-          <Typography variant="h3" align="center" color="#00255C">
+          <Typography
+            variant="h4"
+            align="center"
+            maxWidth="lg"
+          >
             Health IT Developer Toolkit
+          </Typography>
+        </Grid>
+
+        <Grid
+          container
+          item
+          xs={12}
+          alignItems="center"
+          justifyContent="center"
+          maxWidth="lg"
+        >
+          <Typography
+            variant="body1"
+            align="center"
+            color="text.secondary"
+            maxWidth="lg"
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Dignissimos iste odio repellendus, quas minima quibusdam consequatur
+            nulla quia, eius inventore voluptates tempore neque obcaecati libero
+            voluptate laudantium provident. Vero, obcaecati!
           </Typography>
         </Grid>
 
@@ -26,7 +51,6 @@ function Tools() {
             xs={12}
             marginTop={2}
             marginBottom={4}
-            bgcolor="#E8E8E8"
             alignItems="center"
             justifyContent="center"
           >
@@ -37,11 +61,6 @@ function Tools() {
               columnSpacing={3}
               padding={5}
             >
-              <Grid item xs={12} alignItems="center" justifyContent="center">
-                <Typography variant="h5" align="center" color="#00255C">
-                  {toolGroup.title}
-                </Typography>
-              </Grid>
               <Grid container item xs={12} spacing={5} maxWidth={100}>
                 {toolGroup.tools.map((toolObject) => (
                   <Grid

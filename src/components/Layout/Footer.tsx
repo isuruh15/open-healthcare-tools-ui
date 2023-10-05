@@ -1,18 +1,21 @@
-import { Box, Typography } from "@mui/material";
 import CopyrightIcon from "@mui/icons-material/Copyright";
+import { Box, Link, Typography } from "@mui/material";
 import { Logo } from "../Logo";
 
 export const Footer = () => {
   return (
     <Box
-      sx={{ display: "flex", borderTop: 0.5, borderColor: "grey.400" }}
+      sx={{ display: "flex" }}
       id="footer-container"
+      borderTop={2}
+      borderColor="secondary.main"
+      color="text.primary"
     >
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          ml: 0.5
+          ml: 0.5,
         }}
       >
         <Logo />
@@ -35,13 +38,16 @@ export const Footer = () => {
           }}
           aria-hidden="true"
         />
+        <Link href="https://wso2.com/" target="_blank" underline="hover">
         <Typography
-          variant="h6"
+          variant="body1"
           sx={{ color: "grey.500", fontWeight: 300 }}
           id="footer-text"
         >
-          2023 WSO2 LLC.
+          {new Date().getFullYear()} WSO2 LLC.
         </Typography>
+        </Link>
+        
       </Box>
     </Box>
   );

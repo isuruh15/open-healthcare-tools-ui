@@ -1,16 +1,12 @@
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import { Button, Grid, Link } from "@mui/material";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { articles } from "../Configs/ArticleConfig";
-import { Link } from "@mui/material";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -32,80 +28,117 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 1200, flexGrow: 1 }} >
-      <Paper
-        square={false}
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-          borderTopLeftRadius:8,
-          borderTopRightRadius:8,
-        }}
-      >
-        <Typography variant="h4">{articles[activeStep].label}</Typography>
-      </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {articles.map((step, index) => (
-          <Box key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Link href="https://google.com" target="_blank">
-              <Box
-                component="img"
-                sx={{
-                  height: 350,
-                  display: "block",
-                  maxWidth: 1200,
-                  overflow: "hidden",
-                  width: "100%",
-                }}
-                src={step.imgPath}
-                alt={step.label}
-              ></Box>
-              </Link>
-              
-            ) : null}
-          </Box>
-        ))}
-      </AutoPlaySwipeableViews>
-      <MobileStepper
-        sx={{ borderBottomRightRadius: 10, borderBottomLeftRadius: 10}}
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
+    <Box maxWidth="xl">
+      <Grid container alignItems="center" justifyContent="center">
+        <Grid container item alignItems="center" justifyContent="center">
+          <Grid
+            container
+            item
+            xs={2}
+            alignItems="center"
+            justifyContent="center"
           >
-            Next
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
+            <Button
+              variant="outlined"
+              disabled={activeStep == 0}
+              onClick={() => handleBack()}
+              sx={{ color: "#FF7300", borderRadius: 20 }}
+            >
+              <ArrowBackIosOutlinedIcon
+                fontSize="large"
+                sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+              />
+            </Button>
+          </Grid>
+          <Grid
+            container
+            item
+            xs={8}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <AutoPlaySwipeableViews
+              axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+              index={activeStep}
+              onChangeIndex={handleStepChange}
+              enableMouseEvents
+              interval={25000}
+            >
+              {articles.map((step, index) => (
+                <Box key={step.label}>
+                  {Math.abs(activeStep - index) <= 2 ? (
+                    <Link href="https://google.com" target="_blank">
+                      <Box
+                        component="img"
+                        sx={{
+                          height: 350,
+                          display: "block",
+                          maxWidth: 1200,
+                          overflow: "hidden",
+                          width: "100%",
+                        }}
+                        src={step.imgPath}
+                        alt={step.label}
+                        borderRadius={5}
+                      ></Box>
+                    </Link>
+                  ) : null}
+                </Box>
+              ))}
+            </AutoPlaySwipeableViews>
+          </Grid>
+          <Grid
+            container
+            item
+            xs={2}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Button
+              variant="outlined"
+              disabled={activeStep == maxSteps - 1}
+              onClick={() => handleNext()}
+              sx={{ borderRadius: 200, stroke: "#FF7300" }}
+            >
+              <ArrowForwardIosOutlinedIcon
+                fontSize="large"
+                sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+              />
+            </Button>
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          item
+          xs={12}
+          paddingTop={5}
+          alignItems="center"
+          justifyContent="center"
+          columnSpacing={5}
+        >
+          {articles.map((step, index) => (
+            <Button
+              onClick={() => {
+                handleStepChange(index);
+              }}
+              sx={{
+                display: "inline-block",
+                padding: 0,
+                minHeight: 0,
+                minWidth: 0,
+              }}
+            >
+              <Box
+                width={30}
+                height={7}
+                bgcolor={index == activeStep ? "secondary.main":"text.primary"}
+                marginRight={1}
+                borderRadius={1}
+              ></Box>
+            </Button>
+          ))}
+        </Grid>
+      </Grid>
     </Box>
   );
 }

@@ -196,15 +196,15 @@ export const Hl7v2ToFhir = () => {
         />
       )}
 
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           mt: 4,
         }}
-      >
+      > */}
         {/* <SamplesModal /> */}
-        <Box id="headers-button" sx={{
+        {/* <Box id="headers-button" sx={{
           justifyContent: "flex-end",
         }}>
           <HeadersTab request={request} response={response} />
@@ -214,13 +214,14 @@ export const Hl7v2ToFhir = () => {
           mode={darkMode}
           toggleMode={() => setDarkMode(!darkMode)}
         />
-      </Box>
-      <Divider sx={{ mt: 1 }} />
+      </Box> */}
+      {/* <Divider sx={{ mt: 1 }} /> */}
       <Box
         sx={{
           display: "flex",
           flexGrow: 1,
         }}
+        marginTop={5}
       >
         <Box
           sx={{

@@ -13,13 +13,13 @@ export const ComponentTitle = ({ heading, description, url }: Props) => {
       <Box sx={{ display: "flex", flexDirection: "column", mt:2, ml:1 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Typography
-            color="primary.dark"
-            variant="h3"
+            variant="h5"
             sx={{
               fontWeight: 600,
             }}
             id="component-heading"
             aria-label="Component heading"
+            color="text.primary"
           >
             {heading}
           </Typography>
@@ -27,15 +27,15 @@ export const ComponentTitle = ({ heading, description, url }: Props) => {
         </Box>
         <Box sx={{ display: "flex", gap: 0.5 }}>
           <Typography
-            color="common.black"
-            variant="h6"
+            color="text.secondary"
+            variant="body1"
             sx={{ fontWeight: 400 }}
             id="component-description"
             aria-label="Component description"
           >
-            {description}.
+            {description}
           </Typography>
-          <AboutTool url={url}></AboutTool>
+          {/* <AboutTool url={url}></AboutTool> */}
         </Box>
       </Box>
     </>
