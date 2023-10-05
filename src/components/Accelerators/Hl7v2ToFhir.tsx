@@ -1,17 +1,13 @@
+import { Box, Container } from "@mui/material";
 import { useCallback, useContext, useEffect, useState } from "react";
-import { Box, Container, Divider, Typography } from "@mui/material";
+import apiClient from "../../services/api-client";
 import {
-  ConvertButton,
-  SamplesModal,
   CodeEditor,
-  ResponseAlert,
-  HeadersTab,
-  ToggleEditorStyle,
+  ResponseAlert
 } from "../Common";
+import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
-import apiClient from "../../services/api-client";
-import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 
 interface State {
   input: string;
@@ -36,7 +32,7 @@ export const Hl7v2ToFhir = () => {
 
   const { loadSample, setLoadSample, selectedLabel, setSelectedLabel } =
     useContext(SelectedSampleContext);
-    const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   const [response, setResponse] = useState<any>({
     statusCode: null,
@@ -203,8 +199,8 @@ export const Hl7v2ToFhir = () => {
           mt: 4,
         }}
       > */}
-        {/* <SamplesModal /> */}
-        {/* <Box id="headers-button" sx={{
+      {/* <SamplesModal /> */}
+      {/* <Box id="headers-button" sx={{
           justifyContent: "flex-end",
         }}>
           <HeadersTab request={request} response={response} />

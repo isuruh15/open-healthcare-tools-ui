@@ -10,7 +10,7 @@ interface Props {
 export const ComponentTitle = ({ heading, description, url }: Props) => {
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column", mt:2, ml:1 }}>
+      <Box sx={{ display: "flex", flexDirection: "column", mt: 2, ml: 1 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Typography
             variant="h5"

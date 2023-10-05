@@ -1,5 +1,5 @@
-import { IconButton, Tooltip } from "@mui/material";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
+import { IconButton, Tooltip } from "@mui/material";
 
 interface Props {
   size?: number;

@@ -19,22 +19,17 @@ export const Logo = () => {
       </Typography>
       <Box sx={{ alignSelf: "flex-end" }}>
         <Box sx={{ display: "flex", gap: 1 }}>
-          <Typography
-            color="#545CEC"
-            variant="h6"
-            sx={{ fontWeight: 600 }}
-          >
+          <Typography color="#545CEC" variant="h6" sx={{ fontWeight: 600 }}>
             Powered by
           </Typography>
           <Link href="https://wso2.com/choreo/" target="_blank">
-          <Box
-            component="img"
-            sx={{ width: 80 }}
-            alt="Choreo Logo"
-            src={choreologo}
-          />
+            <Box
+              component="img"
+              sx={{ width: 80 }}
+              alt="Choreo Logo"
+              src={choreologo}
+            />
           </Link>
-          
         </Box>
       </Box>
     </Box>

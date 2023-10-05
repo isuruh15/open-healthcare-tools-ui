@@ -10,7 +10,7 @@ import {
   FhirPath,
   FhirValidation,
   Hl7v2ToFhir,
-  SmartOnFhir
+  SmartOnFhir,
 } from "../Accelerators";
 import { CcdaData, Hl7Data } from "../Accelerators/Samples";
 
@@ -22,12 +22,12 @@ export interface Tool {
   icon: ReactElement;
   component: ReactElement;
   sampleData?: Sample[];
-  header:{
+  header: {
     title: string;
     shortDescription: string;
     url: string;
   };
-  mainBlade:{
+  mainBlade: {
     title: string;
     description: string;
     image: string;
@@ -63,15 +63,15 @@ export const tools: Tool[] = [
     header:{
       title: "FHIR APIs",
       shortDescription: "Convert HL7 V2 data to FHIR",
-      url: "https://wso2.com/solutions/healthcare/"
+      url: "https://wso2.com/solutions/healthcare/",
     },
     mainBlade:{
       title: "FHIR APIs",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       image: "health-intro.png",
       link: "https://wso2.com/solutions/healthcare/",
-      background: "#00255C"
-    }
+      background: "#00255C",
+    },
   },
   {
     label: "HL7V2 To FHIR",
@@ -81,18 +81,19 @@ export const tools: Tool[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     sampleData: Hl7Data,
-    header:{
+    header: {
       title: "HL7V2 To FHIR",
       shortDescription: "Convert HL7 V2 data to FHIR",
-      url: "https://wso2.com/solutions/healthcare/"
+      url: "https://wso2.com/solutions/healthcare/",
     },
-    mainBlade:{
+    mainBlade: {
       title: "HL7V2 To FHIR",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       image: "health-intro.png",
       link: "https://wso2.com/solutions/healthcare/",
-      background: "#00255C"
-    }
+      background: "#00255C",
+    },
   },
   {
     label: "C-CDA To FHIR",
@@ -105,15 +106,15 @@ export const tools: Tool[] = [
     header:{
       title: "C-CDA To FHIR",
       shortDescription: "Convert HL7 V2 data to FHIR",
-      url: "https://wso2.com/solutions/healthcare/"
+      url: "https://wso2.com/solutions/healthcare/",
     },
     mainBlade:{
       title: "C-CDA To FHIR",
       description: "Convert HL7 V2 data to FHIR",
       image: "https://ballerina.io/images/health-sm-banner.png",
       link: "https://wso2.com/solutions/healthcare/",
-      background: "#00255C"
-    }
+      background: "#00255C",
+    },
   },
   {
     label: "FHIR Validation",
@@ -126,15 +127,15 @@ export const tools: Tool[] = [
     header:{
       title: "FHIR Validation",
       shortDescription: "Convert HL7 V2 data to FHIR",
-      url: "https://wso2.com/solutions/healthcare/"
+      url: "https://wso2.com/solutions/healthcare/",
     },
     mainBlade:{
       title: "FHIR Validation",
       description: "Convert HL7 V2 data to FHIR",
       image: "https://ballerina.io/images/health-sm-banner.png",
       link: "https://wso2.com/solutions/healthcare/",
-      background: "#00255C"
-    }
+      background: "#00255C",
+    },
   },
   {
     label: "SMART on FHIR",
@@ -146,15 +147,15 @@ export const tools: Tool[] = [
     header:{
       title: "SMART on FHIR",
       shortDescription: "Convert HL7 V2 data to FHIR",
-      url: "https://wso2.com/solutions/healthcare/"
+      url: "https://wso2.com/solutions/healthcare/",
     },
     mainBlade:{
       title: "SMART on FHIR",
       description: "Convert HL7 V2 data to FHIR",
       image: "https://ballerina.io/images/health-sm-banner.png",
       link: "https://wso2.com/solutions/healthcare/",
-      background: "#00255C"
-    }
+      background: "#00255C",
+    },
   },
   {
     label: "FHIR Path",
@@ -166,15 +167,15 @@ export const tools: Tool[] = [
     header:{
       title: "FHIR Path",
       shortDescription: "Convert HL7 V2 data to FHIR",
-      url: "https://wso2.com/solutions/healthcare/"
+      url: "https://wso2.com/solutions/healthcare/",
     },
     mainBlade:{
       title: "FHIR Path",
       description: "Convert HL7 V2 data to FHIR",
       image: "https://ballerina.io/images/health-sm-banner.png",
       link: "https://wso2.com/solutions/healthcare/",
-      background: "#00255C"
-    }
+      background: "#00255C",
+    },
   },
   {
     label: "Connect To EMR",
@@ -186,14 +187,14 @@ export const tools: Tool[] = [
     header:{
       title: "Connect To EMR",
       shortDescription: "Convert HL7 V2 data to FHIR",
-      url: "https://wso2.com/solutions/healthcare/"
+      url: "https://wso2.com/solutions/healthcare/",
     },
     mainBlade:{
       title: "Connect To EMR",
       description: "Convert HL7 V2 data to FHIR",
       image: "https://ballerina.io/images/health-sm-banner.png",
       link: "https://wso2.com/solutions/healthcare/",
-      background: "#00255C"
-    }
+      background: "#00255C",
+    },
   },
 ];
