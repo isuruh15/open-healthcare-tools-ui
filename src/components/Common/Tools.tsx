@@ -1,8 +1,30 @@
-import { Grid, Typography } from "@mui/material";
-import { toolGroups } from "../Configs/Config";
+import { Box, Button, Grid, MobileStepper, Paper, Typography } from "@mui/material";
+import * as React from 'react';
+import { useTheme } from '@mui/material/styles';
+import { tools } from "../Configs/ToolContentConfig";
 import Toolcard from "./ToolCard";
+import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import SwipeableViews from "react-swipeable-views";
+
 
 function Tools() {
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = tools.length;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleStepChange = (step: number) => {
+    setActiveStep(step);
+  };
+
   return (
     <>
       <Grid container rowSpacing={2} color="text.primary">
@@ -43,53 +65,99 @@ function Tools() {
             voluptate laudantium provident. Vero, obcaecati!
           </Typography>
         </Grid>
-
-        {toolGroups.map((toolGroup) => (
-          <Grid
-            container
-            item
-            xs={12}
-            marginTop={2}
-            marginBottom={4}
-            alignItems="center"
-            justifyContent="center"
-          >
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container alignItems="center" justifyContent="center">
             <Grid
               container
-              maxWidth="lg"
-              rowSpacing={5}
-              columnSpacing={3}
-              padding={5}
+              item
+              xs={2}
+              alignItems="center"
+              justifyContent="center"
             >
-              <Grid container item xs={12} spacing={5} maxWidth={100}>
-                {toolGroup.tools.map((toolObject) => (
+              <Button
+                variant="outlined"
+                disabled={activeStep == 0}
+                onClick={() => handleBack()}
+                sx={{ color: "#FF7300", borderRadius: 20 }}
+              >
+                <ArrowBackIosOutlinedIcon
+                  fontSize="large"
+                  sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+                />
+              </Button>
+            </Grid>
+            <Grid
+              container
+              item
+              xs={8}
+              alignItems="center"
+              justifyContent="center"
+            >
+              <SwipeableViews
+                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                index={activeStep}
+                // onChangeIndex={handleStepChange}
+                enableMouseEvents
+                // interval={25000}
+              >
+                {tools.slice(activeStep, activeStep+3).map((toolObject) => (
                   <Grid
                     container
-                    item
+                    lg={4}
                     xs={12}
-                    sm={6}
-                    md={
-                      toolGroup.tools.length > 2
-                        ? 4
-                        : toolGroup.tools.length == 2
-                        ? 6
-                        : 12
-                    }
+                    spacing={0}
+                    marginTop={2}
+                    marginBottom={4}
                     alignItems="center"
                     justifyContent="center"
+                  // maxWidth="xl"
                   >
-                    <Toolcard
-                      title={toolObject.title}
-                      description={toolObject.description}
-                      image={toolObject.image}
-                      link={toolObject.link}
-                    ></Toolcard>
+                    <Grid
+                      container
+                      lg={12}
+                      sm={6}
+                      md={
+                        tools.length > 2
+                          ? 4
+                          : tools.length == 2
+                            ? 6
+                            : 12
+                      }
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Toolcard
+                        title={toolObject.label}
+                        description={toolObject.description}
+                        image={toolObject.mainBlade.image}
+                        link={toolObject.url}
+                      ></Toolcard>
+                    </Grid>
                   </Grid>
                 ))}
-              </Grid>
+              </SwipeableViews>
+            </Grid>
+            <Grid
+              container
+              item
+              xs={2}
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Button
+                variant="outlined"
+                disabled={activeStep == maxSteps - 1}
+                onClick={() => handleNext()}
+                sx={{ borderRadius: 200, stroke: "#FF7300" }}
+              >
+                <ArrowForwardIosOutlinedIcon
+                  fontSize="large"
+                  sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+                />
+              </Button>
             </Grid>
           </Grid>
-        ))}
+        </Box>
       </Grid>
     </>
   );
