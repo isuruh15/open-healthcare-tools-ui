@@ -33,9 +33,9 @@ export const ComponentTitle = ({ heading, description, url }: Props) => {
             id="component-description"
             aria-label="Component description"
           >
-            {description}.
+            {description}
           </Typography>
-          <AboutTool url={url}></AboutTool>
+          {/* <AboutTool url={url}></AboutTool> */}
         </Box>
       </Box>
     </>

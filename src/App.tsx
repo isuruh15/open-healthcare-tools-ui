@@ -36,7 +36,6 @@ const theme = createTheme({
 const App = () => {
   return (
     <SecureApp>
-      <DarkModeProvider>
         <ThemeProvider theme={theme}>
           <Box
             sx={{ display: "flex", flexDirection: "column", height: "100vh" }}
@@ -62,7 +61,6 @@ const App = () => {
             </Suspense>
           </Box>
         </ThemeProvider>
-      </DarkModeProvider>
     </SecureApp>
   );
 };

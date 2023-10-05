@@ -10,10 +10,12 @@ export const ClearIcon = ({ size = 30, onClear }: Props) => {
   return (
     <Tooltip key="clear-icon" title="Clear Content" placement="bottom">
       <IconButton
-        color="primary"
         onClick={onClear}
         id="clear-icon-button"
         aria-label="Clear Icon Button"
+        sx={{
+          color: "text.primary",
+        }}
       >
         <DeleteOutlineOutlinedIcon
           sx={{ fontSize: size }}

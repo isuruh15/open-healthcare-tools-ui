@@ -44,7 +44,7 @@ export const UploadIcon = ({ size = 30, readFile }: Props) => {
           <IconButton
             aria-label="upload file"
             sx={{
-              color: "primary.main",
+              color: "text.primary",
             }}
             component="span"
           >

@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Link } from "@mui/material";
 import choreologo from "./../assets/choreo-logo-black.svg";
 
 export const Logo = () => {
@@ -12,6 +12,7 @@ export const Logo = () => {
         marginLeft: 1,
         my: 1,
       }}
+      color="text.primary"
     >
       <Typography color="primary.dark" variant="h6" sx={{ fontWeight: 600 }}>
         Open Healthcare Tools
@@ -19,18 +20,21 @@ export const Logo = () => {
       <Box sx={{ alignSelf: "flex-end" }}>
         <Box sx={{ display: "flex", gap: 1 }}>
           <Typography
-            color="primary.main"
+            color="#545CEC"
             variant="h6"
             sx={{ fontWeight: 600 }}
           >
             Powered by
           </Typography>
+          <Link href="https://wso2.com/choreo/" target="_blank">
           <Box
             component="img"
             sx={{ width: 80 }}
             alt="Choreo Logo"
             src={choreologo}
           />
+          </Link>
+          
         </Box>
       </Box>
     </Box>
