@@ -14,14 +14,10 @@ function Tools() {
   const maxSteps = tools.length-3;
 
   const handleNext = () => {
-    console.log("Next");
-    console.log(activeStep);
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
-    console.log("Back");
-    console.log(activeStep);
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
