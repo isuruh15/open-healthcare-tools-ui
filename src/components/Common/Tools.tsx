@@ -11,23 +11,23 @@ import SwipeableViews from "react-swipeable-views";
 function Tools() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tools.length;
+  const maxSteps = tools.length-3;
 
   const handleNext = () => {
+    console.log("Next");
+    console.log(activeStep);
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
+    console.log("Back");
+    console.log(activeStep);
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleStepChange = (step: number) => {
-    setActiveStep(step);
   };
 
   return (
     <>
-      <Grid container rowSpacing={2} color="text.primary">
+      <Grid container rowSpacing={2} color="text.primary" marginBottom={6}>
         <Grid
           container
           item
@@ -75,19 +75,19 @@ function Tools() {
               justifyContent="center"
             >
               <Button
-                variant="outlined"
+                // variant="outlined"
                 disabled={activeStep == 0}
                 onClick={() => handleBack()}
-                sx={{ color: "#FF7300", borderRadius: 20 }}
+                sx={{ color: "grey.300", borderRadius: 20 }}
               >
                 <ArrowBackIosOutlinedIcon
                   fontSize="large"
-                  sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+                  sx={{ stroke: "primary.main", strokeWidth: 5, color: "primary.main" }}
                 />
               </Button>
             </Grid>
             <Grid
-              container
+              // container
               item
               xs={8}
               alignItems="center"
@@ -95,26 +95,25 @@ function Tools() {
             >
               <SwipeableViews
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                index={activeStep}
+                // index={activeStep}
                 // onChangeIndex={handleStepChange}
                 enableMouseEvents
                 // interval={25000}
               >
-                {tools.slice(activeStep, activeStep+3).map((toolObject) => (
+                {/* {tools.slice(activeStep, activeStep+3).map((toolObject) => ( */}
                   <Grid
                     container
-                    lg={4}
+                    flexDirection={"row"}
                     xs={12}
-                    spacing={0}
+                    spacing={2}
                     marginTop={2}
                     marginBottom={4}
                     alignItems="center"
                     justifyContent="center"
-                  // maxWidth="xl"
                   >
                     <Grid
-                      container
-                      lg={12}
+                      item
+                      xs={4}
                       sm={6}
                       md={
                         tools.length > 2
@@ -127,14 +126,56 @@ function Tools() {
                       justifyContent="center"
                     >
                       <Toolcard
-                        title={toolObject.label}
-                        description={toolObject.description}
-                        image={toolObject.mainBlade.image}
-                        link={toolObject.url}
+                        title={tools[activeStep].label}
+                        description={tools[activeStep].description}
+                        image={tools[activeStep].mainBlade.image}
+                        link={tools[activeStep].url}
+                      ></Toolcard>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={4}
+                      sm={6}
+                      md={
+                        tools.length > 2
+                          ? 4
+                          : tools.length == 2
+                            ? 6
+                            : 12
+                      }
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Toolcard
+                        title={tools[activeStep+1].label}
+                        description={tools[activeStep+1].description}
+                        image={tools[activeStep+1].mainBlade.image}
+                        link={tools[activeStep+1].url}
+                      ></Toolcard>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={4}
+                      sm={6}
+                      md={
+                        tools.length > 2
+                          ? 4
+                          : tools.length == 2
+                            ? 6
+                            : 12
+                      }
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Toolcard
+                        title={tools[activeStep+2].label}
+                        description={tools[activeStep+2].description}
+                        image={tools[activeStep+2].mainBlade.image}
+                        link={tools[activeStep+2].url}
                       ></Toolcard>
                     </Grid>
                   </Grid>
-                ))}
+                {/* // ))} */}
               </SwipeableViews>
             </Grid>
             <Grid
@@ -145,14 +186,14 @@ function Tools() {
               justifyContent="center"
             >
               <Button
-                variant="outlined"
+                // variant="outlined"
                 disabled={activeStep == maxSteps - 1}
                 onClick={() => handleNext()}
-                sx={{ borderRadius: 200, stroke: "#FF7300" }}
+                sx={{ borderRadius: 200, stroke: "grey.300" }}
               >
                 <ArrowForwardIosOutlinedIcon
                   fontSize="large"
-                  sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+                  sx={{ stroke: "primary.main", strokeWidth: 5, color: "primary.main" }}
                 />
               </Button>
             </Grid>
