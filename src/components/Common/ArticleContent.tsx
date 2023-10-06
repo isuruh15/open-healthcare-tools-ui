@@ -17,9 +17,9 @@ interface Props {
 
 function ArticleContent({ imgPath, title, description, link }: Props) {
   return (
-    <Card sx={{ maxWidth: 1200 }}>
+    <Card sx={{ maxWidth: 1200, minWidth: 180 }}>
       <Box sx={{ position: "relative" }}>
-        <CardMedia component="img" height="350" image={imgPath} />
+        <CardMedia component="img" sx={{minHeight: 250, maxHeight: 350}} image={imgPath} />
         <Box
           sx={{
             position: "absolute",
@@ -38,18 +38,21 @@ function ArticleContent({ imgPath, title, description, link }: Props) {
                 <Typography variant="body2">{description}</Typography>
               </Stack>
             </Grid>
-            <Grid container item xs={6}>
+            <Grid container item xs={6} justifyContent="center">
               <Button
                 href={link}
                 target="_blank"
                 variant="outlined"
-                style={{
+                sx={{
                   borderRadius: 35,
                   border: "solid 2px #FF7300",
                   color: "#FFFFFF",
+                  padding: {sm: "0px", md:"1px", lg: "8px"},
+                  width: {sm:100, md: 100, lg:100, xl: 110},
                 }}
               >
-                Read more
+                <Typography justifyContent="center" alignItems="center" variant="body2" sx={{fontSize: {sm: "0.55rem", md: "0.75rem",lg:"0.8rem", xl: "0.857rem"}}}>Read more</Typography>
+                
               </Button>
             </Grid>
           </Grid>

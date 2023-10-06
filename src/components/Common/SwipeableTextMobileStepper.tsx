@@ -35,15 +35,16 @@ function SwipeableTextMobileStepper() {
           <Grid
             container
             item
-            xs={2}
+            xs={1}
+            md={2}
             alignItems="center"
             justifyContent="center"
           >
             <Button
-              variant="outlined"
+              variant="text"
               disabled={activeStep == 0}
               onClick={() => handleBack()}
-              sx={{ color: "#FF7300", borderRadius: 20 }}
+              // sx={{ color: "#FF7300", borderRadius: 20, width: {md:30, lg: 40} }}
             >
               <ArrowBackIosOutlinedIcon
                 fontSize="large"
@@ -51,6 +52,7 @@ function SwipeableTextMobileStepper() {
                   stroke: "#FF7300",
                   strokeWidth: 2,
                   color: "secondary.main",
+                  width: {sm:20, md:30, lg: 40}
                 }}
               />
             </Button>
@@ -88,15 +90,16 @@ function SwipeableTextMobileStepper() {
           <Grid
             container
             item
-            xs={2}
+            xs={1}
+            md={2}
             alignItems="center"
             justifyContent="center"
           >
             <Button
-              variant="outlined"
+              variant="text"
               disabled={activeStep == maxSteps - 1}
               onClick={() => handleNext()}
-              sx={{ borderRadius: 200, stroke: "#FF7300" }}
+              // sx={{ borderRadius: 200, stroke: "#FF7300", width: {sm: 20, md:30, lg: 40}, padding: 0 }}
             >
               <ArrowForwardIosOutlinedIcon
                 fontSize="large"
@@ -104,6 +107,7 @@ function SwipeableTextMobileStepper() {
                   stroke: "#FF7300",
                   strokeWidth: 2,
                   color: "secondary.main",
+                  width: {sm: 20, md:30, lg: 40}
                 }}
               />
             </Button>
@@ -131,13 +135,13 @@ function SwipeableTextMobileStepper() {
               }}
             >
               <Box
-                width={30}
                 height={7}
                 bgcolor={
                   index == activeStep ? "secondary.main" : "text.primary"
                 }
                 marginRight={1}
                 borderRadius={1}
+                sx={{width: {sm: 20, md:25, lg: 30}, height: {sm: 6, md:7, lg: 7}}}
               ></Box>
             </Button>
           ))}

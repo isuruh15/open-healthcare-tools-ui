@@ -1,5 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Button, Grid, Typography } from "@mui/material";
+import { useRef, useState } from "react";
 
 interface MainBladeProps {
   title: string;
@@ -15,6 +15,11 @@ export const MainBlade = ({
   backgroundImage,
 }: MainBladeProps) => {
   const [active] = useState(true);
+  const ref = useRef(null);
+
+  // const handleClick = () => {
+  //   ref.current?.scrollIntoView({ behavior: 'smooth' });
+  // };
   return (
     <Box bgcolor="background.paper">
       <Grid container alignItems="center" justifyContent="center">
@@ -23,8 +28,9 @@ export const MainBlade = ({
           item
           alignItems="center"
           justifyContent="center"
-          maxWidth={{ xl: "xl", lg: "lg", md: "md" }}
-          spacing={5}
+          maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "sm", xs: "xs" }}
+          sx={{ padding: { xs: 3, sm: 0, md: 0, lg: 0, xl: 0 } }}
+          spacing={8}
         >
           <Grid
             container
@@ -36,8 +42,10 @@ export const MainBlade = ({
             <Grid container item alignItems="center" justifyContent="flexStart">
               <Typography
                 variant="h2"
-                fontWeight="500"
-                sx={{ mt: 3, mb: 6 }}
+                sx={{
+                  mt: 3,
+                  mb: 6,
+                }}
                 alignItems="center"
                 color="text.primary"
               >
@@ -56,6 +64,24 @@ export const MainBlade = ({
                 {description}
               </Typography>
             </Grid>
+            {/* <Grid
+              container
+              item
+              alignItems="center"
+              marginTop={3}
+              paddingLeft={5}
+            >
+              <Button
+                variant="contained"
+                color="info"
+                sx={{
+                  borderRadius: 2,
+                  border: "solid 1px #FF7300",
+                }}
+              >
+                <Typography color="#FFFFFF">Try-out</Typography>
+              </Button>
+            </Grid> */}
           </Grid>
           <Grid
             container
@@ -64,10 +90,25 @@ export const MainBlade = ({
             alignItems={{ lg: "center", xl: "left" }}
             justifyContent={{ lg: "center", xl: "start" }}
           >
-            <img src={image} alt="Healthcare Logo" width={700} height={395} />
+            <Box
+              component="img"
+              sx={{
+                height: { xs: 197, sm: 254, lg: 310, xl: 395 },
+                width: { xs: 350, sm: 450, lg: 550, xl: 700 },
+                // maxHeight: { xs: 233, md: 167 },
+                // maxWidth: { xs: 350, md: 250 },
+              }}
+              width={700}
+              height={395}
+              alt="Healthcare Logo"
+              src={image}
+            />
           </Grid>
         </Grid>
       </Grid>
     </Box>
   );
 };
+function scrollIntoView(arg0: { behavior: string }) {
+  throw new Error("Function not implemented.");
+}
