@@ -1,5 +1,5 @@
 import { SecureApp } from "@asgardeo/auth-react";
-import { Box, ThemeProvider, createTheme } from "@mui/material";
+import { Box, ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
 import React, { Suspense } from "react";
 import { PreLoader } from "./components/Common";
 
@@ -9,7 +9,7 @@ const MainContent = React.lazy(() =>
   }))
 );
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: ["Plus Jakarta Sans", "sans-serif"].join(","),
   },
@@ -28,8 +28,13 @@ const theme = createTheme({
       paper: "#f7f8fb", // Light grey + purple
       default: "#ffffff", // White
     },
+    info: {
+      main: "#FF7300", //WSO2 Orange
+    }
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 const App = () => {
   return (
