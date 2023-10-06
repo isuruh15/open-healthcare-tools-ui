@@ -105,12 +105,16 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
         }}
       >
         <Grid container alignItems="center" justifyContent="center">
-          <Grid container alignItems="center" sx={{
+          <Grid
+            container
+            alignItems="center"
+            sx={{
               paddingRight: 5,
               paddingLeft: 2,
               paddingTop: 5,
               paddingBottom: 5,
-            }}>
+            }}
+          >
             <Typography
               variant="h3"
               align="center"

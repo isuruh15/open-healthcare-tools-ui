@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { SecureRoute, useAuthContext } from "@asgardeo/auth-react";
 import { SelectedSampleProvider } from "../Contexts/SelectedSampleContext";
 
 interface SideNavItem {
@@ -12,7 +11,6 @@ interface Props {
 }
 
 const AppRoutes = ({ items }: Props) => {
-
   return (
     <SelectedSampleProvider>
       <Routes>

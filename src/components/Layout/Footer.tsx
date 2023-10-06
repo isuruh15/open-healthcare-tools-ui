@@ -39,15 +39,14 @@ export const Footer = () => {
           aria-hidden="true"
         />
         <Link href="https://wso2.com/" target="_blank" underline="hover">
-        <Typography
-          variant="body1"
-          sx={{ color: "grey.500", fontWeight: 300 }}
-          id="footer-text"
-        >
-          {new Date().getFullYear()} WSO2 LLC.
-        </Typography>
+          <Typography
+            variant="body1"
+            sx={{ color: "grey.500", fontWeight: 300 }}
+            id="footer-text"
+          >
+            {new Date().getFullYear()} WSO2 LLC.
+          </Typography>
         </Link>
-        
       </Box>
     </Box>
   );

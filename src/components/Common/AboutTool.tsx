@@ -1,5 +1,5 @@
-import { IconButton, Link, Tooltip, Typography } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { IconButton, Link, Tooltip, Typography } from "@mui/material";
 
 interface Props {
   url: string;

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import CodeMirror from "@uiw/react-codemirror";
-import { aura, xcodeLight } from "@uiw/codemirror-themes-all";
 import { langs } from "@uiw/codemirror-extensions-langs";
+import { aura, xcodeLight } from "@uiw/codemirror-themes-all";
+import CodeMirror from "@uiw/react-codemirror";
 import FileSaver from "file-saver";
 import { ClearIcon, CopyContent, DownloadIcon, UploadIcon } from "../Common";
 
@@ -77,9 +77,7 @@ export const CodeEditor = ({
           alignItems: "center",
         }}
       >
-        <Typography variant="h6">
-          {title}
-        </Typography>
+        <Typography variant="h6">{title}</Typography>
         <Box sx={{ display: "flex" }}>
           <CopyContent data={JSON.parse(JSON.stringify(value!))} size={20} />
           {downloadEnabled && (

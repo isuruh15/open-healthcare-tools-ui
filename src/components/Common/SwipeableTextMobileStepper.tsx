@@ -7,6 +7,7 @@ import { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { articles } from "../Configs/ArticleConfig";
+import ArticleContent from "./ArticleContent";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -46,7 +47,11 @@ function SwipeableTextMobileStepper() {
             >
               <ArrowBackIosOutlinedIcon
                 fontSize="large"
-                sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+                sx={{
+                  stroke: "#FF7300",
+                  strokeWidth: 2,
+                  color: "secondary.main",
+                }}
               />
             </Button>
           </Grid>
@@ -65,22 +70,15 @@ function SwipeableTextMobileStepper() {
               interval={25000}
             >
               {articles.map((step, index) => (
-                <Box key={step.label}>
+                <Box key={step.title}>
                   {Math.abs(activeStep - index) <= 2 ? (
-                    <Link href="https://google.com" target="_blank">
-                      <Box
-                        component="img"
-                        sx={{
-                          height: 350,
-                          display: "block",
-                          maxWidth: 1200,
-                          overflow: "hidden",
-                          width: "100%",
-                        }}
-                        src={step.imgPath}
-                        alt={step.label}
-                        borderRadius={5}
-                      ></Box>
+                    <Link href={step.link} target="_blank">
+                      <ArticleContent
+                        imgPath={step.imgPath}
+                        title={step.title}
+                        description={step.description}
+                        link={step.link}
+                      />
                     </Link>
                   ) : null}
                 </Box>
@@ -102,7 +100,11 @@ function SwipeableTextMobileStepper() {
             >
               <ArrowForwardIosOutlinedIcon
                 fontSize="large"
-                sx={{ stroke: "#FF7300", strokeWidth: 2, color: "secondary.main" }}
+                sx={{
+                  stroke: "#FF7300",
+                  strokeWidth: 2,
+                  color: "secondary.main",
+                }}
               />
             </Button>
           </Grid>
@@ -131,7 +133,9 @@ function SwipeableTextMobileStepper() {
               <Box
                 width={30}
                 height={7}
-                bgcolor={index == activeStep ? "secondary.main":"text.primary"}
+                bgcolor={
+                  index == activeStep ? "secondary.main" : "text.primary"
+                }
                 marginRight={1}
                 borderRadius={1}
               ></Box>

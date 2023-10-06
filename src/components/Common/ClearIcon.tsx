@@ -1,5 +1,5 @@
-import { IconButton, Tooltip } from "@mui/material";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import { IconButton, Tooltip } from "@mui/material";
 
 interface Props {
   size?: number;
