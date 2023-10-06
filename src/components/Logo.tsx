@@ -14,7 +14,7 @@ export const Logo = () => {
       }}
       color="text.primary"
     >
-      <Typography color="primary.dark" variant="h6" sx={{ fontWeight: 600 }}>
+      <Typography color="primary.dark" variant="h6" sx={{ fontWeight: {xs:400,sm:600} }}>
         Open Healthcare Tools
       </Typography>
       <Box sx={{ alignSelf: "flex-end" }}>
@@ -25,7 +25,7 @@ export const Logo = () => {
           <Link href="https://wso2.com/choreo/" target="_blank">
             <Box
               component="img"
-              sx={{ width: 80 }}
+              sx={{ width: {xs:60, sm: 80} }}
               alt="Choreo Logo"
               src={choreologo}
             />

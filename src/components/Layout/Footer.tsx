@@ -27,21 +27,21 @@ export const Footer = () => {
           ml: "auto",
           px: 1,
           py: 0.6,
-          mr: 2,
+          mr: {sm: 2},
         }}
       >
         <CopyrightIcon
           sx={{
             color: "grey.400",
-            mr: 0.5,
-            fontSize: 19,
+            mr: {sm:0.5},
+            // fontSize: 19,
           }}
           aria-hidden="true"
         />
         <Link href="https://wso2.com/" target="_blank" underline="hover">
           <Typography
             variant="body1"
-            sx={{ color: "grey.500", fontWeight: 300 }}
+            sx={{ color: "grey.500" }}
             id="footer-text"
           >
             {new Date().getFullYear()} WSO2 LLC.

@@ -17,11 +17,11 @@ interface Props {
 
 function ArticleContent({ imgPath, title, description, link }: Props) {
   return (
-    <Card sx={{ maxWidth: 1200, minWidth: 200 }}>
+    <Card sx={{ maxWidth: 1200, minWidth: {xs:130, sm: 200,md:250} }}>
       <Box sx={{ position: "relative" }}>
         <CardMedia
           component="img"
-          sx={{ minHeight: 250, minWidth: 200 }}
+          // sx={{ minHeight: 250, minWidth: 200 }}
           image={imgPath}
         />
         <Box
@@ -38,7 +38,7 @@ function ArticleContent({ imgPath, title, description, link }: Props) {
           <Grid container>
             <Grid container item xs={10} md={8}>
               <Stack>
-                <Typography variant="h5">{title}</Typography>
+                <Typography variant="h6">{title}</Typography>
                 <Typography variant="body2">{description}</Typography>
               </Stack>
             </Grid>
@@ -60,8 +60,8 @@ function ArticleContent({ imgPath, title, description, link }: Props) {
                   borderRadius: 35,
                   border: { xs: "solid 1px #FF7300", md: "solid 2px #FF7300" },
                   color: "#FFFFFF",
-                  padding: { sm: "0px", md: "1px", lg: "8px" },
-                  width: { sm: 100, md: 100, lg: 100, xl: 110 },
+                  padding: { xs: "0px", sm: "0px", md: "1px", lg: "8px" },
+                  width: { xs: 100, sm: 100, md: 100, lg: 100, xl: 110 },
                 }}
               >
                 <Typography
@@ -70,7 +70,8 @@ function ArticleContent({ imgPath, title, description, link }: Props) {
                   variant="body2"
                   sx={{
                     fontSize: {
-                      sm: "0.60rem",
+                      xs: "0.6rem",
+                      sm: "0.65rem",
                       md: "0.70rem",
                       lg: "0.8rem",
                       xl: "0.857rem",
