@@ -44,6 +44,7 @@ function SwipeableTextMobileStepper() {
               variant="text"
               disabled={activeStep == 0}
               onClick={() => handleBack()}
+              sx={{ display: { xs: "none", md: "block" } }}
               // sx={{ color: "#FF7300", borderRadius: 20, width: {md:30, lg: 40} }}
             >
               <ArrowBackIosOutlinedIcon
@@ -52,7 +53,7 @@ function SwipeableTextMobileStepper() {
                   stroke: "#FF7300",
                   strokeWidth: 2,
                   color: "secondary.main",
-                  width: {sm:20, md:30, lg: 40}
+                  width: { sm: 20, md: 30, lg: 40 },
                 }}
               />
             </Button>
@@ -99,6 +100,7 @@ function SwipeableTextMobileStepper() {
               variant="text"
               disabled={activeStep == maxSteps - 1}
               onClick={() => handleNext()}
+              sx={{ display: { xs: "none", md: "block" } }}
               // sx={{ borderRadius: 200, stroke: "#FF7300", width: {sm: 20, md:30, lg: 40}, padding: 0 }}
             >
               <ArrowForwardIosOutlinedIcon
@@ -107,7 +109,7 @@ function SwipeableTextMobileStepper() {
                   stroke: "#FF7300",
                   strokeWidth: 2,
                   color: "secondary.main",
-                  width: {sm: 20, md:30, lg: 40}
+                  width: { sm: 20, md: 30, lg: 40 },
                 }}
               />
             </Button>
@@ -141,7 +143,10 @@ function SwipeableTextMobileStepper() {
                 }
                 marginRight={1}
                 borderRadius={1}
-                sx={{width: {sm: 20, md:25, lg: 30}, height: {sm: 6, md:7, lg: 7}}}
+                sx={{
+                  width: { sm: 20, md: 25, lg: 30 },
+                  height: { sm: 6, md: 7, lg: 7 },
+                }}
               ></Box>
             </Button>
           ))}

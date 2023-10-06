@@ -28,8 +28,8 @@ export const MainBlade = ({
           item
           alignItems="center"
           justifyContent="center"
-          maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "sm", xs: "xs" }}
-          sx={{ padding: { xs: 3, sm: 0, md: 0, lg: 0, xl: 0 } }}
+          maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "md", xs: "xs" }}
+          sx={{ padding: { xs: 3, sm: 3, md: 0, lg: 0, xl: 0 } }}
           spacing={8}
         >
           <Grid

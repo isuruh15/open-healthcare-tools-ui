@@ -1,5 +1,10 @@
 import { SecureApp } from "@asgardeo/auth-react";
-import { Box, ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
+import {
+  Box,
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material";
 import React, { Suspense } from "react";
 import { PreLoader } from "./components/Common";
 
@@ -21,7 +26,7 @@ let theme = createTheme({
       main: "#FF7300", //WSO2 Orange
     },
     text: {
-      primary: "#00255C", //Dark blue
+      primary: "#000000", //Dark blue
       secondary: "#494848", //Light Grey
     },
     background: {
@@ -30,7 +35,7 @@ let theme = createTheme({
     },
     info: {
       main: "#FF7300", //WSO2 Orange
-    }
+    },
   },
 });
 

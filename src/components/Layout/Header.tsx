@@ -44,9 +44,9 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
 
   return (
     <>
-      {/* {screenWidth < 600 && (
+      {screenWidth < 600 && (
         <AlertModal contentText="Please use a laptop or a desktop to try out the Open Healthcare Sandbox seamlessly." />
-      )} */}
+      )}
       <Box
         sx={{
           display: "flex",
