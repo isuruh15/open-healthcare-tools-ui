@@ -19,7 +19,7 @@ function Toolcard({ title, description, image, link }: Props) {
       sx={{
         maxWidth: 345,
         transform: isHover
-          ? "scale3d(1.05, 1.05, 1.5)"
+          ? "scale3d(1.05, 1.05, 1.0)"
           : "scale3d(1.0, 1.0, 1.0)",
       }}
       color="#00255C"

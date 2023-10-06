@@ -1,20 +1,18 @@
-import { ReactElement } from "react";
-import {
-  ConnectToEmr,
-  CcdaToFhir,
-  FhirPath,
-  Hl7v2ToFhir,
-  SmartOnFhir,
-  FhirValidation,
-  FhirApis,
-} from "../Accelerators";
-import { CcdaData, Hl7Data, FhirData } from "../Accelerators/Samples";
+import CableOutlinedIcon from "@mui/icons-material/CableOutlined";
+import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import TransformOutlinedIcon from "@mui/icons-material/TransformOutlined";
 import VpnKeyOutlinedIcon from "@mui/icons-material/VpnKeyOutlined";
-import CableOutlinedIcon from "@mui/icons-material/CableOutlined";
-import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
-import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
+import { ReactElement } from "react";
+import {
+  CcdaToFhir,
+  ConnectToEmr,
+  FhirPath,
+  FhirValidation,
+  Hl7v2ToFhir,
+  SmartOnFhir
+} from "../Accelerators";
+import { CcdaData, Hl7Data } from "../Accelerators/Samples";
 
 export interface Item {
   label: string;
