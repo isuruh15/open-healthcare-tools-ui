@@ -88,11 +88,12 @@ export const Hl7v2ToFhir = () => {
     }));
   };
 
-  const handleInputChange = useCallback((value: string) => {
+  const handleInputChange = useCallback((value: string, backendCall:Function) => {
     setState((prevState) => ({
       ...prevState,
       input: value,
     }));
+    backendCall();
   }, []);
 
   const handleInputClear = () => {
@@ -101,6 +102,10 @@ export const Hl7v2ToFhir = () => {
       input: "",
     }));
   };
+
+  const handleChange = (value: string) => {
+    handleInputChange(value, callBackend);
+  }
 
   const handleOutputClear = () => {
     setState((prevState) => ({
