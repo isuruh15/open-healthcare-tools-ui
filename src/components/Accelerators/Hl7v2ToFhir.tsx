@@ -36,7 +36,7 @@ export const Hl7v2ToFhir = () => {
 
   const { loadSample, setLoadSample, selectedLabel, setSelectedLabel } =
     useContext(SelectedSampleContext);
-    const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   const [response, setResponse] = useState<any>({
     statusCode: null,
@@ -82,11 +82,12 @@ export const Hl7v2ToFhir = () => {
     }));
   };
 
-  const handleInputChange = useCallback((value: string) => {
+  const handleInputChange = useCallback((value: string, backendCall:Function) => {
     setState((prevState) => ({
       ...prevState,
       input: value,
     }));
+    backendCall();
   }, []);
 
   const handleInputClear = () => {
@@ -95,6 +96,10 @@ export const Hl7v2ToFhir = () => {
       input: "",
     }));
   };
+
+  const handleChange = (value: string) => {
+    handleInputChange(value, callBackend);
+  }
 
   const handleOutputClear = () => {
     setState((prevState) => ({
@@ -203,8 +208,8 @@ export const Hl7v2ToFhir = () => {
           mt: 4,
         }}
       > */}
-        {/* <SamplesModal /> */}
-        {/* <Box id="headers-button" sx={{
+      {/* <SamplesModal /> */}
+      {/* <Box id="headers-button" sx={{
           justifyContent: "flex-end",
         }}>
           <HeadersTab request={request} response={response} />
@@ -235,7 +240,7 @@ export const Hl7v2ToFhir = () => {
           <CodeEditor
             title="HL7 Resource"
             value={input}
-            onChange={handleInputChange}
+            onChange={handleChange}
             darkMode={darkMode}
             onClear={handleInputClear}
             placeholder="Paste or edit HL7 Data here..."
