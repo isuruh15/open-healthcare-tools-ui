@@ -19,7 +19,9 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
         display: "flex",
       }}
     >
-      <Box
+      <Grid container>
+        <Grid item container md={6}>
+        <Box
         sx={{
           minHeight: 300,
           backgroundColor: "background.paper",
@@ -27,7 +29,6 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
           flexDirection: "column",
           display: "flex",
           padding: 5,
-          width: "0.5",
         }}
       >
         <Grid container alignItems="center" justifyContent="center">
@@ -46,6 +47,15 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
               align="center"
               color="text.primary"
               maxWidth="md"
+              sx={{
+                fontSize: {
+                  xs: "2.0rem",
+                  sm: "2.2rem",
+                  md: "2.3rem",
+                  lg: "2.8rem",
+                  xl: "3.0rem",
+                },
+              }}
             >
               {solution.title}
             </Typography>
@@ -81,14 +91,16 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
             src="wso2-logo.png"
             alt="WSO2 Logo"
             sx={{
-              height: 100,
-              width: 350,
-              maxHeight: { xs: 233, md: 167 },
-              maxWidth: { xs: 350, md: 250 },
+              height: {xs:75,sm:100, md:86,lg: 106},
+              width: {xs:191,sm:254, md:220,lg: 270},
+              // maxHeight: { xs: 233, md: 167 },
+              // maxWidth: { xs: 350, md: 250 },
             }}
           ></Box>
         </Grid>
       </Box>
+          </Grid>
+     <Grid item container md={6}>
       <Box
         minHeight={300}
         alignItems="center"
@@ -100,21 +112,23 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
           flexDirection: "column",
           display: "flex",
           padding: 5,
-
-          width: "0.5",
         }}
       >
         <Grid container alignItems="center" justifyContent="center">
-          <Grid container alignItems="center" sx={{
+          <Grid
+            container
+            alignItems="center"
+            sx={{
               paddingRight: 5,
               paddingLeft: 2,
               paddingTop: 5,
               paddingBottom: 5,
-            }}>
+            }}
+          >
             <Typography
               variant="h3"
               align="center"
-              color="#00255C"
+              color="text.primary"
               maxWidth="lg"
             >
               {language.title}
@@ -151,14 +165,17 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
             src="ballerina-logo-grey.svg"
             alt="Ballerina Logo"
             sx={{
-              height: 100,
-              width: 350,
-              maxHeight: { xs: 233, md: 167 },
-              maxWidth: { xs: 350, md: 250 },
+              height: {xs:60,sm:90,md:76, lg: 97},
+              width: {xs:198,sm:297,md:250, lg: 320},
+              // maxHeight: { xs: 233, md: 167 },
+              // maxWidth: { xs: 350, md: 250 },
             }}
           ></Box>
         </Grid>
       </Box>
+      </Grid>
+        </Grid>
+     
     </Box>
   );
 };

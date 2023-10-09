@@ -1,17 +1,12 @@
+import { Box, Container } from "@mui/material";
 import { useCallback, useContext, useEffect, useState } from "react";
-import { Box, Container, Divider, Typography } from "@mui/material";
-import {
-  ConvertButton,
-  SamplesModal,
-  CodeEditor,
-  ResponseAlert,
-  HeadersTab,
-  ToggleEditorStyle,
-} from "../Common";
+import apiClient from "../../services/api-client";
+import { CodeEditor, ResponseAlert } from "../Common";
+import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
-import apiClient from "../../services/api-client";
-import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
+import BasicTabs from "../Common/BasicTabs";
+import React from "react";
 
 interface State {
   input: string;
@@ -31,6 +26,17 @@ export const Hl7v2ToFhir = () => {
     isLoading: false,
     alertOpen: false,
   });
+
+  const [screenWidth, setScreenWidth] = React.useState<number>(
+    window.innerWidth
+  );
+
+  const handleResize = (): void => setScreenWidth(window.innerWidth);
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const { input, output, errorMessage, isError, isLoading, alertOpen } = state;
 
@@ -174,6 +180,44 @@ export const Hl7v2ToFhir = () => {
       });
   };
 
+  const inputEditor = (
+    <CodeEditor
+      title="HL7 Resource"
+      value={input}
+      onChange={()=>{handleInputChange}}
+      darkMode={darkMode}
+      onClear={handleInputClear}
+      placeholder="Paste or edit HL7 Data here..."
+      fileType="jsx"
+      uploadEnabled
+      readFile={readFile}
+      clearEnabled
+      width="100%"
+      height="calc(100vh - 197px)"
+      id="hl7-resource-editor"
+      aria-label="HL7 Resource Editor"
+    />
+  );
+
+  const outputEditor = (
+    <CodeEditor
+      title="FHIR Resource"
+      value={output}
+      readOnly
+      darkMode={darkMode}
+      onClear={handleOutputClear}
+      placeholder="FHIR Resource will be displayed here..."
+      fileType="json"
+      downloadEnabled
+      downloadName="hl7-to-fhir-output"
+      clearEnabled
+      width="100%"
+      height="calc(100vh - 197px)"
+      id="fhir-resource-editor"
+      aria-label="FHIR Resource Editor"
+    />
+  );
+
   return (
     <Container
       id="hl7v2-to-fhir-container"
@@ -229,58 +273,38 @@ export const Hl7v2ToFhir = () => {
         }}
         marginTop={5}
       >
-        <Box
-          sx={{
-            pr: 1,
-            pb: 1,
-            width: "50%",
-          }}
-          id="hl7-resource-box"
-          aria-label="HL7 Resource Box"
-        >
-          <CodeEditor
-            title="HL7 Resource"
-            value={input}
-            onChange={handleChange}
-            darkMode={darkMode}
-            onClear={handleInputClear}
-            placeholder="Paste or edit HL7 Data here..."
-            fileType="jsx"
-            uploadEnabled
-            readFile={readFile}
-            clearEnabled
-            width="100%"
-            height="calc(100vh - 197px)"
-            id="hl7-resource-editor"
-            aria-label="HL7 Resource Editor"
-          />
-        </Box>
-        <Box
-          sx={{
-            pl: 1,
-            pb: 1,
-            width: "50%",
-          }}
-          id="fhir-resource-box"
-          aria-label="FHIR Resource Box"
-        >
-          <CodeEditor
-            title="FHIR Resource"
-            value={output}
-            readOnly
-            darkMode={darkMode}
-            onClear={handleOutputClear}
-            placeholder="FHIR Resource will be displayed here..."
-            fileType="json"
-            downloadEnabled
-            downloadName="hl7-to-fhir-output"
-            clearEnabled
-            width="100%"
-            height="calc(100vh - 197px)"
-            id="fhir-resource-editor"
-            aria-label="FHIR Resource Editor"
-          />
-        </Box>
+        {screenWidth < 900 && (
+          <BasicTabs
+            inputeditor={inputEditor}
+            outputeditor={outputEditor}
+          ></BasicTabs>
+        )}
+        {screenWidth >= 900 && (
+          <>
+            <Box
+              sx={{
+                pr: 1,
+                pb: 1,
+                width: "50%",
+              }}
+              id="hl7-resource-box"
+              aria-label="HL7 Resource Box"
+            >
+              {inputEditor}
+            </Box>
+            <Box
+              sx={{
+                pl: 1,
+                pb: 1,
+                width: "50%",
+              }}
+              id="fhir-resource-box"
+              aria-label="FHIR Resource Box"
+            >
+              {outputEditor}
+            </Box>
+          </>
+        )}
       </Box>
       {/* <Box>
 
