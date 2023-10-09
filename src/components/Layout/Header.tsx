@@ -1,17 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box } from "@mui/material";
-import { useLocation } from "react-router-dom";
-import { Logo } from "../Logo";
 import {
-  AlertModal,
   ComponentTitle,
-  ToggleEditorStyle,
   CommonButton,
 } from "../Common";
-import { items, Item } from "../Configs/AcceleratorConfig";
-import { DarkModeContext } from "../Contexts/DarkModeContext";
-import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
 
 interface HeaderProps {
   title: string;
@@ -51,15 +44,16 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
         sx={{
           display: "flex",
           alignItems: "center",
-          gap: 1,
+          // gap: 1,
           py: 0,
           px: 1,
-          mt: 0.1,
-          boxShadow:
-            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+          // mt: 0.1,
+          boxShadow: 3,
+          mb: 1,
+            // "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
         }}
-        borderBottom={5}
-        borderColor="secondary.main"
+        // borderBottom={5}
+        // borderColor="secondary.main"
         id="header-container"
       >
         {/* <Logo /> */}

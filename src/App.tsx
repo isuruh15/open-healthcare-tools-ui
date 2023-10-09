@@ -21,9 +21,11 @@ let theme = createTheme({
   palette: {
     primary: {
       main: "#000000", //Black
+      contrastText: "#fff",
     },
     secondary: {
       main: "#FF7300", //WSO2 Orange
+      light: "#f7f8fb", // Light grey + purple
     },
     text: {
       primary: "#000000", //Dark blue
