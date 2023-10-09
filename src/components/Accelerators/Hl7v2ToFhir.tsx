@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Divider, Typography } from "@mui/material";
 import { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
@@ -71,8 +71,9 @@ export const Hl7v2ToFhir = () => {
           alertOpen: false,
         }));
       }, 2000);
-    }
-  }, [loadSample, selectedLabel]);
+    };
+    validateInput();
+  }, [loadSample, selectedLabel, input]);
 
   const closeAlert = () => {
     setState((prevState) => ({
@@ -88,12 +89,11 @@ export const Hl7v2ToFhir = () => {
     }));
   };
 
-  const handleInputChange = useCallback((value: string, backendCall:Function) => {
+  const handleInputChange = useCallback((value: string) => {
     setState((prevState) => ({
       ...prevState,
       input: value,
     }));
-    backendCall();
   }, []);
 
   const handleInputClear = () => {
@@ -103,8 +103,10 @@ export const Hl7v2ToFhir = () => {
     }));
   };
 
-  const handleChange = (value: string) => {
-    handleInputChange(value, callBackend);
+  const validateInput = () => {
+    if (state.input !== "") {
+      callBackend();
+    }
   }
 
   const handleOutputClear = () => {
@@ -184,7 +186,7 @@ export const Hl7v2ToFhir = () => {
     <CodeEditor
       title="HL7 Resource"
       value={input}
-      onChange={()=>{handleInputChange}}
+      onChange={handleInputChange}
       darkMode={darkMode}
       onClear={handleInputClear}
       placeholder="Paste or edit HL7 Data here..."
@@ -264,7 +266,8 @@ export const Hl7v2ToFhir = () => {
           toggleMode={() => setDarkMode(!darkMode)}
         />
       </Box> */}
-      {/* <Divider sx={{ mt: 1 }} /> */}
+      <Divider sx={{ mt: 3, mb: 3 }} />
+      <Typography variant="h4" align="center" sx={{ mt: 0 }}>Try It Out</Typography>
       <Box
         sx={{
           display: "flex",

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import toolConfig from "../../tool-config.json";
 import { ComingSoon } from "../Common";
@@ -66,6 +66,7 @@ export const MainContent = () => {
           description={currentItem.mainBlade.description}
           image={currentItem.mainBlade.image}
         />
+        
 
         {/* Tool execution area */}
         <Routes items={renderedItems} />

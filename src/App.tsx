@@ -40,8 +40,6 @@ let theme = createTheme({
 });
 theme = responsiveFontSizes(theme);
 
-theme = responsiveFontSizes(theme);
-
 const App = () => {
   return (
     <SecureApp>

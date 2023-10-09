@@ -129,7 +129,16 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
               variant="h3"
               align="center"
               color="text.primary"
-              maxWidth="lg"
+              maxWidth="md"
+              sx={{
+                fontSize: {
+                  xs: "2.0rem",
+                  sm: "2.2rem",
+                  md: "2.3rem",
+                  lg: "2.8rem",
+                  xl: "3.0rem",
+                },
+              }}
             >
               {language.title}
             </Typography>
