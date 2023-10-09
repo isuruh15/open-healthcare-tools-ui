@@ -18,15 +18,16 @@ export const CommonButton = ({ variant, label, id, onClick }: ButtonProps) => {
         borderRadius: 1,
         textTransform: "none",
         backgroundColor:
-          variant === "background" ? "secondary.main" : "transparent",
-        color: variant === "background" ? "white" : "secondary.main",
+          variant === "background" ? "primary.main" : "transparent",
+        color: variant === "background" ? "white" : "primary.main",
         border: 2,
-        borderColor: "secondary.main",
+        borderColor: "primary.main",
         ":hover": {
           border: 2,
-          bgcolor: variant === "background" ? "secondary.light" : "grey.100",
+          color: variant === "background" ? "primary.main" : "primary.contrastText",
+          bgcolor: variant === "background" ? "secondary.light" : "secondary.main",
           borderColor:
-            variant === "background" ? "secondary.light" : "secondary.light",
+            variant === "background" ? "secondary.light" : "secondary.main",
         },
       }}
     >
