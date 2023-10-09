@@ -11,7 +11,7 @@ import SwipeableViews from "react-swipeable-views";
 function Tools() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tools.length-3;
+  const maxSteps = tools.length - 3;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -71,7 +71,6 @@ function Tools() {
               justifyContent="center"
             >
               <Button
-                // variant="outlined"
                 disabled={activeStep == 0}
                 onClick={() => handleBack()}
                 sx={{ color: "grey.300", borderRadius: 20 }}
@@ -83,7 +82,6 @@ function Tools() {
               </Button>
             </Grid>
             <Grid
-              // container
               item
               xs={8}
               alignItems="center"
@@ -91,87 +89,35 @@ function Tools() {
             >
               <SwipeableViews
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                // index={activeStep}
-                // onChangeIndex={handleStepChange}
                 enableMouseEvents
-                // interval={25000}
               >
-                {/* {tools.slice(activeStep, activeStep+3).map((toolObject) => ( */}
-                  <Grid
-                    container
-                    flexDirection={"row"}
-                    xs={12}
-                    spacing={2}
-                    marginTop={2}
-                    marginBottom={4}
+                <Grid
+                  container
+                  flexDirection={"row"}
+                  xs={12}
+                  spacing={2}
+                  marginTop={2}
+                  marginBottom={4}
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  {tools.slice(activeStep,activeStep+3).map((tool) => (
+                    <Grid
+                    item
+                    sm={6}
+                    md={4}
                     alignItems="center"
                     justifyContent="center"
                   >
-                    <Grid
-                      item
-                      xs={4}
-                      sm={6}
-                      md={
-                        tools.length > 2
-                          ? 4
-                          : tools.length == 2
-                            ? 6
-                            : 12
-                      }
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <Toolcard
-                        title={tools[activeStep].label}
-                        description={tools[activeStep].description}
-                        image={tools[activeStep].mainBlade.image}
-                        link={tools[activeStep].url}
-                      ></Toolcard>
+                    <Toolcard
+                      title={tool.label}
+                      description={tool.description}
+                      image={tool.mainBlade.image}
+                      link={tool.url}
+                    ></Toolcard>
                     </Grid>
-                    <Grid
-                      item
-                      xs={4}
-                      sm={6}
-                      md={
-                        tools.length > 2
-                          ? 4
-                          : tools.length == 2
-                            ? 6
-                            : 12
-                      }
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <Toolcard
-                        title={tools[activeStep+1].label}
-                        description={tools[activeStep+1].description}
-                        image={tools[activeStep+1].mainBlade.image}
-                        link={tools[activeStep+1].url}
-                      ></Toolcard>
-                    </Grid>
-                    <Grid
-                      item
-                      xs={4}
-                      sm={6}
-                      md={
-                        tools.length > 2
-                          ? 4
-                          : tools.length == 2
-                            ? 6
-                            : 12
-                      }
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <Toolcard
-                        title={tools[activeStep+2].label}
-                        description={tools[activeStep+2].description}
-                        image={tools[activeStep+2].mainBlade.image}
-                        link={tools[activeStep+2].url}
-                      ></Toolcard>
-                    </Grid>
-                  </Grid>
-                {/* // ))} */}
+                  ))}
+                </Grid>
               </SwipeableViews>
             </Grid>
             <Grid
@@ -182,7 +128,6 @@ function Tools() {
               justifyContent="center"
             >
               <Button
-                // variant="outlined"
                 disabled={activeStep == maxSteps - 1}
                 onClick={() => handleNext()}
                 sx={{ borderRadius: 200, stroke: "grey.300" }}

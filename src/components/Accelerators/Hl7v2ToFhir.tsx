@@ -220,7 +220,8 @@ export const Hl7v2ToFhir = () => {
           toggleMode={() => setDarkMode(!darkMode)}
         />
       </Box> */}
-      {/* <Divider sx={{ mt: 1 }} /> */}
+      <Divider sx={{ mt: 3, mb:3 }} />
+      <Typography variant="h4" align="center" sx={{mt:0}}>Try It Out</Typography>
       <Box
         sx={{
           display: "flex",
