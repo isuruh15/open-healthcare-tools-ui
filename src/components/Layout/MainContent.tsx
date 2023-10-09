@@ -42,7 +42,7 @@ export const MainContent = () => {
   }
 
   const content = {
-    title: "Health IT Developer Toolkit",
+    title: "Complete Healthcare Solution for your business",
   };
   const contentBal = {
     title: "Ballerina - A Language for healthcare",
