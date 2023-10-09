@@ -12,6 +12,14 @@ function Tools() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = tools.length-3;
+  const [screenWidth, setScreenWidth] = React.useState<number>(window.innerWidth);
+
+  const handleResize = (): void => setScreenWidth(window.innerWidth);
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -67,6 +75,10 @@ function Tools() {
               container
               item
               xs={2}
+              sm={3}
+              md={2}
+              lg={1}
+              xl={2}
               alignItems="center"
               justifyContent="center"
             >
@@ -86,6 +98,10 @@ function Tools() {
               // container
               item
               xs={8}
+              sm={6}
+              md={8}
+              lg={10}
+              xl={8}
               alignItems="center"
               justifyContent="center"
             >
@@ -100,8 +116,8 @@ function Tools() {
                   <Grid
                     container
                     flexDirection={"row"}
-                    xs={12}
-                    spacing={2}
+                    columnSpacing={{md:5, lg:10}}
+                    rowSpacing={2}
                     marginTop={2}
                     marginBottom={4}
                     alignItems="center"
@@ -109,17 +125,10 @@ function Tools() {
                   >
                     <Grid
                       item
-                      xs={4}
-                      sm={6}
-                      md={
-                        tools.length > 2
-                          ? 4
-                          : tools.length == 2
-                            ? 6
-                            : 12
-                      }
                       alignItems="center"
                       justifyContent="center"
+                      md={6}
+                      lg={4}
                     >
                       <Toolcard
                         title={tools[activeStep].label}
@@ -128,17 +137,10 @@ function Tools() {
                         link={tools[activeStep].url}
                       ></Toolcard>
                     </Grid>
-                    <Grid
+                    {screenWidth>=900 && <Grid
                       item
-                      xs={4}
-                      sm={6}
-                      md={
-                        tools.length > 2
-                          ? 4
-                          : tools.length == 2
-                            ? 6
-                            : 12
-                      }
+                      md={6}
+                      lg={4}
                       alignItems="center"
                       justifyContent="center"
                     >
@@ -148,18 +150,10 @@ function Tools() {
                         image={tools[activeStep+1].mainBlade.image}
                         link={tools[activeStep+1].url}
                       ></Toolcard>
-                    </Grid>
-                    <Grid
+                    </Grid>}
+                    {screenWidth>=1200 &&<Grid
                       item
-                      xs={4}
-                      sm={6}
-                      md={
-                        tools.length > 2
-                          ? 4
-                          : tools.length == 2
-                            ? 6
-                            : 12
-                      }
+                      lg={4}
                       alignItems="center"
                       justifyContent="center"
                     >
@@ -169,7 +163,7 @@ function Tools() {
                         image={tools[activeStep+2].mainBlade.image}
                         link={tools[activeStep+2].url}
                       ></Toolcard>
-                    </Grid>
+                    </Grid>}
                   </Grid>
                 {/* // ))} */}
               </SwipeableViews>
@@ -178,6 +172,10 @@ function Tools() {
               container
               item
               xs={2}
+              sm={3}
+              md={2}
+              lg={1}
+              xl={2}
               alignItems="center"
               justifyContent="center"
             >

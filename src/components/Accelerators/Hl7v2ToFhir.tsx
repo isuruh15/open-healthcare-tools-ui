@@ -184,7 +184,7 @@ export const Hl7v2ToFhir = () => {
     <CodeEditor
       title="HL7 Resource"
       value={input}
-      onChange={handleInputChange}
+      onChange={()=>{handleInputChange}}
       darkMode={darkMode}
       onClear={handleInputClear}
       placeholder="Paste or edit HL7 Data here..."
