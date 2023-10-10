@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box } from "@mui/material";
-import { ComponentTitle, CommonButton } from "../Common";
-import React from "react";
+import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { ComponentTitle } from "../Common";
 
 interface HeaderProps {
   title: string;
@@ -94,12 +93,44 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
           }}
           id="toggle-container"
         >
-          <CommonButton
-            variant="border"
-            label={isLogedIn ? "Logout" : "Login"}
-            onClick={handleLogin}
-            id="load-sample-button"
-          />
+          <Stack direction="row" spacing={{ xs: 2, sm: 5 }}>
+            <Link
+              href="https://discord.com/invite/wso2"
+              target="_blank"
+              underline="none"
+            >
+              <Stack direction="row" spacing={1} alignItems="center">
+                {/* https://icons8.com/icons/set/discord */}
+                <Box
+                  component="img"
+                  src="discord.png"
+                  sx={{
+                    width: { xs: "25px", sm: "30px" },
+                    height: { xs: "25px", sm: "30px" },
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  color="secondary.main"
+                  display={{ xs: "none", sm: "block" }}
+                >
+                  Get help
+                </Typography>
+              </Stack>
+            </Link>
+
+            {/* <CommonButton
+              variant="border"
+              label={isLogedIn ? "Logout" : "Login"}
+              onClick={handleLogin}
+              id="load-sample-button"
+            /> */}
+            <Button variant="contained" color="info" onClick={handleLogin}>
+              <Typography variant="body2" color="common.white">
+                {isLogedIn ? "Logout" : "Login"}
+              </Typography>
+            </Button>
+          </Stack>
         </Box>
       </Box>
     </>
