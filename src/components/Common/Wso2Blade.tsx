@@ -19,6 +19,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
         display: "flex",
       }}
     >
+      <Grid container>
         <Grid item container md={6}>
           <Box
             sx={{
@@ -182,6 +183,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
               ></Box>
             </Grid>
           </Box>
+        </Grid>
         </Grid>
     </Box>
   );
