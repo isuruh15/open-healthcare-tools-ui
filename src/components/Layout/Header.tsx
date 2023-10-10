@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box } from "@mui/material";
-import {
-  ComponentTitle,
-  CommonButton,
-} from "../Common";
+import { ComponentTitle, CommonButton } from "../Common";
+import React from "react";
 
 interface HeaderProps {
   title: string;
@@ -22,10 +20,34 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { signOut } = useAuthContext();
+  const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
+  const { signOut, signIn, isAuthenticated, state } = useAuthContext();
+  useEffect(() => {
+    isAuthenticated()
+      .then((response) => {
+        console.log("State  " + state.isAuthenticated);
+        if (response === true) {
+          console.log("response" + response);
+          setIsLogedIn(true);
+        } else {
+          console.log("response " + response);
+          setIsLogedIn(false);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [isAuthenticated]);
 
-  const handleSampleLoad = () => signOut();
-  console.log("logout");
+  const handleLogin = () => {
+    if (isLogedIn) {
+      setIsLogedIn(false);
+      signOut();
+    } else {
+      setIsLogedIn(true);
+      signIn();
+    }
+  };
 
   // const location = useLocation();
   // const currentItem = items.find(
@@ -50,7 +72,7 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
           // mt: 0.1,
           boxShadow: 3,
           mb: 1,
-            // "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+          // "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
         }}
         // borderBottom={5}
         // borderColor="secondary.main"
@@ -74,8 +96,8 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
         >
           <CommonButton
             variant="border"
-            label="Logout"
-            onClick={handleSampleLoad}
+            label={isLogedIn ? "Logout" : "Login"}
+            onClick={handleLogin}
             id="load-sample-button"
           />
         </Box>

@@ -50,7 +50,7 @@ function SwipeableTextMobileStepper() {
               <ArrowBackIosOutlinedIcon
                 fontSize="large"
                 sx={{
-                  stroke: "#FF7300",
+                  // stroke: "#FF7300",
                   strokeWidth: 2,
                   color: "secondary.main",
                   width: { sm: 20, md: 30, lg: 40 },
@@ -106,7 +106,7 @@ function SwipeableTextMobileStepper() {
               <ArrowForwardIosOutlinedIcon
                 fontSize="large"
                 sx={{
-                  stroke: "#FF7300",
+                  // stroke: "#FF7300",
                   strokeWidth: 2,
                   color: "secondary.main",
                   width: { sm: 20, md: 30, lg: 40 },

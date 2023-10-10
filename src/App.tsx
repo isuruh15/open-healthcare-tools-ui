@@ -1,4 +1,3 @@
-import { SecureApp } from "@asgardeo/auth-react";
 import {
   Box,
   ThemeProvider,
@@ -24,7 +23,7 @@ let theme = createTheme({
       contrastText: "#fff",
     },
     secondary: {
-      main: "#FF7300", //WSO2 Orange
+      main: "#00A79D", //Asgardeo Green
       light: "#f7f8fb", // Light grey + purple
     },
     text: {
@@ -36,7 +35,7 @@ let theme = createTheme({
       default: "#ffffff", // White
     },
     info: {
-      main: "#FF7300", //WSO2 Orange
+      main: "#00A79D", //Asgardeo Green
     },
   },
 });
@@ -44,31 +43,29 @@ theme = responsiveFontSizes(theme);
 
 const App = () => {
   return (
-    <SecureApp>
-      <ThemeProvider theme={theme}>
-        <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-          <Suspense
-            fallback={
-              <>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100vh",
-                  }}
-                >
-                  <PreLoader setActive={true} size={50} />
-                </Box>
-              </>
-            }
-          >
-            <MainContent />
-          </Suspense>
-        </Box>
-      </ThemeProvider>
-    </SecureApp>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+        <Suspense
+          fallback={
+            <>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100vh",
+                }}
+              >
+                <PreLoader setActive={true} size={50} />
+              </Box>
+            </>
+          }
+        >
+          <MainContent />
+        </Suspense>
+      </Box>
+    </ThemeProvider>
   );
 };
 
