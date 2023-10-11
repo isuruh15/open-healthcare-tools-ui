@@ -15,7 +15,25 @@ const MainContent = React.lazy(() =>
 
 let theme = createTheme({
   typography: {
-    fontFamily: ["Plus Jakarta Sans", "sans-serif"].join(","),
+    fontFamily: "Plus Jakarta Sans",
+    h1: {
+      fontWeight: 700,
+      fontSize: "2.8rem",
+    },
+    h2:{
+      fontWeight: 700,
+      fontSize: "2rem",
+    },
+    h3: {
+      fontWeight: 700,
+    },
+    h4: {
+      fontWeight: 600,
+    },
+    h5: {
+      fontWeight: 500,
+      fontSize: "1.2rem",
+    },
   },
   palette: {
     primary: {

@@ -48,7 +48,7 @@ function Tools() {
           alignItems="center"
           justifyContent="center"
         >
-          <Typography variant="h4" align="center" maxWidth="lg">
+          <Typography variant="h2" align="center" maxWidth="lg">
             Health IT Developer Toolkit
           </Typography>
         </Grid>
