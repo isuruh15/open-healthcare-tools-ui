@@ -17,7 +17,7 @@ export const articles = [
     title: "EMR connectors",
     description: "Connect to EMR systems",
     imgPath:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&h=300",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&h=300&q=60",
     link: "https://google.com",
   },
   {

@@ -7,6 +7,7 @@ import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
 import BasicTabs from "../Common/BasicTabs";
 import React from "react";
+import { useAuthContext } from "@asgardeo/auth-react";
 
 interface State {
   input: string;
@@ -30,6 +31,25 @@ export const Hl7v2ToFhir = () => {
   const [screenWidth, setScreenWidth] = React.useState<number>(
     window.innerWidth
   );
+
+  const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
+  const [isInterectable, setIsInterectable] = React.useState<boolean>(true);
+  const { isAuthenticated } = useAuthContext();
+  useEffect(() => {
+    isAuthenticated()
+      .then((response) => {
+        if (response === true) {
+          console.log("response" + response);
+          setIsLogedIn(true);
+        } else {
+          console.log("response " + response);
+          setIsLogedIn(false);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [isAuthenticated]);
 
   const handleResize = (): void => setScreenWidth(window.innerWidth);
 
@@ -71,7 +91,7 @@ export const Hl7v2ToFhir = () => {
           alertOpen: false,
         }));
       }, 2000);
-    };
+    }
     validateInput();
   }, [loadSample, selectedLabel, input]);
 
@@ -87,6 +107,10 @@ export const Hl7v2ToFhir = () => {
       ...prevState,
       isError: false,
     }));
+  };
+
+  const closeLoginAlert = () => {
+    setIsInterectable(true);
   };
 
   const handleInputChange = useCallback((value: string) => {
@@ -107,13 +131,24 @@ export const Hl7v2ToFhir = () => {
     if (state.input !== "") {
       callBackend();
     }
-  }
+  };
 
   const handleOutputClear = () => {
     setState((prevState) => ({
       ...prevState,
       output: "",
     }));
+  };
+
+  const handleOnClick = () => {
+    console.log("clicked22");
+    if (isLogedIn) {
+      console.log(isLogedIn);
+      setIsInterectable(true);
+    } else {
+      console.log(isLogedIn);
+      setIsInterectable(false);
+    }
   };
 
   const readFile = (fileInput?: string | ArrayBuffer | null) => {
@@ -186,7 +221,9 @@ export const Hl7v2ToFhir = () => {
     <CodeEditor
       title="HL7 Resource"
       value={input}
+      readOnly={!isInterectable}
       onChange={handleInputChange}
+      onClick={handleOnClick}
       darkMode={darkMode}
       onClear={handleInputClear}
       placeholder="Paste or edit HL7 Data here..."
@@ -247,6 +284,16 @@ export const Hl7v2ToFhir = () => {
         />
       )}
 
+      {!isInterectable && (
+        <ResponseAlert
+          isOpen={!isInterectable}
+          severity="error"
+          message="Please login to try out the Open Healthcare tools."
+          setIsOpen={closeLoginAlert}
+          id="response-alert-error"
+          aria-label="Error Response Alert"
+        />
+      )}
       {/* <Box
         sx={{
           display: "flex",
@@ -267,7 +314,9 @@ export const Hl7v2ToFhir = () => {
         />
       </Box> */}
       <Divider sx={{ mt: 3, mb: 3 }} />
-      <Typography variant="h4" align="center" sx={{ mt: 0 }}>Try It Out</Typography>
+      <Typography variant="h4" align="center" sx={{ mt: 0 }}>
+        Try It Out
+      </Typography>
       <Box
         sx={{
           display: "flex",

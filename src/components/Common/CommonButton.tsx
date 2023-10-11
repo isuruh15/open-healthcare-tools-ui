@@ -19,13 +19,16 @@ export const CommonButton = ({ variant, label, id, onClick }: ButtonProps) => {
         textTransform: "none",
         backgroundColor:
           variant === "background" ? "primary.main" : "transparent",
-        color: variant === "background" ? "white" : "primary.main",
+        color: variant === "background" ? "white" : "secondary.main",
         border: 2,
+        borderBlockColor: "secondary.main",
         borderColor: "primary.main",
         ":hover": {
           border: 2,
-          color: variant === "background" ? "primary.main" : "primary.contrastText",
-          bgcolor: variant === "background" ? "secondary.light" : "secondary.main",
+          color:
+            variant === "background" ? "primary.main" : "primary.contrastText",
+          bgcolor:
+            variant === "background" ? "secondary.light" : "secondary.main",
           borderColor:
             variant === "background" ? "secondary.light" : "secondary.main",
         },

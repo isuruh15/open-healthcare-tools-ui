@@ -17,7 +17,7 @@ interface Props {
 
 function ArticleContent({ imgPath, title, description, link }: Props) {
   return (
-    <Card sx={{ maxWidth: 1200, minWidth: {xs:130, sm: 200,md:250} }}>
+    <Card sx={{ maxWidth: 1200, minWidth: { xs: 130, sm: 200, md: 250 } }}>
       <Box sx={{ position: "relative" }}>
         <CardMedia
           component="img"
@@ -58,7 +58,7 @@ function ArticleContent({ imgPath, title, description, link }: Props) {
                 variant="outlined"
                 sx={{
                   borderRadius: 35,
-                  border: { xs: "solid 1px #FF7300", md: "solid 2px #FF7300" },
+                  border: { xs: "solid 1px #00A79D", md: "solid 2px #00A79D" },
                   color: "#FFFFFF",
                   padding: { xs: "0px", sm: "0px", md: "1px", lg: "8px" },
                   width: { xs: 100, sm: 100, md: 100, lg: 100, xl: 110 },

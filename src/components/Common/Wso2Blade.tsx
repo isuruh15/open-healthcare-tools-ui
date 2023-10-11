@@ -59,7 +59,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                     },
                   }}
                 >
-                  {solution.title}
+                  Digital Experiences for Payers, Providers, and Patients
                 </Typography>
               </Grid>
               <Grid
@@ -75,15 +75,12 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                   maxWidth="lg"
                   lineHeight={1.7}
                 >
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                  odio reprehenderit accusantium animi vitae necessitatibus
-                  molestiae eaque repellendus eos tempora cupiditate magni
-                  laboriosam ex enim sapiente voluptatum facilis, voluptatem unde.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                  odio reprehenderit accusantium animi vitae necessitatibus
-                  molestiae eaque repellendus eos tempora cupiditate magni
-                  laboriosam ex enim sapiente voluptatum facilis, voluptatem
-                  unde.Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Everything you need to provide awesome experiences for your
+                  healthcare customers under one umbrella; Pre-built healthcare
+                  APIs, the Choreo Internal Developer Platform, Asgardeo’s CIAM
+                  capabilities and on-premises software, enables healthcare
+                  app-dev teams to kick start their digital healthcare
+                  experience development.
                 </Typography>
               </Grid>
             </Grid>
@@ -93,8 +90,8 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                 src="wso2-logo.png"
                 alt="WSO2 Logo"
                 sx={{
-                  height: {xs:75,sm:100, md:86,lg: 106},
-                  width: {xs:191,sm:254, md:220,lg: 270},
+                  height: { xs: 75, sm: 100, md: 86, lg: 106 },
+                  width: { xs: 191, sm: 254, md: 220, lg: 270 },
                   // maxHeight: { xs: 233, md: 167 },
                   // maxWidth: { xs: 350, md: 250 },
                 }}
@@ -141,7 +138,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                     },
                   }}
                 >
-                  {language.title}
+                  A Language Built for Healthcare - Ballerina
                 </Typography>
               </Grid>
               <Grid
@@ -157,19 +154,19 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                   maxWidth="lg"
                   lineHeight={1.7}
                 >
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                  odio reprehenderit accusantium animi vitae necessitatibus
-                  molestiae eaque repellendus eos tempora cupiditate magni
-                  laboriosam ex enim sapiente voluptatum facilis, voluptatem unde.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                  odio reprehenderit accusantium animi vitae necessitatibus
-                  molestiae eaque repellendus eos tempora cupiditate magni
-                  laboriosam ex enim sapiente voluptatum facilis, voluptatem
-                  unde.Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Ballerina is the only integration language built for
+                  healthcare. With its native support for healthcare standards
+                  like FHIR, HL7, and X12, Ballerina enables rapid health tech
+                  application development.
                 </Typography>
               </Grid>
             </Grid>
-            <Grid container alignItems="center" justifyContent="center" padding={2}>
+            <Grid
+              container
+              alignItems="center"
+              justifyContent="center"
+              padding={2}
+            >
               <Box
                 component={"img"}
                 src="ballerina-logo-grey.svg"
@@ -184,7 +181,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
             </Grid>
           </Box>
         </Grid>
-        </Grid>
+      </Grid>
     </Box>
   );
 };

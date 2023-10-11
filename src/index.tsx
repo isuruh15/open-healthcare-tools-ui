@@ -11,17 +11,17 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const basePath = import.meta.env.VITE_APP_AUTH_REDIRECT_URL || "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/hl7-to-fhir";
-
+const basePath =
+  import.meta.env.VITE_APP_AUTH_REDIRECT_URL ||
+  "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev/hl7-to-fhir";
 
 const config = {
   signInRedirectURL: basePath,
   signOutRedirectURL: basePath,
   clientID: "DN2VylTUi2ZgzUFTI0NuJ17LWKMa",
   baseUrl: "https://api.asgardeo.io/t/healthtools",
-  scope: ["openid", "profile"]
+  scope: ["openid", "profile"],
 };
-
 
 root.render(
   <AuthProvider config={config}>
@@ -35,4 +35,3 @@ root.render(
     </React.StrictMode>
   </AuthProvider>
 );
-

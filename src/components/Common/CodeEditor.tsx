@@ -10,6 +10,7 @@ interface CodeEditorProps {
   title: string;
   value: string;
   onChange?: (value: string) => void;
+  onClick?: () => void;
   darkMode?: boolean;
   onClear?: () => void;
   placeholder?: string;
@@ -29,6 +30,7 @@ export const CodeEditor = ({
   title,
   value,
   onChange,
+  onClick,
   darkMode,
   onClear,
   placeholder,
@@ -93,6 +95,7 @@ export const CodeEditor = ({
           border: 1,
           borderColor: "grey.500",
         }}
+        onClick={onClick}
       >
         <CodeMirror
           placeholder={placeholder}

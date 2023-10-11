@@ -1,6 +1,7 @@
 import CopyrightIcon from "@mui/icons-material/Copyright";
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Grid, Link, Stack, Typography } from "@mui/material";
 import { Logo } from "../Logo";
+import { text } from "stream/consumers";
 
 export const Footer = () => {
   return (
@@ -10,44 +11,56 @@ export const Footer = () => {
       borderTop={2}
       borderColor="secondary.main"
       color="text.primary"
+      bgcolor="background.paper"
     >
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          ml: 0.5,
-        }}
-      >
-        <Logo />
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          ml: "auto",
-          px: 1,
-          py: 0.6,
-          mr: {sm: 2},
-        }}
-      >
-        <CopyrightIcon
-          sx={{
-            color: "grey.400",
-            mr: {sm:0.5},
-            // fontSize: 19,
-          }}
-          aria-hidden="true"
-        />
-        <Link href="https://wso2.com/" target="_blank" underline="hover">
-          <Typography
-            variant="body1"
-            sx={{ color: "grey.500" }}
-            id="footer-text"
-          >
-            {new Date().getFullYear()} WSO2 LLC.
-          </Typography>
-        </Link>
-      </Box>
+      <Grid container spacing={2} paddingLeft={2} paddingRight={2}>
+        <Grid
+          item
+          container
+          xs={12}
+          md={6}
+          direction="row"
+          alignItems="center"
+          justifyContent={{ xs: "center", md: "flex-start" }}
+        >
+          <Logo />
+        </Grid>
+        <Grid
+          item
+          container
+          xs={12}
+          md={6}
+          direction="row"
+          justifyContent={{ xs: "center", md: "flex-end" }}
+          alignItems="center"
+        >
+          <Stack spacing={1}>
+            <Stack direction="row">
+              <CopyrightIcon
+                sx={{
+                  color: "text.secondary",
+                  mr: { sm: 0.5 },
+                  // fontSize: 19,
+                }}
+                aria-hidden="true"
+              />
+              <Link href="https://wso2.com/" target="_blank" underline="hover">
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.500" }}
+                  id="footer-text"
+                  color="text.secondary"
+                >
+                  {new Date().getFullYear()} WSO2 LLC.
+                </Typography>
+              </Link>
+            </Stack>
+            <Link href="" target="_blank">
+              <Typography color="text.secondary">Terms of service</Typography>
+            </Link>
+          </Stack>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

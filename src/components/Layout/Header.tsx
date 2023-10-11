@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box } from "@mui/material";
-import {
-  ComponentTitle,
-  CommonButton,
-} from "../Common";
+import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { ComponentTitle } from "../Common";
 
 interface HeaderProps {
   title: string;
@@ -22,10 +19,34 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { signOut } = useAuthContext();
+  const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
+  const { signOut, signIn, isAuthenticated, state } = useAuthContext();
+  useEffect(() => {
+    isAuthenticated()
+      .then((response) => {
+        console.log("State  " + state.isAuthenticated);
+        if (response === true) {
+          console.log("response" + response);
+          setIsLogedIn(true);
+        } else {
+          console.log("response " + response);
+          setIsLogedIn(false);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [isAuthenticated]);
 
-  const handleSampleLoad = () => signOut();
-  console.log("logout");
+  const handleLogin = () => {
+    if (isLogedIn) {
+      setIsLogedIn(false);
+      signOut();
+    } else {
+      setIsLogedIn(true);
+      signIn();
+    }
+  };
 
   // const location = useLocation();
   // const currentItem = items.find(
@@ -50,7 +71,7 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
           // mt: 0.1,
           boxShadow: 3,
           mb: 1,
-            // "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+          // "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
         }}
         // borderBottom={5}
         // borderColor="secondary.main"
@@ -72,12 +93,44 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
           }}
           id="toggle-container"
         >
-          <CommonButton
-            variant="border"
-            label="Logout"
-            onClick={handleSampleLoad}
-            id="load-sample-button"
-          />
+          <Stack direction="row" spacing={{ xs: 2, sm: 5 }}>
+            <Link
+              href="https://discord.com/invite/wso2"
+              target="_blank"
+              underline="none"
+            >
+              <Stack direction="row" spacing={1} alignItems="center">
+                {/* https://icons8.com/icons/set/discord */}
+                <Box
+                  component="img"
+                  src="discord.png"
+                  sx={{
+                    width: { xs: "25px", sm: "30px" },
+                    height: { xs: "25px", sm: "30px" },
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  color="secondary.main"
+                  display={{ xs: "none", sm: "block" }}
+                >
+                  Get help
+                </Typography>
+              </Stack>
+            </Link>
+
+            {/* <CommonButton
+              variant="border"
+              label={isLogedIn ? "Logout" : "Login"}
+              onClick={handleLogin}
+              id="load-sample-button"
+            /> */}
+            <Button variant="contained" color="info" onClick={handleLogin}>
+              <Typography variant="body2" color="common.white">
+                {isLogedIn ? "Logout" : "Login"}
+              </Typography>
+            </Button>
+          </Stack>
         </Box>
       </Box>
     </>
