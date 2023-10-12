@@ -41,7 +41,7 @@ export const MainBlade = ({
           >
             <Grid container item alignItems="center" justifyContent="flexStart">
               <Typography
-                variant="h2"
+                variant="h1"
                 sx={{
                   mt: 3,
                   mb: 6,

@@ -45,19 +45,10 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                 }}
               >
                 <Typography
-                  variant="h3"
+                  variant="h2"
                   align="center"
                   color="text.primary"
                   maxWidth="md"
-                  sx={{
-                    fontSize: {
-                      xs: "2.0rem",
-                      sm: "2.2rem",
-                      md: "2.3rem",
-                      lg: "2.8rem",
-                      xl: "3.0rem",
-                    },
-                  }}
                 >
                   Digital Experiences for Payers, Providers, and Patients
                 </Typography>
@@ -124,19 +115,10 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
                 }}
               >
                 <Typography
-                  variant="h3"
+                  variant="h2"
                   align="center"
                   color="text.primary"
                   maxWidth="md"
-                  sx={{
-                    fontSize: {
-                      xs: "2.0rem",
-                      sm: "2.2rem",
-                      md: "2.3rem",
-                      lg: "2.8rem",
-                      xl: "3.0rem",
-                    },
-                  }}
                 >
                   A Language Built for Healthcare - Ballerina
                 </Typography>

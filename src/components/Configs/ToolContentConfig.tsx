@@ -57,7 +57,7 @@ export const tools: Tool[] = [
     description:
       "Convert HL7 V2 data to FHIR. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
     url: "https://wso2.com/solutions/healthcare/",
-    path: "/",
+    path: "/fhir-apis",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     sampleData: Hl7Data,
@@ -80,7 +80,7 @@ export const tools: Tool[] = [
     description:
       "Convert HL7 V2 data to FHIR. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
     url: "https://wso2.com/solutions/healthcare/",
-    path: "/hl7-to-fhir",
+    path: "/",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     sampleData: Hl7Data,

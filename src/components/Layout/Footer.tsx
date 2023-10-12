@@ -13,7 +13,7 @@ export const Footer = () => {
       color="text.primary"
       bgcolor="background.paper"
     >
-      <Grid container spacing={2} paddingLeft={2} paddingRight={2}>
+      <Grid container spacing={1} paddingLeft={2} paddingRight={2}>
         <Grid
           item
           container

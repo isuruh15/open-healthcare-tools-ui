@@ -23,7 +23,7 @@ function GithubBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
       <Grid container alignItems="center" justifyContent="center" padding={1}>
         <Stack spacing={3}>
           <Typography
-            variant="h3"
+            variant="h2"
             align="center"
             color="text.primary"
             maxWidth="lg"
