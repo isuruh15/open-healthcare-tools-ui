@@ -64,24 +64,6 @@ export const MainBlade = ({
                 {description}
               </Typography>
             </Grid>
-            {/* <Grid
-              container
-              item
-              alignItems="center"
-              marginTop={3}
-              paddingLeft={5}
-            >
-              <Button
-                variant="contained"
-                color="info"
-                sx={{
-                  borderRadius: 2,
-                  border: "solid 1px #FF7300",
-                }}
-              >
-                <Typography color="#FFFFFF">Try-out</Typography>
-              </Button>
-            </Grid> */}
           </Grid>
           <Grid
             container

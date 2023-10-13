@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
@@ -261,7 +261,7 @@ export const Hl7v2ToFhir = () => {
     <Container
       id="hl7v2-to-fhir-container"
       maxWidth={false}
-      sx={{ display: "flex", flexDirection: "column", height: 1 }}
+      sx={{ display: "flex", flexDirection: "column", height: 1, mt: 3 }}
     >
       {isError && (
         <ResponseAlert
@@ -294,28 +294,8 @@ export const Hl7v2ToFhir = () => {
           aria-label="Error Response Alert"
         />
       )}
-      {/* <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          mt: 4,
-        }}
-      > */}
-      {/* <SamplesModal /> */}
-      {/* <Box id="headers-button" sx={{
-          justifyContent: "flex-end",
-        }}>
-          <HeadersTab request={request} response={response} />
-        </Box>
-
-        <ToggleEditorStyle
-          mode={darkMode}
-          toggleMode={() => setDarkMode(!darkMode)}
-        />
-      </Box> */}
-      <Divider sx={{ mt: 3, mb: 3 }} />
-      <Typography variant="h4" align="center" sx={{ mt: 0 }}>
-        Try It Out
+      <Typography variant="h4" align="center">
+        Transform
       </Typography>
       <Box
         sx={{
@@ -357,14 +337,6 @@ export const Hl7v2ToFhir = () => {
           </>
         )}
       </Box>
-      {/* <Box>
-
-      <ConvertButton
-          handleSubmit={callBackend}
-          isLoading={isLoading}
-          aria-label="Convert Button"
-        />
-      </Box> */}
     </Container>
   );
 };
