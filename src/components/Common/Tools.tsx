@@ -150,9 +150,9 @@ function Tools() {
                       lg={4}
                     >
                       <Toolcard
-                        title={tools[activeStep].label}
+                        title={tools[activeStep].title}
                         description={tools[activeStep].description}
-                        image={tools[activeStep].mainBlade.image}
+                        image={tools[activeStep].image}
                         link={tools[activeStep].url}
                       ></Toolcard>
                     </Grid>
@@ -165,9 +165,9 @@ function Tools() {
                         justifyContent="center"
                       >
                         <Toolcard
-                          title={tools[activeStep + 1].label}
+                          title={tools[activeStep + 1].title}
                           description={tools[activeStep + 1].description}
-                          image={tools[activeStep + 1].mainBlade.image}
+                          image={tools[activeStep + 1].image}
                           link={tools[activeStep + 1].url}
                         ></Toolcard>
                       </Grid>
@@ -180,9 +180,9 @@ function Tools() {
                         justifyContent="center"
                       >
                         <Toolcard
-                          title={tools[activeStep + 2].label}
+                          title={tools[activeStep + 2].title}
                           description={tools[activeStep + 2].description}
-                          image={tools[activeStep + 2].mainBlade.image}
+                          image={tools[activeStep + 2].image}
                           link={tools[activeStep + 2].url}
                         ></Toolcard>
                       </Grid>

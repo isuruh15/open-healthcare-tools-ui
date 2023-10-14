@@ -7,7 +7,7 @@ import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
 import Tools from "../Common/Tools";
 import Wso2Blade from "../Common/Wso2Blade";
-import { items } from "../Configs/AcceleratorConfig";
+// import { items } from "../Configs/AcceleratorConfig";
 import { Tool, tools } from "../Configs/ToolContentConfig";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
@@ -19,18 +19,18 @@ interface ToolConfig {
 }
 
 export const MainContent = () => {
-  const filteredItems = items.filter((item) => {
-    const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
-    return itemStatus !== "disabled";
-  });
+//   const filteredItems = items.filter((item) => {
+//     const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
+//     return itemStatus !== "disabled";
+//   });
 
-  const renderedItems = filteredItems.map((item) => {
-    const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
-    if (itemStatus === "maintenance") {
-      return { ...item, component: <ComingSoon /> };
-    }
-    return item;
-  });
+//   const renderedItems = filteredItems.map((item) => {
+//     const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
+//     if (itemStatus === "maintenance") {
+//       return { ...item, component: <ComingSoon /> };
+//     }
+//     return item;
+//   });
 
   const location = useLocation();
   const currentItem = tools.find(
@@ -55,21 +55,20 @@ export const MainContent = () => {
   return (
     <Box>
       <Header
-        title={currentItem.header.title}
-        shortDescription={currentItem.header.shortDescription}
-        url={currentItem.header.url}
+        title={currentItem.title}
+        shortDescription={currentItem.shortDescription}
+        url={currentItem.url}
       />
       <Box id="main-container">
         {/* Banner content */}
         <MainBlade
-          title={currentItem.mainBlade.title}
-          description={currentItem.mainBlade.description}
-          image={currentItem.mainBlade.image}
+          title={currentItem.title}
+          description={currentItem.description}
+          image={currentItem.image}
         />
-        
 
         {/* Tool execution area */}
-        <Routes items={renderedItems} />
+        <Routes items={tools} />
 
         {/* Github source display area */}
         <GithubBanner
