@@ -1,8 +1,8 @@
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { common } from "@mui/material/colors";
 import React, { useEffect, useState } from "react";
 import { ComponentTitle } from "../Common";
-import { common } from "@mui/material/colors";
 
 interface HeaderProps {
   title: string;
@@ -136,8 +136,11 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
                 padding: { xs: "0px", sm: "0px", md: "1px", lg: "8px" },
                 width: { xs: 100, sm: 100, md: 100, lg: 100, xl: 110 },
               }}
+              onClick={handleLogin}
             >
-              <Typography color={common.white}>Login</Typography>
+              <Typography color={common.white}>
+                {isLogedIn ? "Logout" : "Login"}
+              </Typography>
             </Button>
           </Stack>
         </Box>

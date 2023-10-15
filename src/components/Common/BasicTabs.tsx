@@ -1,3 +1,4 @@
+import { Button, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
@@ -7,6 +8,8 @@ import * as React from "react";
 interface Props {
   inputeditor: React.ReactNode;
   outputeditor: React.ReactNode;
+  isInterectable: boolean;
+  handleLogin: () => void;
 }
 
 interface TabPanelProps {
@@ -42,7 +45,12 @@ function a11yProps(index: number) {
   };
 }
 
-export default function BasicTabs({ inputeditor, outputeditor }: Props) {
+export default function BasicTabs({
+  inputeditor,
+  outputeditor,
+  isInterectable,
+  handleLogin,
+}: Props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -62,6 +70,39 @@ export default function BasicTabs({ inputeditor, outputeditor }: Props) {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
+        {!isInterectable && (
+          <Box
+            sx={{
+              position: "absolute",
+              bgcolor: "background.paper",
+              color: "common.black",
+              height: "100px",
+              width: "100%",
+              zIndex: 1,
+            }}
+            marginTop={20}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Grid
+              container
+              alignItems="center"
+              justifyContent="center"
+              height="100px"
+            >
+              <Grid container item alignItems="center" justifyContent="center">
+                <Typography variant="h5">
+                  Please login to try out the Open Healthcare tool
+                </Typography>
+              </Grid>
+              <Grid container item alignItems="center" justifyContent="center">
+                <Button variant="contained" size="large" onClick={handleLogin}>
+                  Login
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
+        )}
         {inputeditor}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
