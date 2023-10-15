@@ -101,6 +101,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
               flexDirection: "column",
               display: "flex",
               padding: 5,
+              borderLeft: "2px solid #fff",
             }}
           >
             <Grid container alignItems="center" justifyContent="center">

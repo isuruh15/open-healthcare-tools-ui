@@ -334,6 +334,8 @@ export const Hl7v2ToFhir = () => {
                   height: "100px",
                   width: "100%",
                   zIndex: 1,
+                  pr: 1,
+                  pb: 1,
                 }}
                 marginTop={20}
                 alignItems="center"
@@ -365,6 +367,18 @@ export const Hl7v2ToFhir = () => {
                       variant="contained"
                       size="large"
                       onClick={handleLogin}
+                      sx={{
+                        backgroundColor: "primary.main",
+                        color: "primary.contrastText",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "1.2rem",
+                        textTransform: "none",
+                        alignSelf: "center",
+                        "&:hover": {
+                          backgroundColor: "secondary.main",
+                        },
+                      }}
                     >
                       Login
                     </Button>
