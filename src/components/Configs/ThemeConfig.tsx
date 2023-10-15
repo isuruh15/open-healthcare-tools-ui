@@ -12,13 +12,19 @@ export let theme = createTheme({
     },
     h3: {
       fontWeight: 700,
+      fontSize: "1.8rem",
     },
     h4: {
       fontWeight: 600,
+      fontSize: "1.5rem",
     },
     h5: {
       fontWeight: 500,
       fontSize: "1.2rem",
+    },
+    h6: {
+      fontWeight: 500,
+      fontSize: "1.0rem",
     },
   },
   palette: {

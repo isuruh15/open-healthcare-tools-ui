@@ -13,6 +13,12 @@ import {
   SmartOnFhir,
 } from "../Accelerators";
 
+export enum ToolStatus {
+  active,
+  inactive,
+  maintenance,
+}
+
 export interface Tool {
   title: string;
   subTitle?: string;
@@ -23,6 +29,7 @@ export interface Tool {
   icon: ReactElement;
   component: ReactElement;
   url: string;
+  status?: ToolStatus;
 }
 
 export interface Sample {
@@ -32,18 +39,6 @@ export interface Sample {
 }
 
 export const tools: Tool[] = [
-  {
-    title: "FHIR APIs",
-    subTitle: "Transformm",
-    shortDescription: "Hands on experience with FHIR APIs",
-    description:
-      "Hands on experience with FHIR APIs. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-    path: "/fhir-apis",
-    image: "health-intro.png",
-    icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
-    component: <Hl7v2ToFhir />,
-    url: "https://wso2.com/solutions/healthcare/",
-  },
   {
     title: "HL7v2 To FHIR",
     subTitle: "Transformm",
@@ -55,18 +50,20 @@ export const tools: Tool[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.active,
   },
   {
-    title: "HL7v2 To FHIR",
+    title: "FHIR APIs",
     subTitle: "Transformm",
-    shortDescription: "Convert HL7 V2 data to FHIR",
+    shortDescription: "Hands on experience with FHIR APIs",
     description:
-      "This API offers health IT developers a turnkey solution for effortlessly converting HL7v2 data to FHIR standards, enabling rapid integration and data exchange while reducing development complexity and accelerating time-to-market.",
-    path: "/",
+      "Hands on experience with FHIR APIs. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+    path: "/fhir-apis",
     image: "health-intro.png",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.active,
   },
   {
     title: "C-CDA To FHIR",
@@ -79,6 +76,7 @@ export const tools: Tool[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <CcdaToFhir />,
     url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.active,
   },
   {
     title: "FHIR Validation",
@@ -91,6 +89,7 @@ export const tools: Tool[] = [
     icon: <CheckCircleOutlineOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirValidation />,
     url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.active,
   },
   {
     title: "SMART on FHIR",
@@ -102,6 +101,7 @@ export const tools: Tool[] = [
     icon: <VpnKeyOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <SmartOnFhir />,
     url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.active,
   },
   {
     title: "FHIR Path",
@@ -114,6 +114,7 @@ export const tools: Tool[] = [
     icon: <FilterAltOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirPath />,
     url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.active,
   },
   {
     title: "Connect To EMR",
@@ -125,5 +126,6 @@ export const tools: Tool[] = [
     icon: <CableOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <ConnectToEmr />,
     url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.active,
   },
 ];

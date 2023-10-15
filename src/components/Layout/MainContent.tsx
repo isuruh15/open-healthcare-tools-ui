@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import toolConfig from "../../tool-config.json";
 import { ComingSoon } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
@@ -7,38 +7,44 @@ import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
 import Tools from "../Common/Tools";
 import Wso2Blade from "../Common/Wso2Blade";
-// import { items } from "../Configs/AcceleratorConfig";
-import { Tool, tools } from "../Configs/ToolContentConfig";
+import { Tool, ToolStatus, tools } from "../Configs/ToolContentConfig";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
-
-interface ToolConfig {
-  [key: string]: {
-    status: "enabled" | "disabled" | "maintenance";
-  };
-}
+import { useEffect } from "react";
+import NotFoundError from "../Common/NotFoundError";
 
 export const MainContent = () => {
-//   const filteredItems = items.filter((item) => {
-//     const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
-//     return itemStatus !== "disabled";
-//   });
+  const renderTools = tools.filter(
+    (tool) => tool.status !== ToolStatus.inactive
+  );
 
-//   const renderedItems = filteredItems.map((item) => {
-//     const itemStatus = (toolConfig as ToolConfig)[item.label]?.status;
-//     if (itemStatus === "maintenance") {
-//       return { ...item, component: <ComingSoon /> };
-//     }
-//     return item;
-//   });
+  const activeTools = renderTools.map((tool) => {
+    const status = tool.status;
+    if (status === ToolStatus.maintenance) {
+      return { ...tool, component: <ComingSoon /> };
+    }
+    return tool;
+  });
 
   const location = useLocation();
-  const currentItem = tools.find(
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/hl7-to-fhir");
+    }
+  }, [location]);
+  let currentItem = activeTools.find(
     (tool: Tool) => tool.path === location.pathname
   );
+
+  if (location.pathname === "/") {
+    currentItem = activeTools.find(
+      (tool: Tool) => tool.path === "/hl7-to-fhir"
+    );
+  }
+
   if (!currentItem) {
-    // TODO: We should create a proper 404 page
-    return <div>404</div>;
+    return <NotFoundError />;
   }
 
   const content = {
