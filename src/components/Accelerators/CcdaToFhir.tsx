@@ -1,8 +1,6 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { Box, Container, Divider, Typography } from "@mui/material";
 import {
-  ConvertButton,
-  SamplesModal,
   CodeEditor,
   ResponseAlert,
   HeadersTab,
