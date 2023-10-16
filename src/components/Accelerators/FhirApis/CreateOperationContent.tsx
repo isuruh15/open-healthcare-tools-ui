@@ -4,7 +4,7 @@ import { Box, Divider, Typography } from "@mui/material";
 import {
   CommonButton,
   ResponseAlert,
-  SamplesModal,
+  // SamplesModal,
   PreLoader,
   CodeEditor,
   HeadersTab,
@@ -239,7 +239,7 @@ export const CreateOperationContent = ({ backendUrl, resource }: Props) => {
             id="samples-box"
           >
             <Box sx={{ mt: 1 }}>
-              <SamplesModal selectedAPI={selectedAPIName} />
+              {/* <SamplesModal selectedAPI={selectedAPIName} /> */}
             </Box>
             <Typography
               variant="h6"

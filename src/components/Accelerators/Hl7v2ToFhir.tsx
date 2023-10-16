@@ -1,13 +1,12 @@
-import { Box, Container, Typography } from "@mui/material";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useAuthContext } from "@asgardeo/auth-react";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
+import BasicTabs from "../Common/BasicTabs";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
-import BasicTabs from "../Common/BasicTabs";
-import React from "react";
-import { useAuthContext } from "@asgardeo/auth-react";
 
 interface State {
   input: string;
@@ -34,16 +33,18 @@ export const Hl7v2ToFhir = () => {
 
   const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
   const [isInterectable, setIsInterectable] = React.useState<boolean>(true);
-  const { isAuthenticated } = useAuthContext();
+  const { signOut, signIn, isAuthenticated } = useAuthContext();
   useEffect(() => {
     isAuthenticated()
       .then((response) => {
         if (response === true) {
           console.log("response" + response);
           setIsLogedIn(true);
+          setIsInterectable(true);
         } else {
           console.log("response " + response);
           setIsLogedIn(false);
+          setIsInterectable(false);
         }
       })
       .catch((error) => {
@@ -148,6 +149,16 @@ export const Hl7v2ToFhir = () => {
     } else {
       console.log(isLogedIn);
       setIsInterectable(false);
+    }
+  };
+
+  const handleLogin = () => {
+    if (isLogedIn) {
+      setIsLogedIn(false);
+      signOut();
+    } else {
+      setIsLogedIn(true);
+      signIn();
     }
   };
 
@@ -284,7 +295,7 @@ export const Hl7v2ToFhir = () => {
         />
       )}
 
-      {!isInterectable && (
+      {/* {!isInterectable && (
         <ResponseAlert
           isOpen={!isInterectable}
           severity="error"
@@ -293,7 +304,7 @@ export const Hl7v2ToFhir = () => {
           id="response-alert-error"
           aria-label="Error Response Alert"
         />
-      )}
+      )} */}
       <Typography variant="h4" align="center">
         Transform
       </Typography>
@@ -308,10 +319,73 @@ export const Hl7v2ToFhir = () => {
           <BasicTabs
             inputeditor={inputEditor}
             outputeditor={outputEditor}
+            isInterectable={isInterectable}
+            handleLogin={handleLogin}
           ></BasicTabs>
         )}
         {screenWidth >= 900 && (
           <>
+            {!isInterectable && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  bgcolor: "background.paper",
+                  color: "common.black",
+                  height: "100px",
+                  width: "100%",
+                  zIndex: 1,
+                  pr: 1,
+                  pb: 1,
+                }}
+                marginTop={20}
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Grid
+                  container
+                  alignItems="center"
+                  justifyContent="center"
+                  height="100px"
+                >
+                  <Grid
+                    container
+                    item
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Typography variant="h5">
+                      Please login to try out the Open Healthcare tool
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    container
+                    item
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Button
+                      variant="contained"
+                      size="large"
+                      onClick={handleLogin}
+                      sx={{
+                        backgroundColor: "primary.main",
+                        color: "primary.contrastText",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "1.2rem",
+                        textTransform: "none",
+                        alignSelf: "center",
+                        "&:hover": {
+                          backgroundColor: "secondary.main",
+                        },
+                      }}
+                    >
+                      Login
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Box>
+            )}
             <Box
               sx={{
                 pr: 1,

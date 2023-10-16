@@ -91,6 +91,3 @@ export const MainBlade = ({
     </Box>
   );
 };
-function scrollIntoView(arg0: { behavior: string }) {
-  throw new Error("Function not implemented.");
-}
