@@ -70,39 +70,68 @@ export default function BasicTabs({
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        {!isInterectable && (
-          <Box
-            sx={{
-              position: "absolute",
-              bgcolor: "background.paper",
-              color: "common.black",
-              height: "100px",
-              width: "100%",
-              zIndex: 1,
-            }}
-            marginTop={20}
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Grid
-              container
-              alignItems="center"
-              justifyContent="center"
-              height="100px"
-            >
-              <Grid container item alignItems="center" justifyContent="center">
-                <Typography variant="h5">
-                  Please login to try out the Open Healthcare tool
-                </Typography>
-              </Grid>
-              <Grid container item alignItems="center" justifyContent="center">
-                <Button variant="contained" size="large" onClick={handleLogin}>
-                  Login
-                </Button>
-              </Grid>
-            </Grid>
-          </Box>
-        )}
+      {!isInterectable && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  bgcolor: "rgba(0, 0, 0, 0.50)",
+                  color: "common.white",
+                  height: "calc(100vh - 197px)",
+                  width: "90%",
+                  zIndex: 1,
+                }}
+                marginTop={5}
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Grid
+                  container
+                  alignItems="center"
+                  justifyContent="center"
+                  height="calc(100vh - 197px)"
+                >
+                  <Box
+                    alignItems="center"
+                    justifyContent="center"
+                    flexDirection="column"
+                    display="flex"
+                    bgcolor="background.paper"
+                    width="98%"
+                    padding={3}
+                    borderRadius={1}
+                  >
+                    <Typography
+                      variant="h4"
+                      marginBottom={2}
+                      color="common.black"
+                      textAlign="center"
+                    >
+                      Please sign in to try out the Healthcare tool
+                    </Typography>
+                    <Button
+                      variant="contained"
+                      size="large"
+                      onClick={handleLogin}
+                      sx={{
+                        backgroundColor: "primary.main",
+                        color: "primary.contrastText",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "1.2rem",
+                        textTransform: "none",
+                        alignSelf: "center",
+                        "&:hover": {
+                          backgroundColor: "secondary.main",
+                        },
+                      }}
+                    >
+                      Sign In
+                    </Button>
+                  </Box>
+                  <Box alignItems="center" justifyContent="center"></Box>
+                </Grid>
+              </Box>
+            )}
         {inputeditor}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>

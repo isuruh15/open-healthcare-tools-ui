@@ -1,17 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import toolConfig from "../../tool-config.json";
 import { ComingSoon } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
+import NotFoundError from "../Common/NotFoundError";
 import Tools from "../Common/Tools";
 import Wso2Blade from "../Common/Wso2Blade";
 import { Tool, ToolStatus, tools } from "../Configs/ToolContentConfig";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
-import { useEffect } from "react";
-import NotFoundError from "../Common/NotFoundError";
 
 export const MainContent = () => {
   const renderTools = tools.filter(
@@ -69,6 +68,7 @@ export const MainContent = () => {
         {/* Banner content */}
         <MainBlade
           title={currentItem.title}
+          subTitle={currentItem.subTitle}
           description={currentItem.description}
           image={currentItem.image}
         />

@@ -1,12 +1,17 @@
-import { IconButton, Tooltip } from "@mui/material";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import { IconButton, Tooltip } from "@mui/material";
 
 interface Props {
   size?: number;
   handleDownload(): any;
+  isDisabled?: boolean;
 }
 
-export const DownloadIcon = ({ size = 30, handleDownload }: Props) => {
+export const DownloadIcon = ({
+  size = 30,
+  handleDownload,
+  isDisabled = false,
+}: Props) => {
   return (
     <>
       <Tooltip
@@ -21,6 +26,7 @@ export const DownloadIcon = ({ size = 30, handleDownload }: Props) => {
             color: "text.primary",
           }}
           onClick={handleDownload}
+          disabled={isDisabled}
         >
           <FileDownloadOutlinedIcon
             sx={{ fontSize: size }}

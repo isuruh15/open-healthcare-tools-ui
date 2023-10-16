@@ -1,6 +1,5 @@
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
-import { common } from "@mui/material/colors";
 import React, { useEffect, useState } from "react";
 import { ComponentTitle } from "../Common";
 
@@ -104,7 +103,7 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
                 {/* https://icons8.com/icons/set/discord */}
                 <Box
                   component="img"
-                  src="discord.png"
+                  src="discord-black.png"
                   sx={{
                     width: { xs: "25px", sm: "30px" },
                     height: { xs: "25px", sm: "30px" },
@@ -112,10 +111,11 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
                 />
                 <Typography
                   variant="body2"
-                  color="secondary.main"
+                  color="common.black"
                   display={{ xs: "none", sm: "block" }}
+                  fontSize="1.0rem"
                 >
-                  Get help
+                  Get Help
                 </Typography>
               </Stack>
             </Link>
@@ -126,22 +126,32 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
               onClick={handleLogin}
               id="load-sample-button"
             /> */}
-            <Button
-              href=""
-              target="_blank"
-              variant="contained"
-              size="medium"
-              color="info"
-              sx={{
-                padding: { xs: "0px", sm: "0px", md: "1px", lg: "8px" },
-                width: { xs: 100, sm: 100, md: 100, lg: 100, xl: 110 },
-              }}
-              onClick={handleLogin}
-            >
-              <Typography color={common.white}>
-                {isLogedIn ? "Logout" : "Login"}
-              </Typography>
-            </Button>
+            {isLogedIn && (
+              <Button
+                href=""
+                target="_blank"
+                variant="contained"
+                size="medium"
+                color="info"
+                sx={{
+                  padding: { xs: "0px", sm: "0px", md: "1px", lg: "8px" },
+                  width: { xs: 100, sm: 100, md: 100, lg: 100, xl: 110 },
+                  backgroundColor: "primary.main",
+                  color: "primary.contrastText",
+                  borderRadius: "8px",
+                  fontWeight: 600,
+                  fontSize: "1.0rem",
+                  textTransform: "none",
+                  alignSelf: "center",
+                  "&:hover": {
+                    backgroundColor: "secondary.main",
+                  },
+                }}
+                onClick={handleLogin}
+              >
+                Sign Out
+              </Button>
+            )}
           </Stack>
         </Box>
       </Box>

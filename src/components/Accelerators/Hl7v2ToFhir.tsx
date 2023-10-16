@@ -246,6 +246,7 @@ export const Hl7v2ToFhir = () => {
       height="calc(100vh - 197px)"
       id="hl7-resource-editor"
       aria-label="HL7 Resource Editor"
+      isDisabled={!isInterectable}
     />
   );
 
@@ -265,6 +266,7 @@ export const Hl7v2ToFhir = () => {
       height="calc(100vh - 197px)"
       id="fhir-resource-editor"
       aria-label="FHIR Resource Editor"
+      isDisabled={!isInterectable}
     />
   );
 
@@ -294,20 +296,6 @@ export const Hl7v2ToFhir = () => {
           aria-label="Success Response Alert"
         />
       )}
-
-      {/* {!isInterectable && (
-        <ResponseAlert
-          isOpen={!isInterectable}
-          severity="error"
-          message="Please login to try out the Open Healthcare tools."
-          setIsOpen={closeLoginAlert}
-          id="response-alert-error"
-          aria-label="Error Response Alert"
-        />
-      )} */}
-      <Typography variant="h4" align="center">
-        Transform
-      </Typography>
       <Box
         sx={{
           display: "flex",
@@ -316,12 +304,14 @@ export const Hl7v2ToFhir = () => {
         marginTop={5}
       >
         {screenWidth < 900 && (
+          <>
           <BasicTabs
             inputeditor={inputEditor}
             outputeditor={outputEditor}
             isInterectable={isInterectable}
             handleLogin={handleLogin}
           ></BasicTabs>
+          </>
         )}
         {screenWidth >= 900 && (
           <>
@@ -329,15 +319,13 @@ export const Hl7v2ToFhir = () => {
               <Box
                 sx={{
                   position: "absolute",
-                  bgcolor: "background.paper",
-                  color: "common.black",
-                  height: "100px",
-                  width: "100%",
+                  bgcolor: "rgba(0, 0, 0, 0.50)",
+                  color: "common.white",
+                  height: "calc(100vh - 197px)",
+                  width: "97.5%",
                   zIndex: 1,
-                  pr: 1,
-                  pb: 1,
                 }}
-                marginTop={20}
+                marginTop={{xs: 100,md: 5}}
                 alignItems="center"
                 justifyContent="center"
               >
@@ -345,24 +333,26 @@ export const Hl7v2ToFhir = () => {
                   container
                   alignItems="center"
                   justifyContent="center"
-                  height="100px"
+                  height="calc(100vh - 197px)"
                 >
-                  <Grid
-                    container
-                    item
+                  <Box
                     alignItems="center"
                     justifyContent="center"
+                    flexDirection="column"
+                    display="flex"
+                    bgcolor="background.paper"
+                    width="98%"
+                    padding={3}
+                    borderRadius={1}
                   >
-                    <Typography variant="h5">
-                      Please login to try out the Open Healthcare tool
+                    <Typography
+                      variant="h4"
+                      marginBottom={2}
+                      color="common.black"
+                      textAlign="center"
+                    >
+                      Please sign in to try out the Healthcare tool
                     </Typography>
-                  </Grid>
-                  <Grid
-                    container
-                    item
-                    alignItems="center"
-                    justifyContent="center"
-                  >
                     <Button
                       variant="contained"
                       size="large"
@@ -380,9 +370,10 @@ export const Hl7v2ToFhir = () => {
                         },
                       }}
                     >
-                      Login
+                      Sign In
                     </Button>
-                  </Grid>
+                  </Box>
+                  <Box alignItems="center" justifyContent="center"></Box>
                 </Grid>
               </Box>
             )}

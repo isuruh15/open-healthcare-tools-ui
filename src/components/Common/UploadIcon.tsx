@@ -4,9 +4,10 @@ import { IconButton, Tooltip } from "@mui/material";
 interface Props {
   size?: number;
   readFile(data?: string | ArrayBuffer | null, errors?: Error): any;
+  isDisabled?: boolean;
 }
 
-export const UploadIcon = ({ size = 30, readFile }: Props) => {
+export const UploadIcon = ({ size = 30, readFile, isDisabled = false }: Props) => {
   const reader = async (file: Blob): Promise<void> => {
     const fr = new FileReader();
 
@@ -47,6 +48,7 @@ export const UploadIcon = ({ size = 30, readFile }: Props) => {
               color: "text.primary",
             }}
             component="span"
+            disabled={isDisabled}
           >
             <FileUploadOutlinedIcon sx={{ fontSize: size }} />
           </IconButton>

@@ -20,7 +20,7 @@ function ArticleBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
     >
       <Grid container alignItems="center" justifyContent="center" padding={1}>
         <Typography
-          variant="h4"
+          variant="h2"
           align="center"
           maxWidth="lg"
           color="text.primary"

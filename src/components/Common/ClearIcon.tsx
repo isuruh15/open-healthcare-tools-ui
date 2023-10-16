@@ -4,9 +4,10 @@ import { IconButton, Tooltip } from "@mui/material";
 interface Props {
   size?: number;
   onClear: () => void;
+  isDisabled?: boolean;
 }
 
-export const ClearIcon = ({ size = 30, onClear }: Props) => {
+export const ClearIcon = ({ size = 30, onClear, isDisabled=false }: Props) => {
   return (
     <Tooltip key="clear-icon" title="Clear Content" placement="bottom">
       <IconButton
@@ -16,6 +17,7 @@ export const ClearIcon = ({ size = 30, onClear }: Props) => {
         sx={{
           color: "text.primary",
         }}
+        disabled={isDisabled}
       >
         <DeleteOutlineOutlinedIcon
           sx={{ fontSize: size }}

@@ -60,10 +60,11 @@ function Tools() {
           alignItems="center"
           justifyContent="center"
           maxWidth="lg"
+          padding={5}
         >
           <Typography
             variant="body1"
-            align="center"
+            align="justify"
             color="text.secondary"
             maxWidth="lg"
           >
