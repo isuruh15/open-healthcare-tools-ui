@@ -29,7 +29,6 @@ export interface Tool {
   image: string;
   icon: ReactElement;
   component: ReactElement;
-  url: string;
   status?: ToolStatus;
 }
 
