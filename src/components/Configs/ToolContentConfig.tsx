@@ -24,6 +24,7 @@ export interface Tool {
   subTitle?: string;
   shortDescription: string;
   description: string;
+  url: string;
   path: string;
   image: string;
   icon: ReactElement;
