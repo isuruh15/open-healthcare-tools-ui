@@ -12,7 +12,7 @@ export { ResponseAlert } from "./ResponseAlert";
 export { ToggleEditorStyle } from "./ToggleEditorStyle";
 export { ClearIcon } from "./ClearIcon";
 export { SamplesButton } from "./SamplesButton";
-export { ComingSoon } from "./ComingSoon";
+export { MaintenancePage } from "./MaintenancePage";
 export { RatingIcons } from "./RatingIcons";
 export { PreLoader } from "./PreLoader";
 export { HeadersTab } from "./HeadersTab";

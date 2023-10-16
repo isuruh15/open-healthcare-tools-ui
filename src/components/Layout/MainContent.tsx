@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ComingSoon } from "../Common";
+import { MaintenancePage } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
@@ -13,17 +13,9 @@ import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
 
 export const MainContent = () => {
-  const renderTools = tools.filter(
+  const activeTools = tools.filter(
     (tool) => tool.status !== ToolStatus.inactive
   );
-
-  const activeTools = renderTools.map((tool) => {
-    const status = tool.status;
-    if (status === ToolStatus.maintenance) {
-      return { ...tool, component: <ComingSoon /> };
-    }
-    return tool;
-  });
 
   const location = useLocation();
   let navigate = useNavigate();
@@ -74,14 +66,19 @@ export const MainContent = () => {
         />
 
         {/* Tool execution area */}
-        <Routes items={tools} />
+        {currentItem.status === ToolStatus.active && <Routes items={tools} />}
 
         {/* Github source display area */}
-        <GithubBanner
-          content={content}
-          marginTop={0}
-          marginBottom={0}
-        ></GithubBanner>
+        {currentItem.status === ToolStatus.active && (
+          <GithubBanner
+            content={content}
+            marginTop={0}
+            marginBottom={0}
+          ></GithubBanner>
+        )}
+
+        {/* If the particular page is in maintenance status */}
+        {currentItem.status === ToolStatus.maintenance && <MaintenancePage />}
 
         {/* Other tools display area */}
         <Tools></Tools>
