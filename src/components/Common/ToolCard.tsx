@@ -33,7 +33,7 @@ function Toolcard({ title, description, image, link }: Props) {
           height="170"
           image={image}
         />
-        <CardContent>
+        <CardContent sx={{ height: { xs: "300px", lg: "250px", xl: "230px", padding: "25px" } }} >
           <Typography
             gutterBottom
             variant="h5"
@@ -43,7 +43,12 @@ function Toolcard({ title, description, image, link }: Props) {
           >
             {title}
           </Typography>
-          <Typography variant="body1" color="text.secondary" lineHeight={1.5}>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            lineHeight={1.5}
+            align="justify"
+          >
             {description}
           </Typography>
         </CardContent>

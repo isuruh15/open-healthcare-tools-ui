@@ -21,7 +21,7 @@ export enum ToolStatus {
 
 export interface Tool {
   title: string;
-  subTitle?: string;
+  subTitle: string;
   shortDescription: string;
   description: string;
   url: string;
@@ -41,7 +41,7 @@ export interface Sample {
 export const tools: Tool[] = [
   {
     title: "HL7v2 To FHIR",
-    subTitle: "Transformm",
+    subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description:
       "This API offers health IT developers a turnkey solution for effortlessly converting HL7v2 data to FHIR standards, enabling rapid integration and data exchange while reducing development complexity and accelerating time-to-market.",
@@ -54,7 +54,7 @@ export const tools: Tool[] = [
   },
   {
     title: "FHIR APIs",
-    subTitle: "Transformm",
+    subTitle: "Transform",
     shortDescription: "Hands on experience with FHIR APIs",
     description:
       "Hands on experience with FHIR APIs. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
@@ -67,7 +67,7 @@ export const tools: Tool[] = [
   },
   {
     title: "C-CDA To FHIR",
-    subTitle: "Transformm",
+    subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description:
       "Convert C-CDA data to FHIR. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
@@ -80,7 +80,7 @@ export const tools: Tool[] = [
   },
   {
     title: "FHIR Validation",
-    subTitle: "Transformm",
+    subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description:
       "Validate the FHIR Resource that complies with the FHIR standards",
@@ -93,7 +93,7 @@ export const tools: Tool[] = [
   },
   {
     title: "SMART on FHIR",
-    subTitle: "Transformm",
+    subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description: "Try out a standalone end user FHIR application",
     path: "/smart-on-fhir",
@@ -105,7 +105,7 @@ export const tools: Tool[] = [
   },
   {
     title: "FHIR Path",
-    subTitle: "Transformm",
+    subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description:
       "Easily convert, transform and extract healthcare data to meet FHIR standards",
@@ -118,7 +118,7 @@ export const tools: Tool[] = [
   },
   {
     title: "Connect To EMR",
-    subTitle: "Transformm",
+    subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description: "Connect FHIR resource to EMR",
     path: "/connect-to-emr",

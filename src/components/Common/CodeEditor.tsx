@@ -23,6 +23,7 @@ interface CodeEditorProps {
   readOnly?: boolean;
   width?: string;
   height?: string;
+  isDisabled?: boolean;
 }
 
 export const CodeEditor = ({
@@ -43,6 +44,7 @@ export const CodeEditor = ({
   readOnly,
   width,
   height,
+  isDisabled = false
 }: CodeEditorProps) => {
   const handleDownload = (content: string, filename: string) => {
     if (content != null) {
@@ -81,12 +83,12 @@ export const CodeEditor = ({
       >
         <Typography variant="h6">{title}</Typography>
         <Box sx={{ display: "flex" }}>
-          <CopyContent data={JSON.parse(JSON.stringify(value!))} size={20} />
+          <CopyContent data={JSON.parse(JSON.stringify(value!))} size={20} isDisabled={isDisabled}/>
           {downloadEnabled && (
-            <DownloadIcon handleDownload={handleDownloadClick} size={22} />
+            <DownloadIcon handleDownload={handleDownloadClick} size={22} isDisabled={isDisabled}/>
           )}
-          {uploadEnabled && <UploadIcon readFile={readFile!} size={22} />}
-          {clearEnabled && <ClearIcon onClear={onClear!} size={22} />}
+          {uploadEnabled && <UploadIcon readFile={readFile!} size={22} isDisabled={isDisabled}/>}
+          {clearEnabled && <ClearIcon onClear={onClear!} size={22} isDisabled={isDisabled}/>}
         </Box>
       </Box>
       <Box

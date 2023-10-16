@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
-import { Alert, Box, IconButton, Tooltip, Typography } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import { Alert, Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 interface Props {
   data: string;
   size?: number;
+  isDisabled?: boolean;
 }
 
-export const CopyContent = ({ data, size = 30 }: Props) => {
+export const CopyContent = ({ data, size = 30, isDisabled = false }: Props) => {
   const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
@@ -47,6 +48,7 @@ export const CopyContent = ({ data, size = 30 }: Props) => {
             navigator.clipboard.writeText(data!);
             setIsCopied(true);
           }}
+          disabled={isDisabled}
         >
           <ContentCopyIcon sx={{ fontSize: size }} aria-hidden="true" />
         </IconButton>
