@@ -26,6 +26,9 @@ export let theme = createTheme({
       fontWeight: 500,
       fontSize: "1.0rem",
     },
+    button: {
+      textTransform: 'none'
+    }
   },
   palette: {
     primary: {

@@ -1,8 +1,5 @@
 import {
-  Box,
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
+  Box
 } from "@mui/material";
 import React, { Suspense } from "react";
 import { PreLoader } from "./components/Common";
