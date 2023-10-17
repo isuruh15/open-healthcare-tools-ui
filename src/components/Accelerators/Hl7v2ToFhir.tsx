@@ -1,9 +1,10 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
+import LoginOverlay from "../Common/LoginOverlay";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
@@ -31,19 +32,16 @@ export const Hl7v2ToFhir = () => {
     window.innerWidth
   );
 
-  const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
   const [isInterectable, setIsInterectable] = React.useState<boolean>(true);
-  const { signOut, signIn, isAuthenticated } = useAuthContext();
+  const { isAuthenticated } = useAuthContext();
   useEffect(() => {
     isAuthenticated()
       .then((response) => {
         if (response === true) {
           console.log("response" + response);
-          setIsLogedIn(true);
           setIsInterectable(true);
         } else {
           console.log("response " + response);
-          setIsLogedIn(false);
           setIsInterectable(false);
         }
       })
@@ -110,10 +108,6 @@ export const Hl7v2ToFhir = () => {
     }));
   };
 
-  const closeLoginAlert = () => {
-    setIsInterectable(true);
-  };
-
   const handleInputChange = useCallback((value: string) => {
     setState((prevState) => ({
       ...prevState,
@@ -139,27 +133,6 @@ export const Hl7v2ToFhir = () => {
       ...prevState,
       output: "",
     }));
-  };
-
-  const handleOnClick = () => {
-    console.log("clicked22");
-    if (isLogedIn) {
-      console.log(isLogedIn);
-      setIsInterectable(true);
-    } else {
-      console.log(isLogedIn);
-      setIsInterectable(false);
-    }
-  };
-
-  const handleLogin = () => {
-    if (isLogedIn) {
-      setIsLogedIn(false);
-      signOut();
-    } else {
-      setIsLogedIn(true);
-      signIn();
-    }
   };
 
   const readFile = (fileInput?: string | ArrayBuffer | null) => {
@@ -234,7 +207,7 @@ export const Hl7v2ToFhir = () => {
       value={input}
       readOnly={!isInterectable}
       onChange={handleInputChange}
-      onClick={handleOnClick}
+      // onClick={handleOnClick}
       darkMode={darkMode}
       onClear={handleInputClear}
       placeholder="Paste or edit HL7 Data here..."
@@ -309,74 +282,12 @@ export const Hl7v2ToFhir = () => {
               inputeditor={inputEditor}
               outputeditor={outputEditor}
               isInterectable={isInterectable}
-              handleLogin={handleLogin}
             ></BasicTabs>
           </>
         )}
         {screenWidth >= 900 && (
           <>
-            {!isInterectable && (
-              <Box
-                sx={{
-                  position: "absolute",
-                  bgcolor: "rgba(0, 0, 0, 0.50)",
-                  color: "common.white",
-                  height: "calc(100vh - 197px)",
-                  width: { md: "95.5%", lg: "96.4%", xl: "97.3%" },
-                  zIndex: 1,
-                }}
-                marginTop={{ xs: 100, md: 4.8 }}
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Grid
-                  container
-                  alignItems="center"
-                  justifyContent="center"
-                  height="calc(100vh - 197px)"
-                >
-                  <Box
-                    alignItems="center"
-                    justifyContent="center"
-                    flexDirection="column"
-                    display="flex"
-                    bgcolor="background.paper"
-                    width="98%"
-                    padding={3}
-                    borderRadius={1}
-                  >
-                    <Typography
-                      variant="h4"
-                      marginBottom={2}
-                      color="common.black"
-                      textAlign="center"
-                    >
-                      Please sign in to try out the tool
-                    </Typography>
-                    <Button
-                      variant="contained"
-                      size="large"
-                      onClick={handleLogin}
-                      sx={{
-                        backgroundColor: "primary.main",
-                        color: "primary.contrastText",
-                        borderRadius: "8px",
-                        fontWeight: 600,
-                        fontSize: "1.2rem",
-                        textTransform: "none",
-                        alignSelf: "center",
-                        "&:hover": {
-                          backgroundColor: "secondary.main",
-                        },
-                      }}
-                    >
-                      Sign In
-                    </Button>
-                  </Box>
-                  <Box alignItems="center" justifyContent="center"></Box>
-                </Grid>
-              </Box>
-            )}
+            {!isInterectable && <LoginOverlay />}
             <Box
               sx={{
                 pr: 1,
