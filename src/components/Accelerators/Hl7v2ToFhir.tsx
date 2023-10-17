@@ -351,7 +351,7 @@ export const Hl7v2ToFhir = () => {
                       color="common.black"
                       textAlign="center"
                     >
-                      Please sign in to try out the Healthcare tool
+                      Please sign in to try out the tool
                     </Typography>
                     <Button
                       variant="contained"
