@@ -1,18 +1,20 @@
+import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import {
   Box,
   Button,
   Grid,
-  MobileStepper,
-  Paper,
-  Typography,
+  Typography
 } from "@mui/material";
-import * as React from "react";
 import { useTheme } from "@mui/material/styles";
+import * as React from "react";
+import SwipeableViews from "react-swipeable-views";
+import {
+  OTHER_TOOLS_SECTION_DESCRIPTION,
+  OTHER_TOOLS_SECTION_TITLE,
+} from "../Configs/TextConstants";
 import { tools } from "../Configs/ToolContentConfig";
 import Toolcard from "./ToolCard";
-import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
-import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
-import SwipeableViews from "react-swipeable-views";
 
 function Tools() {
   const theme = useTheme();
@@ -49,7 +51,7 @@ function Tools() {
           justifyContent="center"
         >
           <Typography variant="h2" align="center" maxWidth="lg">
-            Health IT Developer Toolkit
+            {OTHER_TOOLS_SECTION_TITLE}
           </Typography>
         </Grid>
 
@@ -68,13 +70,7 @@ function Tools() {
             color="text.secondary"
             maxWidth="lg"
           >
-            Developer Tools for experimentation and learning foundational Health
-            IT concepts. WSO2 provides everything you need to provide awesome
-            experiences for your healthcare customers under one umbrella;
-            Pre-built healthcare APIs, the Choreo Internal Developer Platform,
-            Asgardeo’s CIAM capabilities and on-premises software, enables
-            healthcare app-dev teams to kick start their digital healthcare
-            experience development.
+            {OTHER_TOOLS_SECTION_DESCRIPTION}
           </Typography>
         </Grid>
         <Grid

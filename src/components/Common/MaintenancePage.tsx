@@ -1,5 +1,9 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { useState } from "react";
+import {
+  MAINTENANCE_PAGE_SUB_TITLE,
+  MAINTENANCE_PAGE_TITLE,
+} from "../Configs/TextConstants";
 import { PreLoader } from "./PreLoader";
 
 export const MaintenancePage = () => {
@@ -15,12 +19,12 @@ export const MaintenancePage = () => {
       <Grid container alignItems="center" justifyContent="center" spacing={5}>
         <Grid item container alignItems="center" justifyContent="center">
           <Typography variant="h2" textAlign="center">
-            This tool is under maintenance
+            {MAINTENANCE_PAGE_TITLE}
           </Typography>
         </Grid>
         <Grid item container alignItems="center" justifyContent="center">
           <Typography variant="h6" textAlign="center">
-            We are trying to make your experience even better.
+            {MAINTENANCE_PAGE_SUB_TITLE}
           </Typography>
         </Grid>
         <Grid item container alignItems="center" justifyContent="center">

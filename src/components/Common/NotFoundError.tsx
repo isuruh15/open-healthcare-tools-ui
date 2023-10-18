@@ -1,7 +1,10 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
-import { Footer } from "../Layout";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import {
+  NOT_FOUND_BUTTON_LABEL,
+  NOT_FOUND_PAGE_SUB_TITLE,
+  NOT_FOUND_PAGE_TITLE,
+} from "../Configs/TextConstants";
 
 function NotFoundError() {
   return (
@@ -19,32 +22,32 @@ function NotFoundError() {
         minHeight="100%"
         padding={5}
       >
-          <Grid item container alignContent="center" justifyContent="center">
-            <Typography
-              variant="h1"
-              alignContent="center"
-              justifyContent="center"
-            >
-              404 - Not Found
-            </Typography>
-          </Grid>
-          <Grid item container alignContent="center" justifyContent="center">
-            <Typography
-              variant="h3"
-              alignContent="center"
-              justifyContent="center"
-            >
-              Opps..! The requested page is not found
-            </Typography>
-          </Grid>
-          <Grid item container alignContent="center" justifyContent="center">
-            <Link to="/">
-              <Button variant="contained" color="primary" size="large" href="/">
-                Back to home
-              </Button>
-            </Link>
-          </Grid>
+        <Grid item container alignContent="center" justifyContent="center">
+          <Typography
+            variant="h1"
+            alignContent="center"
+            justifyContent="center"
+          >
+            {NOT_FOUND_PAGE_TITLE}
+          </Typography>
         </Grid>
+        <Grid item container alignContent="center" justifyContent="center">
+          <Typography
+            variant="h3"
+            alignContent="center"
+            justifyContent="center"
+          >
+            {NOT_FOUND_PAGE_SUB_TITLE}
+          </Typography>
+        </Grid>
+        <Grid item container alignContent="center" justifyContent="center">
+          <Link to="/">
+            <Button variant="contained" color="primary" size="large" href="/">
+              {NOT_FOUND_BUTTON_LABEL}
+            </Button>
+          </Link>
+        </Grid>
+      </Grid>
     </Box>
   );
 }

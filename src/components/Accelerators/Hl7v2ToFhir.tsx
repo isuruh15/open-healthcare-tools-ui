@@ -207,7 +207,6 @@ export const Hl7v2ToFhir = () => {
       value={input}
       readOnly={!isInterectable}
       onChange={handleInputChange}
-      // onClick={handleOnClick}
       darkMode={darkMode}
       onClear={handleInputClear}
       placeholder="Paste or edit HL7 Data here..."

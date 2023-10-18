@@ -38,17 +38,6 @@ export const MainContent = () => {
     return <NotFoundError />;
   }
 
-  const content = {
-    title: "Complete Healthcare Solution for your business",
-  };
-  const contentBal = {
-    title: "Ballerina - A Language for healthcare",
-  };
-
-  const contentArticle = {
-    title: "Listen what our developers say about different tools",
-  };
-
   return (
     <Box>
       <Header
@@ -62,7 +51,8 @@ export const MainContent = () => {
           title={currentItem.title}
           subTitle={currentItem.subTitle}
           description={currentItem.description}
-          image={currentItem.image}
+          backgroundImage={currentItem.image}
+          status={currentItem.status}
         />
 
         {/* Tool execution area */}
@@ -70,11 +60,7 @@ export const MainContent = () => {
 
         {/* Github source display area */}
         {currentItem.status === ToolStatus.active && (
-          <GithubBanner
-            content={content}
-            marginTop={0}
-            marginBottom={0}
-          ></GithubBanner>
+          <GithubBanner marginTop={0} marginBottom={0}></GithubBanner>
         )}
 
         {/* If the particular page is in maintenance status */}
@@ -84,14 +70,10 @@ export const MainContent = () => {
         <Tools></Tools>
 
         {/* About WSO2 display area */}
-        <Wso2Blade solution={content} language={contentBal}></Wso2Blade>
+        <Wso2Blade></Wso2Blade>
 
         {/* Articles display area */}
-        <ArticleBanner
-          content={contentArticle}
-          marginTop={0}
-          marginBottom={0}
-        ></ArticleBanner>
+        <ArticleBanner marginTop={0} marginBottom={0}></ArticleBanner>
 
         {/* Footer display area */}
         <Footer />

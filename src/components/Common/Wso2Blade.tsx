@@ -1,16 +1,13 @@
 import { Divider, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import {
+  BALLERINA_BLADE_DESCRIPTION,
+  BALLERINA_BLADE_TITLE,
+  WSO2_BLADE_DESCRIPTION,
+  WSO2_BLADE_TITLE,
+} from "../Configs/TextConstants";
 
-interface Wso2BladeProps {
-  solution: {
-    title: string;
-  };
-  language: {
-    title: string;
-  };
-}
-
-export const Banner = ({ solution, language }: Wso2BladeProps) => {
+export const Banner = () => {
   return (
     <Grid
       container
@@ -32,7 +29,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
         <Grid item container xs={12} md={6} justifyContent="center" spacing={5}>
           <Grid item container alignItems="flex-start" justifyContent="center">
             <Typography variant="h2" align="center">
-              Digital Experiences for Payers, Providers, and Patients
+              {WSO2_BLADE_TITLE}
             </Typography>
           </Grid>
           <Grid item container alignItems="center" justifyContent="center">
@@ -43,12 +40,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
               maxWidth="lg"
               lineHeight={1.7}
             >
-              Everything you need to provide awesome experiences for your
-              healthcare customers under one umbrella; Pre-built healthcare
-              APIs, the Choreo Internal Developer Platform, Asgardeo’s CIAM
-              capabilities and on-premises software, enables healthcare app-dev
-              teams to kick start their digital healthcare experience
-              development.
+              {WSO2_BLADE_DESCRIPTION}
             </Typography>
           </Grid>
           <Grid item container alignItems="flex-end" justifyContent="center">
@@ -81,7 +73,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
               }}
             />
             <Typography variant="h2" align="center">
-              A Language Built for Healthcare - Ballerina
+              {BALLERINA_BLADE_TITLE}
             </Typography>
           </Grid>
           <Grid
@@ -98,10 +90,7 @@ export const Banner = ({ solution, language }: Wso2BladeProps) => {
               maxWidth="lg"
               lineHeight={1.7}
             >
-              Ballerina is the only integration language built for healthcare.
-              With its native support for healthcare standards like FHIR, HL7,
-              and X12, Ballerina enables rapid health tech application
-              development.
+              {BALLERINA_BLADE_DESCRIPTION}
             </Typography>
           </Grid>
 

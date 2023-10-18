@@ -1,20 +1,21 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useRef, useState } from "react";
+import { ToolStatus } from "../Configs/ToolContentConfig";
 
 interface MainBladeProps {
   title: string;
   subTitle: string;
   description: string;
-  image: string;
-  backgroundImage?: string;
+  backgroundImage: string;
+  status?: ToolStatus;
 }
 
 export const MainBlade = ({
   title,
   subTitle,
   description,
-  image,
   backgroundImage,
+  status = ToolStatus.active,
 }: MainBladeProps) => {
   const [active] = useState(true);
   const ref = useRef(null);
@@ -91,7 +92,7 @@ export const MainBlade = ({
                 width={700}
                 height={395}
                 alt="Healthcare Logo"
-                src={image}
+                src={backgroundImage}
               />
             </Grid>
           </Grid>
@@ -99,7 +100,7 @@ export const MainBlade = ({
       </Box>
       <Box>
         <Typography variant="h2" align="center" paddingTop={5}>
-          {subTitle}
+          {status === ToolStatus.active && subTitle}
         </Typography>
       </Box>
     </>

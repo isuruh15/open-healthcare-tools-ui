@@ -2,14 +2,18 @@ import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { ComponentTitle } from "../Common";
+import {
+  DISCORD_HELP_LABEL,
+  SIGN_OUT_BUTTON_LABEL,
+} from "../Configs/TextConstants";
 
-interface HeaderProps {
+interface Props {
   title: string;
   shortDescription: string;
   url: string;
 }
 
-export const Header = ({ title, shortDescription, url }: HeaderProps) => {
+export const Header = ({ title, shortDescription, url }: Props) => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
   const handleResize = (): void => setScreenWidth(window.innerWidth);
@@ -24,12 +28,9 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
   useEffect(() => {
     isAuthenticated()
       .then((response) => {
-        console.log("State  " + state.isAuthenticated);
         if (response === true) {
-          console.log("response" + response);
           setIsLogedIn(true);
         } else {
-          console.log("response " + response);
           setIsLogedIn(false);
         }
       })
@@ -38,7 +39,7 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
       });
   }, [isAuthenticated]);
 
-  const handleLogin = () => {
+  const handleLogout = () => {
     if (isLogedIn) {
       setIsLogedIn(false);
       signOut();
@@ -48,19 +49,8 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
     }
   };
 
-  // const location = useLocation();
-  // const currentItem = items.find(
-  //   (item: Item) => item.path === location.pathname
-  // );
-  // const label = currentItem ? currentItem.label : "";
-  // const description = currentItem ? currentItem.description : "";
-  // const url = currentItem ? currentItem.url : "";
-
   return (
     <>
-      {/* {screenWidth < 600 && (
-        <AlertModal contentText="Please use a laptop or a desktop to try out the Open Healthcare Sandbox seamlessly." />
-      )} */}
       <Box
         sx={{
           display: "flex",
@@ -115,17 +105,11 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
                   display={{ xs: "none", sm: "block" }}
                   fontSize="1.0rem"
                 >
-                  Get Help
+                  {DISCORD_HELP_LABEL}
                 </Typography>
               </Stack>
             </Link>
 
-            {/* <CommonButton
-              variant="border"
-              label={isLogedIn ? "Logout" : "Login"}
-              onClick={handleLogin}
-              id="load-sample-button"
-            /> */}
             {isLogedIn && (
               <Button
                 href=""
@@ -147,9 +131,9 @@ export const Header = ({ title, shortDescription, url }: HeaderProps) => {
                     backgroundColor: "secondary.main",
                   },
                 }}
-                onClick={handleLogin}
+                onClick={handleLogout}
               >
-                Sign Out
+                {SIGN_OUT_BUTTON_LABEL}
               </Button>
             )}
           </Stack>

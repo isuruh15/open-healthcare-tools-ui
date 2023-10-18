@@ -1,6 +1,10 @@
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
+import {
+  SIGN_IN_BUTTON_LABEL,
+  UNAUTHORIZED_LOGIN_LABEL,
+} from "../Configs/TextConstants";
 
 export default function LoginOverlay() {
   const { signOut, signIn, isAuthenticated } = useAuthContext();
@@ -65,7 +69,7 @@ export default function LoginOverlay() {
             color="common.black"
             textAlign="center"
           >
-            Please sign in to try out the tool
+            {UNAUTHORIZED_LOGIN_LABEL}
           </Typography>
           <Button
             variant="contained"
@@ -84,7 +88,7 @@ export default function LoginOverlay() {
               },
             }}
           >
-            Sign In
+            {SIGN_IN_BUTTON_LABEL}
           </Button>
         </Box>
         <Box alignItems="center" justifyContent="center"></Box>
