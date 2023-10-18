@@ -128,4 +128,16 @@ export const tools: Tool[] = [
     url: "https://wso2.com/solutions/healthcare/",
     status: ToolStatus.maintenance,
   },
+  {
+    title: "Terminology Service",
+    subTitle: "Resolve and validate",
+    shortDescription: "Query terminology service",
+    description: "Query terminology service",
+    path: "/terminology-service",
+    image: "health-intro.png",
+    icon: <CableOutlinedIcon sx={{ width: 23, height: 23 }} />,
+    component: <ConnectToEmr />,
+    url: "https://wso2.com/solutions/healthcare/",
+    status: ToolStatus.maintenance,
+  },
 ];
