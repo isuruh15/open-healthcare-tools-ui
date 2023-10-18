@@ -63,3 +63,9 @@ export const NOT_FOUND_PAGE_TITLE = "404 - Not Found";
 export const NOT_FOUND_PAGE_SUB_TITLE =
   "Opps..! The requested page is not found";
 export const NOT_FOUND_BUTTON_LABEL = "Back To Home";
+
+// Throttled out page
+export const THROTTLED_OUT_PAGE_TITLE = "429 - Throttled Out";
+export const THROTTLED_OUT_PAGE_SUB_TITLE =
+  `Opps..! The service is unavailable at the moment due to excessive requests. Please try again later.`;
+export const THROTTLED_OUT_BUTTON_LABEL = "Back To Home";

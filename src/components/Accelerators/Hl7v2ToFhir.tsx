@@ -246,7 +246,7 @@ export const Hl7v2ToFhir = () => {
     <Container
       id="hl7v2-to-fhir-container"
       maxWidth={false}
-      sx={{ display: "flex", flexDirection: "column", height: 1, mt: 3 }}
+      sx={{ display: "flex", flexDirection: "column", height: 1, mt: 0 }}
     >
       {isError && (
         <ResponseAlert

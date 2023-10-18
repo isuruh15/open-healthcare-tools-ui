@@ -17,12 +17,6 @@ export const MainBlade = ({
   backgroundImage,
   status = ToolStatus.active,
 }: MainBladeProps) => {
-  const [active] = useState(true);
-  const ref = useRef(null);
-
-  // const handleClick = () => {
-  //   ref.current?.scrollIntoView({ behavior: 'smooth' });
-  // };
   return (
     <>
       <Box bgcolor="background.paper">
@@ -33,7 +27,7 @@ export const MainBlade = ({
             alignItems="center"
             justifyContent="center"
             maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "md", xs: "xs" }}
-            sx={{ padding: { xs: 3, sm: 3, md: 0, lg: 0, xl: 0 } }}
+            sx={{ padding: { xs: 3, sm: 3, md: 0 } }}
             spacing={8}
           >
             <Grid
