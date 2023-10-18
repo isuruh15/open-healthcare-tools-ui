@@ -305,12 +305,12 @@ export const Hl7v2ToFhir = () => {
       >
         {screenWidth < 900 && (
           <>
-          <BasicTabs
-            inputeditor={inputEditor}
-            outputeditor={outputEditor}
-            isInterectable={isInterectable}
-            handleLogin={handleLogin}
-          ></BasicTabs>
+            <BasicTabs
+              inputeditor={inputEditor}
+              outputeditor={outputEditor}
+              isInterectable={isInterectable}
+              handleLogin={handleLogin}
+            ></BasicTabs>
           </>
         )}
         {screenWidth >= 900 && (
@@ -322,10 +322,10 @@ export const Hl7v2ToFhir = () => {
                   bgcolor: "rgba(0, 0, 0, 0.50)",
                   color: "common.white",
                   height: "calc(100vh - 197px)",
-                  width: "97.5%",
+                  width: { md: "95.5%", lg: "96.4%", xl: "97.3%" },
                   zIndex: 1,
                 }}
-                marginTop={{xs: 100,md: 5}}
+                marginTop={{ xs: 100, md: 4.8 }}
                 alignItems="center"
                 justifyContent="center"
               >
@@ -351,7 +351,7 @@ export const Hl7v2ToFhir = () => {
                       color="common.black"
                       textAlign="center"
                     >
-                      Please sign in to try out the Healthcare tool
+                      Please sign in to try out the tool
                     </Typography>
                     <Button
                       variant="contained"

@@ -72,7 +72,7 @@ export const tools: Tool[] = [
     description:
       "Convert C-CDA data to FHIR. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
     path: "/c-cda-to-fhir",
-    image: "https://ballerina.io/images/health-sm-banner.png",
+    image: "health-intro.png",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <CcdaToFhir />,
     url: "https://wso2.com/solutions/healthcare/",
@@ -85,11 +85,11 @@ export const tools: Tool[] = [
     description:
       "Validate the FHIR Resource that complies with the FHIR standards",
     path: "/fhir-validation",
-    image: "https://ballerina.io/images/health-sm-banner.png",
+    image: "health-intro.png",
     icon: <CheckCircleOutlineOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirValidation />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.active,
+    status: ToolStatus.maintenance,
   },
   {
     title: "SMART on FHIR",
@@ -97,11 +97,11 @@ export const tools: Tool[] = [
     shortDescription: "Convert HL7 V2 data to FHIR",
     description: "Try out a standalone end user FHIR application",
     path: "/smart-on-fhir",
-    image: "https://ballerina.io/images/health-sm-banner.png",
+    image: "health-intro.png",
     icon: <VpnKeyOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <SmartOnFhir />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.active,
+    status: ToolStatus.maintenance,
   },
   {
     title: "FHIR Path",
@@ -110,11 +110,11 @@ export const tools: Tool[] = [
     description:
       "Easily convert, transform and extract healthcare data to meet FHIR standards",
     path: "/fhir-path",
-    image: "https://ballerina.io/images/health-sm-banner.png",
+    image: "health-intro.png",
     icon: <FilterAltOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirPath />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.active,
+    status: ToolStatus.maintenance,
   },
   {
     title: "Connect To EMR",
@@ -122,10 +122,10 @@ export const tools: Tool[] = [
     shortDescription: "Convert HL7 V2 data to FHIR",
     description: "Connect FHIR resource to EMR",
     path: "/connect-to-emr",
-    image: "https://ballerina.io/images/health-sm-banner.png",
+    image: "health-intro.png",
     icon: <CableOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <ConnectToEmr />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.active,
+    status: ToolStatus.maintenance,
   },
 ];
