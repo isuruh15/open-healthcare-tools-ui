@@ -5,6 +5,7 @@ import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
 import LoginOverlay from "../Common/LoginOverlay";
+import ThrottledOutError from "../Common/ThrottledOutError";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
@@ -16,6 +17,8 @@ interface State {
   isError: boolean;
   isLoading: boolean;
   alertOpen: boolean;
+  outputType: string;
+  statusCode: string;
 }
 
 export const Hl7v2ToFhir = () => {
@@ -26,6 +29,8 @@ export const Hl7v2ToFhir = () => {
     isError: false,
     isLoading: false,
     alertOpen: false,
+    outputType: "json",
+    statusCode: "",
   });
 
   const [screenWidth, setScreenWidth] = React.useState<number>(
@@ -57,7 +62,16 @@ export const Hl7v2ToFhir = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { input, output, errorMessage, isError, isLoading, alertOpen } = state;
+  const {
+    input,
+    output,
+    errorMessage,
+    isError,
+    isLoading,
+    alertOpen,
+    outputType,
+    statusCode,
+  } = state;
 
   const { loadSample, setLoadSample, selectedLabel, setSelectedLabel } =
     useContext(SelectedSampleContext);
@@ -174,6 +188,10 @@ export const Hl7v2ToFhir = () => {
         }));
       })
       .catch((error) => {
+        setState((prevState) => ({
+          ...prevState,
+          statusCode: error.response.status,
+        }));
         setRequest({
           reqUrl: BFF_BASE_URL + error.config["url"],
           contentType: error.config.headers["Content-Type"],
@@ -192,6 +210,7 @@ export const Hl7v2ToFhir = () => {
           isError: true,
           isLoading: false,
         }));
+
         setTimeout(() => {
           setState((prevState) => ({
             ...prevState,
@@ -203,7 +222,7 @@ export const Hl7v2ToFhir = () => {
 
   const inputEditor = (
     <CodeEditor
-      title="HL7 Resource"
+      title="HL7 Message"
       value={input}
       readOnly={!isInterectable}
       onChange={handleInputChange}
@@ -230,7 +249,7 @@ export const Hl7v2ToFhir = () => {
       darkMode={darkMode}
       onClear={handleOutputClear}
       placeholder="FHIR Resource will be displayed here..."
-      fileType="json"
+      fileType={outputType}
       downloadEnabled
       downloadName="hl7-to-fhir-output"
       clearEnabled
@@ -248,7 +267,7 @@ export const Hl7v2ToFhir = () => {
       maxWidth={false}
       sx={{ display: "flex", flexDirection: "column", height: 1, mt: 0 }}
     >
-      {isError && (
+      {isError && statusCode != "429" && (
         <ResponseAlert
           isOpen={isError}
           severity="error"
@@ -278,9 +297,10 @@ export const Hl7v2ToFhir = () => {
         {screenWidth < 900 && (
           <>
             <BasicTabs
-              inputeditor={inputEditor}
-              outputeditor={outputEditor}
+              inputEditor={inputEditor}
+              outputEditor={outputEditor}
               isInterectable={isInterectable}
+              statusCode={statusCode}
             ></BasicTabs>
           </>
         )}
@@ -307,7 +327,7 @@ export const Hl7v2ToFhir = () => {
               id="fhir-resource-box"
               aria-label="FHIR Resource Box"
             >
-              {outputEditor}
+              {statusCode == "429" ? <ThrottledOutError /> : outputEditor}
             </Box>
           </>
         )}

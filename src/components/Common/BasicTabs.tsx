@@ -4,11 +4,13 @@ import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import LoginOverlaySmall from "./LoginOverlaySmall";
+import ThrottledOutError from "./ThrottledOutError";
 
 interface Props {
-  inputeditor: React.ReactNode;
-  outputeditor: React.ReactNode;
+  inputEditor: React.ReactNode;
+  outputEditor: React.ReactNode;
   isInterectable: boolean;
+  statusCode: string;
 }
 
 interface TabPanelProps {
@@ -29,7 +31,7 @@ function CustomTabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 3, width: "100%" }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -45,9 +47,10 @@ function a11yProps(index: number) {
 }
 
 export default function BasicTabs({
-  inputeditor,
-  outputeditor,
+  inputEditor,
+  outputEditor,
   isInterectable,
+  statusCode,
 }: Props) {
   const [value, setValue] = React.useState(0);
 
@@ -69,10 +72,10 @@ export default function BasicTabs({
       </Box>
       <CustomTabPanel value={value} index={0}>
         {!isInterectable && <LoginOverlaySmall />}
-        {inputeditor}
+        {inputEditor}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        {outputeditor}
+        {statusCode == "429" ? <ThrottledOutError /> : outputEditor}
       </CustomTabPanel>
     </Box>
   );
