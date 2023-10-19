@@ -1,18 +1,14 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import {
-  THROTTLED_OUT_BUTTON_LABEL,
-  THROTTLED_OUT_PAGE_SUB_TITLE,
-  THROTTLED_OUT_PAGE_TITLE,
-} from "../Configs/TextConstants";
+import { Box, Grid, Typography } from "@mui/material";
+import { THROTTLED_OUT_PAGE_SUB_TITLE } from "../Configs/TextConstants";
 
 function ThrottledOutError() {
   return (
     <Box
       bgcolor="background.paper"
-      height="100%"
+      height="95%"
       alignContent="center"
       justifyContent="center"
+      marginTop={10}
     >
       <Grid
         container
@@ -20,32 +16,20 @@ function ThrottledOutError() {
         justifyContent="center"
         spacing={5}
         minHeight="100%"
-        padding={5}
+        padding={8}
       >
-        <Grid item container alignContent="center" justifyContent="center">
+        {/* <Grid item container alignContent="center" justifyContent="center">
           <Typography
-            variant="h1"
-            alignContent="center"
-            justifyContent="center"
+            variant="h2"
+            textAlign="center"
           >
             {THROTTLED_OUT_PAGE_TITLE}
           </Typography>
-        </Grid>
+        </Grid> */}
         <Grid item container alignContent="center" justifyContent="center">
-          <Typography
-            variant="h3"
-            alignContent="center"
-            justifyContent="center"
-          >
+          <Typography variant="h4" textAlign="center" border={1} padding={2}>
             {THROTTLED_OUT_PAGE_SUB_TITLE}
           </Typography>
-        </Grid>
-        <Grid item container alignContent="center" justifyContent="center">
-          <Link to="/">
-            <Button variant="contained" color="primary" size="large" href="/">
-              {THROTTLED_OUT_BUTTON_LABEL}
-            </Button>
-          </Link>
         </Grid>
       </Grid>
     </Box>
