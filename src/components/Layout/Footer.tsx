@@ -1,5 +1,23 @@
 import CopyrightIcon from "@mui/icons-material/Copyright";
-import { Box, Button, Divider, Grid, Link, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Grid,
+  Link,
+  Stack,
+  Typography,
+} from "@mui/material";
+import {
+  ABOUT_LINK_LABEL,
+  CONTACT_LINK_LABEL,
+  FOOTER_BUTTON_LABEL,
+  FOOTER_COPYRIGHT,
+  FOOTER_DESCRIPTION,
+  FOOTER_TITLE,
+  POLICY_LINK_LABEL,
+  TERMS_LINK_LABEL,
+} from "../Configs/TextConstants";
 
 export const Footer = () => {
   return (
@@ -29,16 +47,15 @@ export const Footer = () => {
                 sx={{
                   height: { xs: 60, sm: 90, md: 76, lg: 69 },
                   width: { xs: 198, sm: 297, md: 250, lg: 226 },
-                }}>
-
-              </Box>
+                }}
+              ></Box>
 
               <Typography
                 variant="h6"
                 sx={{
                   color: "text.primary",
                   alignItems: "center",
-                  display: 'flex',
+                  display: "flex",
                   ml: 3,
                 }}
                 id="footer-text"
@@ -62,7 +79,7 @@ export const Footer = () => {
                 color="text.primary"
                 maxWidth="md"
               >
-                Open Healthcare Tools is brought to you by Choreo
+                {FOOTER_TITLE}
               </Typography>
             </Grid>
             <Grid
@@ -80,42 +97,52 @@ export const Footer = () => {
                     maxWidth="md"
                     marginBottom={2}
                   >
-                    The all in  Internal Developer Platform as a Service.
-                    Everything you need to deliver quality software on time and within budget.
+                    {FOOTER_DESCRIPTION}
                   </Typography>
-                  <Link href="https://console.choreo.dev/" target="_blank" sx={{
+                  <Link
+                    href="https://console.choreo.dev/"
+                    target="_blank"
+                    sx={{
                       alignSelf: "center",
-                    }}>
-                  <Button
-                    variant="contained" sx={{
-                      backgroundColor: "primary.main",
-                      color: "primary.contrastText",
-                      padding: "10px 20px",
-                      borderRadius: "8px",
-                      fontWeight: 600,
-                      fontSize: "1.2rem",
-                      textTransform: "none",
-                      maxWidth: "300px",
-                      alignSelf: "center",
-                      "&:hover": {
-                        backgroundColor: "secondary.main",
-                      },
-                    }}>
-                    Get Started Free
-                  </Button>
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "primary.main",
+                        color: "primary.contrastText",
+                        padding: "10px 20px",
+                        borderRadius: "8px",
+                        fontWeight: 600,
+                        fontSize: "1.2rem",
+                        textTransform: "none",
+                        maxWidth: "300px",
+                        alignSelf: "center",
+                        "&:hover": {
+                          backgroundColor: "secondary.main",
+                        },
+                      }}
+                    >
+                      {FOOTER_BUTTON_LABEL}
+                    </Button>
                   </Link>
                 </Stack>
               </Grid>
             </Grid>
           </Grid>
         </Box>
-
       </Grid>
       <Divider />
-      <Grid container spacing={1} paddingLeft={2} paddingRight={2} sx={{
-        backgroundColor: "background.paper",
-        justifyContent: "right",
-      }}>
+      <Grid
+        container
+        spacing={1}
+        paddingLeft={2}
+        paddingRight={2}
+        sx={{
+          backgroundColor: "background.paper",
+          justifyContent: "right",
+        }}
+      >
         <Grid
           item
           container
@@ -125,25 +152,51 @@ export const Footer = () => {
           justifyContent={{ xs: "center", md: "flex-start" }}
           alignItems="center"
         >
-          <Stack direction="row" >
-            <Box sx={{
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              flexDirection: "row",
-              padding: 1,
-            }}>
-              <Link href="https://wso2.com/solutions/healthcare/" target="_blank" sx={{ ml: 1, mr: 1 }}>
-                <Typography color="text.secondary">About</Typography>
+          <Stack direction="row">
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "flex-start",
+                justifyContent: "center",
+                flexDirection: "row",
+                padding: 1,
+              }}
+            >
+              <Link
+                href="https://wso2.com/solutions/healthcare/"
+                target="_blank"
+                sx={{ ml: 1, mr: 1 }}
+              >
+                <Typography color="text.secondary">
+                  {ABOUT_LINK_LABEL}
+                </Typography>
               </Link>
-              <Link href="https://wso2.com/contact/" target="_blank" sx={{ ml: 1, mr: 1 }}>
-                <Typography color="text.secondary">Contact</Typography>
+              <Link
+                href="https://wso2.com/contact/"
+                target="_blank"
+                sx={{ ml: 1, mr: 1 }}
+              >
+                <Typography color="text.secondary">
+                  {CONTACT_LINK_LABEL}
+                </Typography>
               </Link>
-              <Link href="https://wso2.com/california-privacy#opt-out" target="_blank" sx={{ ml: 1, mr: 1 }}>
-                <Typography color="text.secondary">Privacy Policy</Typography>
+              <Link
+                href="https://wso2.com/california-privacy#opt-out"
+                target="_blank"
+                sx={{ ml: 1, mr: 1 }}
+              >
+                <Typography color="text.secondary">
+                  {POLICY_LINK_LABEL}
+                </Typography>
               </Link>
-              <Link href="https://wso2.com/legal/" target="_blank" sx={{ ml: 1, mr: 6 }}>
-                <Typography color="text.secondary">Terms of service</Typography>
+              <Link
+                href="https://wso2.com/legal/"
+                target="_blank"
+                sx={{ ml: 1, mr: 6 }}
+              >
+                <Typography color="text.secondary">
+                  {TERMS_LINK_LABEL}
+                </Typography>
               </Link>
             </Box>
           </Stack>
@@ -157,14 +210,16 @@ export const Footer = () => {
           justifyContent={{ xs: "center", md: "flex-end" }}
           alignItems="center"
         >
-          <Stack direction="row" >
-            <Box sx={{
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "center",
-              flexDirection: "row",
-              padding: 1,
-            }}>
+          <Stack direction="row">
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "center",
+                flexDirection: "row",
+                padding: 1,
+              }}
+            >
               <CopyrightIcon
                 sx={{
                   color: "text.secondary",
@@ -179,7 +234,7 @@ export const Footer = () => {
                   id="footer-text"
                   color="text.secondary"
                 >
-                  {new Date().getFullYear()} WSO2 LLC.
+                  {new Date().getFullYear()} {FOOTER_COPYRIGHT}
                 </Typography>
               </Link>
             </Box>

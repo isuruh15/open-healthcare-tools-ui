@@ -1,16 +1,12 @@
 import { Box, Grid, Link, Stack, Typography } from "@mui/material";
+import { GITHUB_LINK_LABEL, GITHUB_TITLE } from "../Configs/TextConstants";
 
 interface Props {
-  content: {
-    title: string;
-  };
   marginTop?: number;
   marginBottom?: number;
 }
 
-function GithubBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
-  const heading = "Hey! Want to know how it is built?";
-  const linkText = "Check out our code repositories >>";
+function GithubBanner({ marginTop = 3, marginBottom = 2 }: Props) {
   return (
     <Box
       bgcolor="background.paper"
@@ -28,7 +24,7 @@ function GithubBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
             color="text.primary"
             maxWidth="lg"
           >
-            {heading}
+            {GITHUB_TITLE}
           </Typography>
           <Typography variant="h5" align="center" maxWidth="lg">
             <Link
@@ -37,7 +33,7 @@ function GithubBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
               target="_blank"
               color="text.secondary"
             >
-              {linkText}
+              {GITHUB_LINK_LABEL}
             </Link>
           </Typography>
         </Stack>

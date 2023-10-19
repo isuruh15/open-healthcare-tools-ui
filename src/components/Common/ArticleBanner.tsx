@@ -1,18 +1,15 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { ARTICLE_BANNER_TITLE } from "../Configs/TextConstants";
 import SwipeableTextMobileStepper from "./SwipeableTextMobileStepper";
 
 interface Props {
-  content: {
-    title: string;
-  };
   marginTop?: number;
   marginBottom?: number;
 }
 
-function ArticleBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
+function ArticleBanner({ marginTop = 3, marginBottom = 2 }: Props) {
   return (
     <Box
-      // bgcolor="secondary.main"
       alignItems="center"
       justifyContent="center"
       padding={5}
@@ -25,7 +22,7 @@ function ArticleBanner({ content, marginTop = 3, marginBottom = 2 }: Props) {
           maxWidth="lg"
           color="text.primary"
         >
-          {content.title}
+         {ARTICLE_BANNER_TITLE}
         </Typography>
       </Grid>
       <Grid container alignItems="center" justifyContent="center" padding={2}>

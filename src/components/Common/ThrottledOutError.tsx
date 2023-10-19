@@ -1,12 +1,12 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import {
-  NOT_FOUND_BUTTON_LABEL,
-  NOT_FOUND_PAGE_SUB_TITLE,
-  NOT_FOUND_PAGE_TITLE,
+  THROTTLED_OUT_BUTTON_LABEL,
+  THROTTLED_OUT_PAGE_SUB_TITLE,
+  THROTTLED_OUT_PAGE_TITLE,
 } from "../Configs/TextConstants";
 
-function NotFoundError() {
+function ThrottledOutError() {
   return (
     <Box
       bgcolor="background.paper"
@@ -28,7 +28,7 @@ function NotFoundError() {
             alignContent="center"
             justifyContent="center"
           >
-            {NOT_FOUND_PAGE_TITLE}
+            {THROTTLED_OUT_PAGE_TITLE}
           </Typography>
         </Grid>
         <Grid item container alignContent="center" justifyContent="center">
@@ -37,13 +37,13 @@ function NotFoundError() {
             alignContent="center"
             justifyContent="center"
           >
-            {NOT_FOUND_PAGE_SUB_TITLE}
+            {THROTTLED_OUT_PAGE_SUB_TITLE}
           </Typography>
         </Grid>
         <Grid item container alignContent="center" justifyContent="center">
           <Link to="/">
             <Button variant="contained" color="primary" size="large" href="/">
-              {NOT_FOUND_BUTTON_LABEL}
+              {THROTTLED_OUT_BUTTON_LABEL}
             </Button>
           </Link>
         </Grid>
@@ -52,4 +52,4 @@ function NotFoundError() {
   );
 }
 
-export default NotFoundError;
+export default ThrottledOutError;

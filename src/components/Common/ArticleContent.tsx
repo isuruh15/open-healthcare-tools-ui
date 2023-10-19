@@ -7,6 +7,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { READ_MORE_BUTTON_LABEL } from "../Configs/TextConstants";
 
 interface Props {
   imgPath: string;
@@ -78,7 +79,7 @@ function ArticleContent({ imgPath, title, description, link }: Props) {
                     },
                   }}
                 >
-                  Read more
+                  {READ_MORE_BUTTON_LABEL}
                 </Typography>
               </Button>
             </Grid>

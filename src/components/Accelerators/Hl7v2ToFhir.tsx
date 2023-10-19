@@ -207,7 +207,6 @@ export const Hl7v2ToFhir = () => {
       value={input}
       readOnly={!isInterectable}
       onChange={handleInputChange}
-      // onClick={handleOnClick}
       darkMode={darkMode}
       onClear={handleInputClear}
       placeholder="Paste or edit HL7 Data here..."
@@ -247,7 +246,7 @@ export const Hl7v2ToFhir = () => {
     <Container
       id="hl7v2-to-fhir-container"
       maxWidth={false}
-      sx={{ display: "flex", flexDirection: "column", height: 1, mt: 3 }}
+      sx={{ display: "flex", flexDirection: "column", height: 1, mt: 0 }}
     >
       {isError && (
         <ResponseAlert

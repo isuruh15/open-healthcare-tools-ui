@@ -1,27 +1,22 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useRef, useState } from "react";
+import { ToolStatus } from "../Configs/ToolContentConfig";
 
 interface MainBladeProps {
   title: string;
   subTitle: string;
   description: string;
-  image: string;
-  backgroundImage?: string;
+  backgroundImage: string;
+  status?: ToolStatus;
 }
 
 export const MainBlade = ({
   title,
   subTitle,
   description,
-  image,
   backgroundImage,
+  status = ToolStatus.active,
 }: MainBladeProps) => {
-  const [active] = useState(true);
-  const ref = useRef(null);
-
-  // const handleClick = () => {
-  //   ref.current?.scrollIntoView({ behavior: 'smooth' });
-  // };
   return (
     <>
       <Box bgcolor="background.paper">
@@ -32,7 +27,7 @@ export const MainBlade = ({
             alignItems="center"
             justifyContent="center"
             maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "md", xs: "xs" }}
-            sx={{ padding: { xs: 3, sm: 3, md: 0, lg: 0, xl: 0 } }}
+            sx={{ padding: { xs: 3, sm: 3, md: 0 } }}
             spacing={8}
           >
             <Grid
@@ -91,7 +86,7 @@ export const MainBlade = ({
                 width={700}
                 height={395}
                 alt="Healthcare Logo"
-                src={image}
+                src={backgroundImage}
               />
             </Grid>
           </Grid>
@@ -99,7 +94,7 @@ export const MainBlade = ({
       </Box>
       <Box>
         <Typography variant="h2" align="center" paddingTop={5}>
-          {subTitle}
+          {status === ToolStatus.active && subTitle}
         </Typography>
       </Box>
     </>
