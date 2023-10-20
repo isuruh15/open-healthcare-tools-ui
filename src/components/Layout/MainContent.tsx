@@ -5,10 +5,10 @@ import { MaintenancePage } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
-import NotFoundError from "../Common/NotFoundError";
 import Tools from "../Common/Tools";
 import Wso2Blade from "../Common/Wso2Blade";
 import { Tool, ToolStatus, tools } from "../Configs/ToolContentConfig";
+import NotFoundError from "../Errors/NotFoundError";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
 
@@ -21,7 +21,7 @@ export const MainContent = () => {
   let navigate = useNavigate();
   useEffect(() => {
     if (location.pathname === "/") {
-      navigate("/hl7-to-fhir");
+      navigate("/hl7v2-to-fhir");
     }
   }, [location]);
   let currentItem = activeTools.find(
@@ -30,7 +30,7 @@ export const MainContent = () => {
 
   if (location.pathname === "/") {
     currentItem = activeTools.find(
-      (tool: Tool) => tool.path === "/hl7-to-fhir"
+      (tool: Tool) => tool.path === "/hl7v2-to-fhir"
     );
   }
 

@@ -1,14 +1,14 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Container } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
 import LoginOverlay from "../Common/LoginOverlay";
-import ThrottledOutError from "../Common/ThrottledOutError";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
+import ThrottledOutError from "../Errors/ThrottledOutError";
 
 interface State {
   input: string;
@@ -105,7 +105,7 @@ export const Hl7v2ToFhir = () => {
         }));
       }, 2000);
     }
-    validateInput();
+    // validateInput();
   }, [loadSample, selectedLabel, input]);
 
   const closeAlert = () => {
@@ -287,6 +287,47 @@ export const Hl7v2ToFhir = () => {
           aria-label="Success Response Alert"
         />
       )}
+      <Box
+        sx={{
+          display: "flex",
+          flexGrow: 1,
+          justifyContent: "center",
+          marginTop: 5,
+        }}
+      >
+        {!isInterectable && (
+          <Typography variant="h2" align="center" paddingTop={5}>
+            Transform
+          </Typography>
+        )}
+
+        {isInterectable && (
+          <Button
+            href=""
+            target="_blank"
+            variant="contained"
+            size="medium"
+            color="info"
+            sx={{
+              padding: { xs: "5px", sm: "5px", md: "5px", lg: "8px" },
+              width: { xs: 130, sm: 130, md: 130, lg: 130, xl: 150 },
+              backgroundColor: "primary.main",
+              color: "primary.contrastText",
+              borderRadius: "8px",
+              fontWeight: 700,
+              fontSize: "1.5rem",
+              textTransform: "none",
+              alignSelf: "center",
+              "&:hover": {
+                backgroundColor: "secondary.main",
+              },
+            }}
+            onClick={validateInput}
+          >
+            Transform
+          </Button>
+        )}
+      </Box>
       <Box
         sx={{
           display: "flex",

@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import LoginOverlaySmall from "./LoginOverlaySmall";
-import ThrottledOutError from "./ThrottledOutError";
+import ThrottledOutError from "../Errors/ThrottledOutError";
 
 interface Props {
   inputEditor: React.ReactNode;
