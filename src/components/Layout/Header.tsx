@@ -118,8 +118,8 @@ export const Header = ({ title, shortDescription, url }: Props) => {
                 size="medium"
                 color="info"
                 sx={{
-                  padding: { xs: "0px", sm: "0px", md: "1px", lg: "8px" },
-                  width: { xs: 100, sm: 100, md: 100, lg: 100, xl: 110 },
+                  padding: { xs: "5px", sm: "8px", md: "5px", lg: "8px" },
+                  width: { xs: 100, sm: 110, md: 100, lg: 100, xl: 110 },
                   backgroundColor: "primary.main",
                   color: "primary.contrastText",
                   borderRadius: "8px",
