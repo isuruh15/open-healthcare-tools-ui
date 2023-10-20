@@ -39,6 +39,7 @@ export const UploadIcon = ({ size = 30, readFile, isDisabled = false }: Props) =
           reader(file[0]);
         }}
         aria-label="Upload File"
+        disabled={isDisabled}
       />
       <label htmlFor="icon-button-file">
         <Tooltip key="upload-icon" title="Upload Content" placement="bottom">
