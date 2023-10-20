@@ -144,8 +144,8 @@ function SwipeableTextMobileStepper() {
                 marginRight={1}
                 borderRadius={1}
                 sx={{
-                  width: { sm: 20, md: 25, lg: 30 },
-                  height: { sm: 6, md: 7, lg: 7 },
+                  width: { xs: 20, md: 25, lg: 30 },
+                  height: { xs: 6, md: 7, lg: 7 },
                 }}
               ></Box>
             </Button>
