@@ -34,7 +34,8 @@ export const BALLERINA_BLADE_DESCRIPTION = `Ballerina is the only integration la
                                             development.`;
 
 // Article banner section
-export const ARTICLE_BANNER_TITLE ="Listen what our developers say about different tools";
+export const ARTICLE_BANNER_TITLE =
+  "Listen what our developers say about different tools";
 export const READ_MORE_BUTTON_LABEL = "Read More";
 
 // Footer section
@@ -65,7 +66,6 @@ export const NOT_FOUND_PAGE_SUB_TITLE =
 export const NOT_FOUND_BUTTON_LABEL = "Back To Home";
 
 // Throttled out page
-export const THROTTLED_OUT_PAGE_TITLE = "429 - Throttled Out";
-export const THROTTLED_OUT_PAGE_SUB_TITLE =
-  `Opps..! The service is unavailable at the moment due to excessive requests. Please try again later.`;
-export const THROTTLED_OUT_BUTTON_LABEL = "Back To Home";
+export const THROTTLED_OUT_PAGE_TITLE =
+  "Opps..! The service is unavailable at the moment due to excessive requests";
+export const THROTTLED_OUT_PAGE_SUB_TITLE = ` Please try again in 1 minute`;
