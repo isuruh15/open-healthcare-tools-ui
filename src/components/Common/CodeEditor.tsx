@@ -87,7 +87,7 @@ export const CodeEditor = ({
       >
         <Typography variant="h6">{title}</Typography>
         <Box sx={{ display: "flex" }}>
-          {uploadEnabled && <ExecuteButton handleExecute={onExecute} />}
+          {uploadEnabled && <ExecuteButton handleExecute={onExecute} isDisabled={isDisabled}/>}
           <CopyContent
             data={JSON.parse(JSON.stringify(value!))}
             size={20}
