@@ -43,7 +43,7 @@ function LoginOverlaySmall() {
         width: { xs: "80%", sm: "88.5%" },
         zIndex: 1,
       }}
-      marginTop={4.6}
+      marginTop={5.8}
       alignItems="center"
       justifyContent="center"
     >
