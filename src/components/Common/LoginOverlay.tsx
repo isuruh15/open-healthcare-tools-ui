@@ -43,7 +43,7 @@ export default function LoginOverlay() {
         width: { md: "95.5%", lg: "96.4%", xl: "97.3%" },
         zIndex: 1,
       }}
-      marginTop={{ xs: 100, md: 4.8 }}
+      marginTop={{ xs: 100, md: 5.8 }}
       alignItems="center"
       justifyContent="center"
     >
