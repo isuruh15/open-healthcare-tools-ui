@@ -7,6 +7,7 @@ import { ReactElement } from "react";
 import {
   CcdaToFhir,
   ConnectToEmr,
+  FhirApis,
   FhirPath,
   FhirValidation,
   Hl7v2ToFhir,
@@ -45,7 +46,7 @@ export const tools: Tool[] = [
     shortDescription: "Convert HL7 V2 data to FHIR",
     description:
       "This API offers health IT developers a turnkey solution for effortlessly converting HL7v2 data to FHIR standards, enabling rapid integration and data exchange while reducing development complexity and accelerating time-to-market.",
-    path: "/hl7-to-fhir",
+    path: "/hl7v2-to-fhir",
     image: "health-intro.png",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
@@ -61,7 +62,7 @@ export const tools: Tool[] = [
     path: "/fhir-apis",
     image: "health-intro.png",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
-    component: <Hl7v2ToFhir />,
+    component: <FhirApis />,
     url: "https://wso2.com/solutions/healthcare/",
     status: ToolStatus.active,
   },

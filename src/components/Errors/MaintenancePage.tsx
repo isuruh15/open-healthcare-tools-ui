@@ -4,7 +4,7 @@ import {
   MAINTENANCE_PAGE_SUB_TITLE,
   MAINTENANCE_PAGE_TITLE,
 } from "../Configs/TextConstants";
-import { PreLoader } from "./PreLoader";
+import { PreLoader } from "../Common/PreLoader";
 
 export const MaintenancePage = () => {
   const [active] = useState(true);

@@ -1,14 +1,14 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
 import LoginOverlay from "../Common/LoginOverlay";
-import ThrottledOutError from "../Common/ThrottledOutError";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
+import ThrottledOutError from "../Errors/ThrottledOutError";
 
 interface State {
   input: string;
@@ -105,7 +105,7 @@ export const Hl7v2ToFhir = () => {
         }));
       }, 2000);
     }
-    validateInput();
+    // validateInput();
   }, [loadSample, selectedLabel, input]);
 
   const closeAlert = () => {
@@ -228,6 +228,7 @@ export const Hl7v2ToFhir = () => {
       onChange={handleInputChange}
       darkMode={darkMode}
       onClear={handleInputClear}
+      onExecute={validateInput}
       placeholder="Paste or edit HL7 Data here..."
       fileType="jsx"
       uploadEnabled

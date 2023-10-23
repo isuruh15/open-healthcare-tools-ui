@@ -1,5 +1,4 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { useRef, useState } from "react";
 import { ToolStatus } from "../Configs/ToolContentConfig";
 
 interface MainBladeProps {

@@ -24,7 +24,7 @@ export const Header = ({ title, shortDescription, url }: Props) => {
   }, []);
 
   const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
-  const { signOut, signIn, isAuthenticated, state } = useAuthContext();
+  const { signOut, signIn, isAuthenticated } = useAuthContext();
   useEffect(() => {
     isAuthenticated()
       .then((response) => {
