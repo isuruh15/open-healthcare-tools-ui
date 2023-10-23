@@ -91,11 +91,11 @@ export const MainBlade = ({
           </Grid>
         </Grid>
       </Box>
-      {/* <Box>
+      <Box>
         <Typography variant="h2" align="center" paddingTop={5}>
           {status === ToolStatus.active && subTitle}
         </Typography>
-      </Box> */}
+      </Box>
     </>
   );
 };

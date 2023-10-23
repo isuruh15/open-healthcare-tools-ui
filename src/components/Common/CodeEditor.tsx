@@ -4,6 +4,7 @@ import { aura, xcodeLight } from "@uiw/codemirror-themes-all";
 import CodeMirror from "@uiw/react-codemirror";
 import FileSaver from "file-saver";
 import { ClearIcon, CopyContent, DownloadIcon, UploadIcon } from "../Common";
+import { ExecuteButton } from "./ExecuteButton";
 
 interface CodeEditorProps {
   id?: string;
@@ -11,6 +12,7 @@ interface CodeEditorProps {
   value: string;
   onChange?: (value: string) => void;
   onClick?: () => void;
+  onExecute?: () => void;
   darkMode?: boolean;
   onClear?: () => void;
   placeholder?: string;
@@ -32,6 +34,7 @@ export const CodeEditor = ({
   value,
   onChange,
   onClick,
+  onExecute,
   darkMode,
   onClear,
   placeholder,
@@ -44,7 +47,7 @@ export const CodeEditor = ({
   readOnly,
   width,
   height,
-  isDisabled = false
+  isDisabled = false,
 }: CodeEditorProps) => {
   const handleDownload = (content: string, filename: string) => {
     if (content != null) {
@@ -79,16 +82,34 @@ export const CodeEditor = ({
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          height: 1,
         }}
       >
         <Typography variant="h6">{title}</Typography>
         <Box sx={{ display: "flex" }}>
-          <CopyContent data={JSON.parse(JSON.stringify(value!))} size={20} isDisabled={isDisabled}/>
+          {uploadEnabled && <ExecuteButton handleExecute={onExecute} />}
+          <CopyContent
+            data={JSON.parse(JSON.stringify(value!))}
+            size={20}
+            isDisabled={isDisabled}
+          />
           {downloadEnabled && (
-            <DownloadIcon handleDownload={handleDownloadClick} size={22} isDisabled={isDisabled}/>
+            <DownloadIcon
+              handleDownload={handleDownloadClick}
+              size={22}
+              isDisabled={isDisabled}
+            />
           )}
-          {uploadEnabled && <UploadIcon readFile={readFile!} size={22} isDisabled={isDisabled}/>}
-          {clearEnabled && <ClearIcon onClear={onClear!} size={22} isDisabled={isDisabled}/>}
+          {uploadEnabled && (
+            <UploadIcon
+              readFile={readFile!}
+              size={22}
+              isDisabled={isDisabled}
+            />
+          )}
+          {clearEnabled && (
+            <ClearIcon onClear={onClear!} size={22} isDisabled={isDisabled} />
+          )}
         </Box>
       </Box>
       <Box

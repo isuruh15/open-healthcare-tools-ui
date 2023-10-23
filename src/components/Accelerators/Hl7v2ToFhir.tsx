@@ -1,5 +1,5 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
@@ -228,6 +228,7 @@ export const Hl7v2ToFhir = () => {
       onChange={handleInputChange}
       darkMode={darkMode}
       onClear={handleInputClear}
+      onExecute={validateInput}
       placeholder="Paste or edit HL7 Data here..."
       fileType="jsx"
       uploadEnabled
@@ -287,47 +288,6 @@ export const Hl7v2ToFhir = () => {
           aria-label="Success Response Alert"
         />
       )}
-      <Box
-        sx={{
-          display: "flex",
-          flexGrow: 1,
-          justifyContent: "center",
-          marginTop: 5,
-        }}
-      >
-        {!isInterectable && (
-          <Typography variant="h2" align="center" paddingTop={5}>
-            Transform
-          </Typography>
-        )}
-
-        {isInterectable && (
-          <Button
-            href=""
-            target="_blank"
-            variant="contained"
-            size="medium"
-            color="info"
-            sx={{
-              padding: { xs: "5px", sm: "5px", md: "5px", lg: "8px" },
-              width: { xs: 130, sm: 130, md: 130, lg: 130, xl: 150 },
-              backgroundColor: "primary.main",
-              color: "primary.contrastText",
-              borderRadius: "8px",
-              fontWeight: 700,
-              fontSize: "1.5rem",
-              textTransform: "none",
-              alignSelf: "center",
-              "&:hover": {
-                backgroundColor: "secondary.main",
-              },
-            }}
-            onClick={validateInput}
-          >
-            Transform
-          </Button>
-        )}
-      </Box>
       <Box
         sx={{
           display: "flex",
