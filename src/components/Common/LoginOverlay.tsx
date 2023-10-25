@@ -27,10 +27,8 @@ export default function LoginOverlay() {
 
   const handleLogin = (fidp: string) => {
     if (isLogedIn) {
-      setIsLogedIn(false);
       signOut();
     } else {
-      setIsLogedIn(true);
       signIn({
         fidp: fidp,
       });

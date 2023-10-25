@@ -1,5 +1,12 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Link,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { ComponentTitle } from "../Common";
 import {
@@ -15,7 +22,6 @@ interface Props {
 
 export const Header = ({ title, shortDescription, url }: Props) => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
-
   const handleResize = (): void => setScreenWidth(window.innerWidth);
 
   useEffect(() => {
@@ -25,6 +31,7 @@ export const Header = ({ title, shortDescription, url }: Props) => {
 
   const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
   const { signOut, signIn, isAuthenticated } = useAuthContext();
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
   useEffect(() => {
     isAuthenticated()
       .then((response) => {
@@ -41,10 +48,8 @@ export const Header = ({ title, shortDescription, url }: Props) => {
 
   const handleLogout = () => {
     if (isLogedIn) {
-      setIsLogedIn(false);
       signOut();
     } else {
-      setIsLogedIn(true);
       signIn();
     }
   };
@@ -119,7 +124,7 @@ export const Header = ({ title, shortDescription, url }: Props) => {
                 color="info"
                 sx={{
                   padding: { xs: "5px", sm: "8px", md: "5px", lg: "8px" },
-                  width: { xs: 100, sm: 110, md: 100, lg: 100, xl: 110 },
+                  width: { xs: 110, sm: 120, md: 110, lg: 110, xl: 120 },
                   backgroundColor: "primary.main",
                   color: "primary.contrastText",
                   borderRadius: "8px",
@@ -131,7 +136,18 @@ export const Header = ({ title, shortDescription, url }: Props) => {
                     backgroundColor: "secondary.main",
                   },
                 }}
-                onClick={handleLogout}
+                onClick={() => {
+                  setIsLoading(true);
+                  handleLogout();
+                }}
+                endIcon={
+                  isLoading && (
+                    <CircularProgress
+                      size={16}
+                      sx={{ color: "white", ml: 0.1 }}
+                    />
+                  )
+                }
               >
                 {SIGN_OUT_BUTTON_LABEL}
               </Button>
