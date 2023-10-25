@@ -1,10 +1,11 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import {
-  SIGN_IN_BUTTON_LABEL,
-  UNAUTHORIZED_LOGIN_LABEL,
-} from "../Configs/TextConstants";
+import { UNAUTHORIZED_LOGIN_LABEL } from "../Configs/TextConstants";
+import GithubSignInButton from "./GithubSignInButton";
+import GmailSignInButton from "./GmailSignInButton";
+import MicrosoftSignInButton from "./MicrosoftSignInButton";
+import PoweredByAsgardeo from "./PoweredByAsgardeo";
 
 function LoginOverlaySmall() {
   const { signOut, signIn, isAuthenticated } = useAuthContext();
@@ -24,13 +25,15 @@ function LoginOverlaySmall() {
       });
   }, [isAuthenticated]);
 
-  const handleLogin = () => {
+  const handleLogin = (fidp: string) => {
     if (isLogedIn) {
       setIsLogedIn(false);
       signOut();
     } else {
       setIsLogedIn(true);
-      signIn();
+      signIn({
+        fidp: fidp,
+      });
     }
   };
   return (
@@ -71,27 +74,18 @@ function LoginOverlaySmall() {
           >
             {UNAUTHORIZED_LOGIN_LABEL}
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            onClick={handleLogin}
-            sx={{
-              backgroundColor: "primary.main",
-              color: "primary.contrastText",
-              borderRadius: "8px",
-              fontWeight: 600,
-              fontSize: { xs: "1rem" },
-              textTransform: "none",
-              alignSelf: "center",
-              "&:hover": {
-                backgroundColor: "secondary.main",
-              },
-            }}
+          <Box
+            alignItems="center"
+            flexDirection="column"
+            display="flex"
+            sx={{ justifyContent: "space-between" }}
           >
-            {SIGN_IN_BUTTON_LABEL}
-          </Button>
+            <GmailSignInButton handleLogin={handleLogin} />
+            <MicrosoftSignInButton handleLogin={handleLogin} />
+            <GithubSignInButton handleLogin={handleLogin} />
+          </Box>
+          <PoweredByAsgardeo />
         </Box>
-        <Box alignItems="center" justifyContent="center"></Box>
       </Grid>
     </Box>
   );

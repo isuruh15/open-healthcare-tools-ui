@@ -1,10 +1,11 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import {
-  SIGN_IN_BUTTON_LABEL,
-  UNAUTHORIZED_LOGIN_LABEL,
-} from "../Configs/TextConstants";
+import { UNAUTHORIZED_LOGIN_LABEL } from "../Configs/TextConstants";
+import GithubSignInButton from "./GithubSignInButton";
+import GmailSignInButton from "./GmailSignInButton";
+import MicrosoftSignInButton from "./MicrosoftSignInButton";
+import PoweredByAsgardeo from "./PoweredByAsgardeo";
 
 export default function LoginOverlay() {
   const { signOut, signIn, isAuthenticated } = useAuthContext();
@@ -24,13 +25,15 @@ export default function LoginOverlay() {
       });
   }, [isAuthenticated]);
 
-  const handleLogin = () => {
+  const handleLogin = (fidp: string) => {
     if (isLogedIn) {
       setIsLogedIn(false);
       signOut();
     } else {
       setIsLogedIn(true);
-      signIn();
+      signIn({
+        fidp: fidp,
+      });
     }
   };
   return (
@@ -38,12 +41,11 @@ export default function LoginOverlay() {
       sx={{
         position: "absolute",
         bgcolor: "rgba(0, 0, 0, 0.50)",
-        color: "common.white",
         height: "calc(100vh - 197px)",
-        width: { md: "95.5%", lg: "96.4%", xl: "97.3%" },
+        width: { md: "95.5%", lg: "96.4%", xl: "97.5%" },
         zIndex: 1,
       }}
-      marginTop={{ xs: 100, md: 5.8 }}
+      marginTop={{ md: 5.8 }}
       alignItems="center"
       justifyContent="center"
     >
@@ -71,27 +73,18 @@ export default function LoginOverlay() {
           >
             {UNAUTHORIZED_LOGIN_LABEL}
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            onClick={handleLogin}
-            sx={{
-              backgroundColor: "primary.main",
-              color: "primary.contrastText",
-              borderRadius: "8px",
-              fontWeight: 600,
-              fontSize: "1.2rem",
-              textTransform: "none",
-              alignSelf: "center",
-              "&:hover": {
-                backgroundColor: "secondary.main",
-              },
-            }}
+          <Box
+            alignItems="center"
+            flexDirection="column"
+            display="flex"
+            sx={{ justifyContent: "space-between" }}
           >
-            {SIGN_IN_BUTTON_LABEL}
-          </Button>
+            <GmailSignInButton handleLogin={handleLogin} />
+            <MicrosoftSignInButton handleLogin={handleLogin} />
+            <GithubSignInButton handleLogin={handleLogin} />
+          </Box>
+          <PoweredByAsgardeo />
         </Box>
-        <Box alignItems="center" justifyContent="center"></Box>
       </Grid>
     </Box>
   );
