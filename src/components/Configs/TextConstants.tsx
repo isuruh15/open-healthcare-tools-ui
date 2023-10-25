@@ -50,7 +50,9 @@ export const TERMS_LINK_LABEL = "Terms of Use";
 export const FOOTER_COPYRIGHT = "WSO2 LLC.";
 
 // Authentication
-export const SIGN_IN_BUTTON_LABEL = "Sign In";
+export const GMAIL_SIGN_IN_BUTTON_LABEL = "Sign in with Gmail";
+export const MICROSOFT_SIGN_IN_BUTTON_LABEL = "Sign in with Microsoft";
+export const GITHUB_SIGN_IN_BUTTON_LABEL = "Sign in with Github";
 export const SIGN_OUT_BUTTON_LABEL = "Sign Out";
 export const UNAUTHORIZED_LOGIN_LABEL = "Please sign in to try out the tool";
 
