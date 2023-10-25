@@ -1,4 +1,5 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, CircularProgress } from "@mui/material";
+import React from "react";
 import { MICROSOFT_SIGN_IN_BUTTON_LABEL } from "../Configs/TextConstants";
 
 interface Props {
@@ -6,20 +7,33 @@ interface Props {
 }
 
 function MicrosoftIcon() {
-  return <Box component="img" src="microsoft.png" width={27} height={27} />;
+  return (
+    <Box
+      component="img"
+      src="microsoft.png"
+      width={{ xs: 17, md: 27 }}
+      height={{ xs: 17, md: 27 }}
+    />
+  );
 }
 
 function MicrosoftSignInButton({ handleLogin }: Props) {
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
   return (
     <Button
       component="label"
       variant="contained"
       startIcon={<MicrosoftIcon />}
+      endIcon={
+        isLoading && (
+          <CircularProgress size={16} sx={{ color: "black", ml: 0.1 }} />
+        )
+      }
       size="large"
       sx={{
         margin: 1,
         justifyContent: "flex-start",
-        width: 230,
+        width: { xs: 240, md: 250 },
         backgroundColor: "common.white",
         color: "common.black",
         "&:hover": {
@@ -27,6 +41,7 @@ function MicrosoftSignInButton({ handleLogin }: Props) {
         },
       }}
       onClick={() => {
+        setIsLoading(true);
         handleLogin("microsoft");
       }}
     >
