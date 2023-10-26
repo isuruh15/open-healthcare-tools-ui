@@ -181,7 +181,7 @@ export const Footer = () => {
                 </Typography>
               </Link>
               <Link
-                href="https://wso2.com/california-privacy#opt-out"
+                href="https://wso2.com/privacy-policy/"
                 target="_blank"
                 sx={{ ml: 1, mr: 1 }}
               >
@@ -190,7 +190,7 @@ export const Footer = () => {
                 </Typography>
               </Link>
               <Link
-                href="https://wso2.com/legal/"
+                href="https://wso2.com/terms-of-use/"
                 target="_blank"
                 sx={{ ml: 1, mr: 6 }}
               >

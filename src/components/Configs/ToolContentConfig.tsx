@@ -64,14 +64,14 @@ export const tools: Tool[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirApis />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.active,
+    status: ToolStatus.inactive,
   },
   {
     title: "C-CDA To FHIR",
     subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description:
-      "Convert C-CDA data to FHIR. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "This API provides health IT developers with a powerful tool to seamlessly convert C-CDA documents to FHIR, facilitating the transition of clinical data from older systems to modern standards.",
     path: "/c-cda-to-fhir",
     image: "health-intro.png",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
@@ -102,14 +102,14 @@ export const tools: Tool[] = [
     icon: <VpnKeyOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <SmartOnFhir />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.maintenance,
+    status: ToolStatus.inactive,
   },
   {
     title: "FHIR Path",
     subTitle: "Transform",
     shortDescription: "Convert HL7 V2 data to FHIR",
     description:
-      "Easily convert, transform and extract healthcare data to meet FHIR standards",
+      "Easily convert, transform and extract healthcare data to meet FHIR standards.",
     path: "/fhir-path",
     image: "health-intro.png",
     icon: <FilterAltOutlinedIcon sx={{ width: 23, height: 23 }} />,
@@ -127,7 +127,7 @@ export const tools: Tool[] = [
     icon: <CableOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <ConnectToEmr />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.maintenance,
+    status: ToolStatus.inactive,
   },
   {
     title: "Terminology Service",
