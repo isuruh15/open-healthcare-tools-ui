@@ -1,5 +1,5 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
@@ -43,10 +43,8 @@ export const Hl7v2ToFhir = () => {
     isAuthenticated()
       .then((response) => {
         if (response === true) {
-          console.log("response" + response);
           setIsInterectable(true);
         } else {
-          console.log("response " + response);
           setIsInterectable(false);
         }
       })
@@ -249,7 +247,9 @@ export const Hl7v2ToFhir = () => {
       readOnly
       darkMode={darkMode}
       onClear={handleOutputClear}
-      placeholder="FHIR Resource will be displayed here..."
+      placeholder={
+        isLoading ? "Loading..." : "FHIR Resource will be displayed here..."
+      }
       fileType={outputType}
       downloadEnabled
       downloadName="hl7-to-fhir-output"
@@ -259,6 +259,7 @@ export const Hl7v2ToFhir = () => {
       id="fhir-resource-editor"
       aria-label="FHIR Resource Editor"
       isDisabled={!isInterectable}
+      isLoading={isLoading}
     />
   );
 
