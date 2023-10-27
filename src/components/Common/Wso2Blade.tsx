@@ -46,11 +46,11 @@ export const Banner = () => {
           <Grid item container alignItems="flex-end" justifyContent="center">
             <Box
               component={"img"}
-              src="wso2-logo.png"
+              src="wso2.svg"
               alt="WSO2 Logo"
               sx={{
-                height: { xs: 75, sm: 100, md: 86, lg: 106 },
-                width: { xs: 191, sm: 254, md: 220, lg: 270 },
+                width: { xs: 191, sm: 240, md: 220, lg: 220 },
+                height: { xs: 75, sm: 94, md: 86, lg: 86 },
                 // maxHeight: { xs: 233, md: 167 },
                 // maxWidth: { xs: 350, md: 250 },
               }}

@@ -67,7 +67,7 @@ export const MainContent = () => {
         {currentItem.status === ToolStatus.maintenance && <MaintenancePage />}
 
         {/* Other tools display area */}
-        <Tools></Tools>
+        <Tools currentTool={currentItem.title}></Tools>
 
         {/* About WSO2 display area */}
         <Wso2Blade></Wso2Blade>

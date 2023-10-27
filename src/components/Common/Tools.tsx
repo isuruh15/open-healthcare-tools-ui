@@ -1,11 +1,6 @@
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
-import {
-  Box,
-  Button,
-  Grid,
-  Typography
-} from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import * as React from "react";
 import SwipeableViews from "react-swipeable-views";
@@ -13,13 +8,21 @@ import {
   OTHER_TOOLS_SECTION_DESCRIPTION,
   OTHER_TOOLS_SECTION_TITLE,
 } from "../Configs/TextConstants";
-import { tools } from "../Configs/ToolContentConfig";
+import { ToolStatus, tools } from "../Configs/ToolContentConfig";
 import Toolcard from "./ToolCard";
 
-function Tools() {
+interface Props {
+  currentTool: string;
+}
+
+function Tools({ currentTool }: Props) {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tools.length - 3;
+
+  const activeTools = tools.filter(
+    (tool) => tool.status !== ToolStatus.inactive && tool.title !== currentTool
+  );
+  const maxSteps = activeTools.length - 3;
   const [screenWidth, setScreenWidth] = React.useState<number>(
     window.innerWidth
   );
@@ -147,10 +150,10 @@ function Tools() {
                       lg={4}
                     >
                       <Toolcard
-                        title={tools[activeStep].title}
-                        description={tools[activeStep].description}
-                        image={tools[activeStep].image}
-                        link={tools[activeStep].url}
+                        title={activeTools[activeStep].title}
+                        description={activeTools[activeStep].description}
+                        image={activeTools[activeStep].image}
+                        link={activeTools[activeStep].url}
                       ></Toolcard>
                     </Grid>
                     {screenWidth >= 900 && (
@@ -162,10 +165,10 @@ function Tools() {
                         justifyContent="center"
                       >
                         <Toolcard
-                          title={tools[activeStep + 1].title}
-                          description={tools[activeStep + 1].description}
-                          image={tools[activeStep + 1].image}
-                          link={tools[activeStep + 1].url}
+                          title={activeTools[activeStep + 1].title}
+                          description={activeTools[activeStep + 1].description}
+                          image={activeTools[activeStep + 1].image}
+                          link={activeTools[activeStep + 1].url}
                         ></Toolcard>
                       </Grid>
                     )}
@@ -177,10 +180,10 @@ function Tools() {
                         justifyContent="center"
                       >
                         <Toolcard
-                          title={tools[activeStep + 2].title}
-                          description={tools[activeStep + 2].description}
-                          image={tools[activeStep + 2].image}
-                          link={tools[activeStep + 2].url}
+                          title={activeTools[activeStep + 2].title}
+                          description={activeTools[activeStep + 2].description}
+                          image={activeTools[activeStep + 2].image}
+                          link={activeTools[activeStep + 2].url}
                         ></Toolcard>
                       </Grid>
                     )}

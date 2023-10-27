@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import { langs } from "@uiw/codemirror-extensions-langs";
 import { aura, xcodeLight } from "@uiw/codemirror-themes-all";
 import CodeMirror from "@uiw/react-codemirror";
@@ -26,6 +26,7 @@ interface CodeEditorProps {
   width?: string;
   height?: string;
   isDisabled?: boolean;
+  isLoading?: boolean;
 }
 
 export const CodeEditor = ({
@@ -48,6 +49,7 @@ export const CodeEditor = ({
   width,
   height,
   isDisabled = false,
+  isLoading = false,
 }: CodeEditorProps) => {
   const handleDownload = (content: string, filename: string) => {
     if (content != null) {
@@ -85,9 +87,16 @@ export const CodeEditor = ({
           height: 1,
         }}
       >
-        <Typography variant="h6">{title}</Typography>
         <Box sx={{ display: "flex" }}>
-          {uploadEnabled && <ExecuteButton handleExecute={onExecute} isDisabled={isDisabled}/>}
+          <Typography variant="h6">{title}</Typography>
+          {downloadEnabled && isLoading && (
+            <CircularProgress size={16} sx={{ color: "black", ml: 4 }} />
+          )}
+        </Box>
+        <Box sx={{ display: "flex" }}>
+          {uploadEnabled && (
+            <ExecuteButton handleExecute={onExecute} isDisabled={isDisabled} />
+          )}
           <CopyContent
             data={JSON.parse(JSON.stringify(value!))}
             size={20}

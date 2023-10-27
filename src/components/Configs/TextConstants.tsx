@@ -39,7 +39,7 @@ export const ARTICLE_BANNER_TITLE =
 export const READ_MORE_BUTTON_LABEL = "Read More";
 
 // Footer section
-export const FOOTER_TITLE = "Open Healthcare Tools is brought to you by Choreo";
+export const FOOTER_TITLE = "Healthcare Tools is brought to you by Choreo";
 export const FOOTER_DESCRIPTION = `The all in  Internal Developer Platform as a Service.
                                     Everything you need to deliver quality software on time and within budget.`;
 export const FOOTER_BUTTON_LABEL = "Get Started Free";
