@@ -12,8 +12,7 @@ const root = ReactDOM.createRoot(
 );
 
 const basePath =
-  import.meta.env.VITE_APP_AUTH_REDIRECT_URL ||
-  "https://fcc975f4-146e-494e-946c-d0ab180bd2f0.e1-us-east-azure.choreoapps.dev";
+  import.meta.env.VITE_APP_AUTH_REDIRECT_URL;
 
 const config = {
   signInRedirectURL: basePath,
@@ -22,6 +21,8 @@ const config = {
   baseUrl: "https://api.asgardeo.io/t/healthtools",
   scope: ["openid", "profile"],
 };
+
+console.log("basePath-import", import.meta.env.VITE_APP_AUTH_REDIRECT_URL);
 
 root.render(
   <AuthProvider config={config}>
