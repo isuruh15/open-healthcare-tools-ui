@@ -22,7 +22,7 @@ const config = {
   scope: ["openid", "profile"],
 };
 
-console.log("basePath-import", import.meta.env.VITE_APP_AUTH_REDIRECT_URL);
+console.log("basePath-import", import.meta.env.VITE_APP_AUTH_REDIRECT_URL_TST);
 
 root.render(
   <AuthProvider config={config}>
