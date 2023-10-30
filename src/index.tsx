@@ -17,8 +17,8 @@ const basePath =
 const config = {
   signInRedirectURL: basePath,
   signOutRedirectURL: basePath,
-  clientID: "DN2VylTUi2ZgzUFTI0NuJ17LWKMa",
-  baseUrl: "https://api.asgardeo.io/t/healthtools",
+  clientID: import.meta.env.VITE_APP_AUTH_CLIENT_ID,
+  baseUrl: import.meta.env.VITE_APP_AUTH_BASE_URL,
   scope: ["openid", "profile"],
 };
 
