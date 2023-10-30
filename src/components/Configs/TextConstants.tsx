@@ -2,7 +2,7 @@
 export const DISCORD_HELP_LABEL = "Get Help";
 
 // Github section
-export const GITHUB_TITLE = "Hey! Want to know how it is built?";
+export const GITHUB_TITLE = "Want to understand how it works?";
 export const GITHUB_LINK_LABEL = "Check out our code repositories >>";
 
 // Other tools section
