@@ -23,7 +23,7 @@ export const ExecuteButton = ({
         <IconButton
           aria-label="Execute Tool"
           sx={{
-            color: "red",
+            color: "secondary.main",
           }}
           onClick={handleExecute}
           disabled={isDisabled}

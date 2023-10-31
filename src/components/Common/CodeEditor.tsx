@@ -95,18 +95,21 @@ export const CodeEditor = ({
         </Box>
         <Box sx={{ display: "flex" }}>
           {uploadEnabled && (
-            <ExecuteButton handleExecute={onExecute} isDisabled={isDisabled} />
+            <ExecuteButton
+              handleExecute={onExecute}
+              isDisabled={isDisabled || value === ""}
+            />
           )}
           <CopyContent
             data={JSON.parse(JSON.stringify(value!))}
             size={20}
-            isDisabled={isDisabled}
+            isDisabled={isDisabled || value === ""}
           />
           {downloadEnabled && (
             <DownloadIcon
               handleDownload={handleDownloadClick}
               size={22}
-              isDisabled={isDisabled}
+              isDisabled={isDisabled || value === ""}
             />
           )}
           {uploadEnabled && (
@@ -117,7 +120,11 @@ export const CodeEditor = ({
             />
           )}
           {clearEnabled && (
-            <ClearIcon onClear={onClear!} size={22} isDisabled={isDisabled} />
+            <ClearIcon
+              onClear={onClear!}
+              size={22}
+              isDisabled={isDisabled || value === ""}
+            />
           )}
         </Box>
       </Box>

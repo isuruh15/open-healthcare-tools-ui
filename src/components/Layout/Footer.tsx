@@ -21,17 +21,16 @@ import {
 
 export const Footer = () => {
   return (
-    <Grid container sx={{ mb: 2 }}>
+    <Grid container sx={{ mb: 1 }}>
       <Grid>
         <Box
           sx={{
             alignItems: "center",
             justifyContent: "center",
-            minHeight: 300,
             backgroundColor: "background.paper",
             flexDirection: "column",
             display: "flex",
-            padding: 5,
+            padding: 2,
           }}
         >
           <Grid container alignItems="center" justifyContent="center">
@@ -45,8 +44,8 @@ export const Footer = () => {
                 src="choreo-logo-black.svg"
                 alt="Choreo Logo"
                 sx={{
-                  height: { xs: 60, sm: 90, md: 76, lg: 69 },
-                  width: { xs: 198, sm: 297, md: 250, lg: 226 },
+                  height: { xs: 55, sm: 69, md: 61, lg: 61 },
+                  width: { xs: 180, sm: 226, md: 200, lg: 200 },
                 }}
               ></Box>
 
@@ -70,7 +69,7 @@ export const Footer = () => {
                 paddingRight: 5,
                 paddingLeft: 2,
                 paddingTop: 5,
-                paddingBottom: 5,
+                paddingBottom: 3,
               }}
             >
               <Typography
@@ -89,13 +88,13 @@ export const Footer = () => {
               padding={2}
             >
               <Grid item>
-                <Stack spacing={1}>
+                <Stack spacing={2}>
                   <Typography
                     variant="h5"
                     align="center"
                     color="text.primary"
                     maxWidth="md"
-                    marginBottom={2}
+                    marginBottom={1}
                   >
                     {FOOTER_DESCRIPTION}
                   </Typography>
@@ -114,7 +113,7 @@ export const Footer = () => {
                         padding: "10px 20px",
                         borderRadius: "8px",
                         fontWeight: 600,
-                        fontSize: "1.2rem",
+                        fontSize: "1rem",
                         textTransform: "none",
                         maxWidth: "300px",
                         alignSelf: "center",
