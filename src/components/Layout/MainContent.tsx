@@ -5,7 +5,6 @@ import { MaintenancePage } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
-import Tools from "../Common/Tools";
 import Wso2Blade from "../Common/Wso2Blade";
 import { Tool, ToolStatus, tools } from "../Configs/ToolContentConfig";
 import NotFoundError from "../Errors/NotFoundError";

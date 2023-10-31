@@ -10,7 +10,9 @@ interface Props {
 export const ComponentTitle = ({ heading, description, url }: Props) => {
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column", mt: 2, ml: 1, mb:1 }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", mt: 2, ml: 1, mb: 1 }}
+      >
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Typography
             variant="h5"
@@ -23,7 +25,7 @@ export const ComponentTitle = ({ heading, description, url }: Props) => {
           >
             {heading}
           </Typography>
-          <AboutTool url={url} iconType></AboutTool>
+          {/* <AboutTool url={url} iconType></AboutTool> */}
         </Box>
         <Box sx={{ display: "flex", gap: 0.5 }}>
           <Typography

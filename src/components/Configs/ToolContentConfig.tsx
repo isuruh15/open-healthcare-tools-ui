@@ -43,7 +43,7 @@ export const tools: Tool[] = [
   {
     title: "HL7v2 To FHIR",
     subTitle: "Transform",
-    shortDescription: "Convert HL7 V2 data to FHIR",
+    shortDescription: "Convert HL7v2 messages to FHIR resources",
     description:
       "This API offers health IT developers a turnkey solution for effortlessly converting HL7v2 data to FHIR standards, enabling rapid integration and data exchange while reducing development complexity and accelerating time-to-market.",
     path: "/hl7v2-to-fhir",
@@ -64,7 +64,7 @@ export const tools: Tool[] = [
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <FhirApis />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.inactive,
+    status: ToolStatus.active,
   },
   {
     title: "C-CDA To FHIR",
@@ -102,7 +102,7 @@ export const tools: Tool[] = [
     icon: <VpnKeyOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <SmartOnFhir />,
     url: "https://wso2.com/solutions/healthcare/",
-    status: ToolStatus.inactive,
+    status: ToolStatus.active,
   },
   {
     title: "FHIR Path",

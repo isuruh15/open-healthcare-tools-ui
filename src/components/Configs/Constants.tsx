@@ -15,5 +15,8 @@ export const FHIR_ORGANIZATION_URL: string = "/fhir/r4/organization";
 
 export const FHIR_OBSERVATION_URL: string = "/fhir/r4/observation";
 
+export const BALLERINA_DISCORD_LINK: string =
+  "https://discord.com/invite/ballerinalang";
+
 export const WSO2_CONTACT_URL: string =
   "https://wso2.com/contact/?src=healthcare";

@@ -13,6 +13,7 @@ import {
   DISCORD_HELP_LABEL,
   SIGN_OUT_BUTTON_LABEL,
 } from "../Configs/TextConstants";
+import { BALLERINA_DISCORD_LINK } from "../Configs/Constants";
 
 interface Props {
   title: string;
@@ -90,7 +91,7 @@ export const Header = ({ title, shortDescription, url }: Props) => {
         >
           <Stack direction="row" spacing={{ xs: 2, sm: 5 }}>
             <Link
-              href="https://discord.com/invite/wso2"
+              href={BALLERINA_DISCORD_LINK}
               target="_blank"
               underline="none"
             >
