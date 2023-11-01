@@ -5,7 +5,7 @@ import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
 import Wso2Blade from "../Common/Wso2Blade";
-import { ITool, ToolStatus, tools } from "../Configs/ToolContentConfig";
+import { Tool, ToolStatus, tools } from "../Configs/ToolContentConfig";
 import NotFoundError from "../Errors/NotFoundError";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
@@ -19,7 +19,7 @@ export const MainContent = () => {
   }
 
   let currentItem = tools.find(
-    (tool: ITool) =>
+    (tool: Tool) =>
       tool.status !== ToolStatus.inactive && tool.path === location.pathname
   );
 

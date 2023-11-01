@@ -26,7 +26,7 @@ export const MainBlade = ({
             alignItems="center"
             justifyContent="center"
             maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "md", xs: "xs" }}
-            sx={{ padding: { xs: 3, sm: 3, md: 0 } }}
+            sx={{ padding: { xs: 3, sm: 3, md: 3, lg: 2 } }}
             spacing={8}
           >
             <Grid
@@ -77,13 +77,9 @@ export const MainBlade = ({
               <Box
                 component="img"
                 sx={{
-                  height: { xs: 197, sm: 254, lg: 310, xl: 395 },
-                  width: { xs: 350, sm: 450, lg: 550, xl: 700 },
-                  // maxHeight: { xs: 233, md: 167 },
-                  // maxWidth: { xs: 350, md: 250 },
+                  width: { xs: 0, sm: 0, lg: 550, xl: 550 },
+                  height: { xs: 0, sm: 0, lg: 310, xl: 310 },
                 }}
-                width={700}
-                height={395}
                 alt="Healthcare Logo"
                 src={backgroundImage}
               />

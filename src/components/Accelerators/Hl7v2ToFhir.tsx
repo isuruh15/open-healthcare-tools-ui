@@ -237,6 +237,7 @@ export const Hl7v2ToFhir = () => {
       id="hl7-resource-editor"
       aria-label="HL7 Resource Editor"
       isDisabled={!isInterectable}
+      executeButtonToolTipText="Perform transformation"
     />
   );
 
