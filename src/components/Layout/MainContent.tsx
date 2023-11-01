@@ -1,37 +1,27 @@
 import { Box } from "@mui/material";
-import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { MaintenancePage } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
 import { MainBlade } from "../Common/MainBlade";
 import Wso2Blade from "../Common/Wso2Blade";
-import { Tool, ToolStatus, tools } from "../Configs/ToolContentConfig";
+import { ITool, ToolStatus, tools } from "../Configs/ToolContentConfig";
 import NotFoundError from "../Errors/NotFoundError";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
+import Page from "../landing-page/Page";
 
 export const MainContent = () => {
-  const activeTools = tools.filter(
-    (tool) => tool.status !== ToolStatus.inactive
-  );
-
   const location = useLocation();
-  let navigate = useNavigate();
-  useEffect(() => {
-    if (location.pathname === "/") {
-      navigate("/hl7v2-to-fhir");
-    }
-  }, [location]);
-  let currentItem = activeTools.find(
-    (tool: Tool) => tool.path === location.pathname
-  );
 
   if (location.pathname === "/") {
-    currentItem = activeTools.find(
-      (tool: Tool) => tool.path === "/hl7v2-to-fhir"
-    );
+    return <Page />;
   }
+
+  let currentItem = tools.find(
+    (tool: ITool) =>
+      tool.status !== ToolStatus.inactive && tool.path === location.pathname
+  );
 
   if (!currentItem) {
     return <NotFoundError />;

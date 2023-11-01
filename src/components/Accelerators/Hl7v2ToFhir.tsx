@@ -227,7 +227,7 @@ export const Hl7v2ToFhir = () => {
       darkMode={darkMode}
       onClear={handleInputClear}
       onExecute={validateInput}
-      placeholder="Paste or edit HL7 Data here..."
+      placeholder="Paste or edit HL7 message here..."
       fileType="jsx"
       uploadEnabled
       readFile={readFile}
