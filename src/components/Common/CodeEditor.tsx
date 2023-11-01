@@ -27,6 +27,7 @@ interface CodeEditorProps {
   height?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
+  executeButtonToolTipText?: string;
 }
 
 export const CodeEditor = ({
@@ -50,6 +51,7 @@ export const CodeEditor = ({
   height,
   isDisabled = false,
   isLoading = false,
+  executeButtonToolTipText = "Execute",
 }: CodeEditorProps) => {
   const handleDownload = (content: string, filename: string) => {
     if (content != null) {
@@ -96,6 +98,7 @@ export const CodeEditor = ({
         <Box sx={{ display: "flex" }}>
           {uploadEnabled && (
             <ExecuteButton
+              toolTipText={executeButtonToolTipText}
               handleExecute={onExecute}
               isDisabled={isDisabled || value === ""}
             />

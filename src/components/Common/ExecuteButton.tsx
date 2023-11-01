@@ -2,12 +2,14 @@ import PlayCircleFilledOutlinedIcon from "@mui/icons-material/PlayCircleFilledOu
 import { IconButton, Tooltip } from "@mui/material";
 
 interface Props {
+  toolTipText: string;
   size?: number;
   handleExecute?: () => void;
   isDisabled?: boolean;
 }
 
 export const ExecuteButton = ({
+  toolTipText,
   size = 30,
   handleExecute,
   isDisabled = false,
@@ -16,7 +18,7 @@ export const ExecuteButton = ({
     <>
       <Tooltip
         key="execute-icon"
-        title="Execute Tool"
+        title={toolTipText}
         placement="bottom"
         id="execute-tooltip"
       >
