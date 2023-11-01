@@ -77,9 +77,9 @@ function SwipeableTextMobileStepper() {
                   {Math.abs(activeStep - index) <= 2 ? (
                     <Link href={step.link} target="_blank">
                       <ArticleContent
-                        imgPath={step.imgPath}
+                        imgPath=""
                         title={step.title}
-                        description={step.description}
+                        description=""
                         link={step.link}
                       />
                     </Link>
