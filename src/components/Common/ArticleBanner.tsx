@@ -1,6 +1,7 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import { articles } from "../Configs/ArticleConfig";
 import { ARTICLE_BANNER_TITLE } from "../Configs/TextConstants";
-import SwipeableTextMobileStepper from "./SwipeableTextMobileStepper";
+import ArticleTile from "./ArticleTile";
 
 interface Props {
   marginTop?: number;
@@ -9,26 +10,64 @@ interface Props {
 
 function ArticleBanner({ marginTop = 3, marginBottom = 2 }: Props) {
   return (
-    <Box
-      alignItems="center"
-      justifyContent="center"
-      padding={5}
-      paddingTop={10}
-    >
-      <Grid container alignItems="center" justifyContent="center" padding={1}>
-        <Typography
-          variant="h2"
-          align="center"
-          maxWidth="lg"
-          color="text.primary"
+    <Grid container alignItems="center" justifyContent="center">
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        spacing={5}
+        paddingTop={10}
+        paddingRight={5}
+        paddingLeft={5}
+        paddingBottom={5}
+        maxWidth={{ xs: "xs", sm: "md", md: "md", lg: "lg" }}
+      >
+        <Grid
+          container
+          item
+          alignItems="center"
+          justifyContent="center"
+          spacing={2}
+          paddingBottom={5}
         >
-         {ARTICLE_BANNER_TITLE}
-        </Typography>
+          <Typography
+            variant="h2"
+            align="center"
+            maxWidth="lg"
+            color="text.primary"
+          >
+            {ARTICLE_BANNER_TITLE}
+          </Typography>
+        </Grid>
+        <Grid
+          container
+          item
+          alignItems="center"
+          justifyContent="center"
+          spacing={{ md: 2, lg: 3, xl: 5 }}
+        >
+          {articles.map((article, index) => (
+            <Grid
+              xl={4}
+              lg={4}
+              md={6}
+              sm={6}
+              xs={12}
+              alignItems="center"
+              justifyContent="center"
+              spacing={3}
+              paddingBottom={3}
+            >
+              <ArticleTile
+                title={article.title}
+                type={article.type}
+                link={article.link}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
-      <Grid container alignItems="center" justifyContent="center" padding={2}>
-        <SwipeableTextMobileStepper />
-      </Grid>
-    </Box>
+    </Grid>
   );
 }
 

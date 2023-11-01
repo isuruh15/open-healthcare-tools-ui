@@ -30,7 +30,7 @@ export const Footer = () => {
             backgroundColor: "background.paper",
             flexDirection: "column",
             display: "flex",
-            padding: 2,
+            padding: 3,
           }}
         >
           <Grid container alignItems="center" justifyContent="center">
@@ -38,6 +38,7 @@ export const Footer = () => {
               container
               // alignItems="center"
               justifyContent={{ xs: "center", md: "center" }}
+              paddingTop={4}
             >
               <Box
                 component={"img"}
