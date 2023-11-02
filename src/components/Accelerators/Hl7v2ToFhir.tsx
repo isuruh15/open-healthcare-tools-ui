@@ -9,6 +9,7 @@ import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
 import ThrottledOutError from "../Errors/ThrottledOutError";
+import * as DOMPurify from "dompurify";
 
 interface State {
   input: string;
@@ -116,7 +117,6 @@ export const Hl7v2ToFhir = () => {
         }));
       }, 2000);
     }
-    // validateInput();
   }, [loadSample, selectedLabel, input]);
 
   const closeAlert = () => {
@@ -149,7 +149,11 @@ export const Hl7v2ToFhir = () => {
 
   const validateInput = () => {
     if (state.input !== "") {
-      callBackend();
+      const cleanInput = DOMPurify.sanitize(state.input);
+      setState((prevState) => ({
+        ...prevState,
+        input: cleanInput,
+      }));
     }
   };
 
@@ -255,6 +259,7 @@ export const Hl7v2ToFhir = () => {
       errorMessage: "",
     }));
 
+    validateInput();
     apiClient(BFF_BASE_URL)
       .post(HL7V2_TO_FHIR_URL, input)
       .then((res) => {
@@ -316,9 +321,9 @@ export const Hl7v2ToFhir = () => {
       onChange={handleInputChange}
       darkMode={darkMode}
       onClear={handleInputClear}
-      onExecute={validateInput}
+      onExecute={callBackend}
       placeholder="Paste or edit HL7 message here..."
-      fileType="jsx"
+      fileType="textile"
       uploadEnabled
       readFile={readFile}
       clearEnabled

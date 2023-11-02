@@ -1,5 +1,5 @@
 {
-  "name": "open-healthcare-sandbox-v3",
+  "name": "healthcare-sandbox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "@uiw/react-codemirror": "^4.20.2",
     "axios": "^1.4.0",
     "dayjs": "^1.11.8",
+    "dompurify": "^3.0.6",
     "file-saver": "^2.0.5",
     "gray-matter": "^4.0.3",
     "memfs": "^4.4.0",
@@ -68,6 +69,7 @@
     ]
   },
   "devDependencies": {
+    "@types/dompurify": "^3.0.4",
     "@types/file-saver": "^2.0.5",
     "@types/react-swipeable-views-utils": "^0.13.5",
     "@vitejs/plugin-react": "^4.0.0",
