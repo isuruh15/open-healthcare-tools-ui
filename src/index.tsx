@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { theme } from "./components/Configs/ThemeConfig";
 import "./index.css";
+import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "./components/Configs/Constants";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -20,6 +21,7 @@ const config = {
   clientID: import.meta.env.VITE_APP_AUTH_CLIENT_ID,
   baseUrl: import.meta.env.VITE_APP_AUTH_BASE_URL,
   scope: ["openid", "profile"],
+  resourceServerURLs: [BFF_BASE_URL+HL7V2_TO_FHIR_URL]
 };
 
 console.log("basePath-import", import.meta.env.VITE_APP_AUTH_REDIRECT_URL_TST);

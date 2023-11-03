@@ -1,4 +1,4 @@
-import { useAuthContext } from "@asgardeo/auth-react";
+import { HttpRequestConfig, useAuthContext } from "@asgardeo/auth-react";
 import { Box, Container } from "@mui/material";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
@@ -74,6 +74,19 @@ export const Hl7v2ToFhir = () => {
   const { loadSample, setLoadSample, selectedLabel, setSelectedLabel } =
     useContext(SelectedSampleContext);
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { httpRequest } = useAuthContext();
+
+  const requestConfig = {
+    headers: {
+      "Accept": "*/*",
+      "Content-Type": "text/plain"
+    },
+    method: "post",
+    url: BFF_BASE_URL + HL7V2_TO_FHIR_URL,
+    data: {
+      firstName: 'Fred'
+    },
+  };
 
   const [response, setResponse] = useState<any>({
     statusCode: null,
@@ -157,6 +170,83 @@ export const Hl7v2ToFhir = () => {
   };
 
   const callBackend = () => {
+    setState((prevState) => ({
+      ...prevState,
+      isLoading: true,
+      output: "",
+      isError: false,
+      errorMessage: "",
+    }));
+
+    const requestConfig: HttpRequestConfig = {
+      url: BFF_BASE_URL + HL7V2_TO_FHIR_URL,
+      method: "POST",
+      headers: {
+        "Accept": "*/*",
+        "Content-Type": "text/plain",
+        "Access-Control-Allow-Credentials":"true"
+      },
+      data: input,
+    };
+
+    console.log("requestConfigIs", requestConfig);
+
+    httpRequest(requestConfig)
+      .then((res) => {
+        console.log("res", res);
+        setRequest({
+          reqUrl: BFF_BASE_URL + res.config["url"],
+          contentType: requestConfig.headers ? requestConfig.headers["Content-Type"] : "",
+          method: res.config["method"]?.toUpperCase(),
+        });
+        setResponse({
+          statusCode: res.status,
+          statusText: res.statusText,
+          resUrl: res.request["responseURL"],
+          contentType: res.headers["content-type"],
+        });
+
+        setState((prevState) => ({
+          ...prevState,
+          output: JSON.stringify(res.data, null, 2),
+          isLoading: false,
+        }));
+      })
+      .catch((error) => {
+        console.log("error", error);
+        setState((prevState) => ({
+          ...prevState,
+          statusCode: error.response.status,
+        }));
+        setRequest({
+          reqUrl: BFF_BASE_URL + error.config["url"],
+          contentType: error.config.headers["Content-Type"],
+          method: error.config["method"]?.toUpperCase(),
+        });
+        setResponse({
+          statusCode: error.response.status,
+          statusText: error.response.statusText,
+          resUrl: error.response.request["responseURL"],
+          contentType: error.response.headers["content-type"],
+        });
+        setState((prevState) => ({
+          ...prevState,
+          output: JSON.stringify(error.response, null, 2),
+          errorMessage: error.message,
+          isError: true,
+          isLoading: false,
+        }));
+
+        setTimeout(() => {
+          setState((prevState) => ({
+            ...prevState,
+            isError: false,
+          }));
+        }, 2000);
+      });
+  };
+
+  const callBackendWithToken = () => {
     setState((prevState) => ({
       ...prevState,
       isLoading: true,
