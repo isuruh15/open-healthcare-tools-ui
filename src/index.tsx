@@ -12,8 +12,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const basePath =
-  import.meta.env.VITE_APP_AUTH_REDIRECT_URL;
+const basePath = import.meta.env.VITE_APP_AUTH_REDIRECT_URL;
 
 const config = {
   signInRedirectURL: basePath,
