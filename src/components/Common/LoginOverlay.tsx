@@ -1,4 +1,4 @@
-import { useAuthContext } from "@asgardeo/auth-react";
+import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react";
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { UNAUTHORIZED_LOGIN_LABEL } from "../Configs/TextConstants";
@@ -25,13 +25,19 @@ export default function LoginOverlay() {
       });
   }, [isAuthenticated]);
 
+  const redirectFn = (response: BasicUserInfo) => {
+    console.log("redirectFn", response);
+  
+    
+  }
   const handleLogin = (fidp: string) => {
     if (isLogedIn) {
       signOut();
     } else {
-      signIn({
-        fidp: fidp,
-      });
+      signIn();
+      // signIn({
+      //   fidp: fidp,
+      // });
     }
   };
   return (
