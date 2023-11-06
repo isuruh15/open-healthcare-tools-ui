@@ -2,7 +2,7 @@
 //   "https://c32618cf-389d-44f1-93ee-b67a3468aae3-dev.e1-us-east-azure.choreoapis.dev/hdbb/bffservice/endpoint-9090-803/1.0.0";
 
   export const BFF_BASE_URL: string =
-  "https://b17fd5f2-9916-4794-ba8d-0ef71611b3fc-dev.e1-us-east-azure.choreoapis.dev/yltz/bffsecured/endpoint-9090-803/v1";
+  "https://b17fd5f2-9916-4794-ba8d-0ef71611b3fc-dev.e1-us-east-azure.choreoapis.dev/yltz/bffsecured/endpoint-9090-803/v1.0";
 
 export const HL7V2_TO_FHIR_URL: string = "/v2tofhir/transform";
 
