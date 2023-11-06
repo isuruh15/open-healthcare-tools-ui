@@ -3,14 +3,17 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import LoginOverlaySmall from "./LoginOverlaySmall";
 import ThrottledOutError from "../Errors/ThrottledOutError";
+import ErrorDisplay from "./ErrorDisplay";
+import LoginOverlaySmall from "./LoginOverlaySmall";
 
 interface Props {
   inputEditor: React.ReactNode;
   outputEditor: React.ReactNode;
   isInterectable: boolean;
   statusCode: string;
+  isError?: boolean;
+  errorMessage?: string;
 }
 
 interface TabPanelProps {
@@ -51,6 +54,8 @@ export default function BasicTabs({
   outputEditor,
   isInterectable,
   statusCode,
+  isError = false,
+  errorMessage = "",
 }: Props) {
   const [value, setValue] = React.useState(0);
 
@@ -75,7 +80,11 @@ export default function BasicTabs({
         {inputEditor}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        {statusCode == "429" ? <ThrottledOutError /> : outputEditor}
+        {isError && statusCode == "429" && <ThrottledOutError />}
+        {isError && statusCode !== "429" && (
+          <ErrorDisplay statusCode="400" message={errorMessage} />
+        )}
+        {outputEditor}
       </CustomTabPanel>
     </Box>
   );

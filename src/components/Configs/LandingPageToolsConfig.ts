@@ -82,7 +82,7 @@ export const toolGroups: IToolGroup[] = [
         title: "Terminology Server",
         description:
           "This tool includes support for the provision of a terminology service - that is, a service that lets healthcare applications make use of codes and value sets without having to become experts in the fine details of the code system, value set.",
-        image: "https://ballerina.io/images/health-sm-banner.png",
+        image: "terminology.png",
         link: "/terminology-service",
         status: ToolStatus.maintenance,
       },
@@ -105,7 +105,7 @@ export const toolGroups: IToolGroup[] = [
         title: "FHIR Validator",
         description:
           "This tool provides the capability to validate the FHIR resource against standard specification. The interface accepts the FHIR resource and returns validation errors if any.",
-        image: "https://ballerina.io/images/health-sm-banner.png",
+        image: "validation.png",
         link: "/fhir-validation",
         status: ToolStatus.maintenance,
       },
