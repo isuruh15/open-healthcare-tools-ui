@@ -9,7 +9,7 @@ import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
 import ThrottledOutError from "../Errors/ThrottledOutError";
-import * as DOMPurify from "dompurify";
+import DOMPurify from 'dompurify';
 
 interface State {
   input: string;
