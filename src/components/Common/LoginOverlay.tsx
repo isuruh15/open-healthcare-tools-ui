@@ -35,9 +35,9 @@ export default function LoginOverlay() {
       signOut();
     } else {
       signIn();
-      signIn({
-        // fidp: fidp,
-      });
+      // signIn({
+      //   fidp: fidp,
+      // });
     }
   };
   return (
