@@ -1,15 +1,16 @@
-import { HttpRequestConfig, useAuthContext } from "@asgardeo/auth-react";
+import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Container } from "@mui/material";
+import DOMPurify from "dompurify";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
+import ErrorDisplay from "../Common/ErrorDisplay";
 import LoginOverlay from "../Common/LoginOverlay";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
 import ThrottledOutError from "../Errors/ThrottledOutError";
-import DOMPurify from 'dompurify';
 
 interface State {
   input: string;
@@ -209,17 +210,22 @@ export const Hl7v2ToFhir = () => {
         setState((prevState) => ({
           ...prevState,
           output: JSON.stringify(error.response, null, 2),
-          errorMessage: error.message,
+          errorMessage: JSON.parse(error.response.data.issue[0].details.text)
+            .message,
           isError: true,
           isLoading: false,
         }));
 
-        setTimeout(() => {
-          setState((prevState) => ({
-            ...prevState,
-            isError: false,
-          }));
-        }, 2000);
+        console.log(
+          JSON.parse(error.response.data.issue[0].details.text).message
+        );
+
+        // setTimeout(() => {
+        //   setState((prevState) => ({
+        //     ...prevState,
+        //     isError: false,
+        //   }));
+        // }, 2000);
       });
   };
 
@@ -275,7 +281,7 @@ export const Hl7v2ToFhir = () => {
       maxWidth={false}
       sx={{ display: "flex", flexDirection: "column", height: 1, mt: 0 }}
     >
-      {isError && statusCode != "429" && (
+      {/* {isError && statusCode != "429" && (
         <ResponseAlert
           isOpen={isError}
           severity="error"
@@ -284,7 +290,7 @@ export const Hl7v2ToFhir = () => {
           id="response-alert-error"
           aria-label="Error Response Alert"
         />
-      )}
+      )} */}
       {alertOpen && (
         <ResponseAlert
           isOpen={alertOpen}
@@ -309,6 +315,8 @@ export const Hl7v2ToFhir = () => {
               outputEditor={outputEditor}
               isInterectable={isInterectable}
               statusCode={statusCode}
+              isError={isError}
+              errorMessage={errorMessage}
             ></BasicTabs>
           </>
         )}
@@ -335,7 +343,13 @@ export const Hl7v2ToFhir = () => {
               id="fhir-resource-box"
               aria-label="FHIR Resource Box"
             >
-              {statusCode == "429" ? <ThrottledOutError /> : outputEditor}
+              <>
+                {isError && statusCode == "429" && <ThrottledOutError />}
+                {isError && statusCode !== "429" && (
+                  <ErrorDisplay statusCode="400" message={errorMessage} />
+                )}
+                {outputEditor}
+              </>
             </Box>
           </>
         )}
