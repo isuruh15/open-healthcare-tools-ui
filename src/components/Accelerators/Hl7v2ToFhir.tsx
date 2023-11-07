@@ -1,4 +1,4 @@
-import { useAuthContext } from "@asgardeo/auth-react";
+import { HttpRequestConfig, useAuthContext } from "@asgardeo/auth-react";
 import { Box, Container } from "@mui/material";
 import DOMPurify from "dompurify";
 import React, { useCallback, useContext, useEffect, useState } from "react";
