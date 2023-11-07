@@ -54,6 +54,7 @@ export const Hl7v2ToFhir = () => {
         console.log(error);
       });
   }, [isAuthenticated]);
+  const { httpRequest } = useAuthContext();
 
   const handleResize = (): void => setScreenWidth(window.innerWidth);
 
@@ -171,12 +172,20 @@ export const Hl7v2ToFhir = () => {
     }));
 
     validateInput();
-    apiClient(BFF_BASE_URL)
-      .post(HL7V2_TO_FHIR_URL, input)
+    const requestConfig: HttpRequestConfig = {
+      url: BFF_BASE_URL + HL7V2_TO_FHIR_URL,
+      method: "POST",
+      headers: {
+        "Accept": "*/*",
+        "Content-Type": "text/plain"
+      },
+      data: input,
+    };
+    httpRequest(requestConfig)
       .then((res) => {
         setRequest({
           reqUrl: BFF_BASE_URL + res.config["url"],
-          contentType: res.config.headers["Content-Type"],
+          contentType: res.headers["Content-Type"],
           method: res.config["method"]?.toUpperCase(),
         });
         setResponse({
