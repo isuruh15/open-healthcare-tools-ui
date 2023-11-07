@@ -1,9 +1,6 @@
-import { Box, Grid, Typography } from "@mui/material";
 import ErrorIcon from "@mui/icons-material/Error";
-import {
-  THROTTLED_OUT_PAGE_SUB_TITLE,
-  THROTTLED_OUT_PAGE_TITLE,
-} from "../Configs/TextConstants";
+import { Box, Grid, Typography } from "@mui/material";
+import { THROTTLED_OUT_PAGE_TITLE } from "../Configs/TextConstants";
 
 function ThrottledOutError() {
   return (
@@ -32,11 +29,11 @@ function ThrottledOutError() {
               {THROTTLED_OUT_PAGE_TITLE}
             </Typography>
           </Grid>
-          <Grid item container alignContent="center" justifyContent="center">
+          {/* <Grid item container alignContent="center" justifyContent="center">
             <Typography variant="h5" textAlign="center" padding={2}>
               {THROTTLED_OUT_PAGE_SUB_TITLE}
             </Typography>
-          </Grid>
+          </Grid> */}
         </Box>
       </Grid>
     </Box>
