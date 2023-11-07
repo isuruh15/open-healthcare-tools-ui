@@ -8,9 +8,9 @@ import BasicTabs from "../Common/BasicTabs";
 import ErrorDisplay from "../Common/ErrorDisplay";
 import LoginOverlay from "../Common/LoginOverlay";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
+import { THROTTLED_OUT_PAGE_TITLE } from "../Configs/TextConstants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
-import ThrottledOutError from "../Errors/ThrottledOutError";
 
 interface State {
   input: string;
@@ -32,7 +32,7 @@ export const Hl7v2ToFhir = () => {
     isLoading: false,
     alertOpen: false,
     outputType: "json",
-    statusCode: "",
+    statusCode: "500",
   });
 
   const [screenWidth, setScreenWidth] = React.useState<number>(
@@ -192,6 +192,7 @@ export const Hl7v2ToFhir = () => {
         }));
       })
       .catch((error) => {
+        console.log(error.response.data.hasOwnProperty("issue"));
         setState((prevState) => ({
           ...prevState,
           statusCode: error.response.status,
@@ -210,15 +211,12 @@ export const Hl7v2ToFhir = () => {
         setState((prevState) => ({
           ...prevState,
           output: JSON.stringify(error.response.data, null, 2),
-          errorMessage: JSON.parse(error.response.data.issue[0].details.text)
-            .message,
+          errorMessage:
+            error.response.data.hasOwnProperty("issue") &&
+            JSON.parse(error.response.data.issue[0].details.text).message,
           isError: true,
           isLoading: false,
         }));
-
-        console.log(
-          JSON.parse(error.response.data.issue[0].details.text).message
-        );
 
         // setTimeout(() => {
         //   setState((prevState) => ({
@@ -344,9 +342,15 @@ export const Hl7v2ToFhir = () => {
               aria-label="FHIR Resource Box"
             >
               <>
-                {isError && statusCode == "429" && <ThrottledOutError />}
-                {isError && statusCode !== "429" && (
-                  <ErrorDisplay statusCode="400" message={errorMessage} />
+                {isError && (
+                  <ErrorDisplay
+                    statusCode={statusCode == "500" ? "400" : statusCode}
+                    message={
+                      statusCode == "429"
+                        ? THROTTLED_OUT_PAGE_TITLE
+                        : errorMessage
+                    }
+                  />
                 )}
                 {outputEditor}
               </>

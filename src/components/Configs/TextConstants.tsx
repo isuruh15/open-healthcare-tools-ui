@@ -69,5 +69,5 @@ export const NOT_FOUND_BUTTON_LABEL = "Back To Home";
 
 // Throttled out page
 export const THROTTLED_OUT_PAGE_TITLE =
-  "Opps..! The service is unavailable at the moment due to excessive requests";
-export const THROTTLED_OUT_PAGE_SUB_TITLE = ` Please try again in 1 minute`;
+  `Opps..! The service is unavailable at the moment due to excessive requests.
+  Please try again in 1 minute`;

@@ -3,7 +3,7 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import ThrottledOutError from "../Errors/ThrottledOutError";
+import { THROTTLED_OUT_PAGE_TITLE } from "../Configs/TextConstants";
 import ErrorDisplay from "./ErrorDisplay";
 import LoginOverlaySmall from "./LoginOverlaySmall";
 
@@ -80,9 +80,13 @@ export default function BasicTabs({
         {inputEditor}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        {isError && statusCode == "429" && <ThrottledOutError />}
-        {isError && statusCode !== "429" && (
-          <ErrorDisplay statusCode="400" message={errorMessage} />
+        {isError && (
+          <ErrorDisplay
+            statusCode={statusCode == "500" ? "400" : statusCode}
+            message={
+              statusCode == "429" ? THROTTLED_OUT_PAGE_TITLE : errorMessage
+            }
+          />
         )}
         {outputEditor}
       </CustomTabPanel>
