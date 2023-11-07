@@ -172,7 +172,7 @@ export const Footer = () => {
                 </Typography>
               </Link>
               <Link
-                href="https://wso2.com/contact/"
+                href="https://wso2.com/contact/?ref=Healthcare"
                 target="_blank"
                 sx={{ ml: 1, mr: 1 }}
               >
