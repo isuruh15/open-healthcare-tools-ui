@@ -209,7 +209,7 @@ export const Hl7v2ToFhir = () => {
         });
         setState((prevState) => ({
           ...prevState,
-          output: JSON.stringify(error.response, null, 2),
+          output: JSON.stringify(error.response.data, null, 2),
           errorMessage: JSON.parse(error.response.data.issue[0].details.text)
             .message,
           isError: true,
