@@ -20,7 +20,7 @@ const config = {
   clientID: import.meta.env.VITE_APP_AUTH_CLIENT_ID,
   baseUrl: import.meta.env.VITE_APP_AUTH_BASE_URL,
   scope: ["openid", "profile"],
-  resourceServerURLs: [BFF_BASE_URL+HL7V2_TO_FHIR_URL]
+  resourceServerURLs: [BFF_BASE_URL]
 };
 
 console.log("basePath-import", import.meta.env.VITE_APP_AUTH_REDIRECT_URL_TST);
