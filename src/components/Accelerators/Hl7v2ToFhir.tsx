@@ -187,7 +187,7 @@ export const Hl7v2ToFhir = () => {
       .then((res) => {
         setRequest({
           reqUrl: BFF_BASE_URL + res.config["url"],
-          contentType: res.headers["Content-Type"],
+          contentType: res.headers["Content-Type"],          
           method: res.config["method"]?.toUpperCase(),
         });
         setResponse({
