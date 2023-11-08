@@ -27,7 +27,7 @@ export const MainBlade = ({
             justifyContent="center"
             maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "md", xs: "xs" }}
             sx={{ padding: { xs: 3, sm: 3, md: 3, lg: 2 } }}
-            spacing={8}
+            spacing={10}
           >
             <Grid
               container
@@ -72,15 +72,16 @@ export const MainBlade = ({
               item
               md={6}
               alignItems={{ lg: "center", xl: "left" }}
-              justifyContent={{ lg: "center", xl: "start" }}
+              justifyContent="center"
             >
               <Box
                 component="img"
                 sx={{
-                  width: { xs: 0, sm: 0, lg: 550, xl: 550 },
-                  height: { xs: 0, sm: 0, lg: 310, xl: 310 },
+                  width: { xs: 0, md: 450, lg: 550, xl: 690 },
+                  height: { xs: 0, md: 236, lg: 289, xl: 362 },
+                  marginLeft: 10,
                 }}
-                alt="Healthcare Logo"
+                alt="HL7v2 Logo"
                 src={backgroundImage}
               />
             </Grid>
