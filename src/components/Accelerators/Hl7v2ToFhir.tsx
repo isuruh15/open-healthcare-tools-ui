@@ -176,7 +176,7 @@ export const Hl7v2ToFhir = () => {
       url: BFF_BASE_URL + HL7V2_TO_FHIR_URL,
       method: "POST",
       headers: {
-        "Accept": "*/*",
+        "Accept": "*application/json",
         "Content-Type": "text/plain",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST",
