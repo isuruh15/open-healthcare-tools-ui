@@ -37,6 +37,7 @@ export const MainContent = () => {
     baseUrl: import.meta.env.VITE_APP_AUTH_BASE_URL,
     scope: ["openid", "profile"],
     resourceServerURLs: [BFF_BASE_URL],
+    disableTrySignInSilently: false
   };
 
   return (
