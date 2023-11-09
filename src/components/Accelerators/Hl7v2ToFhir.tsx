@@ -201,7 +201,6 @@ export const Hl7v2ToFhir = () => {
         }));
       })
       .catch((error) => {
-        console.log(error.response.data.hasOwnProperty("issue"));
         setState((prevState) => ({
           ...prevState,
           statusCode: error.response.status,
@@ -226,13 +225,6 @@ export const Hl7v2ToFhir = () => {
           isError: true,
           isLoading: false,
         }));
-
-        // setTimeout(() => {
-        //   setState((prevState) => ({
-        //     ...prevState,
-        //     isError: false,
-        //   }));
-        // }, 2000);
       });
   };
 
