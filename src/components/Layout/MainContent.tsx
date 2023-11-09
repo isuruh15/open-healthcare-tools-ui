@@ -1,6 +1,7 @@
 import { AuthProvider } from "@asgardeo/auth-react";
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
+import { OauthConfig } from "../../../oauth-config";
 import { MaintenancePage } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
@@ -29,15 +30,15 @@ export const MainContent = () => {
     return <NotFoundError />;
   }
 
-  const basePath = import.meta.env.VITE_APP_AUTH_REDIRECT_URL;
+  const redirectBaseUrl = OauthConfig.APP_AUTH_REDIRECT_BASE_URL;
   const config = {
-    signInRedirectURL: basePath + location.pathname,
-    signOutRedirectURL: basePath + location.pathname,
-    clientID: import.meta.env.VITE_APP_AUTH_CLIENT_ID,
-    baseUrl: import.meta.env.VITE_APP_AUTH_BASE_URL,
+    signInRedirectURL: redirectBaseUrl + location.pathname,
+    signOutRedirectURL: redirectBaseUrl + location.pathname,
+    clientID: OauthConfig.APP_AUTH_CLIENT_ID,
+    baseUrl: OauthConfig.APP_AUTH_BASE_URL,
     scope: ["openid", "profile"],
     resourceServerURLs: [BFF_BASE_URL],
-    disableTrySignInSilently: false
+    disableTrySignInSilently: false,
   };
 
   return (
