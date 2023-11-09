@@ -187,7 +187,6 @@ export const Hl7v2ToFhir = () => {
         }));
       })
       .catch((error) => {
-        console.log(error.response.data.hasOwnProperty("issue"));
         setState((prevState) => ({
           ...prevState,
           statusCode: error.response.status,
