@@ -1,5 +1,5 @@
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import { IconButton, Tooltip } from "@mui/material";
+import { Box, IconButton, Tooltip } from "@mui/material";
 
 interface Props {
   size?: number;
@@ -20,19 +20,21 @@ export const DownloadIcon = ({
         placement="bottom"
         id="download-tooltip"
       >
-        <IconButton
-          aria-label="Download Content"
-          sx={{
-            color: "text.primary",
-          }}
-          onClick={handleDownload}
-          disabled={isDisabled}
-        >
-          <FileDownloadOutlinedIcon
-            sx={{ fontSize: size }}
-            aria-hidden="true"
-          />
-        </IconButton>
+        <Box>
+          <IconButton
+            aria-label="Download Content"
+            sx={{
+              color: "text.primary",
+            }}
+            onClick={handleDownload}
+            disabled={isDisabled}
+          >
+            <FileDownloadOutlinedIcon
+              sx={{ fontSize: size }}
+              aria-hidden="true"
+            />
+          </IconButton>
+        </Box>
       </Tooltip>
     </>
   );

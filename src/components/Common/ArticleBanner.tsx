@@ -48,6 +48,9 @@ function ArticleBanner({ marginTop = 3, marginBottom = 2 }: Props) {
         >
           {articles.map((article, index) => (
             <Grid
+              key={index}
+              item
+              container
               xl={4}
               lg={4}
               md={6}
