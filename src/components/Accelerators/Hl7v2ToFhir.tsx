@@ -2,6 +2,7 @@ import { HttpRequestConfig, useAuthContext } from "@asgardeo/auth-react";
 import { Box, Container } from "@mui/material";
 import DOMPurify from "dompurify";
 import React, { useCallback, useContext, useEffect, useState } from "react";
+import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
 import ErrorDisplay from "../Common/ErrorDisplay";
@@ -175,11 +176,8 @@ export const Hl7v2ToFhir = () => {
       url: BFF_BASE_URL + HL7V2_TO_FHIR_URL,
       method: "POST",
       headers: {
-        Accept: "*application/json",
-        "Content-Type": "text/plain",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST",
-        "Access-Control-Allow-Credentials": "true",
+        "Accept": "*application/json",
+        "Content-Type": "text/plain"
       },
       data: input,
     };
@@ -228,6 +226,13 @@ export const Hl7v2ToFhir = () => {
           isError: true,
           isLoading: false,
         }));
+
+        // setTimeout(() => {
+        //   setState((prevState) => ({
+        //     ...prevState,
+        //     isError: false,
+        //   }));
+        // }, 2000);
       });
   };
 
