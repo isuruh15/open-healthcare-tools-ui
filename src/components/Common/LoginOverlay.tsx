@@ -25,11 +25,6 @@ export default function LoginOverlay() {
       });
   }, [isAuthenticated]);
 
-  const redirectFn = (response: BasicUserInfo) => {
-    console.log("redirectFn", response);
-  
-    
-  }
   const handleLogin = (fidp: string) => {
     if (isLogedIn) {
       signOut();
