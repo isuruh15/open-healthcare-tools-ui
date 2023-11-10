@@ -21,42 +21,37 @@ import {
 
 export const Footer = () => {
   return (
-    <Grid container sx={{ mb: 1 }}>
+    <Grid sx={{ mb: 1 }}>
       <Grid>
         <Box
-          sx={{
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "background.paper",
-            flexDirection: "column",
-            display: "flex",
-            padding: 3,
-          }}
+          bgcolor="background.paper"
+          alignItems="center"
+          justifyContent="center"
+          padding={2}
         >
           <Grid container alignItems="center" justifyContent="center">
             <Grid
               container
-              // alignItems="center"
               justifyContent={{ xs: "center", md: "center" }}
-              paddingTop={4}
+              paddingTop={2}
             >
               <Box
                 component={"img"}
                 src="choreo-logo-black.svg"
                 alt="Choreo Logo"
                 sx={{
-                  height: { xs: 55, sm: 69, md: 61, lg: 61 },
-                  width: { xs: 180, sm: 226, md: 200, lg: 200 },
+                  height: { xs: 31, sm: 37, md: 40, lg: 43 },
+                  width: { xs: 100, sm: 120, md: 130, lg: 140 },
                 }}
               ></Box>
 
               <Typography
-                variant="h6"
+                variant="body2"
                 sx={{
                   color: "text.primary",
                   alignItems: "center",
                   display: "flex",
-                  ml: 3,
+                  ml: 2,
                 }}
                 id="footer-text"
               >
@@ -69,12 +64,12 @@ export const Footer = () => {
               sx={{
                 paddingRight: 5,
                 paddingLeft: 2,
-                paddingTop: 5,
-                paddingBottom: 3,
+                paddingTop: 3,
+                paddingBottom: 1,
               }}
             >
               <Typography
-                variant="h2"
+                variant="h4"
                 align="center"
                 color="text.primary"
                 maxWidth="md"
@@ -86,12 +81,12 @@ export const Footer = () => {
               container
               alignItems="center"
               justifyContent="center"
-              padding={2}
+              padding={1}
             >
               <Grid item>
                 <Stack spacing={2}>
                   <Typography
-                    variant="h5"
+                    variant="body1"
                     align="center"
                     color="text.primary"
                     maxWidth="md"
@@ -111,9 +106,9 @@ export const Footer = () => {
                       sx={{
                         backgroundColor: "primary.main",
                         color: "primary.contrastText",
-                        padding: "10px 20px",
+                        padding: "7px 12px",
                         borderRadius: "8px",
-                        fontWeight: 600,
+                        fontWeight: 500,
                         fontSize: "1rem",
                         textTransform: "none",
                         maxWidth: "300px",
@@ -167,7 +162,7 @@ export const Footer = () => {
                 target="_blank"
                 sx={{ ml: 1, mr: 1 }}
               >
-                <Typography color="text.secondary">
+                <Typography variant="body2" color="text.secondary">
                   {ABOUT_LINK_LABEL}
                 </Typography>
               </Link>
@@ -176,7 +171,7 @@ export const Footer = () => {
                 target="_blank"
                 sx={{ ml: 1, mr: 1 }}
               >
-                <Typography color="text.secondary">
+                <Typography variant="body2" color="text.secondary">
                   {CONTACT_LINK_LABEL}
                 </Typography>
               </Link>
@@ -185,7 +180,7 @@ export const Footer = () => {
                 target="_blank"
                 sx={{ ml: 1, mr: 1 }}
               >
-                <Typography color="text.secondary">
+                <Typography variant="body2" color="text.secondary">
                   {POLICY_LINK_LABEL}
                 </Typography>
               </Link>
@@ -194,7 +189,7 @@ export const Footer = () => {
                 target="_blank"
                 sx={{ ml: 1, mr: 6 }}
               >
-                <Typography color="text.secondary">
+                <Typography variant="body2" color="text.secondary">
                   {TERMS_LINK_LABEL}
                 </Typography>
               </Link>
@@ -224,12 +219,13 @@ export const Footer = () => {
                 sx={{
                   color: "text.secondary",
                   mr: { sm: 0.5 },
+                  fontSize: "10",
                 }}
                 aria-hidden="true"
               />
               <Link href="https://wso2.com/" target="_blank" underline="hover">
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   sx={{ color: "grey.500" }}
                   id="footer-text"
                   color="text.secondary"
