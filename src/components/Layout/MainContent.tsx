@@ -1,7 +1,6 @@
 import { AuthProvider } from "@asgardeo/auth-react";
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import { OauthConfig } from "../../../oauth-config";
 import { MaintenancePage } from "../Common";
 import ArticleBanner from "../Common/ArticleBanner";
 import GithubBanner from "../Common/GithubBanner";
@@ -13,6 +12,12 @@ import NotFoundError from "../Errors/NotFoundError";
 import { Footer, Header } from "../Layout";
 import Routes from "../Routes/AppRoutes";
 import Page from "../landing-page/Page";
+
+declare global {
+  interface Window {
+    OauthConfig: any;
+  }
+}
 
 export const MainContent = () => {
   const location = useLocation();
@@ -30,6 +35,8 @@ export const MainContent = () => {
     return <NotFoundError />;
   }
 
+  
+  const OauthConfig = window.OauthConfig;
   const redirectBaseUrl = OauthConfig.APP_AUTH_REDIRECT_BASE_URL;
   const config = {
     signInRedirectURL: redirectBaseUrl + location.pathname,
