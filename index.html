@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self';
   connect-src 'self' https://api.asgardeo.io/t/healthtools/oauth2/token https://api.asgardeo.io/t/healthtools/oauth2/jwks https://c32618cf-389d-44f1-93ee-b67a3468aae3-dev.e1-us-east-azure.choreoapis.dev/hdbb/bffservice/endpoint-9090-803/1.0.0/v2tofhir/transform https://api.asgardeo.io/t/wso2healthcare/oauth2/token https://api.asgardeo.io/t/wso2healthcare/oauth2/jwks; 
   frame-src 'self' https://api.asgardeo.io;
-  script-src 'self'; 
+  script-src 'self' 'unsafe-inline'; 
   style-src 'self'  https://fonts.googleapis.com 'unsafe-inline'; 
   img-src 'self' https://ballerina.io/images/health-sm-banner.png data:; 
   font-src 'self' https://fonts.gstatic.com; 
@@ -20,8 +20,12 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
     rel="stylesheet">
   <link rel="manifest" href="/manifest.json" />
+  <script src="/build/oauth-config.js"></script>
+  <script>
+    window.OauthConfig = OauthConfig;
+  </script>
   <title>Healthcare Tools</title>
-</head>
+  </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
