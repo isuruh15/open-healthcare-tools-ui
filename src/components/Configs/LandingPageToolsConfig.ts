@@ -27,7 +27,7 @@ export const toolGroups: IToolGroup[] = [
         title: "HL7v2 to FHIR",
         description:
           "This API offers health IT developers a turnkey solution for effortlessly converting HL7v2 data to FHIR standards, enabling rapid integration and data exchange while reducing development complexity and accelerating time-to-market.",
-        image: "hl7v2.png",
+        image: "tools-logo/with-background/hl7v2.png",
         link: "/hl7v2-to-fhir",
         status: ToolStatus.active,
       },
@@ -35,7 +35,7 @@ export const toolGroups: IToolGroup[] = [
         title: "C-CDA to FHIR",
         description:
           "This API provides health IT developers with a powerful tool to seamlessly convert C-CDA documents to FHIR, facilitating the transition of clinical data from older systems to modern standards.",
-        image: "c-cda.png",
+        image: "tools-logo/with-background/c-cda.png",
         link: "/c-cda-to-fhir",
         status: ToolStatus.maintenance,
       },
@@ -58,7 +58,7 @@ export const toolGroups: IToolGroup[] = [
         title: "Connect to EMR",
         description:
           "We offer seamless integration with EMR/EHR systems featuring standard FHIR APIs and OAuth2 authentication support, guaranteeing secure and efficient data exchange.",
-        image: "emr.png",
+        image: "tools-logo/with-background/emr.png",
         link: "/connect-to-emr",
         status: ToolStatus.maintenance,
       },
@@ -66,7 +66,7 @@ export const toolGroups: IToolGroup[] = [
         title: "FHIR API",
         description:
           "We have a number of pre-built Ballerina services that are ready to deploy in Choreo as FHIR APIs. All you have to do is configure a relevant backend(API, datasource, FHIR repository…) and deploy.",
-        image: "fhir-api.png",
+        image: "tools-logo/with-background/fhir-api.png",
         link: "/fhir-apis",
         status: ToolStatus.maintenance,
       },
@@ -82,7 +82,7 @@ export const toolGroups: IToolGroup[] = [
         title: "Terminology Server",
         description:
           "This tool includes support for the provision of a terminology service - that is, a service that lets healthcare applications make use of codes and value sets without having to become experts in the fine details of the code system, value set.",
-        image: "terminology-service.png",
+        image: "tools-logo/with-background/terminology-service.png",
         link: "/terminology-service",
         status: ToolStatus.maintenance,
       },
@@ -105,7 +105,7 @@ export const toolGroups: IToolGroup[] = [
         title: "FHIR Validator",
         description:
           "This tool provides the capability to validate the FHIR resource against standard specification. The interface accepts the FHIR resource and returns validation errors if any.",
-        image: "validator.png",
+        image: "tools-logo/with-background/validator.png",
         link: "/fhir-validation",
         status: ToolStatus.maintenance,
       },
