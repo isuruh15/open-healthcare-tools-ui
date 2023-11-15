@@ -47,7 +47,7 @@ export const tools: Tool[] = [
     description:
       "This API offers health IT developers a turnkey solution for effortlessly converting HL7v2 data to FHIR standards, enabling rapid integration and data exchange while reducing development complexity and accelerating time-to-market.",
     path: "/hl7v2-to-fhir",
-    image: "hl7v2-removebg.png",
+    image: "tools-logo/without-background/hl7v2.png",
     icon: <TransformOutlinedIcon sx={{ width: 23, height: 23 }} />,
     component: <Hl7v2ToFhir />,
     url: "https://wso2.com/solutions/healthcare/",
