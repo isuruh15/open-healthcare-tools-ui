@@ -6,24 +6,20 @@ import GithubSignInButton from "./GithubSignInButton";
 import GmailSignInButton from "./GmailSignInButton";
 import MicrosoftSignInButton from "./MicrosoftSignInButton";
 import PoweredByAsgardeo from "./PoweredByAsgardeo";
+import { PreLoader } from "./PreLoader";
 
 function LoginOverlaySmall() {
-  const { signOut, signIn, isAuthenticated } = useAuthContext();
+  const { signOut, signIn, state } = useAuthContext();
   const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
+  const { isAuthenticated, isLoading } = state;
 
   useEffect(() => {
-    isAuthenticated()
-      .then((response) => {
-        if (response === true) {
-          setIsLogedIn(true);
-        } else {
-          setIsLogedIn(false);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [isAuthenticated]);
+    if (isAuthenticated) {
+      setIsLogedIn(true);
+    } else {
+      setIsLogedIn(false);
+    }
+  }, [state]);
 
   const handleLogin = (fidp: string) => {
     if (isLogedIn) {
@@ -64,25 +60,37 @@ function LoginOverlaySmall() {
           padding={1}
           borderRadius={1}
         >
-          <Typography
-            variant="h6"
-            marginBottom={2}
-            color="common.black"
-            textAlign="center"
-          >
-            {UNAUTHORIZED_LOGIN_LABEL}
-          </Typography>
-          <Box
-            alignItems="center"
-            flexDirection="column"
-            display="flex"
-            sx={{ justifyContent: "space-between" }}
-          >
-            <GmailSignInButton handleLogin={handleLogin} />
-            <MicrosoftSignInButton handleLogin={handleLogin} />
-            <GithubSignInButton handleLogin={handleLogin} />
-          </Box>
-          <PoweredByAsgardeo />
+          {isLoading && (
+            <>
+              <PreLoader setActive={true} size={40} />
+              <Typography variant="body2" color="black" marginTop={2}>
+                Please wait while we are loading the tool...
+              </Typography>
+            </>
+          )}
+          {!isLoading && (
+            <>
+              <Typography
+                variant="h6"
+                marginBottom={2}
+                color="common.black"
+                textAlign="center"
+              >
+                {UNAUTHORIZED_LOGIN_LABEL}
+              </Typography>
+              <Box
+                alignItems="center"
+                flexDirection="column"
+                display="flex"
+                sx={{ justifyContent: "space-between" }}
+              >
+                <GmailSignInButton handleLogin={handleLogin} />
+                <MicrosoftSignInButton handleLogin={handleLogin} />
+                <GithubSignInButton handleLogin={handleLogin} />
+              </Box>
+              <PoweredByAsgardeo />
+            </>
+          )}
         </Box>
       </Grid>
     </Box>

@@ -39,8 +39,8 @@ export const ARTICLE_BANNER_TITLE =
 export const READ_MORE_BUTTON_LABEL = "Read More";
 
 // Footer section
-export const FOOTER_TITLE = "Healthcare Tools is brought to you by Choreo";
-export const FOOTER_DESCRIPTION = `The all in  Internal Developer Platform as a Service.
+export const FOOTER_TITLE = "Healthcare Tools are brought to you by Choreo";
+export const FOOTER_DESCRIPTION = `The all-in Developer Platform as a Service.
                                     Everything you need to deliver quality software on time and within budget.`;
 export const FOOTER_BUTTON_LABEL = "Get Started Free";
 export const ABOUT_LINK_LABEL = "About";
@@ -68,6 +68,5 @@ export const NOT_FOUND_PAGE_SUB_TITLE =
 export const NOT_FOUND_BUTTON_LABEL = "Back To Home";
 
 // Throttled out page
-export const THROTTLED_OUT_PAGE_TITLE =
-  `Opps..! The service is unavailable at the moment due to excessive requests.
+export const THROTTLED_OUT_PAGE_TITLE = `Opps..! The service is unavailable at the moment due to excessive requests.
   Please try again in 1 minute`;
