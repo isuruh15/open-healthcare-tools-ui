@@ -1,6 +1,5 @@
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Grid, Typography } from "@mui/material";
-import React, { useEffect } from "react";
 import { UNAUTHORIZED_LOGIN_LABEL } from "../Configs/TextConstants";
 import GithubSignInButton from "./GithubSignInButton";
 import GmailSignInButton from "./GmailSignInButton";
@@ -10,19 +9,10 @@ import { PreLoader } from "./PreLoader";
 
 function LoginOverlaySmall() {
   const { signOut, signIn, state } = useAuthContext();
-  const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
   const { isAuthenticated, isLoading } = state;
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      setIsLogedIn(true);
-    } else {
-      setIsLogedIn(false);
-    }
-  }, [state]);
-
   const handleLogin = (fidp: string) => {
-    if (isLogedIn) {
+    if (isAuthenticated) {
       signOut();
     } else {
       signIn({
