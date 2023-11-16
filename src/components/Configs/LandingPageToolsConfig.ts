@@ -97,7 +97,7 @@ export const toolGroups: IToolGroup[] = [
         title: "FHIR Path",
         description:
           "Our FHIRPath Evaluation API is the key to seamless FHIR resource querying and data manipulation for healthcare applications. This API enables efficient evaluation of FHIRPath expressions.",
-        image: "https://ballerina.io/images/health-sm-banner.png",
+        image: "tools-logo/with-background/fhir-path.png",
         link: "/fhir-path",
         status: ToolStatus.maintenance,
       },
@@ -105,7 +105,7 @@ export const toolGroups: IToolGroup[] = [
         title: "FHIR Validator",
         description:
           "This tool provides the capability to validate the FHIR resource against standard specification. The interface accepts the FHIR resource and returns validation errors if any.",
-        image: "tools-logo/with-background/validator.png",
+        image: "tools-logo/with-background/fhir-validator.png",
         link: "/fhir-validation",
         status: ToolStatus.maintenance,
       },
