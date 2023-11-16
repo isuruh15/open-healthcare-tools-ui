@@ -10,7 +10,7 @@ interface Props {
 
 export const ExecuteButton = ({
   toolTipText,
-  size = 30,
+  size = 23,
   handleExecute,
   isDisabled = false,
 }: Props) => {
