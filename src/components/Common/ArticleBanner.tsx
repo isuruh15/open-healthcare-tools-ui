@@ -34,6 +34,7 @@ function ArticleBanner({ marginTop = 3, marginBottom = 2 }: Props) {
             align="center"
             maxWidth="lg"
             color="text.primary"
+            paddingBottom={3}
           >
             {ARTICLE_BANNER_TITLE}
           </Typography>
