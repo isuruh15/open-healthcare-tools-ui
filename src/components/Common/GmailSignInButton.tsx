@@ -9,6 +9,7 @@ interface Props {
 function GmailIcon() {
   return (
     <Box
+      id="box-gmail-icon"
       component="img"
       src="google.png"
       width={{ xs: 20, md: 30 }}
@@ -21,12 +22,17 @@ function GmailSignIn({ handleLogin }: Props) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   return (
     <Button
+      id="btn-gmail-sign-in"
       component="label"
       variant="contained"
       startIcon={<GmailIcon />}
       endIcon={
         isLoading && (
-          <CircularProgress size={16} sx={{ color: "black", ml: 0.46 }} />
+          <CircularProgress
+            id="comp-gmail-sign-in-circular-progress"
+            size={16}
+            sx={{ color: "black", ml: 0.46 }}
+          />
         )
       }
       size="large"

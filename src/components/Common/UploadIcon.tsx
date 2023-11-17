@@ -7,7 +7,11 @@ interface Props {
   isDisabled?: boolean;
 }
 
-export const UploadIcon = ({ size = 30, readFile, isDisabled = false }: Props) => {
+export const UploadIcon = ({
+  size = 30,
+  readFile,
+  isDisabled = false,
+}: Props) => {
   const reader = async (file: Blob): Promise<void> => {
     const fr = new FileReader();
 
@@ -28,7 +32,7 @@ export const UploadIcon = ({ size = 30, readFile, isDisabled = false }: Props) =
     <>
       <input
         accept="text/*"
-        id="icon-button-file"
+        id="input-upload-content"
         type="file"
         style={{ display: "none" }}
         onChange={(event) => {
@@ -41,9 +45,15 @@ export const UploadIcon = ({ size = 30, readFile, isDisabled = false }: Props) =
         aria-label="Upload File"
         disabled={isDisabled}
       />
-      <label htmlFor="icon-button-file">
-        <Tooltip key="upload-icon" title="Upload Content" placement="bottom">
+      <label id="comp-upload-content-label" htmlFor="icon-button-file">
+        <Tooltip
+          id="comp-upload-content-tooltip"
+          key="upload-icon"
+          title="Upload Content"
+          placement="bottom"
+        >
           <IconButton
+            id="btn-upload-content"
             aria-label="upload file"
             sx={{
               color: "text.primary",
@@ -51,7 +61,10 @@ export const UploadIcon = ({ size = 30, readFile, isDisabled = false }: Props) =
             component="span"
             disabled={isDisabled}
           >
-            <FileUploadOutlinedIcon sx={{ fontSize: size }} />
+            <FileUploadOutlinedIcon
+              id="icon-upload-content"
+              sx={{ fontSize: size }}
+            />
           </IconButton>
         </Tooltip>
       </label>
