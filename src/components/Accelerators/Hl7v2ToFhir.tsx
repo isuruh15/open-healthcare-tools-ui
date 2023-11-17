@@ -38,7 +38,7 @@ export const Hl7v2ToFhir = () => {
     window.innerWidth
   );
   const { state: authState } = useAuthContext();
-  const { isLoading: isSiginLoading, isAuthenticated } = authState;
+  const { isLoading: isSiginLoading = false, isAuthenticated = false } = authState;
 
   const { httpRequest } = useAuthContext();
 
@@ -315,7 +315,7 @@ export const Hl7v2ToFhir = () => {
         )}
         {screenWidth >= 900 && (
           <>
-            {(!isAuthenticated || isSiginLoading) && <LoginOverlay />}
+            {!isAuthenticated && <LoginOverlay />}
             <Box
               sx={{
                 pr: 1,

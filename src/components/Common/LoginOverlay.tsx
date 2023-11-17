@@ -57,7 +57,7 @@ export default function LoginOverlay() {
               </Typography>
             </>
           )}
-          {!isLoading && (
+          {!isLoading && !isAuthenticated && (
             <>
               <Typography
                 variant="h4"
