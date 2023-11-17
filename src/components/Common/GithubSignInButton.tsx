@@ -9,6 +9,7 @@ interface Props {
 function GithubIcon() {
   return (
     <Box
+      id="box-github-icon"
       component="img"
       src="github.png"
       width={{ xs: 20, md: 30 }}
@@ -21,12 +22,17 @@ function GithubSignInButton({ handleLogin }: Props) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   return (
     <Button
+      id="btn-github-sign-in"
       component="label"
       variant="contained"
       startIcon={<GithubIcon />}
       endIcon={
         isLoading && (
-          <CircularProgress size={16} sx={{ color: "black", ml: 0.46 }} />
+          <CircularProgress
+            id="comp-github-sign-in-circular-progress"
+            size={16}
+            sx={{ color: "black", ml: 0.46 }}
+          />
         )
       }
       size="large"

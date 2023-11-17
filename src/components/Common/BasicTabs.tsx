@@ -64,9 +64,13 @@ export default function BasicTabs({
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Box id="box-basic-tabs" sx={{ width: "100%" }}>
+      <Box
+        id="box-basic-tabs-inner"
+        sx={{ borderBottom: 1, borderColor: "divider" }}
+      >
         <Tabs
+          id="comp-basic-tabs"
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"

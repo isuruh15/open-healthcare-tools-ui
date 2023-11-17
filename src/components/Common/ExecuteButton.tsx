@@ -20,10 +20,11 @@ export const ExecuteButton = ({
         key="execute-icon"
         title={toolTipText}
         placement="bottom"
-        id="execute-tooltip"
+        id="comp-execute-tool-tooltip"
       >
         <Box>
           <IconButton
+            id="btn-execute-tool"
             aria-label="Execute Tool"
             sx={{
               color: "secondary.main",
@@ -32,6 +33,7 @@ export const ExecuteButton = ({
             disabled={isDisabled}
           >
             <PlayCircleFilledOutlinedIcon
+              id="icon-execute-tool"
               sx={{ fontSize: size, padding: 0 }}
               aria-hidden="true"
             />

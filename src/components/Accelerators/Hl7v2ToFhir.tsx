@@ -38,7 +38,7 @@ export const Hl7v2ToFhir = () => {
     window.innerWidth
   );
   const { state: authState } = useAuthContext();
-  const { isLoading: isSiginLoading = false, isAuthenticated = false } = authState;
+  const { isAuthenticated = false } = authState;
 
   const { httpRequest } = useAuthContext();
 
@@ -212,13 +212,6 @@ export const Hl7v2ToFhir = () => {
           isError: true,
           isLoading: false,
         }));
-
-        // setTimeout(() => {
-        //   setState((prevState) => ({
-        //     ...prevState,
-        //     isError: false,
-        //   }));
-        // }, 2000);
       });
   };
 
@@ -238,7 +231,7 @@ export const Hl7v2ToFhir = () => {
       clearEnabled
       width="100%"
       height="calc(100vh - 197px)"
-      id="hl7-resource-editor"
+      id="comp-hl7-to-fhir-input-editor"
       aria-label="HL7 Resource Editor"
       isDisabled={!isAuthenticated}
       executeButtonToolTipText="Perform transformation"
@@ -261,7 +254,7 @@ export const Hl7v2ToFhir = () => {
       clearEnabled
       width="100%"
       height="calc(100vh - 197px)"
-      id="fhir-resource-editor"
+      id="comp-hl7-to-fhir-output-editor"
       aria-label="FHIR Resource Editor"
       isDisabled={!isAuthenticated}
       isLoading={isLoading}
@@ -322,7 +315,7 @@ export const Hl7v2ToFhir = () => {
                 pb: 1,
                 width: "50%",
               }}
-              id="hl7-resource-box"
+              id="box-hl7-resource-box"
               aria-label="HL7 Resource Box"
             >
               {inputEditor}
@@ -333,7 +326,7 @@ export const Hl7v2ToFhir = () => {
                 pb: 1,
                 width: "50%",
               }}
-              id="fhir-resource-box"
+              id="box-fhir-resource-box"
               aria-label="FHIR Resource Box"
             >
               <>

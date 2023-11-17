@@ -18,10 +18,11 @@ export const DownloadIcon = ({
         key="download-icon"
         title="Download Content"
         placement="bottom"
-        id="download-tooltip"
+        id="comp-download-content-tooltip"
       >
         <Box>
           <IconButton
+            id="btn-download-content"
             aria-label="Download Content"
             sx={{
               color: "text.primary",
@@ -30,6 +31,7 @@ export const DownloadIcon = ({
             disabled={isDisabled}
           >
             <FileDownloadOutlinedIcon
+              id="icon-download-content"
               sx={{ fontSize: size }}
               aria-hidden="true"
             />

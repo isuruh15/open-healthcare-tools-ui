@@ -17,8 +17,9 @@ export const PreLoader = ({ size = 40, setActive }: Props) => {
   let [color] = useState("#5567D5");
 
   return (
-    <Box>
+    <Box id="box-pre-loader">
       <HashLoader
+        id="comp-pre-loader"
         color={color}
         loading={loading}
         cssOverride={override}
@@ -26,7 +27,6 @@ export const PreLoader = ({ size = 40, setActive }: Props) => {
         aria-label="Loading Spinner"
         data-testid="loader"
         speedMultiplier={1}
-        id="pre-loader"
       />
     </Box>
   );

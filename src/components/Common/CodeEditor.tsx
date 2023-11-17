@@ -90,9 +90,15 @@ export const CodeEditor = ({
         }}
       >
         <Box sx={{ display: "flex" }}>
-          <Typography variant="h6">{title}</Typography>
+          <Typography id="txt-code-editor-title" variant="h6">
+            {title}
+          </Typography>
           {downloadEnabled && isLoading && (
-            <CircularProgress size={16} sx={{ color: "black", ml: 4 }} />
+            <CircularProgress
+              id="comp-code-editor-circle-progress"
+              size={16}
+              sx={{ color: "black", ml: 4 }}
+            />
           )}
         </Box>
         <Box sx={{ display: "flex" }}>
@@ -140,6 +146,7 @@ export const CodeEditor = ({
         onClick={onClick}
       >
         <CodeMirror
+          id="comp-code-mirror"
           placeholder={placeholder}
           value={value}
           height={height}

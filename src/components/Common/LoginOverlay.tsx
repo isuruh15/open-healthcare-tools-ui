@@ -22,6 +22,7 @@ export default function LoginOverlay() {
   };
   return (
     <Box
+      id="box-login-overlay"
       sx={{
         position: "absolute",
         bgcolor: "rgba(0, 0, 0, 0.50)",
@@ -29,17 +30,19 @@ export default function LoginOverlay() {
         width: { md: "95.5%", lg: "96.4%", xl: "97.5%" },
         zIndex: 1,
       }}
-      marginTop={{ md: 5.8 }}
+      marginTop={{ md: 4.9 }}
       alignItems="center"
       justifyContent="center"
     >
       <Grid
+        id="grid-login-overlay"
         container
         alignItems="center"
         justifyContent="center"
         height="calc(100vh - 197px)"
       >
         <Box
+          id="box-login-overlay-inner"
           alignItems="center"
           justifyContent="center"
           flexDirection="column"
@@ -52,7 +55,7 @@ export default function LoginOverlay() {
           {isLoading && (
             <>
               <PreLoader setActive={true} size={70} />
-              <Typography variant="h5" sx={{ mt: 2 }}>
+              <Typography id="txt-login-loader" variant="h5" sx={{ mt: 2 }}>
                 Please wait while we are loading the tool...
               </Typography>
             </>
@@ -60,6 +63,7 @@ export default function LoginOverlay() {
           {!isLoading && !isAuthenticated && (
             <>
               <Typography
+                id="txt-social-login-display"
                 variant="h4"
                 marginBottom={2}
                 color="common.black"
@@ -68,6 +72,7 @@ export default function LoginOverlay() {
                 {UNAUTHORIZED_LOGIN_LABEL}
               </Typography>
               <Box
+                id="box-social-login-display"
                 alignItems="center"
                 flexDirection="column"
                 display="flex"
