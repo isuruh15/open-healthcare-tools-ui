@@ -23,9 +23,6 @@ export default defineConfig({
     open: true,
     port: 3000,
   },
-  // build: {
-  //   outDir: 'build',
-  // },
   define: {
     'process.env': process.env
   },

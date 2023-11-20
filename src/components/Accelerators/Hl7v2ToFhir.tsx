@@ -2,7 +2,6 @@ import { HttpRequestConfig, useAuthContext } from "@asgardeo/auth-react";
 import { Box, Container } from "@mui/material";
 import DOMPurify from "dompurify";
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import apiClient from "../../services/api-client";
 import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
 import ErrorDisplay from "../Common/ErrorDisplay";
@@ -38,22 +37,9 @@ export const Hl7v2ToFhir = () => {
   const [screenWidth, setScreenWidth] = React.useState<number>(
     window.innerWidth
   );
+  const { state: authState } = useAuthContext();
+  const { isAuthenticated = false } = authState;
 
-  const [isInterectable, setIsInterectable] = React.useState<boolean>(true);
-  const { isAuthenticated } = useAuthContext();
-  useEffect(() => {
-    isAuthenticated()
-      .then((response) => {
-        if (response === true) {
-          setIsInterectable(true);
-        } else {
-          setIsInterectable(false);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [isAuthenticated]);
   const { httpRequest } = useAuthContext();
 
   const handleResize = (): void => setScreenWidth(window.innerWidth);
@@ -232,7 +218,7 @@ export const Hl7v2ToFhir = () => {
     <CodeEditor
       title="HL7 Message"
       value={input}
-      readOnly={!isInterectable}
+      readOnly={!isAuthenticated}
       onChange={handleInputChange}
       darkMode={darkMode}
       onClear={handleInputClear}
@@ -244,9 +230,9 @@ export const Hl7v2ToFhir = () => {
       clearEnabled
       width="100%"
       height="calc(100vh - 197px)"
-      id="hl7-resource-editor"
+      id="comp-hl7-to-fhir-input-editor"
       aria-label="HL7 Resource Editor"
-      isDisabled={!isInterectable}
+      isDisabled={!isAuthenticated}
       executeButtonToolTipText="Perform transformation"
     />
   );
@@ -267,9 +253,9 @@ export const Hl7v2ToFhir = () => {
       clearEnabled
       width="100%"
       height="calc(100vh - 197px)"
-      id="fhir-resource-editor"
+      id="comp-hl7-to-fhir-output-editor"
       aria-label="FHIR Resource Editor"
-      isDisabled={!isInterectable}
+      isDisabled={!isAuthenticated}
       isLoading={isLoading}
     />
   );
@@ -312,7 +298,7 @@ export const Hl7v2ToFhir = () => {
             <BasicTabs
               inputEditor={inputEditor}
               outputEditor={outputEditor}
-              isInterectable={isInterectable}
+              isInterectable={isAuthenticated}
               statusCode={statusCode}
               isError={isError}
               errorMessage={errorMessage}
@@ -321,14 +307,14 @@ export const Hl7v2ToFhir = () => {
         )}
         {screenWidth >= 900 && (
           <>
-            {!isInterectable && <LoginOverlay />}
+            {!isAuthenticated && <LoginOverlay />}
             <Box
               sx={{
                 pr: 1,
                 pb: 1,
                 width: "50%",
               }}
-              id="hl7-resource-box"
+              id="box-hl7-resource-box"
               aria-label="HL7 Resource Box"
             >
               {inputEditor}
@@ -339,7 +325,7 @@ export const Hl7v2ToFhir = () => {
                 pb: 1,
                 width: "50%",
               }}
-              id="fhir-resource-box"
+              id="box-fhir-resource-box"
               aria-label="FHIR Resource Box"
             >
               <>

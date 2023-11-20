@@ -9,6 +9,7 @@ interface Props {
 function MicrosoftIcon() {
   return (
     <Box
+      id="box-microsoft-icon"
       component="img"
       src="microsoft.png"
       width={{ xs: 17, md: 27 }}
@@ -21,12 +22,17 @@ function MicrosoftSignInButton({ handleLogin }: Props) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   return (
     <Button
+      id="btn-microsoft-sign-in"
       component="label"
       variant="contained"
       startIcon={<MicrosoftIcon />}
       endIcon={
         isLoading && (
-          <CircularProgress size={16} sx={{ color: "black", ml: 0.1 }} />
+          <CircularProgress
+            id="comp-microsoft-sign-in-circular-progress"
+            size={16}
+            sx={{ color: "black", ml: 0.1 }}
+          />
         )
       }
       size="large"

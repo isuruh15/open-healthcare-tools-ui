@@ -13,11 +13,16 @@ export const ClearIcon = ({
   isDisabled = false,
 }: Props) => {
   return (
-    <Tooltip key="clear-icon" title="Clear Content" placement="bottom">
+    <Tooltip
+      id="comp-clear-content-tooltip"
+      key="clear-icon"
+      title="Clear Content"
+      placement="bottom"
+    >
       <Box>
         <IconButton
+          id="btn-clear-content"
           onClick={onClear}
-          id="clear-icon-button"
           aria-label="Clear Icon Button"
           sx={{
             color: "text.primary",
@@ -25,8 +30,8 @@ export const ClearIcon = ({
           disabled={isDisabled}
         >
           <DeleteOutlineOutlinedIcon
+            id="icon-clear-content"
             sx={{ fontSize: size }}
-            id="clear-icon"
             aria-label="Clear Icon"
           />
         </IconButton>

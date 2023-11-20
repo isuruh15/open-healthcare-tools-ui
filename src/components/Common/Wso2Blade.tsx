@@ -1,4 +1,4 @@
-import { Divider, Grid, Typography } from "@mui/material";
+import { Divider, Grid, Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   BALLERINA_BLADE_DESCRIPTION,
@@ -44,17 +44,19 @@ export const Banner = () => {
             </Typography>
           </Grid>
           <Grid item container alignItems="flex-end" justifyContent="center">
-            <Box
-              component={"img"}
-              src="wso2.svg"
-              alt="WSO2 Logo"
-              sx={{
-                width: { xs: 191, sm: 240, md: 220, lg: 220 },
-                height: { xs: 75, sm: 94, md: 86, lg: 86 },
-                // maxHeight: { xs: 233, md: 167 },
-                // maxWidth: { xs: 350, md: 250 },
-              }}
-            ></Box>
+            <Link href="https://wso2.com/" target="_blank">
+              <Box
+                component={"img"}
+                src="wso2.svg"
+                alt="WSO2 Logo"
+                sx={{
+                  width: { xs: 191, sm: 240, md: 220, lg: 220 },
+                  height: { xs: 75, sm: 94, md: 86, lg: 86 },
+                  // maxHeight: { xs: 233, md: 167 },
+                  // maxWidth: { xs: 350, md: 250 },
+                }}
+              ></Box>
+            </Link>
           </Grid>
         </Grid>
         <Grid item container xs={12} md={6} justifyContent="center" spacing={5}>
@@ -101,17 +103,19 @@ export const Banner = () => {
             justifyContent="center"
             borderLeft={{ xs: 0, md: 1 }}
           >
-            <Box
-              component={"img"}
-              src="ballerina-logo-grey.svg"
-              alt="Ballerina Logo"
-              sx={{
-                height: { xs: 60, sm: 90, md: 76, lg: 97 },
-                width: { xs: 198, sm: 297, md: 250, lg: 320 },
-                // maxHeight: { xs: 233, md: 167 },
-                // maxWidth: { xs: 350, md: 250 },
-              }}
-            ></Box>
+            <Link href="https://ballerina.io/" target="_blank">
+              <Box
+                component={"img"}
+                src="ballerina-logo-grey.svg"
+                alt="Ballerina Logo"
+                sx={{
+                  height: { xs: 60, sm: 90, md: 76, lg: 97 },
+                  width: { xs: 198, sm: 297, md: 250, lg: 320 },
+                  // maxHeight: { xs: 233, md: 167 },
+                  // maxWidth: { xs: 350, md: 250 },
+                }}
+              ></Box>
+            </Link>
           </Grid>
         </Grid>
       </Grid>

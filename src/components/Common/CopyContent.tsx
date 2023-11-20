@@ -23,22 +23,27 @@ export const CopyContent = ({ data, size = 30, isDisabled = false }: Props) => {
       key="copy-icon"
       title="Copy Content"
       placement="bottom"
-      id="copy-tooltip"
+      id="comp-copy-content-tooltip"
     >
-      <Box style={{ display: "flex" }} color="text.primary">
-        <Typography component="span">
+      <Box
+        id="box-copy-content-alert"
+        style={{ display: "flex" }}
+        color="text.primary"
+      >
+        <Typography id="txt-copy-content-alert" component="span">
           {isCopied && (
             <Alert
               severity="success"
               icon={<TaskAltIcon sx={{ fontSize: 15 }} />}
               sx={{ fontSize: 10, py: 0.3 }}
-              id="copy-alert"
+              id="comp-copy-content-alert"
             >
               Copied
             </Alert>
           )}
         </Typography>
         <IconButton
+          id="btn-copy-content"
           aria-label="Copy Content"
           aria-labelledby="copy-button"
           sx={{
@@ -50,7 +55,11 @@ export const CopyContent = ({ data, size = 30, isDisabled = false }: Props) => {
           }}
           disabled={isDisabled}
         >
-          <ContentCopyIcon sx={{ fontSize: size }} aria-hidden="true" />
+          <ContentCopyIcon
+            id="icon-copy-content"
+            sx={{ fontSize: size }}
+            aria-hidden="true"
+          />
         </IconButton>
       </Box>
     </Tooltip>
