@@ -99,7 +99,7 @@ export const Header = ({ title, shortDescription, url }: Props) => {
                 {/* https://icons8.com/icons/set/discord */}
                 <Box
                   component="img"
-                  src="discord-black.png"
+                  src="third-party-app-logo/discord.png"
                   sx={{
                     width: { xs: "25px", sm: "30px" },
                     height: { xs: "25px", sm: "30px" },

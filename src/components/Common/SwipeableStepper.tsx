@@ -3,12 +3,8 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import { Button, Grid, IconButton } from "@mui/material";
 import Box from "@mui/material/Box";
 import React, { useState } from "react";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
 import { articles } from "../Configs/ArticleConfig";
 import ArticleTile from "./ArticleTile";
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function SwipeableStepper() {
   const [screenWidth, setScreenWidth] = React.useState<number>(

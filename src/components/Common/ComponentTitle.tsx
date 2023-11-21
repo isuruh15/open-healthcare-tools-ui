@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import { AboutTool } from "../Common";
 
 interface Props {
   heading: string;
@@ -37,7 +36,6 @@ export const ComponentTitle = ({ heading, description, url }: Props) => {
           >
             {description}
           </Typography>
-          {/* <AboutTool url={url}></AboutTool> */}
         </Box>
       </Box>
     </>

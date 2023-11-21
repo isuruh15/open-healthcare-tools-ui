@@ -37,7 +37,7 @@ export const Footer = () => {
             >
               <Box
                 component={"img"}
-                src="choreo-logo-black.svg"
+                src="wso2-related-logo/choreo.svg"
                 alt="Choreo Logo"
                 sx={{
                   height: { xs: 31, sm: 37, md: 40, lg: 43 },

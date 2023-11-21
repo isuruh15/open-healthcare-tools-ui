@@ -11,7 +11,7 @@ function GithubIcon() {
     <Box
       id="box-github-icon"
       component="img"
-      src="github.png"
+      src="third-party-app-logo/github.png"
       width={{ xs: 20, md: 30 }}
       height={{ xs: 19, md: 29 }}
     />
