@@ -21,12 +21,11 @@ export default function ErrorDisplay({
         position: "absolute",
         bgcolor: "rgba(0, 0, 0, 0.40)",
         height: "calc(100vh - 197px)",
-        width: { xs: "80%", sm: "88%", md: "46.8%", lg: "47.5%", xl: "48.5%" },
+        width: { xs: "80%", sm: "88%", md: "46.8%", lg: "47.5%", xl: "48.3%" },
         zIndex: 1,
         display: visible ? "block" : "none",
-        marginTop: { xs: 4.8, sm: 5, md: 5.9 },
+        marginTop: { xs: 4.8, sm: 5, md: 5.06 },
       }}
-      // marginTop={{ md: 5.8 }}
       alignItems="center"
       justifyContent="center"
       onClick={() => {

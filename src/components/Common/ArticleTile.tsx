@@ -14,8 +14,8 @@ function ArticleTile({ title, type = ArticleType.article, link }: IArticle) {
           display: "flex",
           justifyContent: "space-between",
           boxShadow: 3,
-          width: { xs: 230, sm: 300, md: 260, lg: 310 },
-          height: { xs: 200, sm: 180, md: 180, lg: 200 },
+          width: { xs: 190, sm: 350, md: 290, lg: 380, xl: 350 },
+          height: { xs: 250, sm: 200, md: 200, lg: 200, xl: 200 },
         }}
       >
         <Box sx={{ alignItems: "flex-start" }}>
