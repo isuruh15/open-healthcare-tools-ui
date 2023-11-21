@@ -11,7 +11,7 @@ function GmailIcon() {
     <Box
       id="box-gmail-icon"
       component="img"
-      src="google.png"
+      src="third-party-app-logo/google.png"
       width={{ xs: 20, md: 30 }}
       height={{ xs: 20, md: 30 }}
     />

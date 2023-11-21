@@ -27,7 +27,7 @@ function PoweredByAsgardeo() {
           height={22}
           width={90}
           margin={1}
-          src="asgardeo-logo.svg"
+          src="wso2-related-logo/asgardeo.svg"
         />
       </Link>
     </Box>

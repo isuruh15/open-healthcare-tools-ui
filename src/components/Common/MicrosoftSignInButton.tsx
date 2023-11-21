@@ -11,7 +11,7 @@ function MicrosoftIcon() {
     <Box
       id="box-microsoft-icon"
       component="img"
-      src="microsoft.png"
+      src="third-party-app-logo/microsoft.png"
       width={{ xs: 17, md: 27 }}
       height={{ xs: 17, md: 27 }}
     />

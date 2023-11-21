@@ -47,7 +47,7 @@ export const Banner = () => {
             <Link href="https://wso2.com/" target="_blank">
               <Box
                 component={"img"}
-                src="wso2.svg"
+                src="wso2-related-logo/wso2.svg"
                 alt="WSO2 Logo"
                 sx={{
                   width: { xs: 191, sm: 240, md: 220, lg: 220 },
@@ -106,7 +106,7 @@ export const Banner = () => {
             <Link href="https://ballerina.io/" target="_blank">
               <Box
                 component={"img"}
-                src="ballerina-logo-grey.svg"
+                src="wso2-related-logo/ballerina.svg"
                 alt="Ballerina Logo"
                 sx={{
                   height: { xs: 60, sm: 90, md: 76, lg: 97 },
