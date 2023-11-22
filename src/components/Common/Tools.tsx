@@ -7,8 +7,8 @@ import SwipeableViews from "react-swipeable-views";
 import {
   OTHER_TOOLS_SECTION_DESCRIPTION,
   OTHER_TOOLS_SECTION_TITLE,
-} from "../Configs/TextConstants";
-import { ToolStatus, tools } from "../Configs/ToolContentConfig";
+} from "../../Configs/TextConstants";
+import { ToolStatus, tools } from "../../Configs/ToolContentConfig";
 import Toolcard from "./ToolCard";
 
 interface Props {

@@ -5,7 +5,7 @@ import {
   BALLERINA_BLADE_TITLE,
   WSO2_BLADE_DESCRIPTION,
   WSO2_BLADE_TITLE,
-} from "../Configs/TextConstants";
+} from "../../Configs/TextConstants";
 
 export const Banner = () => {
   return (

@@ -1,7 +1,7 @@
 import { useState, SyntheticEvent, ChangeEvent } from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import { CreateOperationContent, GetResourceContent } from "../FhirApis";
-import { ApiConfig, OperationTypes, apiList } from "../../Configs/ApiConfig";
+import { ApiConfig, OperationTypes, apiList } from "../../../Configs/ApiConfig";
 
 const tabStyles = {
   fontSize: 13,

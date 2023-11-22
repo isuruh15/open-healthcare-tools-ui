@@ -3,7 +3,7 @@ import {
   ITool,
   ToolStatus,
   toolGroups,
-} from "../Configs/LandingPageToolsConfig";
+} from "../../Configs/LandingPageToolsConfig";
 import Toolcard from "./Toolcard";
 
 function removeInactiveTools(tools: ITool[]) {

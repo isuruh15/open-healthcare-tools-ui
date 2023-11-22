@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { ToolStatus } from "../Configs/ToolContentConfig";
+import { ToolStatus } from "../../Configs/ToolContentConfig";
 
 interface MainBladeProps {
   title: string;

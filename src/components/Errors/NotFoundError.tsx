@@ -5,7 +5,7 @@ import {
   NOT_FOUND_BUTTON_LABEL,
   NOT_FOUND_PAGE_SUB_TITLE,
   NOT_FOUND_PAGE_TITLE,
-} from "../Configs/TextConstants";
+} from "../../Configs/TextConstants";
 
 function NotFoundError() {
   return (

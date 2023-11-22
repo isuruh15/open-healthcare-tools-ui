@@ -3,7 +3,7 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { THROTTLED_OUT_PAGE_TITLE } from "../Configs/TextConstants";
+import { THROTTLED_OUT_PAGE_TITLE } from "../../Configs/TextConstants";
 import ErrorDisplay from "./ErrorDisplay";
 import LoginOverlaySmall from "./LoginOverlaySmall";
 

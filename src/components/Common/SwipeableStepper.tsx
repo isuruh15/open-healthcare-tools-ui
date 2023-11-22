@@ -3,7 +3,7 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import { Button, Grid, IconButton } from "@mui/material";
 import Box from "@mui/material/Box";
 import React, { useState } from "react";
-import { articles } from "../Configs/ArticleConfig";
+import { articles } from "../../Configs/ArticleConfig";
 import ArticleTile from "./ArticleTile";
 
 function SwipeableStepper() {

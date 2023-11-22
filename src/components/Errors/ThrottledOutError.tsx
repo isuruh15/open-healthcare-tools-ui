@@ -1,6 +1,6 @@
 import ErrorIcon from "@mui/icons-material/Error";
 import { Box, Grid, Typography } from "@mui/material";
-import { THROTTLED_OUT_PAGE_TITLE } from "../Configs/TextConstants";
+import { THROTTLED_OUT_PAGE_TITLE } from "../../Configs/TextConstants";
 
 function ThrottledOutError() {
   return (

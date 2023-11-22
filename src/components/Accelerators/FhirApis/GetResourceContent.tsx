@@ -22,7 +22,7 @@ import {
   Props as InputFieldProps,
   ResourceMethodIcon,
 } from "../FhirApis";
-import { SearchParam } from "../../Configs/ApiConfig";
+import { SearchParam } from "../../../Configs/ApiConfig";
 import { DarkModeContext } from "../../Contexts/DarkModeContext";
 import AddIcon from "@mui/icons-material/Add";
 import InfoOutlineIcon from "@mui/icons-material/InfoOutlined";

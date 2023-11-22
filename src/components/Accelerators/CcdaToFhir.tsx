@@ -8,7 +8,7 @@ import {
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
 import apiClient from "../../services/api-client";
-import { BFF_BASE_URL, CCDA_TO_FHIR_URL } from "../Configs/Constants";
+import { BFF_BASE_URL, CCDA_TO_FHIR_URL } from "../../Configs/Constants";
 
 interface State {
   input: string;

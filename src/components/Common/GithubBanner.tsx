@@ -1,5 +1,5 @@
 import { Box, Grid, Link, Stack, Typography } from "@mui/material";
-import { GITHUB_LINK_LABEL, GITHUB_TITLE } from "../Configs/TextConstants";
+import { GITHUB_LINK_LABEL, GITHUB_TITLE } from "../../Configs/TextConstants";
 
 interface Props {
   marginTop?: number;

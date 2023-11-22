@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   MAINTENANCE_PAGE_SUB_TITLE,
   MAINTENANCE_PAGE_TITLE,
-} from "../Configs/TextConstants";
+} from "../../Configs/TextConstants";
 import { PreLoader } from "../Common/PreLoader";
 
 export const MaintenancePage = () => {

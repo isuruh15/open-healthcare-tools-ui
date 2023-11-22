@@ -1,6 +1,6 @@
 import { Box, Button, CircularProgress } from "@mui/material";
 import React from "react";
-import { GITHUB_SIGN_IN_BUTTON_LABEL } from "../Configs/TextConstants";
+import { GITHUB_SIGN_IN_BUTTON_LABEL } from "../../Configs/TextConstants";
 
 interface Props {
   handleLogin: (fidp: string) => void;

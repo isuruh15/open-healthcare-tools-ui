@@ -17,7 +17,7 @@ import {
   FOOTER_TITLE,
   POLICY_LINK_LABEL,
   TERMS_LINK_LABEL,
-} from "../Configs/TextConstants";
+} from "../../Configs/TextConstants";
 
 export const Footer = () => {
   return (
