@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-import { ToolStatus } from "../Configs/LandingPageToolsConfig";
+import { ToolStatus } from "../../Configs/LandingPageToolsConfig";
 
 interface Props {
   title: string;

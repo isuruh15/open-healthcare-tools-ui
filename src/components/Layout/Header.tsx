@@ -12,8 +12,8 @@ import { ComponentTitle } from "../Common";
 import {
   DISCORD_HELP_LABEL,
   SIGN_OUT_BUTTON_LABEL,
-} from "../Configs/TextConstants";
-import { BALLERINA_DISCORD_LINK } from "../Configs/Constants";
+} from "../../Configs/TextConstants";
+import { BALLERINA_DISCORD_LINK } from "../../Configs/Constants";
 
 interface Props {
   title: string;

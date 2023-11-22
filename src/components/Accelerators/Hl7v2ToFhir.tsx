@@ -6,8 +6,8 @@ import { CodeEditor, ResponseAlert } from "../Common";
 import BasicTabs from "../Common/BasicTabs";
 import ErrorDisplay from "../Common/ErrorDisplay";
 import LoginOverlay from "../Common/LoginOverlay";
-import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../Configs/Constants";
-import { THROTTLED_OUT_PAGE_TITLE } from "../Configs/TextConstants";
+import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../../Configs/Constants";
+import { THROTTLED_OUT_PAGE_TITLE } from "../../Configs/TextConstants";
 import { DarkModeContext } from "../Contexts/DarkModeContext";
 import { SelectedSampleContext } from "../Contexts/SelectedSampleContext";
 

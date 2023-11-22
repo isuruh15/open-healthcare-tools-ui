@@ -1,6 +1,6 @@
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { Box, Button, Link, Typography } from "@mui/material";
-import { ArticleType, IArticle } from "../Configs/ArticleConfig";
+import { ArticleType, IArticle } from "../../Configs/ArticleConfig";
 
 function ArticleTile({ title, type = ArticleType.article, link }: IArticle) {
   return (

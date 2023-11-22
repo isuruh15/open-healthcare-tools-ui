@@ -12,7 +12,7 @@ import {
   FhirValidation,
   Hl7v2ToFhir,
   SmartOnFhir,
-} from "../Accelerators";
+} from "../components/Accelerators";
 
 export enum ToolStatus {
   active,

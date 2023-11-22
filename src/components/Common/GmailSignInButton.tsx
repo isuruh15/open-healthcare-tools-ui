@@ -1,6 +1,6 @@
 import { Box, Button, CircularProgress } from "@mui/material";
 import React from "react";
-import { GMAIL_SIGN_IN_BUTTON_LABEL } from "../Configs/TextConstants";
+import { GMAIL_SIGN_IN_BUTTON_LABEL } from "../../Configs/TextConstants";
 
 interface Props {
   handleLogin: (fidp: string) => void;

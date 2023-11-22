@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import { ARTICLE_BANNER_TITLE } from "../Configs/TextConstants";
+import { ARTICLE_BANNER_TITLE } from "../../Configs/TextConstants";
 import SwipeableStepper from "./SwipeableStepper";
 
 interface Props {

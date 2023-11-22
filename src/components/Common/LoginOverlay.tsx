@@ -1,6 +1,6 @@
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Grid, Typography } from "@mui/material";
-import { UNAUTHORIZED_LOGIN_LABEL } from "../Configs/TextConstants";
+import { UNAUTHORIZED_LOGIN_LABEL } from "../../Configs/TextConstants";
 import GithubSignInButton from "./GithubSignInButton";
 import GmailSignInButton from "./GmailSignInButton";
 import MicrosoftSignInButton from "./MicrosoftSignInButton";
