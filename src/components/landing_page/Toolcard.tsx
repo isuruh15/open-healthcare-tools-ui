@@ -35,7 +35,7 @@ function Toolcard({ title, description, image, link, status }: Props) {
       >
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt="tool image"
           image={image}
           sx={{ height: { xs: 130, sm: 130, md: 150, lg: 150, xl: 150 } }}
         />

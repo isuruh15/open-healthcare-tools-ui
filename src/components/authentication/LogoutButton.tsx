@@ -1,5 +1,6 @@
 import { Button, CircularProgress } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { LOGOUT_BUTTON_LABEL } from "../../configs/TextConstants";
 
 interface Props {
   handleSubmit?(): any;
@@ -31,7 +32,7 @@ export const LogoutButton = ({ isLoading, handleSubmit }: Props) => {
       }}
       onClick={handleSubmit}
     >
-      Logout
+      {LOGOUT_BUTTON_LABEL}
     </Button>
   );
 };
