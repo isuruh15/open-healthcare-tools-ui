@@ -2,10 +2,10 @@ import {
   Box
 } from "@mui/material";
 import React, { Suspense } from "react";
-import { PreLoader } from "./components/Common";
+import { PreLoader } from "./components/common";
 
 const MainContent = React.lazy(() =>
-  import("./components/Layout/MainContent").then((module) => ({
+  import("./components/layout/MainContent").then((module) => ({
     default: module.MainContent,
   }))
 );
