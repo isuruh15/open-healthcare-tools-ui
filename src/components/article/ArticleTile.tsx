@@ -1,6 +1,7 @@
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { Box, Button, Link, Typography } from "@mui/material";
 import { ArticleType, IArticle } from "../../configs/ArticleConfig";
+import { READ_MORE_BUTTON_LABEL } from "../../configs/TextConstants";
 
 function ArticleTile({ title, type = ArticleType.article, link }: IArticle) {
   return (
@@ -43,7 +44,7 @@ function ArticleTile({ title, type = ArticleType.article, link }: IArticle) {
             sx={{ color: "info.main", fontSize: "1rem" }}
             endIcon={<ArrowForwardOutlinedIcon />}
           >
-            Read more
+            {READ_MORE_BUTTON_LABEL}
           </Button>
         </Box>
       </Box>

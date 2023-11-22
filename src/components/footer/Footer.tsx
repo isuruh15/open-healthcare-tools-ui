@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import {
   ABOUT_LINK_LABEL,
+  BY_WSO2_LABEL,
   CONTACT_LINK_LABEL,
   FOOTER_BUTTON_LABEL,
   FOOTER_COPYRIGHT,
@@ -55,7 +56,7 @@ export const Footer = () => {
                 }}
                 id="footer-text"
               >
-                By WSO2
+                {BY_WSO2_LABEL}
               </Typography>
             </Grid>
             <Grid

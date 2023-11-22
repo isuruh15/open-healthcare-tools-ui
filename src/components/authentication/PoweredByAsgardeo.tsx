@@ -1,4 +1,5 @@
 import { Box, Link, Typography } from "@mui/material";
+import { POWERED_BY_LABEL } from "../../configs/TextConstants";
 
 function PoweredByAsgardeo() {
   return (
@@ -14,7 +15,7 @@ function PoweredByAsgardeo() {
         color="text.secondary"
         fontSize="0.8rem"
       >
-        Powered by{" "}
+        {POWERED_BY_LABEL}{" "}
       </Typography>
       <Link
         id="link-powered-by-asgardeo"

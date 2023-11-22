@@ -2,6 +2,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import { Alert, Box, IconButton, Tooltip, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { COPIED_INFO_MESSAGE } from "../../configs/TextConstants";
 
 interface Props {
   data: string;
@@ -38,7 +39,7 @@ export const CopyContent = ({ data, size = 30, isDisabled = false }: Props) => {
               sx={{ fontSize: 10, py: 0.3 }}
               id="comp-copy-content-alert"
             >
-              Copied
+              {COPIED_INFO_MESSAGE}
             </Alert>
           )}
         </Typography>

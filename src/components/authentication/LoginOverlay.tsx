@@ -1,11 +1,14 @@
 import { useAuthContext } from "@asgardeo/auth-react";
 import { Box, Grid, Typography } from "@mui/material";
-import { UNAUTHORIZED_LOGIN_LABEL } from "../../configs/TextConstants";
+import {
+  AUTHORIZATION_LOADER_TEXT,
+  UNAUTHORIZED_LOGIN_LABEL,
+} from "../../configs/TextConstants";
+import { PreLoader } from "../common/PreLoader";
 import GithubSignInButton from "./GithubSignInButton";
 import GmailSignInButton from "./GmailSignInButton";
 import MicrosoftSignInButton from "./MicrosoftSignInButton";
 import PoweredByAsgardeo from "./PoweredByAsgardeo";
-import { PreLoader } from "../common/PreLoader";
 
 export default function LoginOverlay() {
   const { signOut, signIn, state } = useAuthContext();
@@ -56,7 +59,7 @@ export default function LoginOverlay() {
             <>
               <PreLoader setActive={true} size={70} />
               <Typography id="txt-login-loader" variant="h5" sx={{ mt: 2 }}>
-                Please wait while we are loading the tool...
+                {AUTHORIZATION_LOADER_TEXT}
               </Typography>
             </>
           )}

@@ -43,6 +43,7 @@ export const FOOTER_TITLE = "Healthcare Tools are brought to you by Choreo";
 export const FOOTER_DESCRIPTION = `The all-in Developer Platform as a Service.
                                     Everything you need to deliver quality software on time and within budget.`;
 export const FOOTER_BUTTON_LABEL = "Get Started Free";
+export const BY_WSO2_LABEL = "By WSO2";
 export const ABOUT_LINK_LABEL = "About";
 export const CONTACT_LINK_LABEL = "Contact";
 export const POLICY_LINK_LABEL = "Privacy Policy";
@@ -55,6 +56,13 @@ export const MICROSOFT_SIGN_IN_BUTTON_LABEL = "Sign in with Microsoft";
 export const GITHUB_SIGN_IN_BUTTON_LABEL = "Sign in with Github";
 export const SIGN_OUT_BUTTON_LABEL = "Sign Out";
 export const UNAUTHORIZED_LOGIN_LABEL = "Please sign in to try out the tool";
+export const AUTHORIZATION_LOADER_TEXT =
+  "Please wait while we are loading the tool...";
+export const LOGOUT_BUTTON_LABEL = "Logout";
+export const POWERED_BY_LABEL = "Logout";
+
+// Execution area
+export const COPIED_INFO_MESSAGE = "Copied";
 
 // Maintenance page
 export const MAINTENANCE_PAGE_TITLE = "This tool is under maintenance";
@@ -70,3 +78,18 @@ export const NOT_FOUND_BUTTON_LABEL = "Back To Home";
 // Throttled out page
 export const THROTTLED_OUT_PAGE_TITLE = `Opps..! The service is unavailable at the moment due to excessive requests.
   Please try again in 1 minute`;
+
+// Landing page
+export const LANDING_PAGE_TITLE = "Health IT Tools for Developers";
+export const LANDING_PAGE_SUB_TITLE = " Want to use these in production?";
+export const LANDING_PAGE_DESCRIPTION = `Developer Tools for experimentation and learning foundational
+Health IT concepts. Please note these tools are intended for
+experimental purposes and should not be deployed in a production
+environment. WSO2’s internal developer platform, Choreo, is used
+to build and host the tools. WSO2 provides everything you need
+to provide awesome experiences for your healthcare customers
+under one umbrella; Pre-built healthcare APIs, the Choreo
+Internal Developer Platform, Asgardeo’s CIAM capabilities and
+on-premises software, enables healthcare app-dev teams to kick
+start their digital healthcare experience development.`;
+export const LANDING_PAGE_BUTTON_LABEL = "Contact Us";

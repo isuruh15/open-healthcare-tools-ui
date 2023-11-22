@@ -2,14 +2,14 @@ import { HttpRequestConfig, useAuthContext } from "@asgardeo/auth-react";
 import { Box, Container } from "@mui/material";
 import DOMPurify from "dompurify";
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { ResponseAlert } from "../common";
-import BasicTabs from "../execution/BasicTabs";
-import ErrorDisplay from "../error/ErrorDisplay";
-import LoginOverlay from "../authentication/LoginOverlay";
 import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../../configs/Constants";
 import { THROTTLED_OUT_PAGE_TITLE } from "../../configs/TextConstants";
+import LoginOverlay from "../authentication/LoginOverlay";
+import { ResponseAlert } from "../common";
 import { DarkModeContext } from "../context/DarkModeContext";
 import { SelectedSampleContext } from "../context/SelectedSampleContext";
+import ErrorDisplay from "../error/ErrorDisplay";
+import BasicTabs from "../execution/BasicTabs";
 import { CodeEditor } from "../execution/CodeEditor";
 
 interface State {
@@ -163,8 +163,8 @@ export const Hl7v2ToFhir = () => {
       url: BFF_BASE_URL + HL7V2_TO_FHIR_URL,
       method: "POST",
       headers: {
-        "Accept": "*application/json",
-        "Content-Type": "text/plain"
+        Accept: "*application/json",
+        "Content-Type": "text/plain",
       },
       data: input,
     };
@@ -268,16 +268,6 @@ export const Hl7v2ToFhir = () => {
       maxWidth={false}
       sx={{ display: "flex", flexDirection: "column", height: 1, mt: 0 }}
     >
-      {/* {isError && statusCode != "429" && (
-        <ResponseAlert
-          isOpen={isError}
-          severity="error"
-          message={errorMessage}
-          setIsOpen={closeResponse}
-          id="response-alert-error"
-          aria-label="Error Response Alert"
-        />
-      )} */}
       {alertOpen && (
         <ResponseAlert
           isOpen={alertOpen}

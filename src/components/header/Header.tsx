@@ -80,7 +80,12 @@ export const Header = ({ title, shortDescription, url }: Props) => {
               target="_blank"
               underline="none"
             >
-              <Stack direction="row" spacing={1} alignItems="center">
+              <Stack
+                direction="row"
+                spacing={1}
+                alignItems="center"
+                paddingTop={1}
+              >
                 {/* https://icons8.com/icons/set/discord */}
                 <Box
                   component="img"

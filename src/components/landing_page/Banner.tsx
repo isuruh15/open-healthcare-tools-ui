@@ -1,5 +1,11 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import {
+  LANDING_PAGE_BUTTON_LABEL,
+  LANDING_PAGE_DESCRIPTION,
+  LANDING_PAGE_SUB_TITLE,
+  LANDING_PAGE_TITLE,
+} from "../../configs/TextConstants";
 
 function Banner() {
   return (
@@ -10,7 +16,6 @@ function Banner() {
       justifyContent="center"
       paddingTop={10}
       paddingBottom={3}
-      // marginTop={9}
     >
       <Grid container alignItems="center" justifyContent="center">
         <Grid
@@ -34,7 +39,7 @@ function Banner() {
           >
             <Grid container alignItems="center" padding={{ xs: 3, md: 3 }}>
               <Typography variant="h1" align="left" sx={{ textAlign: "left" }}>
-                Health IT Tools for Developers
+                {LANDING_PAGE_TITLE}
               </Typography>
             </Grid>
             <Grid container alignItems="center" padding={{ xs: 3, md: 3 }}>
@@ -44,16 +49,7 @@ function Banner() {
                 color="text.secondary"
                 lineHeight={{ xs: 1.4, sm: 1.8 }}
               >
-                Developer Tools for experimentation and learning foundational
-                Health IT concepts. Please note these tools are intended for
-                experimental purposes and should not be deployed in a production
-                environment. WSO2’s internal developer platform, Choreo, is used
-                to build and host the tools. WSO2 provides everything you need
-                to provide awesome experiences for your healthcare customers
-                under one umbrella; Pre-built healthcare APIs, the Choreo
-                Internal Developer Platform, Asgardeo’s CIAM capabilities and
-                on-premises software, enables healthcare app-dev teams to kick
-                start their digital healthcare experience development.
+                {LANDING_PAGE_DESCRIPTION}
               </Typography>
             </Grid>
             <Grid container item alignItems="center" padding={{ xs: 3, md: 3 }}>
@@ -64,7 +60,7 @@ function Banner() {
                   sx={{ textAlign: "left" }}
                   marginBottom={2}
                 >
-                  Want to use these in production?
+                  {LANDING_PAGE_SUB_TITLE}
                 </Typography>
                 <Button
                   variant="contained"
@@ -80,7 +76,7 @@ function Banner() {
                     alignSelf: "center",
                   }}
                 >
-                  Contact Us
+                  {LANDING_PAGE_BUTTON_LABEL}
                 </Button>
               </Box>
             </Grid>
