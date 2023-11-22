@@ -85,7 +85,7 @@ export const MainContent = () => {
           <Wso2Promotion></Wso2Promotion>
 
           {/* Articles display area */}
-          <ArticleBanner marginTop={0} marginBottom={0}></ArticleBanner>
+          <ArticleBanner ></ArticleBanner>
 
           {/* Footer display area */}
           <Footer />

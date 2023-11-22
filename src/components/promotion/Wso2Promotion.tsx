@@ -52,8 +52,6 @@ export const Wso2Promotion = () => {
                 sx={{
                   width: { xs: 191, sm: 240, md: 220, lg: 220 },
                   height: { xs: 75, sm: 94, md: 86, lg: 86 },
-                  // maxHeight: { xs: 233, md: 167 },
-                  // maxWidth: { xs: 350, md: 250 },
                 }}
               ></Box>
             </Link>
@@ -111,8 +109,6 @@ export const Wso2Promotion = () => {
                 sx={{
                   height: { xs: 60, sm: 90, md: 76, lg: 97 },
                   width: { xs: 198, sm: 297, md: 250, lg: 320 },
-                  // maxHeight: { xs: 233, md: 167 },
-                  // maxWidth: { xs: 350, md: 250 },
                 }}
               ></Box>
             </Link>

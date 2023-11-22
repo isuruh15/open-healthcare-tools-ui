@@ -98,7 +98,6 @@ function Tools({ currentTool }: Props) {
                 justifyContent="center"
               >
                 <Button
-                  // variant="outlined"
                   disabled={activeStep == 0}
                   onClick={() => handleBack()}
                   sx={{ color: "grey.300", borderRadius: 20 }}
@@ -114,7 +113,6 @@ function Tools({ currentTool }: Props) {
                 </Button>
               </Grid>
               <Grid
-                // container
                 item
                 xs={8}
                 sm={6}
@@ -126,12 +124,8 @@ function Tools({ currentTool }: Props) {
               >
                 <SwipeableViews
                   axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                  // index={activeStep}
-                  // onChangeIndex={handleStepChange}
                   enableMouseEvents
-                  // interval={25000}
                 >
-                  {/* {tools.slice(activeStep, activeStep+3).map((toolObject) => ( */}
                   <Grid
                     container
                     flexDirection={"row"}
@@ -203,7 +197,6 @@ function Tools({ currentTool }: Props) {
                 justifyContent="center"
               >
                 <Button
-                  // variant="outlined"
                   disabled={activeStep == maxSteps - 1}
                   onClick={() => handleNext()}
                   sx={{ borderRadius: 200, stroke: "grey.300" }}

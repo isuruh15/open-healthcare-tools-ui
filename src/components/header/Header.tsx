@@ -7,12 +7,12 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { BALLERINA_DISCORD_LINK } from "../../configs/Constants";
 import {
   DISCORD_HELP_LABEL,
   SIGN_OUT_BUTTON_LABEL,
 } from "../../configs/TextConstants";
-import { BALLERINA_DISCORD_LINK } from "../../configs/Constants";
 import { ComponentTitle } from "./ComponentTitle";
 
 interface Props {
@@ -22,14 +22,6 @@ interface Props {
 }
 
 export const Header = ({ title, shortDescription, url }: Props) => {
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
-  const handleResize = (): void => setScreenWidth(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
   const { signOut, signIn, isAuthenticated } = useAuthContext();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -61,20 +53,13 @@ export const Header = ({ title, shortDescription, url }: Props) => {
         sx={{
           display: "flex",
           alignItems: "center",
-          // gap: 1,
           py: 0,
           px: 1,
-          // mt: 0.1,
           boxShadow: 3,
           mb: 1,
-          // "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
         }}
-        // borderBottom={5}
-        // borderColor="secondary.main"
         id="header-container"
       >
-        {/* <Logo /> */}
-        {/* <KeyboardArrowRightOutlinedIcon fontSize="large" color="primary" /> */}
         <ComponentTitle
           heading={title}
           description={shortDescription}

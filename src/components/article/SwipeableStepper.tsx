@@ -56,12 +56,10 @@ function SwipeableStepper() {
               disabled={isBackButtonDisabled}
               onClick={() => handleBack()}
               sx={{ display: { xs: "block", md: "block" } }}
-              // sx={{ color: "#FF7300", borderRadius: 20, width: {md:30, lg: 40} }}
             >
               <ArrowBackIosOutlinedIcon
                 fontSize="large"
                 sx={{
-                  // stroke: "#FF7300",
                   strokeWidth: 2,
                   color: isBackButtonDisabled
                     ? "text.secondary"
@@ -139,12 +137,10 @@ function SwipeableStepper() {
               disabled={isNextButtonDisabled}
               onClick={() => handleNext()}
               sx={{ display: { xs: "block", md: "block" } }}
-              // sx={{ borderRadius: 200, stroke: "#FF7300", width: {sm: 20, md:30, lg: 40}, padding: 0 }}
             >
               <ArrowForwardIosOutlinedIcon
                 fontSize="large"
                 sx={{
-                  // stroke: "#FF7300",
                   strokeWidth: 2,
                   color: isNextButtonDisabled
                     ? "text.secondary"

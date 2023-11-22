@@ -24,7 +24,6 @@ export const ComponentTitle = ({ heading, description, url }: Props) => {
           >
             {heading}
           </Typography>
-          {/* <AboutTool url={url} iconType></AboutTool> */}
         </Box>
         <Box sx={{ display: "flex", gap: 0.5 }}>
           <Typography
