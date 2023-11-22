@@ -63,7 +63,6 @@ export default function ErrorDisplay({
             </IconButton>
           </Box>
           <Box
-            // border={1}
             padding={1}
             justifyContent="center"
             alignItems="center"

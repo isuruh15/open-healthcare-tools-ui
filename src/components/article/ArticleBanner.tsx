@@ -2,12 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { ARTICLE_BANNER_TITLE } from "../../configs/TextConstants";
 import SwipeableStepper from "./SwipeableStepper";
 
-interface Props {
-  marginTop?: number;
-  marginBottom?: number;
-}
-
-function ArticleBanner({ marginTop = 3, marginBottom = 2 }: Props) {
+function ArticleBanner() {
   return (
     <Grid container alignItems="center" justifyContent="center">
       <Grid

@@ -29,11 +29,6 @@ function ThrottledOutError() {
               {THROTTLED_OUT_PAGE_TITLE}
             </Typography>
           </Grid>
-          {/* <Grid item container alignContent="center" justifyContent="center">
-            <Typography variant="h5" textAlign="center" padding={2}>
-              {THROTTLED_OUT_PAGE_SUB_TITLE}
-            </Typography>
-          </Grid> */}
         </Box>
       </Grid>
     </Box>
