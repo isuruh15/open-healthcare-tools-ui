@@ -1,12 +1,5 @@
 import { useAuthContext } from "@asgardeo/auth-react";
-import {
-  Box,
-  Button,
-  CircularProgress,
-  Link,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, CircularProgress, Link, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { BALLERINA_DISCORD_LINK } from "../../configs/Constants";
 import {
@@ -56,7 +49,11 @@ export const Header = ({ title, shortDescription, url }: Props) => {
           py: 0,
           px: 1,
           boxShadow: 3,
-          mb: 1,
+          mb: 0.4,
+          backgroundColor: "background.paper",
+          position: "fixed",
+          zIndex: 5,
+          width: "100%",
         }}
         id="header-container"
       >
@@ -70,22 +67,12 @@ export const Header = ({ title, shortDescription, url }: Props) => {
             ml: "auto",
             mr: 2,
             display: "flex",
-            alignItems: "center",
           }}
           id="toggle-container"
         >
-          <Stack direction="row" spacing={{ xs: 2, sm: 5 }}>
-            <Link
-              href={BALLERINA_DISCORD_LINK}
-              target="_blank"
-              underline="none"
-            >
-              <Stack
-                direction="row"
-                spacing={1}
-                alignItems="center"
-                paddingTop={1}
-              >
+          <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", padding: 2 }}>
+              <Link href={BALLERINA_DISCORD_LINK} target="_blank">
                 {/* https://icons8.com/icons/set/discord */}
                 <Box
                   component="img"
@@ -95,6 +82,13 @@ export const Header = ({ title, shortDescription, url }: Props) => {
                     height: { xs: "25px", sm: "30px" },
                   }}
                 />
+              </Link>
+              <Link
+                href={BALLERINA_DISCORD_LINK}
+                target="_blank"
+                underline="none"
+                sx={{ paddingLeft: 1, paddingTop: 0.5 }}
+              >
                 <Typography
                   variant="body2"
                   color="common.black"
@@ -103,8 +97,8 @@ export const Header = ({ title, shortDescription, url }: Props) => {
                 >
                   {DISCORD_HELP_LABEL}
                 </Typography>
-              </Stack>
-            </Link>
+              </Link>
+            </Box>
 
             {isLogedIn && (
               <Button
@@ -143,7 +137,7 @@ export const Header = ({ title, shortDescription, url }: Props) => {
                 {SIGN_OUT_BUTTON_LABEL}
               </Button>
             )}
-          </Stack>
+          </Box>
         </Box>
       </Box>
     </>

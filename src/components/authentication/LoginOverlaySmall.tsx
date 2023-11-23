@@ -30,8 +30,8 @@ function LoginOverlaySmall() {
         position: "absolute",
         bgcolor: "rgba(0, 0, 0, 0.50)",
         color: "common.white",
-        height: "calc(100vh - 197px)",
-        width: { xs: "80%", sm: "88.5%" },
+        height: "calc(100vh - 195px)",
+        width: { xs: "80%", sm: "87.5%" },
         zIndex: 1,
       }}
       marginTop={4.9}

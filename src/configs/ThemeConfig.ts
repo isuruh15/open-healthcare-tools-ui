@@ -6,7 +6,7 @@ export let theme = createTheme({
       fontWeight: 700,
       fontSize: "2.8rem",
     },
-    h2:{
+    h2: {
       fontWeight: 700,
       fontSize: "2rem",
     },
@@ -27,8 +27,8 @@ export let theme = createTheme({
       fontSize: "1.0rem",
     },
     button: {
-      textTransform: 'none'
-    }
+      textTransform: "none",
+    },
   },
   palette: {
     primary: {
@@ -44,7 +44,7 @@ export let theme = createTheme({
       secondary: "#494848", //Light Grey
     },
     background: {
-      paper: "#f7f8fb", // Light grey + purple
+      paper: "#f5f5f5", // Grey, tken from the ballerina.io website
       default: "#ffffff", // White
     },
     info: {
