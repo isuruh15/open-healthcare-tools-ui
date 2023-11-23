@@ -186,7 +186,8 @@ export const Footer = () => {
                 </Typography>
               </Link>
               <Link
-                href="https://wso2.com/terms-of-use/"
+                // href="https://wso2.com/terms-of-use/"
+                href="https://wso2.com/terms-of-use/open-healthcare-sandbox/"
                 target="_blank"
                 sx={{ ml: 1, mr: 6 }}
               >

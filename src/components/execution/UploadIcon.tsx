@@ -45,7 +45,7 @@ export const UploadIcon = ({
         aria-label="Upload File"
         disabled={isDisabled}
       />
-      <label id="comp-upload-content-label" htmlFor="icon-button-file">
+      <label id="comp-upload-content-label" htmlFor="input-upload-content">
         <Tooltip
           id="comp-upload-content-tooltip"
           key="upload-icon"
