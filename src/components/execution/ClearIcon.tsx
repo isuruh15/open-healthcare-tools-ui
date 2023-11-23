@@ -5,23 +5,25 @@ interface Props {
   size?: number;
   onClear: () => void;
   isDisabled?: boolean;
+  id: string;
 }
 
 export const ClearIcon = ({
   size = 30,
   onClear,
   isDisabled = false,
+  id,
 }: Props) => {
   return (
     <Tooltip
-      id="comp-clear-content-tooltip"
+      id={`comp-clear-content-tooltip-${id}`}
       key="clear-icon"
       title="Clear Content"
       placement="bottom"
     >
       <Box>
         <IconButton
-          id="btn-clear-content"
+          id={`btn-clear-content-${id}`}
           onClick={onClear}
           aria-label="Clear Icon Button"
           sx={{
@@ -30,7 +32,7 @@ export const ClearIcon = ({
           disabled={isDisabled}
         >
           <DeleteOutlineOutlinedIcon
-            id="icon-clear-content"
+            id={`icon-clear-content-${id}`}
             sx={{ fontSize: size }}
             aria-label="Clear Icon"
           />

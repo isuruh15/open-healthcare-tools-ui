@@ -8,9 +8,15 @@ interface Props {
   data: string;
   size?: number;
   isDisabled?: boolean;
+  id: string;
 }
 
-export const CopyContent = ({ data, size = 30, isDisabled = false }: Props) => {
+export const CopyContent = ({
+  data,
+  size = 30,
+  isDisabled = false,
+  id,
+}: Props) => {
   const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
@@ -24,27 +30,27 @@ export const CopyContent = ({ data, size = 30, isDisabled = false }: Props) => {
       key="copy-icon"
       title="Copy Content"
       placement="bottom"
-      id="comp-copy-content-tooltip"
+      id={`comp-copy-content-tooltip-${id}`}
     >
       <Box
-        id="box-copy-content-alert"
+        id={`box-copy-content-alert-${id}`}
         style={{ display: "flex" }}
         color="text.primary"
       >
-        <Typography id="txt-copy-content-alert" component="span">
+        <Typography id={`txt-copy-content-alert-${id}`} component="span">
           {isCopied && (
             <Alert
               severity="success"
               icon={<TaskAltIcon sx={{ fontSize: 15 }} />}
               sx={{ fontSize: 10, py: 0.3 }}
-              id="comp-copy-content-alert"
+              id={`comp-copy-content-alert-${id}`}
             >
               {COPIED_INFO_MESSAGE}
             </Alert>
           )}
         </Typography>
         <IconButton
-          id="btn-copy-content"
+          id={`btn-copy-content-${id}`}
           aria-label="Copy Content"
           aria-labelledby="copy-button"
           sx={{
@@ -57,7 +63,7 @@ export const CopyContent = ({ data, size = 30, isDisabled = false }: Props) => {
           disabled={isDisabled}
         >
           <ContentCopyIcon
-            id="icon-copy-content"
+            id={`icon-copy-content-${id}`}
             sx={{ fontSize: size }}
             aria-hidden="true"
           />
