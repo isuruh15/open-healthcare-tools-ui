@@ -89,6 +89,7 @@ export const Wso2Promotion = () => {
               color="text.secondary"
               maxWidth="lg"
               lineHeight={1.7}
+              paddingTop={3.5}
             >
               {BALLERINA_BLADE_DESCRIPTION}
             </Typography>
