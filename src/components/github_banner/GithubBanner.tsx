@@ -23,7 +23,7 @@ function GithubBanner({ marginTop = 3, marginBottom = 2 }: Props) {
     >
       <Grid container alignItems="center" justifyContent="center" padding={1}>
         <Grid item container maxWidth="lg" alignItems="center" justifyContent="center">
-        <Stack spacing={5}>
+        <Stack spacing={5} paddingBottom={2}>
           <Typography
             variant="h2"
             align="center"
@@ -37,7 +37,7 @@ function GithubBanner({ marginTop = 3, marginBottom = 2 }: Props) {
             align="justify"
             maxWidth="lg"
             color="text.secondary"
-            lineHeight={1.9}
+            lineHeight={{xs: 1.7, md: 1.9}}
           >
             This tool transforms HL7v2 messages to FHIR resources. Data
             transformation conditions are taken from the{" "}
@@ -79,10 +79,10 @@ function GithubBanner({ marginTop = 3, marginBottom = 2 }: Props) {
           target="_blank"
           size="large"
           sx={{
-            padding: "8px 36px",
+            padding: {xs: "5px 28px", sm: "6px, 32px", md:"8px 36px"},
             color: "#fff",
-            fontWeight: 600,
-            fontSize: "1.2rem",
+            fontWeight: {xs:550, sm: 600},
+            fontSize: {xs:"1rem", small:"1.1rem", md: "1.2rem"},
             alignSelf: "center",
           }}
         >
