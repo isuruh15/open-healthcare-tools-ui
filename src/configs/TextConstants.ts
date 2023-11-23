@@ -59,7 +59,7 @@ export const UNAUTHORIZED_LOGIN_LABEL = "Please sign in to try out the tool";
 export const AUTHORIZATION_LOADER_TEXT =
   "Please wait while we are loading the tool...";
 export const LOGOUT_BUTTON_LABEL = "Logout";
-export const POWERED_BY_LABEL = "Logout";
+export const POWERED_BY_LABEL = "Powered by";
 
 // Execution area
 export const COPIED_INFO_MESSAGE = "Copied";

@@ -1,5 +1,10 @@
-import { Box, Grid, Link, Stack, Typography } from "@mui/material";
-import { GITHUB_LINK_LABEL, GITHUB_TITLE } from "../../configs/TextConstants";
+import { Box, Button, Grid, Link, Stack, Typography } from "@mui/material";
+import {
+  GITHUB_LINK_LABEL,
+  GITHUB_TITLE,
+  LANDING_PAGE_BUTTON_LABEL,
+  LANDING_PAGE_SUB_TITLE,
+} from "../../configs/TextConstants";
 
 interface Props {
   marginTop?: number;
@@ -17,6 +22,7 @@ function GithubBanner({ marginTop = 3, marginBottom = 2 }: Props) {
       marginBottom={marginBottom}
     >
       <Grid container alignItems="center" justifyContent="center" padding={1}>
+        <Grid item container maxWidth="lg" alignItems="center" justifyContent="center">
         <Stack spacing={5}>
           <Typography
             variant="h2"
@@ -34,21 +40,23 @@ function GithubBanner({ marginTop = 3, marginBottom = 2 }: Props) {
             lineHeight={1.9}
           >
             This tool transforms HL7v2 messages to FHIR resources. Data
-            transformation conditions are taken from the mappings{" "}
+            transformation conditions are taken from the{" "}
             <Link
               href="https://build.fhir.org/ig/HL7/v2-to-fhir/"
               target="_blank"
               color="secondary.main"
               sx={{ textDecoration: "none" }}
             >
-              official HL7v2 to FHIR guide
+              official HL7v2 to FHIR mappings guide
             </Link>{" "}
             and based on the feedback received from the users. The service is
-            written in Ballerina and hosted in Choreo. This tool should not be
-            used in a production environment. We do not store any of the data
-            you pasted/uploaded to the tool. If you want to use these services
-            in a production setting, please contact us. For more information,
-            checkout our{" "}
+            written in Ballerina and hosted in Choreo.{" "}
+            <Box component="span" fontWeight="bold">
+              This tool should not be used in a production environment.
+            </Box>{" "}
+            We do not store any of the data you pasted/uploaded to the tool. If
+            you want to use these services in a production setting, please
+            contact us. For more information, checkout our{" "}
             <Link
               href="https://github.com/wso2/open-healthcare-prebuilt-services/tree/main/transformation/v2-to-fhirr4-service"
               target="_blank"
@@ -60,6 +68,26 @@ function GithubBanner({ marginTop = 3, marginBottom = 2 }: Props) {
             .
           </Typography>
         </Stack>
+        </Grid>
+
+      </Grid>
+      <Grid item container alignItems="center" justifyContent="center">
+      <Button
+          variant="contained"
+          color="info"
+          href="https://wso2.com/contact/?ref=Healthcare"
+          target="_blank"
+          size="large"
+          sx={{
+            padding: "8px 36px",
+            color: "#fff",
+            fontWeight: 600,
+            fontSize: "1.2rem",
+            alignSelf: "center",
+          }}
+        >
+          {LANDING_PAGE_BUTTON_LABEL}
+        </Button>
       </Grid>
     </Box>
   );

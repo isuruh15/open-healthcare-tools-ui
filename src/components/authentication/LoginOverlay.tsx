@@ -29,8 +29,8 @@ export default function LoginOverlay() {
       sx={{
         position: "absolute",
         bgcolor: "rgba(0, 0, 0, 0.50)",
-        height: "calc(100vh - 197px)",
-        width: { md: "95.5%", lg: "96.4%", xl: "97.5%" },
+        height: "calc(100vh - 195px)",
+        width: { md: "95.3%", lg: "96.3%", xl: "97.5%" },
         zIndex: 1,
       }}
       marginTop={{ md: 4.9 }}
