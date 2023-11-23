@@ -3,10 +3,10 @@ import { langs } from "@uiw/codemirror-extensions-langs";
 import { aura, xcodeLight } from "@uiw/codemirror-themes-all";
 import CodeMirror from "@uiw/react-codemirror";
 import FileSaver from "file-saver";
-import { ExecuteButton } from "./ExecuteButton";
-import { CopyContent } from "./CopyContent";
 import { ClearIcon } from "./ClearIcon";
+import { CopyContent } from "./CopyContent";
 import { DownloadIcon } from "./DownloadIcon";
+import { ExecuteButton } from "./ExecuteButton";
 import { UploadIcon } from "./UploadIcon";
 
 interface CodeEditorProps {
@@ -113,6 +113,7 @@ export const CodeEditor = ({
             />
           )}
           <CopyContent
+            id={uploadEnabled ? "input-editor" : "output-editor"}
             data={JSON.parse(JSON.stringify(value!))}
             size={20}
             isDisabled={isDisabled || value === ""}
@@ -133,6 +134,7 @@ export const CodeEditor = ({
           )}
           {clearEnabled && (
             <ClearIcon
+              id={uploadEnabled ? "input-editor" : "output-editor"}
               onClear={onClear!}
               size={22}
               isDisabled={isDisabled || value === ""}
