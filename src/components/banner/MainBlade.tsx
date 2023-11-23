@@ -19,14 +19,19 @@ export const MainBlade = ({
   return (
     <>
       <Box bgcolor="background.paper">
-        <Grid container alignItems="center" justifyContent="center">
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="center"
+          paddingTop={{ xs: 15, sm: 12, md: 8, xl: 2 }}
+        >
           <Grid
             container
             item
             alignItems="center"
             justifyContent="center"
             maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "md", xs: "xs" }}
-            sx={{ padding: { xs: 3, sm: 3, md: 3, lg: 2 } }}
+            sx={{ padding: { xs: 3, sm: 4, md: 2, lg: 2 } }}
             spacing={10}
           >
             <Grid

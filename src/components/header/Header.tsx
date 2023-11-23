@@ -14,7 +14,7 @@ interface Props {
   url: string;
 }
 
-export const Header = ({ title, shortDescription, url }: Props) => {
+export const Header = ({ title, shortDescription }: Props) => {
   const [isLogedIn, setIsLogedIn] = React.useState<boolean>(false);
   const { signOut, signIn, isAuthenticated } = useAuthContext();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -60,7 +60,6 @@ export const Header = ({ title, shortDescription, url }: Props) => {
         <ComponentTitle
           heading={title}
           description={shortDescription}
-          url={url}
         ></ComponentTitle>
         <Box
           sx={{
