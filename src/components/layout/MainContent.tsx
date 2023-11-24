@@ -1,22 +1,22 @@
 import { AuthProvider } from "@asgardeo/auth-react";
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import ArticleBanner from "../article/ArticleBanner";
-import GithubBanner from "../github_banner/GithubBanner";
-import { MainBlade } from "../banner/MainBlade";
-import Wso2Promotion from "../promotion/Wso2Promotion";
 import { BFF_BASE_URL } from "../../configs/Constants";
 import { Tool, ToolStatus, tools } from "../../configs/ToolContentConfig";
-import NotFoundError from "../error/NotFoundError";
-import Routes from "../routes/AppRoutes";
-import LandingPage from "../landing_page/LandingPage";
+import ArticleBanner from "../article/ArticleBanner";
+import { MainBlade } from "../banner/MainBlade";
 import { MaintenancePage } from "../error/MaintenancePage";
-import { Header } from "../header/Header";
+import NotFoundError from "../error/NotFoundError";
 import { Footer } from "../footer/Footer";
+import GithubBanner from "../github_banner/GithubBanner";
+import { Header } from "../header/Header";
+import LandingPage from "../landing_page/LandingPage";
+import Wso2Promotion from "../promotion/Wso2Promotion";
+import Routes from "../routes/AppRoutes";
 
 declare global {
   interface Window {
-    OauthConfig: any;
+    Config: any;
   }
 }
 
@@ -35,14 +35,14 @@ export const MainContent = () => {
   if (!currentItem) {
     return <NotFoundError />;
   }
-  
-  const OauthConfig = window.OauthConfig;
-  const redirectBaseUrl = OauthConfig.APP_AUTH_REDIRECT_BASE_URL;
+
+  const Config = window.Config;
+  const redirectBaseUrl = Config.APP_AUTH_REDIRECT_BASE_URL;
   const config = {
     signInRedirectURL: redirectBaseUrl + location.pathname,
     signOutRedirectURL: redirectBaseUrl + location.pathname,
-    clientID: OauthConfig.APP_AUTH_CLIENT_ID,
-    baseUrl: OauthConfig.APP_AUTH_BASE_URL,
+    clientID: Config.APP_AUTH_CLIENT_ID,
+    baseUrl: Config.APP_AUTH_BASE_URL,
     scope: ["openid", "profile"],
     resourceServerURLs: [BFF_BASE_URL],
     disableTrySignInSilently: false,
@@ -85,7 +85,7 @@ export const MainContent = () => {
           <Wso2Promotion></Wso2Promotion>
 
           {/* Articles display area */}
-          <ArticleBanner ></ArticleBanner>
+          <ArticleBanner></ArticleBanner>
 
           {/* Footer display area */}
           <Footer />

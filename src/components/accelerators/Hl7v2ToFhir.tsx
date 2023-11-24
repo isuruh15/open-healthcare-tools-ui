@@ -2,7 +2,7 @@ import { HttpRequestConfig, useAuthContext } from "@asgardeo/auth-react";
 import { Box, Container } from "@mui/material";
 import DOMPurify from "dompurify";
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { BFF_BASE_URL, HL7V2_TO_FHIR_URL } from "../../configs/Constants";
+import { HL7V2_TO_FHIR_URL } from "../../configs/Constants";
 import { THROTTLED_OUT_PAGE_TITLE } from "../../configs/TextConstants";
 import LoginOverlay from "../authentication/LoginOverlay";
 import { ResponseAlert } from "../common";
@@ -159,11 +159,12 @@ export const Hl7v2ToFhir = () => {
     }));
 
     validateInput();
+    const Config = window.Config;
     const requestConfig: HttpRequestConfig = {
-      url: BFF_BASE_URL + HL7V2_TO_FHIR_URL,
+      url: Config.BFF_BASE_URL + HL7V2_TO_FHIR_URL,
       method: "POST",
       headers: {
-        Accept: "*application/json",
+        "Accept": "*application/json",
         "Content-Type": "text/plain",
       },
       data: input,
@@ -171,7 +172,7 @@ export const Hl7v2ToFhir = () => {
     httpRequest(requestConfig)
       .then((res) => {
         setRequest({
-          reqUrl: BFF_BASE_URL + res.config["url"],
+          reqUrl: Config.BFF_BASE_URL + res.config["url"],
           contentType: res.headers["Content-Type"],
           method: res.config["method"]?.toUpperCase(),
         });
@@ -188,13 +189,12 @@ export const Hl7v2ToFhir = () => {
         }));
       })
       .catch((error) => {
-        console.log(error.response.data.hasOwnProperty("issue"));
         setState((prevState) => ({
           ...prevState,
           statusCode: error.response.status,
         }));
         setRequest({
-          reqUrl: BFF_BASE_URL + error.config["url"],
+          reqUrl: Config.BFF_BASE_URL + error.config["url"],
           contentType: error.config.headers["Content-Type"],
           method: error.config["method"]?.toUpperCase(),
         });
