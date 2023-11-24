@@ -31,7 +31,7 @@ export const UploadIcon = ({
   return (
     <>
       <input
-        accept="text/*"
+        accept=".txt, .json"
         id="input-upload-content"
         type="file"
         style={{ display: "none" }}
@@ -41,6 +41,9 @@ export const UploadIcon = ({
           }
           let file = event.target.files;
           reader(file[0]);
+
+          //It will remove the input value after upload, so that the same file can be uploaded again
+          event.target.value = "";
         }}
         aria-label="Upload File"
         disabled={isDisabled}
