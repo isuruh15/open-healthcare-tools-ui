@@ -118,9 +118,9 @@ function SwipeableStepper() {
                 justifyContent="center"
               >
                 <ArticleTile
-                  title={articles[activeStep + 1].title}
-                  type={articles[activeStep + 1].type}
-                  link={articles[activeStep + 1].link}
+                  title={articles[activeStep + 2].title}
+                  type={articles[activeStep + 2].type}
+                  link={articles[activeStep + 2].link}
                 />
               </Grid>
             )}
